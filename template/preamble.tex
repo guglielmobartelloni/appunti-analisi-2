@@ -1,4 +1,3 @@
-\documentclass[11pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}	% Para caracteres en español
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
@@ -16,7 +15,6 @@
 \usepackage{calc}
 \usepackage{multicol}
 \usepackage{cancel}
-\usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage[margin=3cm]{geometry}
 \usepackage{amsmath}
 \newlength{\tabcont}
@@ -28,51 +26,127 @@
 \usepackage{xcolor}
 \usepackage{FiraSans}
 \usepackage{listings}
-\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
-\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
-\definecolor{mylilas}{RGB}{170,55,241}
-\colorlet{shadecolor}{orange!15}
-\parindent 0in
-\parskip 12pt
+\usepackage[framemethod=TikZ]{mdframed}
+
 \geometry{margin=1in, headsep=0.25in}
-\theoremstyle{definition}
-\newtheorem{defn}{Definizione}
-\newtheorem{reg}{Regola}
-\newtheorem{oss}{Osservazione}
-\newtheorem{exer}{Esecizio}
-\newtheorem{note}{Nota}
-\newtheorem{thm}{Teorema}[section] % reset theorem numbering for each chapter
-\theoremstyle{plain}
-\newcommand{\restr}[2]{%
-\mathchoice{%
-\restriction{#1}{#2}{\displaystyle}%
-}{%
-\restriction{#1}{#2}{\textstyle}%
-}{%
-\restriction{#1}{#2}{\scriptstyle}%
-}{%
-\restriction{#1}{#2}{\scriptscriptstyle}%
-}%
-}
-
-\lstset{language=Matlab,%
-    %basicstyle=\color{red},
-    breaklines=true,%
-    morekeywords={matlab2tikz},
-    keywordstyle=\color{blue},%
-    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
-    identifierstyle=\color{black},%
-    stringstyle=\color{mylilas},
-    commentstyle=\color{mygreen},%
-    showstringspaces=false,%without this there will be a symbol in the places where there is a space
-    numbers=left,%
-    numberstyle={\tiny \color{black}},% size of the numbers
-    numbersep=9pt, % this defines how far the numbers are from the text
-    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
-}
-
 
 \newlength{\totbarheight}
 \newlength{\bardepth}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem, Corollari ecc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+%%% upto here
+\newcounter{theo}[section]
+\newenvironment{theo}[1][]{%
+\stepcounter{theo}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut Teorema~\thetheo};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline=(current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut Teorema~\thetheo:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+\newcounter{lemm}[section]
+\newenvironment{lemm}[1][]{%
+\stepcounter{lemm}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut Lemma~\thetheo};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline=(current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut Lemma~\thetheo:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+
+\newcounter{corollario}[section]
+\newenvironment{corollario}[1][]{%
+\stepcounter{corollario}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut Corollario~\thetheo};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline=(current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut Corollario~\thetheo:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+\newcounter{definizione}[section]
+\newenvironment{definizione}[1][]{%
+\stepcounter{definizione}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut Definizione~\thetheo};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline=(current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut Definizione~\thetheo:~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SELF MADE COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\teorema}[2]{\begin{theo}{#1}{}#2\end{theo}}
+\newcommand{\cor}[2]{\begin{corollario}{#1}{}#2\end{corollario}}
+\newcommand{\lemma}[2]{\begin{lem}{#1}{}#2\end{lem}}
+% \newcommand{\mprop}[2]{\begin{Prop}{#1}{}#2\end{Prop}}
+% \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
+% \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}
+% \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
+% \newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
+\newcommand{\dfn}[2]{\begin{definizione}[#1]{}{}#2\end{definizione}}
+% \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
+% \newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
+% \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
+% \newcommand{\nt}[1]{\begin{note}#1\end{note}}

@@ -2,3 +2,4 @@
 \babel@toc {italian}{}\relax 
 \contentsline {section}{Equazioni differenziali}{2}{section*.2}%
 \contentsline {subsection}{Equazioni differenziali ordinarie}{2}{section*.3}%
+\contentsline {subsection}{I ordine (n=1)}{3}{section*.4}%

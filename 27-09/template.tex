@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+
+
+\input{preamble}
+
+\begin{document}
+
+\title{Introduzione}
+\author{Guglielmo Bartelloni}
+
+\maketitle
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+
+\section{Equazioni differenziali}
+
+Le equazioni differenziali sono equazioni in cui l'ingnita è un equazione insieme a qualche sua derivata.
+
+\subsection{Equazioni differenziali ordinarie}
+
+Noi vedremo quelle del primo ordine lineari e di secondo ordine con coefficienti costanti
+
+Problema di Cauchy: problema con codizioni iniziali.
+
+
+\defn{}{Una equazione di ordine n è una equazione del tipo:
+\[
+    F(x,y(x),y'(x),...,y^{(n-1)}(x),y^{(n)}(x))=0
+\]
+\[
+    u \in I contenuto \mathbb{R}
+\]
+dove l'incognita è la qualunque y(x). F è funzione di (n+2) variabili $x,y(x),y'(x)....$
+}
+
+
+
+L'\textbf{ordine} è dato dal massimo ordine di derivazione che compare.
+
+
+Per esempio:
+\[
+    y'''+2y''+5y = e^x
+\]
+è di ordine 3
+
+\defn{Soluzione (curva) integrale}{La soluzione di una EDO di ordine n sull'intervallo I \[
+        (*) F(x,y(x),y'(x),...) = 0
+\]
+\[
+    x \in I contenuto \mathbb{R}
+\]
+
+$\phi(x)$ che sia definita (almeno) in I e ivi derivabile fino all'ordine n per cui valga (*), ovvero:
+\[
+    F(x,\phi(x),\phi ' (x), ... ) = 0 
+\]
+
+$\forall x \in I$
+
+Chiaramente cambia a seconda dell'intervallo
+}
+
+\defn{Integrale Generale}{Si chiama integrale \textbf{generale} di (*) in I l'insieme di tutte le soluzioni di (*) in I}
+
+
+E' possibile definire un esepressione piu' esplicita
+
+\defn{Forma normale}{Un edo di ordine n si dice in forma normale se è in forma
+
+    \[
+        y^{(n)} = f(x,y(x),y'(x),....,y^{(n-1)}, x \in I
+    \]
+    
+    Esempio:
+    \[
+        y'''=-5y'+sinx
+    \]
+    Quella sopra è un EDO di III ordine normale.
+}
+
+\defn{EDO di ordine n lineare}{Una EDO di ordine n si dice lineare se è nella forma
+    \[
+        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}+... + a_2(x)y''(x)+a_1(x)y'(x)+a_0y(x)=f(x),x \in I
+    \]
+
+    Dove le funzioni \[
+        a_0(x),a_1(x),a_2(x),...,a_n(x),f(x)
+    \]
+
+    sono assegnate (continue) in I
+
+    Esempio:
+    \[
+        xy''+5y = sin x
+    \]
+
+}
+
+
+Quando $f(x)=0$ allora l'equazione si dice l'\textbf{omogenea associata} 
+
+
+Nel nostro caso le equazioni di secondo ordine lineari saranno a \textbf{coefficienti costanti}
+
+
+
+
+
+
+\end{document}

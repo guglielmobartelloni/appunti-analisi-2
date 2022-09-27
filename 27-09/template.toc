@@ -1,0 +1,4 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{Equazioni differenziali}{2}{section*.2}%
+\contentsline {subsection}{Equazioni differenziali ordinarie}{2}{section*.3}%

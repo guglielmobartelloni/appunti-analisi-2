@@ -110,5 +110,130 @@ espandendo $A(x)$:
     y(x) = c e ^{\int_{{}}^{{}} {a(x)} \: d{x} {}}
 \]
 
+posso considerare le soluzioni come:
+
+\[
+    y(x) = c z_0
+\]
+
+dove $z_0$ è una soluzione particolare di (2).
+
+Infatti $e ^{-A(x)}$ è soluzione di (2)
+
+\begin{proof}
+    \[
+    e ^{-A(x)} = -a(x) e ^{-A(x)}
+\]
+
+ovvero
+
+\[
+    (e ^{-A(x)})'+a(x) e ^{-A(x)}=0
+\]
+    
+\end{proof}
+
+
+\subsection{Determinazione dell'integrale particolare}
+
+Sappiamo:
+
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x)
+\]
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Cerco l'integrale particolare ad occhio oppure uso il \textbf{metodo della variazione della costante}
+
+\subsubsection{Metodo della variazione della costante}
+
+Cerco questa $c(x)$ in questa forma:
+
+\[
+    \bar y(x) = c(x) e ^{-A(x)}
+\]
+
+Ovviamente la cerco dopo che so che $\bar y(x)$ è soluzione del problema.
+
+\begin{proof}
+    Poichè $\bar y(x)$ è soluzione di (1) si ha che $\bar y'(x)+a(x) \bar y(x)=f(x)$ da cui sostituendo $\bar y(x) = c(x) e ^{-A(x)}$:
+
+    \[
+        (c(x) e ^{-A(x)})'+ a(x) c(x) e ^{-A(x)} = f(x)
+    \]
+    
+    Deriviamo:
+
+    \[
+        c'(x) e ^{-A(x)} - c(x) a(x) e ^{-A(x)} + a(x) c(x) e ^{-A(x)}= f(x)
+    \]
+    
+    semplifico
+    \[
+        c'(x) e ^{-A(x)} = f(x)
+    \]
+
+    \[
+        c'(x) e ^{-A(x)} = f(x)
+    \]
+
+    \[
+        c'(x) = f(x) e ^{A(x)} \rightarrow e(x) = \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{} {}
+    \]
+
+    e dunque:
+
+    \[
+        \bar y(x) = e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+    \]
+
+    Cioè l'integrale particolare
+\end{proof}
+
+Se metto tutto insieme l'integrale generale diventa:
+
+\[
+    y(x) = c e ^{-A(x)} + e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+\]
+
+\subsection{Osservazioni sulla formula}
+
+$A(x)$ è \textbf{una} primitiva di $a(x)$ scelta una volta per tutte.
+
+Non occorre mettere una costante arbritraria (ovvero considerare come $A(x) + K,K \in \mathbb{R}$ ) poiche l'integrale generale non cambia
+
+Non serve neanche nell'integrale perchè verrebbe buttato dentro $c$ dell'integrale generale
+
+
+\subsection{Esempi}
+
+\[
+    y'(x) = 5y(x) + e ^{x}
+\]
+
+in questo caso $a(x) = -5$
+
+\[
+    A(x) = - \int_{{}}^{{}} {5} \: d{x} {}=-5x
+\]
+
+Quindi: 
+
+\[
+    e ^{-A(x)}=e ^{5x}
+\]
+
+\[
+    y(x) = c e ^{5x} + e ^{5x} \int_{{}}^{{}} {e^x e ^{-5x}} \: d{x} {} = c e ^{5x} + e ^{5x} \int_{{}}^{{}} {e ^{-4x}} \: d{} {} = c e ^{5x} + e ^{5x} (\frac{1}{4} e ^{-4x}) = c e ^{5x} - \frac{1}{4} e ^{x}
+\]
+
+Esercizio per casa:
+
+\[
+    u' + \frac{u}{t} = e ^{t}
+\]
 
 \end{document}

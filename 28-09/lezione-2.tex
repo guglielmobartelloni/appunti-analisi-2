@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+
+
+\input{../template/preamble}
+
+\begin{document}
+
+\title{Lezione 2}
+\author{Guglielmo Bartelloni}
+
+\maketitle
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+
+\section{Facciamo vedere che il teorema precedente valeva anche per $n>1$}
+
+Supponiamo che $u$ e $v$ siamo due soluzioni di (1), cioè che:
+
+$Lu=f$ e $Lv=f$ su $I$
+
+La differenza di queste diventano soluzione su $I=[a,b]$ dell'omogenea associata
+
+Usando la propietà della linearità:
+
+\[
+    L(\lambda u+\mu v) = \lambda L u + \mu L v
+    
+\]
+
+\[
+    L(u-v) = Lu-Lv = f- f=0
+\]
+
+Se indichiamo con $V_0$ l'insieme di tutte le soluzioni dell'equzione omogenea associata ($Lw=0$ su $I=[a,b]$ e $V_0$ è l'insieme delle $w \in \mathbb{C}^n(I)$) e con $\bar u(t)$ una soluzione nota di (1)
+
+\[
+    u(x) = \bar u(x) +w(x)
+\]
+
+L'uguglianza sopra, al variare di $w(x)$ in $V_0$ ci da tutte le soluzioni del problema di partenza. 
+
+(Il problema quindi, diventa solo di studiare il problema omogeneo)
+
+\section{Torniamo al I ordine}
+
+Adesso ritorniamo al problema di I ordine (in forma normale):
+
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x)
+\]
+
+dove $a()$ e $f()$ sono continue su $[a,b]$
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Secondo il teorema della prima lezione:
+
+\[
+    y(x)=z(x)+\bar y(x)
+\]
+
+Come si determina l'insieme di tutte le soluzioni (integrale generale) di (2), cioe:
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0,x \in [a,b]
+\]
+
+Sia $A(x)$ una \textbf{primitiva} di $a(x)$:
+
+\[
+    A(x) = \int_{{}}^{{}} {a(x)} \: d{x} {}
+\]
+
+Moltiplichiamo i due membri della (2) per $e^{A(x)}$:
+
+\[
+    e^{A(x)} + e ^{A(x)}a(x) y(x)=0, x \in [a,b]
+\]
+
+La posso scrivere anche (la derivata di $e ^{A(x)}y(x)$):
+
+\[
+    (e ^{A(x)} y(x))' = e ^{A(x)}a(x)y(x) + e ^{A(x)}y'(x)
+\]
+
+quindi:
+
+\[
+    (e ^{A(x)}y(x))'=0
+\]
+
+
+
+
+\end{document}

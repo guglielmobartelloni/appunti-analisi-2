@@ -1,0 +1,444 @@
+\documentclass[11pt]{article}
+
+
+\input{template/preamble}
+
+\begin{document}
+
+\title{Analisi 2}
+\author{Guglielmo Bartelloni}
+
+\maketitle
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+
+
+\section{Lezione 1}
+
+\subsection{Equazioni differenziali}
+
+Le equazioni differenziali sono equazioni in cui l'ingnita è un equazione insieme a qualche sua derivata.
+
+\subsubsection{Equazioni differenziali ordinarie}
+
+Noi vedremo quelle del primo ordine lineari e di secondo ordine con coefficienti costanti
+
+Problema di Cauchy: problema con codizioni iniziali.
+
+
+\defn{}{Una equazione di ordine n è una equazione del tipo:
+\[
+    F(x,y(x),y'(x),...,y^{(n-1)}(x),y^{(n)}(x))=0
+\]
+\[
+    x \in I \subseteq \mathbb{R}
+\]
+dove l'incognita è la qualunque y(x). F è funzione di (n+2) variabili $x,y(x),y'(x)....$
+}
+
+
+
+L'\textbf{ordine} è dato dal massimo ordine di derivazione che compare.
+
+
+Per esempio:
+\[
+    y'''+2y''+5y = e^x
+\]
+è di ordine 3
+
+\defn{Soluzione (curva) integrale}{La soluzione di una EDO di ordine n sull'intervallo I \[
+        (*) F(x,y(x),y'(x),...) = 0
+\]
+\[
+    x \in I \subseteq \mathbb{R}
+\]
+
+$\varphi(x)$ che sia definita (almeno) in I e ivi derivabile fino all'ordine n per cui valga (*), ovvero:
+\[
+    F(x,\varphi(x),\varphi ' (x), ... ) = 0 
+\]
+
+$\forall x \in I$
+
+Chiaramente cambia a seconda dell'intervallo
+}
+
+\defn{Integrale Generale}{Si chiama integrale \textbf{generale} di (*) in I l'insieme di tutte le soluzioni di (*) in I}
+
+
+E' possibile definire un esepressione piu' esplicita
+
+\defn{Forma normale}{Un edo di ordine n si dice in forma normale se è in forma
+
+    \[
+        y^{(n)} = f(x,y(x),y'(x),....,y^{(n-1)}), x \in I
+    \]
+    
+    Esempio:
+    \[
+        y'''=-5y'+sinx
+    \]
+    Quella sopra è un EDO di III ordine normale.
+}
+
+\defn{EDO di ordine n lineare}{Una EDO di ordine n si dice lineare se è nella forma
+    \[
+        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}+... + a_2(x)y''(x)+a_1(x)y'(x)+a_0y(x)=f(x),x \in I
+    \]
+
+    Dove le funzioni \[
+        a_0(x),a_1(x),a_2(x),...,a_n(x),f(x)
+    \]
+
+    sono assegnate (continue) in I
+
+    Esempio:
+    \[
+        xy''+5y = sin x
+    \]
+
+}
+
+
+Quando $f(x)=0$ allora l'equazione si dice l'\textbf{omogenea associata} 
+
+
+Nel nostro caso le equazioni di secondo ordine lineari saranno a \textbf{coefficienti costanti}
+
+
+Vediamo come si risolve il problema della determinazione delle soluzioni di EDO lineari
+
+
+\subsubsection{I ordine (n=1)}
+
+\[
+    F(x,y(x),y'(x))=0
+\]
+
+La considero in forma normale:
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x), x \in [a,b]
+\]
+
+dove le funzioni $a(x)$ e $f(x)$ sono continue in $[a,b]$
+
+
+Se $f(x)=0$ si ottiene omogenea associata:
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Come si determina l'integrale generale di (1)?
+
+Il teorema che enunciamo vale per tutte le EDO lineari di ordine n
+
+\teorema{}{L'integrale generale di (1) in $[a,b]$ è dato dalla somma dell'integrale generale dell'omogenea associata (2)
+con un integrale particolare noto di (1)
+\[
+\int_{{}}^{{}} {gen} (1) = \int_{{}}^{{}} {gen(2)}  + \int_{{}}^{{}} {particolare} (1)
+\]
+}
+
+\begin{proof}
+    
+
+
+
+Sia $y(x)$ una soluzione qualsiasi di (1) ($y(x)$ appartiene all'integrale generale di (1))
+e sia $\bar y(x)$ una soluzione particolare (nota) di (1). Voglio far vedere è che la loro differenza è una soluzione qualsiasi di (2)
+
+Dunque per ipotesi n ha che:
+\[
+    y'(x)+a(x)y(x) = f(x), \forall x \in [a,b]
+\]
+
+\[
+    \bar y'(x) + a(x) \bar y(x) = f(x)
+\]
+
+Entrambe soddisfano la (1)
+
+Sottraggo membro a membro le due:
+
+\[
+    y'(x)-\bar y'(x) + a(x)y(x) - a(x) \bar y(x) = f(x) - f(x)
+\]
+
+\[
+    y'(x)-\bar y'(x) + a(x)[y(x) - \bar y(x)]=0
+\]
+
+Si può scrivere anche (le derivate raccolte):
+\[
+    [y(x)-\bar y(x)]' + a(x)[y(x) - \bar y(x)]=0
+\]
+
+E dunque  la funzione $y(x) - \bar y(x) = z(x)$ è soluzione di (2)
+Quindi:
+\[
+    y(x) = \bar y(x) + z(x)
+\]
+
+Viceversa se $z(x)$ è una qualsiasi soluzione di (2) e $\bar y(x)$ è una soluzione particolare di (1) 
+voglio mostrare che la loro somma è soluzione di (1)
+
+Pongo:
+\[
+    y(x) = z(x) + \bar y(x)
+\]
+
+Devo mostrare che $y(x)$ verifica (1)
+
+sapendo che:
+\[
+    z'(x) + a(x)z(x) = 0
+\]
+
+\[
+    \bar y'(x) + a(x) \bar y(x) = f(x)
+\]
+
+\[
+    y'(x) = (z(x) + \bar y(x) )' = z'(x) + \bar y'(x) =
+    -a(x)z(x)-a(x)\bar y(x) + f(x) = -a(x) [z(x) + \bar y(x)] +f(x)
+\]
+
+E quindi ho dimostrato che:
+\[
+    y'(x) = -a(x)y(x) + f(x)
+\]
+
+\[
+    y'(x) +  a(x)y(x) = f(x)
+\]
+
+\[
+    y(x) = z(x) + \bar y(x)
+\]
+
+\end{proof}
+
+
+\section{Lezione 2}
+\subsection{Facciamo vedere che il teorema precedente valeva anche per $n>1$}
+
+Supponiamo che $u$ e $v$ siamo due soluzioni di (1), cioè che:
+
+$Lu=f$ e $Lv=f$ su $I$
+
+La differenza di queste diventano soluzione su $I=[a,b]$ dell'omogenea associata
+
+Usando la propietà della linearità:
+
+\[
+    L(\lambda u+\mu v) = \lambda L u + \mu L v
+\]
+
+\[
+    L(u-v) = Lu-Lv = f- f=0
+\]
+
+Se indichiamo con $V_0$ l'insieme di tutte le soluzioni dell'equazione omogenea associata ($Lw=0$ su $I=[a,b]$ e $V_0$ è l'insieme delle $w \in \mathbb{C}^n(I)$) e con $\bar u(t)$ una soluzione nota di (1)
+
+\[
+    u(x) = \bar u(x) +w(x)
+\]
+
+L'uguaglianza sopra, al variare di $w(x)$ in $V_0$ ci da tutte le soluzioni del problema di partenza. 
+
+(Il problema quindi, diventa solo di studiare il problema omogeneo)
+
+\subsection{Torniamo al I ordine}
+
+Adesso ritorniamo al problema di I ordine (in forma normale):
+
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x)
+\]
+
+dove $a()$ e $f()$ sono continue su $[a,b]$
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Secondo il teorema della prima lezione:
+
+\[
+    y(x)=z(x)+\bar y(x)
+\]
+
+Come si determina l'insieme di tutte le soluzioni (integrale generale) di (2), cioè:
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0,x \in [a,b]
+\]
+
+Sia $A(x)$ una \textbf{primitiva} di $a(x)$:
+
+\[
+    A(x) = \int_{{}}^{{}} {a(x)} \: d{x} {}
+\]
+
+Moltiplichiamo i due membri della (2) per $e^{A(x)}$:
+
+\[
+    e^{A(x)} y'(x) + e ^{A(x)}a(x) y(x)=0, x \in [a,b]
+\]
+
+La posso scrivere anche (la derivata di $e ^{A(x)}y(x)$):
+
+\[
+    (e ^{A(x)} y(x))' = e ^{A(x)}a(x)y(x) + e ^{A(x)}y'(x)
+\]
+
+quindi (sempre chiaramente nell'intervallo $[a,b]$):
+
+\[
+    (e ^{A(x)}y(x))'=0
+\]
+
+Questo mi dice che:
+
+\[
+    e ^{A(x)}y(x) = costante=c \in \mathbb{R}
+\]
+
+porto dall'altra parte:
+
+\[
+    y(x) = c e ^{-A(x)}
+\]
+
+espandendo $A(x)$:
+
+\[
+    y(x) = c e ^{\int_{{}}^{{}} {a(x)} \: d{x} {}}
+\]
+
+posso considerare le soluzioni come:
+
+\[
+    y(x) = c z_0
+\]
+
+dove $z_0$ è una soluzione particolare di (2).
+
+Infatti $e ^{-A(x)}$ è soluzione di (2)
+
+\begin{proof}
+    \[
+    e ^{-A(x)} = -a(x) e ^{-A(x)}
+\]
+
+ovvero
+
+\[
+    (e ^{-A(x)})'+a(x) e ^{-A(x)}=0
+\]
+    
+\end{proof}
+
+
+\subsubsection{Determinazione dell'integrale particolare}
+
+Sappiamo:
+
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x)
+\]
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Cerco l'integrale particolare ad \textbf{occhio} oppure uso il \textbf{metodo della variazione della costante}
+
+\paragraph{Metodo della variazione della costante}
+
+Cerco questa $c(x)$ in questa forma:
+
+\[
+    \bar y(x) = c(x) e ^{-A(x)}
+\]
+
+Ovviamente la cerco dopo che so che $\bar y(x)$ è soluzione del problema.
+
+\begin{proof}
+    Poichè $\bar y(x)$ è soluzione di (1) si ha che $\bar y'(x)+a(x) \bar y(x)=f(x)$ da cui sostituendo $\bar y(x) = c(x) e ^{-A(x)}$:
+
+    \[
+        (c(x) e ^{-A(x)})'+ a(x) c(x) e ^{-A(x)} = f(x)
+    \]
+    
+    Deriviamo:
+
+    \[
+        c'(x) e ^{-A(x)} - c(x) a(x) e ^{-A(x)} + a(x) c(x) e ^{-A(x)}= f(x)
+    \]
+    
+    semplifico
+
+    \[
+        c'(x) e ^{-A(x)} = f(x)
+    \]
+
+    \[
+        c'(x) = f(x) e ^{A(x)} \rightarrow c(x) = \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{} {}
+    \]
+
+    e dunque:
+
+    \[
+        \bar y(x) = e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+    \]
+
+    Cioè l'integrale particolare
+\end{proof}
+
+Se metto tutto insieme l'integrale generale diventa:
+
+\[
+    y(x) = c e ^{-A(x)} + e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+\]
+
+\subsubsection{Osservazioni sulla formula}
+
+$A(x)$ è \textbf{una} primitiva di $a(x)$ scelta una volta per tutte.
+
+\textbf{Non} occorre mettere una costante arbitraria (ovvero considerare come $A(x) + K,K \in \mathbb{R}$ ) poiche l'integrale generale non cambia
+
+\textbf{Non} serve neanche nell'integrale perchè verrebbe buttato dentro $c$ dell'integrale generale
+
+
+\subsubsection{Esempi}
+
+\[
+    y'(x) = 5y(x) + e ^{x}
+\]
+
+in questo caso $a(x) = -5$
+
+\[
+    A(x) = - \int_{{}}^{{}} {5} \: d{x} {}=-5x
+\]
+
+Quindi: 
+
+\[
+    e ^{-A(x)}=e ^{5x}
+\]
+
+\[
+    y(x) = c e ^{5x} + e ^{5x} \int_{{}}^{{}} {e^x e ^{-5x}} \: d{x} {} = c e ^{5x} + e ^{5x} \int_{{}}^{{}} {e ^{-4x}} \: d{} {} = c e ^{5x} + e ^{5x} (\frac{1}{4} e ^{-4x}) = c e ^{5x} - \frac{1}{4} e ^{x}
+\]
+
+Esercizio per casa:
+
+\[
+    u' + \frac{u}{t} = e ^{t}
+\]
+
+\end{document}

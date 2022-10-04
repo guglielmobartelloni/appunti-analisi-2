@@ -513,7 +513,7 @@ Determinare la soluzione del problema di Cauchy:
 \]
 
 \[
-    = e ^{5x} [ -\frac{1}{4} e ^{-4t}] = e ^{5x}(-\frac{1}{4} e ^{-4x}+\frac{1}{4})= - \frac{1}{4} e ^{x}+ \frac{1}{4} e ^{5x}
+    = e ^{5x} \Eval{[ -\frac{1}{4} e ^{-4t}]}{0}{x} = e ^{5x}(-\frac{1}{4} e ^{-4x}+\frac{1}{4})= - \frac{1}{4} e ^{x}+ \frac{1}{4} e ^{5x}
 \]
 
 Esempio 2:
@@ -596,7 +596,7 @@ Esempio 3:
 Considero l'intervallo dove sta il $x_0=-1$ quindi $(-\infty,0)$
 
 \[
-    A(x) = \int_{{-1}}^{{x}} {\frac{1}{t} } \: d{t} {} = [2 log|t|] = 2 log|x| - 2 log|-1| = 2 log|x| = 
+    A(x) = \int_{{-1}}^{{x}} {\frac{1}{t} } \: d{t} {} = \Eval{[2 log|t|]}{-1}{x} = 2 log|x| - 2 log|-1| = 2 log|x| = 
 \]
 
 per via dell'intervallo il valore assoluto viene preso col meno:
@@ -614,7 +614,24 @@ quindi l'integrale generale:
 uso la proprietà dei logaritmi:
 
 \[
-    = 2 e ^{log \frac{1}{x ^{2}} }+ e ^{log \frac{1}{x ^{2}} }\int_{{-1}}^{{x}} {e ^{log t ^{2}}} \: d{t} {}= \frac{2}{x ^{2}} + \frac{1}{x ^{2}} \int_{{-1}}^{{x}} {1} \: d{t} {} = \frac{2}{x ^{2}} + \frac{1}{x ^{2}} [t] = \frac{2 }{x ^{2}} + \frac{1}{x ^{2}} (x+1)
+    = 2 e ^{log \frac{1}{x ^{2}} }+ e ^{log \frac{1}{x ^{2}} }\int_{{-1}}^{{x}} {e ^{log t ^{2}}} \: d{t} {}= \frac{2}{x ^{2}} + \frac{1}{x ^{2}} \int_{{-1}}^{{x}} {1} \: d{t} {} = \frac{2}{x ^{2}} + \frac{1}{x ^{2}} \Eval{[t]}{-1}{x} 
+     = \frac{2 }{x ^{2}} + \frac{1}{x ^{2}} (x+1)
 \]
+
+\subsection{Edo a variabili separabili}
+
+Una edo si dice a variabili separabili se è della forma:
+
+\[
+    y(x) = f(x) g(y(x))
+\]
+
+Parte che dipende da y viene moltiplicata a quella che dipende da x.
+
+Dove le fuznioni f e g sono continue nei loro domini di definizione
+
+Determinare gli eventuali zeri(valori di $\bar y$ tra cui $g(\bar y) = 0$) voglio diviedere per g per separare le variabili
+
+considerando $y != \bar y$ si separano le variabili dividendi per $g(y)$
 
 \end{document}

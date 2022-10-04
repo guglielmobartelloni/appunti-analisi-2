@@ -143,6 +143,29 @@
 }
 {\end{mdframed}}
 
+\newcounter{ese}[section]
+\newenvironment{ese}[1][]{%
+\stepcounter{ese}%
+\ifstrempty{#1}%
+ {\mdfsetup{%
+   frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!20]
+         {\strut Esempio~\theese};}}
+ }%
+{\mdfsetup{%
+  frametitle={%
+   \tikz[baseline=(current bounding box.east),outer sep=0pt]
+   \node[anchor=east,rectangle,fill=blue!20]
+        {\strut Esempio~\theese~#1};}}%
+ }%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+       linewidth=2pt,topline=true,
+       frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+}
+{\end{mdframed}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,6 +181,7 @@
 % \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
 % \newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
 \newcommand{\defn}[2]{\begin{definizione}[#1]{}{}#2\end{definizione}}
+\newcommand{\esempio}[2]{\begin{ese}[#1]{}{}#2\end{ese}}
 % \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
 % \newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
 % \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}

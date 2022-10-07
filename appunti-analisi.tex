@@ -630,13 +630,14 @@ Parte che dipende da y viene moltiplicata a quella che dipende da x.
 
 Dove le funzioni f e g sono continue nei loro domini di definizione
 
-Il procedimento è il seguente:
+Il procedimento per risolverle è il seguente:
 
 \begin{enumerate}
-    \item Si cercano le soluzioni costanti $g(y)=0$ cioè gli zeri
-        Si determinao gli eventuali $\bar y$ reali t.c. $g(\bar y)$
+    \item Si cercano le soluzioni costanti $g(y)=0$ (cioè gli zeri)
 
-        $y(x)= \bar y$ sono soluzioni signolari del problema 
+        Si determinano gli eventuali $\bar y$ reali t.c. $g(\bar y)$
+
+        $y(x)= \bar y$ sono soluzioni singolari del problema 
         
     \item Se $y \neq \bar y$ si procede separando le variabili, ovvero dividiamo per $g(y)$
 \end{enumerate}
@@ -723,6 +724,7 @@ Le prime due parentesi sono $g(y)$ il resto $f(x)$
 
         $A=1$ e $B=1$
         
+        Quindi:
 
         \[
             \int_{{}}^{{}} {\frac{1}{1-y}} \: d{y} {}- \int_{{}}^{{}} {\frac{1}{2-y} } \: d{y} {} = \int_{{}}^{{}} {x} \: d{x} {}
@@ -776,7 +778,7 @@ Le prime due parentesi sono $g(y)$ il resto $f(x)$
             (c e ^{\frac{x ^{2}}{2} })y = c ^{\frac{x ^{2}}{2} }-2
         \]
 
-        E quindi le due soluzioni (quella costante e quella non sono):
+        E quindi le due soluzioni (quella costante e quella non) sono:
 
         \begin{equation}
             \begin{cases}
@@ -800,7 +802,7 @@ Risolviamo ora il problema:
 
 e decidiamo qual è il piu ampio intervallo su cui è definita la soluzione
 
-Avendo già risolto la EDO imponiamo la condiizione $y(0) = 3$:
+Avendo già risolto la EDO imponiamo la condizione $y(0) = 3$:
 
 \[
     y(0) = \frac{c-2}{c-1} = 3
@@ -885,6 +887,50 @@ Se lo vedo dal punto di vista matematico se accettassimo soluzioni definite su i
     \end{cases}\,.
 \end{equation}
 
+\textbf{Soluzione} 
+
+Raccolgo: 
+
+\[
+    y'(x)=x(y+2)
+\]
+
+Trovo le soluzioni stazionarie:
+
+\[
+    y+2=0
+\]
+
+\[
+    y=-2
+\]
+
+Trovo le altre:
+
+\[
+    \int_{}^{} {\frac{1}{y+2}} \\: dy = \int_{}^{} {x} \\: dx 
+\]
+
+\[
+    y+2 = c e ^{ \frac{x^{2}}{2}}+c
+\]
+
+Impongo le condizioni di Cauchy e trovo c sostituendo:
+
+\[
+    y=3e ^{ \frac{x^{2}}{2}}-2
+\]
+
+Quindi la soluzione completa e':
+
+    \begin{equation}
+        \begin{cases}
+            y=-2\\
+            y=3e ^{ \frac{x^{2}}{2}}-2
+        \end{cases}\,.
+    \end{equation}
+
+
 
 \subsection{EDO lineari del II ordine}
 
@@ -916,7 +962,7 @@ Poniamo:
     y(x) = c_1 y_1(x) + c_2 y_2(x)
 \]
 
-io so che le soluzioni soddisfano la equazione (ovviamente):
+io so che le soluzioni soddisfano l'equazione (ovviamente):
 
 \[
     a_2(x)y_1''(x) + a_1(x) y_1'(x) + a_0(x) y_1(x) = 0

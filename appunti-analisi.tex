@@ -623,7 +623,7 @@ uso la proprietà dei logaritmi:
 Una edo si dice a variabili separabili se è della forma:
 
 \[
-    y(x) = f(x) g(y(x))
+    y'(x) = f(x) g(y(x))
 \]
 
 Parte che dipende da y viene moltiplicata a quella che dipende da x.
@@ -908,7 +908,7 @@ Trovo le soluzioni stazionarie:
 Trovo le altre:
 
 \[
-    \int_{}^{} {\frac{1}{y+2}} \\: dy = \int_{}^{} {x} \\: dx 
+    \int_{}^{} {\frac{1}{y+2}} \: dy = \int_{}^{} {x} \: dx 
 \]
 
 \[
@@ -948,7 +948,7 @@ In forma normale:
 
 se pongo $f(x) = 0$ ho la omogenea associata (2)
 
-le soluzioni sono linearmente indipendenti
+le sue soluzioni sono linearmente indipendenti
 
 Se abbiamo due soluzioni $y_1$ e $y_2$ di:
 
@@ -962,7 +962,7 @@ Poniamo:
     y(x) = c_1 y_1(x) + c_2 y_2(x)
 \]
 
-io so che le soluzioni soddisfano l'equazione (ovviamente):
+io so che le soluzioni soddisfano l'equazione (per definizione):
 
 \[
     a_2(x)y_1''(x) + a_1(x) y_1'(x) + a_0(x) y_1(x) = 0
@@ -1004,5 +1004,86 @@ $y_1(x)$ e $y_2(x)$ sono linearmente indipendenti su I se:
 \[
     c_1y_1(x) +c_2y_2(x) = 0 \Leftrightarrow c_1=c_2=0
 \]
+
+\textbf{Esercizi per Casa} 
+
+\textbf{Esercizio 1}
+
+\[
+    y(x) = ce ^{x^{2}-x}+e ^{x^{2}-x}\int_{}^{} {xe ^{x}} \: dx = c e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
+\]
+
+Ponendo le condizioni di Cauchy:
+
+\[
+    y(0)=2
+\]
+
+La soluzione e':
+
+\[
+    2 e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
+\]
+
+\textbf{Esercizio 2} 
+
+\[
+    y'=\sqrt[3]{x}y^{2}
+\]
+
+Una soluzione e':
+
+\[
+    y=0
+\]
+
+Le altre le trovo facendo l'integrale di:
+
+\[
+    \int_{}^{} { \frac{1}{y^{2}}} \: dy = \int_{}^{} {\sqrt[3]{x}} \: dx  
+\]
+
+quindi $y(x)$:
+
+\[
+    y(x)  = \frac{4}{3 \sqrt[3]{x^{4}}+c}
+\]
+
+impongo le condizioni e trovo c:
+
+\[
+    y(0) = \frac{-4}{0+c} = 2
+\]
+
+quindi:
+
+\[
+    c = -2
+\]
+
+ergo il la soluzione e':
+
+\[
+    y(x) = -\frac{4}{3 \sqrt[3]{x^{4}} - 2}
+\]
+
+il denominatore deve essere $\neq 0$:
+
+\[
+3 \sqrt[3]{x^{4}} - 2 \neq 0
+\]
+
+quindi:
+
+\[
+    x \neq (\frac{2}{3}^{ \frac{3}{4}})
+\]
+
+Il piu ampio intervallo e':
+
+\[
+    0 \in (-\infty, \frac{2}{3}^{ \frac{3}{4}}) 
+\]
+
 
 \end{document}

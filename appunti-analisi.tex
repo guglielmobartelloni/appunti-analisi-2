@@ -1287,7 +1287,7 @@ dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
         \]
 
         \[
-            e ^{(\lambda_1 x}[a \lambda_1 ^{2} + b \lambda_1+c)u(x)+(au''(x)+(2a \lambda_1 + b)u'(x))]=0
+            e ^{(\lambda_1 x}[a \lambda_1 ^{2} + b \lambda_1+c)u(x)+\underbrace{(au''(x)+(2a \lambda_1 + b)u'(x))}_\text{impongo che sia zero}]=0
         \]
 
         estraggo solo l'ultima parentesi e impongo che sia uguale a zero perche il resto e' gia zero
@@ -1367,7 +1367,7 @@ dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
 
 \end{proof}
 
-Questo era per il caso 1). Adesso voglio per il caso 2)
+Adesso voglio per il caso 2)
 
 \[
     \lambda_1 = \lambda_2 = \lambda = -\frac{b}{2a} \in \mathbb{R}
@@ -1386,11 +1386,29 @@ sia quindi $y(x)$ una soluzione di (2) che scriviamo come:
 Come prima si ottiene:
 
 \[
-    e ^{\lambda x}au''(x) = 0
+    a(e ^{\lambda x}u(x) )''+ b(e ^{\lambda x}u(x))' + c e ^{\lambda x}u(x)=0
 \]
 
 \[
-    u''(x) = 0
+    \overbrace{e ^{\lambda x}}^{>0}(a u''(x) + \underbrace{(a \lambda^{2}+b \lambda +c )}_\text{=0} u(x) + (2a \lambda+b)u'(x))=0
+\]
+
+estraggo la parte che impongo a zero:
+
+\[
+    au''(x) + (2a \lambda+b)u'(x) = 0
+\]
+
+divido per a:
+
+\[
+ u''(x) + (2 \lambda + \frac{b}{a})u'(x) = 0
+\]
+
+sapendo che $-\frac{b}{a} = 2 \lambda$ :
+
+\[
+ u''(x) + (\cancel{2 \lambda} + \cancel{\frac{b}{a}})u'(x) = 0
 \]
 
 
@@ -1402,5 +1420,10 @@ Come prima si ottiene:
     u(x) = c_1 x +c_2
 \]
 
+e quindi ho la soluzione:
+
+\[
+    y(x) = e ^{\lambda x}(c_1x+c_2) = c_1x e^{\lambda x}+ c_2 e ^{\lambda x}
+\]
 
 \end{document}

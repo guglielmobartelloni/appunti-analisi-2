@@ -1097,7 +1097,7 @@ con $a_0(),a_1(),a_2(),f()$ continue in I $ \in  [a,b]$
 
 ci conentriamo nel caso in cui le $a$ sono costanti (coefficienti costanti).
 
-L'altra volta abbiamo dimostrato che se abbiamo due soluzioni $y_1$ e $y_2$ esse sono linearmente indipendenti cioe' il determinante della matrice di $y_1(x)y_2'(x)-y_2(x)y_2'(x)$ e' diverso da 0 (determinante doskriamo?)
+L'altra volta abbiamo dimostrato che se abbiamo due soluzioni $y_1$ e $y_2$ esse sono linearmente indipendenti cioe' il determinante della matrice di $y_1(x)y_2'(x)-y_2(x)y_2'(x)$ e' diverso da 0 (determinante Wronskiano)
 
 Se quindi l'equazione ha coefficienti costanti diventa:
 
@@ -1149,7 +1149,7 @@ Questo caso e' facile. Se invece $b$ e $c$ non sono contemoporaneamente nulli, d
     p(\lambda) = a \lambda^{2}+b \lambda + c =0
 \]
 
-La sua equazione associata $a(\lambda)$:
+La sua equazione associata a (2):
 
 \[
     p(\lambda) =0 \Leftrightarrow  a \lambda^{2}+b \lambda + c =0, in\ \mathbb{C}
@@ -1176,7 +1176,7 @@ Indico con $Ly$ l'equazione $Ly= ay''+by'+cy$
 \begin{proof}
     y e' soluzione di (2) $\Leftrightarrow$ $Ly=0$ 
 
-    Se considero $y(x) = e ^{\lambda x}$ si ha:
+    Se considero $y(x) = e ^{\lambda x}$ 
 
     Devo dimostrare che:
 
@@ -1211,7 +1211,7 @@ Di solito le soluzioni di secondo grado si scrivono
     \lambda_{1,2} = \frac{-b \pm \sqrt{b ^{2}-4 ac}}{2a}
 \]
    
-Le soluzioni $\lambda_1$ e $\lambda_2$ sono soluzioni di (2) $e ^{\lambda_1x}$ e $e ^{\lambda_2x}$
+Le soluzioni $\lambda_1$ e $\lambda_2$ sono soluzioni di ((2) $e ^{\lambda_1x}$ e $e ^{\lambda_2x}$)
 
 Distinguiamo tre casi per le soluzioni:
 
@@ -1228,7 +1228,7 @@ Distinguiamo tre casi per le soluzioni:
 
 3) $y_1(x) = e ^{\alpha x} cos \beta x$ e $y_2(x) = e ^{\alpha x} sin \beta x$ 
 
-altrimenti questo caso corrisponde a soluzioni complesse coniugate  
+questo caso corrisponde a soluzioni complesse coniugate  
 
 \[
     \lambda_1 = \alpha- i \beta \in \mathbb{C} 
@@ -1258,11 +1258,14 @@ dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
        1) $b^{2}-4ac >0$ con $\lambda_1,\lambda_2$ soluzioni dell'equazioni di $p(\lambda)=0$    
 
        scrivo la wronskiana di $y_1,y_2$:
+       \[
         \begin{bmatrix}
+            
         e ^{\lambda_1 x} & e ^{\lambda_2 x} \\
         \lambda_1e ^{\lambda_1 x} & \lambda_2e ^{\lambda_2 x} \\
+        
         \end{bmatrix}
-
+       \]
         che e' diverso da zero quindi le soluzioni sono linearemente indipendenti
 
         sia ora $y(x)$ una soluzione di (2):
@@ -1271,7 +1274,7 @@ dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
             y(x) = e ^{\lambda_1 x}u(x)
         \]
 
-        io devo determinare $u(x)$ per poi dimostrare che $y(x) = c_1 ^{\lambda_1 x}+c_2 e^{\lambda_2 x}$
+        io devo determinare $u(x)$ per poi dimostrare che $y(x) = c_1e ^{\lambda_1 x}+c_2 e^{\lambda_2 x}$
 
         Poiche $y(x) = e ^{\lambda_1 x}u(x)$ e' soluzione di (2) si ha derivando e sostituendo:
 
@@ -1399,14 +1402,5 @@ Come prima si ottiene:
     u(x) = c_1 x +c_2
 \]
 
-integrando:
-
-\[
-    u(x) = c_1 e^{(\lambda_2 - \lambda_1) x} + c_2
-\]
-
-\[
-    y(x) = e ^{\lambda_1 x}u(x)
-\]
 
 \end{document}

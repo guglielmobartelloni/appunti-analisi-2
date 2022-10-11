@@ -1085,5 +1085,328 @@ Il piu ampio intervallo e':
     0 \in (-\infty, \frac{2}{3}^{ \frac{3}{4}}) 
 \]
 
+\section{Lezione 5}
+
+Ritorniamo alle equazione del secondo ordine.
+
+\[
+    a_2(x)y''(x) + a_1(x) y'(x) + a_0(x) y(x) = f(x)
+\]
+
+con $a_0(),a_1(),a_2(),f()$ continue in I $ \in  [a,b]$
+
+ci conentriamo nel caso in cui le $a$ sono costanti (coefficienti costanti).
+
+L'altra volta abbiamo dimostrato che se abbiamo due soluzioni $y_1$ e $y_2$ esse sono linearmente indipendenti cioe' il determinante della matrice di $y_1(x)y_2'(x)-y_2(x)y_2'(x)$ e' diverso da 0 (determinante doskriamo?)
+
+Se quindi l'equazione ha coefficienti costanti diventa:
+
+\[
+    ay''(x)+by'(x)+cy(x) = f(x)
+\]
+
+con $a,b,c \in \mathbb{R}$ con $a \neq 0$ se no non sarebbe di ordine II, $f(x)$ e' continua in I
+
+Adesso associamo il problema omogeneo:
+
+\[
+    ay''(x) + by'(x) + cy(x) = 0
+\]
+
+\textbf{Numeri complessi} 
+
+Qui dobbiamo introdurre i numeri complessi perche ci servono per la soluzione, di solito questi sono formati da una parte reale e una parte immaginaria:
+
+\[
+    z = \alpha + i\beta
+\]
+
+$z$ puo essere scritto come coppia $(\alpha,\beta)$ ad $i$ assegno $i=\sqrt{-1}$
+
+Tornando a noi vediamo il caso in cui $b=c=0$
+
+\[
+    ay''(x) = 0
+\]
+
+in I ed in particolare:
+
+\[
+    y''(x) = 0, \forall x \in I
+\]
+
+\[
+    y'(x) = c, c \in \mathbb{R}
+\]
+
+\[
+    y(x) = c_1x+c_0,c_1,c_0 \in \mathbb{R}
+\]
+
+Questo caso e' facile. Se invece $b$ e $c$ non sono contemoporaneamente nulli, devo considerare la sequente eq. algebrica di secondo grado:
+
+\[
+    p(\lambda) = a \lambda^{2}+b \lambda + c =0
+\]
+
+La sua equazione associata $a(\lambda)$:
+
+\[
+    p(\lambda) =0 \Leftrightarrow  a \lambda^{2}+b \lambda + c =0, in\ \mathbb{C}
+\]
+
+\teorema{Teorema fondamentale dell'algebra}{
+    L'equazione di II in $\mathbb{C}$ 
+
+    \[
+   a \lambda^{2}+b \lambda + c =0, in\ \mathbb{C}
+    \]
+
+    ha sempre due soluzioni in $\mathbb{C}$
+
+}
+
+
+\textbf{Proposizione} 
+
+$y(x) = e ^{\lambda x}$ e' soluzione di (2) $\Leftrightarrow $ $\lambda$ e' soluzione (radice) di $p(\lambda)=0$ dell'equazione caratteristica associata a (2)
+
+Indico con $Ly$ l'equazione $Ly= ay''+by'+cy$
+
+\begin{proof}
+    y e' soluzione di (2) $\Leftrightarrow$ $Ly=0$ 
+
+    Se considero $y(x) = e ^{\lambda x}$ si ha:
+
+    Devo dimostrare che:
+
+    \[
+        L(e ^{\lambda x}) = 0 \Leftrightarrow  p(\lambda) = 0
+    \]
+
+    Sostituisco ad $x$ $e ^{\lambda x}$:
+
+    \[
+        L(e ^{\lambda x}) = a( e^{\lambda x})'' + b( e ^{\lambda x})' + c(e ^{\lambda x}) =
+    \]
+
+    \[
+        =a \lambda ^{2} e ^{\lambda x} + b \lambda e ^{\lambda x} + c e^{\lambda x}= e ^{\lambda x}(a \lambda ^{2}+ b \lambda+ c)
+    \]
+
+    dunque
+
+    \[
+        L( e ^{\lambda x}) = 0 \Leftrightarrow a \lambda ^{2}+ b \lambda +c = 0 
+    \]
+           
+\end{proof}
+
+
+Adesso che ho dimostrato il mio problema e' trovare le radici $p(\lambda) =0$ ($a \lambda ^{2} + b \lambda + c$):
+
+Di solito le soluzioni di secondo grado si scrivono
+
+\[
+    \lambda_{1,2} = \frac{-b \pm \sqrt{b ^{2}-4 ac}}{2a}
+\]
+   
+Le soluzioni $\lambda_1$ e $\lambda_2$ sono soluzioni di (2) $e ^{\lambda_1x}$ e $e ^{\lambda_2x}$
+
+Distinguiamo tre casi per le soluzioni:
+
+\begin{enumerate}
+    \item soluzioni reali e distinte ($\Delta >0$)
+    \item soluzioni reali e coincidenti ($\Delta = 0$)
+    \item soluzioni complesse coniugate ($ \Delta <0$)
+\end{enumerate}
+
+1) $y_1(x) = e ^{\lambda_1x}$ e $y_2(x) = e ^{\lambda_2x}$ con $\lambda_1 e \lambda_2$ $\in \mathbb{R}$ con $\lambda_1 \neq \lambda_2$
+
+
+2) $y_1(x) = e ^{\lambda x}$ e $y_2(x) = xe ^{\lambda x}$ con $\lambda = - \frac{b}{2a}=\lambda_1=\lambda_2$ $\in \mathbb{R}$ 
+
+3) $y_1(x) = e ^{\alpha x} cos \beta x$ e $y_2(x) = e ^{\alpha x} sin \beta x$ 
+
+altrimenti questo caso corrisponde a soluzioni complesse coniugate  
+
+\[
+    \lambda_1 = \alpha- i \beta \in \mathbb{C} 
+\]
+
+\[
+    \lambda_2 = \alpha+ i \beta \in \mathbb{C} 
+\]
+
+\[
+    \lambda = \frac{-b \pm \sqrt{-(4ac-b^{2})}}{2a} = \frac{-b \pm \sqrt{-1(4ac - b^{2})}}{2a} \overset{\text{perche i} = \sqrt{-1}}{=} \frac{-b \pm  \sqrt{4ac -b^{2}}i}{2a} = \alpha \pm i \beta
+\]
+
+dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
+
+
+\teorema{}{L'integrale generale dell'equazione omogenea $a y''+by'+c=0$ e' dato da:
+
+    \[
+        c_1 y_1(x) + c_2 y_2(x)
+    \]
+
+    al variare di $c_1,c_2 \in \mathbb{R}$ dove $y_1(x)$ e $y_2(x)$ sono definite come sopra
+}
+
+\begin{proof}
+       1) $b^{2}-4ac >0$ con $\lambda_1,\lambda_2$ soluzioni dell'equazioni di $p(\lambda)=0$    
+
+       scrivo la wronskiana di $y_1,y_2$:
+        \begin{bmatrix}
+        e ^{\lambda_1 x} & e ^{\lambda_2 x} \\
+        \lambda_1e ^{\lambda_1 x} & \lambda_2e ^{\lambda_2 x} \\
+        \end{bmatrix}
+
+        che e' diverso da zero quindi le soluzioni sono linearemente indipendenti
+
+        sia ora $y(x)$ una soluzione di (2):
+
+        \[
+            y(x) = e ^{\lambda_1 x}u(x)
+        \]
+
+        io devo determinare $u(x)$ per poi dimostrare che $y(x) = c_1 ^{\lambda_1 x}+c_2 e^{\lambda_2 x}$
+
+        Poiche $y(x) = e ^{\lambda_1 x}u(x)$ e' soluzione di (2) si ha derivando e sostituendo:
+
+        \[
+            a( e ^{\lambda_1 x} u(x))'' + b(e ^{\lambda_1 x}u(x))'+ c e ^{\lambda_1 x}u(x) =0
+        \]
+
+        \[
+            a(\lambda_1 e ^{\lambda_1 x} u(x)+ e ^{\lambda_1 x}u'(x))' + b(\lambda_1e ^{\lambda_1 x}u(x) + e ^{\lambda_1 x}u'(x))+ c e ^{\lambda_1 x}u(x) =0
+        \]
+
+        \[
+            e ^{(\lambda_1 x}[a \lambda_1 ^{2} + b \lambda_1+c)u(x)+(au''(x)+(2a \lambda_1 + b)u'(x))]=0
+        \]
+
+        estraggo solo l'ultima parentesi e impongo che sia uguale a zero perche il resto e' gia zero
+
+        \[
+            au''(x) + (2a \lambda_1 + b) u'(x) = 0
+        \]
+
+        divido per a:
+
+        \[
+            u''(x) +(2 \lambda_1 + \frac{b}{a}) u'(x) = 0
+        \]
+
+        sapendo che:
+
+        \[
+            a \lambda^{2} + b \lambda + c =0
+        \]
+
+        \[
+             \lambda^{2} + \frac{b}{a} \lambda + \frac{c}{a} =0
+        \]
+
+        \[
+            \lambda_1 + \lambda_2 = -\frac{b}{a}
+        \]
+
+        \[
+            \lambda_1  \lambda_2 = \frac{c}{a}
+        \]
+
+        \[
+            u''(x) + (2 \lambda_1 - \lambda_1 - \lambda_2)u'(x) = 0
+        \]
+
+        il meno per comodita:
+
+        \[
+            u''(x) - (\lambda_1 - \lambda_2)u'(x) = 0
+        \]
+
+        se adesso chiamo $u'(x)=v(x)$ e $v''(x) = u'(x)$ l'equazione diventa:
+
+        \[
+            v' -kv = 0
+        \]
+
+        Risolvendo 
+
+        \[
+            v(x) = ce ^{kx}
+        \]
+
+        \[
+            v(x) = c e^{(\lambda_2 - \lambda_1)x}
+        \]
+
+        Risostitendo:
+
+        \[
+            u'(x) = c e ^{(\lambda_2- \lambda_1)x}
+        \]
+
+        Integrando:
+
+        \[
+            u(x)  = c_1 e ^{(\lambda_2 - \lambda_1)x}+c_2
+        \]
+        
+        la nostra $y(x)$ diventa:
+
+        \[
+            y(x) = e ^{\lambda_1 x}u(x) = e ^{\lambda_1 x}( c_1 e ^{(\lambda_2 - \lambda_1)x}+c_2) = c_1 e ^{\lambda_2 x}+ c_2 e ^{\lambda_1 x}
+        \]
+
+
+\end{proof}
+
+Questo era per il caso 1). Adesso voglio per il caso 2)
+
+\[
+    \lambda_1 = \lambda_2 = \lambda = -\frac{b}{2a} \in \mathbb{R}
+\]
+   
+\[
+    p(\lambda) =0 \Leftrightarrow e ^{\lambda x} \text{e' soluzione di (2)}
+\]
+
+sia quindi $y(x)$ una soluzione di (2) che scriviamo come:
+
+\[
+    y(x) = e ^{\lambda x}u(x) 
+\]
+
+Come prima si ottiene:
+
+\[
+    e ^{\lambda x}au''(x) = 0
+\]
+
+\[
+    u''(x) = 0
+\]
+
+
+\[
+    u'(x) = c_1
+\]
+
+\[
+    u(x) = c_1 x +c_2
+\]
+
+integrando:
+
+\[
+    u(x) = c_1 e^{(\lambda_2 - \lambda_1) x} + c_2
+\]
+
+\[
+    y(x) = e ^{\lambda_1 x}u(x)
+\]
 
 \end{document}

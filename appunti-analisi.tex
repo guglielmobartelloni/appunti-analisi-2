@@ -1426,4 +1426,540 @@ e quindi ho la soluzione:
     y(x) = e ^{\lambda x}(c_1x+c_2) = c_1x e^{\lambda x}+ c_2 e ^{\lambda x}
 \]
 
+\section{Lezione 6}
+
+Dobbiamo vedere ora come si determina la soluzione particolare.
+
+\[
+    (1)\ ay''+by'+cy = f(x)\ \in I=[a,b]
+\]
+
+\[
+    (2)\ ay''+by'+cy = 0\ \in I=[a,b]
+\]
+
+\[
+    y(t) = c_1 y_1(x) + c_2 y_2(x) + \bar{y} (x)
+\]
+
+La $\bar{y}$ e' la soluzione particolare, ci sono due modi:
+
+\begin{itemize}
+    \item Si procede ad occhio, per similutidne guardando l'espressione di $f(x)$
+    \item Si usa il metodo di variazione delle costanti
+
+        \[
+            \bar{y} = c_1(x) y_1(x) + c_2(x) y_2(x)
+        \]
+
+        dove ${y_1(x),y_2(x)}$ soluzioni linearmente indipendenti di (2) con $c_1(x),c_2(x)$ funzioni di classe $\mathbb{C}^{2}(I)$ da determinare.
+\end{itemize}
+
+Vediamo come fare con quest'ultimo metodo.
+
+Poiche $\bar{y} (x)$ e' soluzione di (1) allora  $a\bar{y} ''+by'+c\bar{y}=f$
+
+\[
+    \bar{y} (x) = c_1(x) y_1(x) + c_2(x) y_2(x)
+\]
+
+\[
+\bar{y} '(x) = c_1'(x) y_1(x) + c_1 y_1'(x) + c_2'(x) y_2(x) + c_2(x) y_2'(x)
+\]
+
+Adesso impongo che $c_1'(x) y_1(x) + c_2'(x) y_2(x) = 0$:
+
+\[
+    \bar{y} '(x) = c_1(x) y_1'(x) +c_2(x) y_2'(x)
+\]
+
+\[
+    \bar{y} ''(x) = c_1'(x) y_1'(x) + c_1(x) y_1''(x) + c_2'(x) y_2'(x) + c_2(x) y_2''(x)
+\]
+
+sapendo che $a \bar{y} ''+ b \bar{y} ' + c \bar{y}  = f$ sostituisco:
+
+\[
+    \textbf{a}[c_1'(x) y_1'(x) + c_1(x) y_1''(x) + c_2'(x) y_2'(x) +c_2(x) y_2''(x)]+ \textbf{b}[c_1(x) y_1'(x) + c_2(x) y_2'(x)]+ \textbf{c}[c_1(x) y_1(x) + c_2(x) y_2(x)] = f(x)
+\]
+
+Adesso raccolgo a fattore comune le $c$:
+
+\[
+    c_1(x) [ \underbrace{a y_1''(x) +b y_1'(x) + c y_1(x)}_\text{=0}] + c_2(x) [\underbrace{a y_2''(x) + b y_2'(x) + c y_2(x)}_\text{=0}]+ a [c_1'(x) y_1'(x)+ c_2'(x) y_2'(x)] = f(x)
+\]
+
+quindi mi rimane:
+
+\[
+    c_1'(x) y_1'(x) + c_2'(x) y_2'(x) = \frac{f(x)}{a}
+\]
+
+Ottengo il sistema di 2 equazioni nelle due incognite ($c_1'(x),c_2'(x)$) non omogeneo:
+
+    \begin{equation}
+        \begin{cases}
+            c_1'(x)y_1(x) + c_2'(x) y_2(x) = 0\\
+            c_1'(x) y_1'(x) + c_2'(x) y_2'(x)  = \frac{f(x)}{a}
+        \end{cases}\,.
+    \end{equation}
+
+La matrice dei coefficienti del sistema e':
+
+\[
+\begin{bmatrix}
+y_1(x) & y_2(x) \\
+y_1'(x) & y_2'(x) \\
+\end{bmatrix}
+\neq 0
+\]
+
+e' la matrice Wronskiana.
+
+Uso il metodo di Cramer per risolvere il sistema:
+
+\[
+    A = \begin{pmatrix}
+        a_{11} & a_{12}  \\
+        a_{21} & a_{22}  \\
+\end{pmatrix}
+\]
+
+$det A = a_{11} a_{22} - a_{12} a_{21}$
+
+Il metodo:
+
+\[
+    c_1'(x) = \frac{
+\begin{pmatrix}
+0 & y_2(x)  \\
+\frac{f(x)}{a} & y_2'(x)  \\
+\end{pmatrix}
+
+    }{
+\begin{pmatrix}
+y_1(x) & y_2(x)  \\
+y_1'(x) & y_2'(x)  \\
+\end{pmatrix}
+    }
+
+    = \frac{- y_2(x) \frac{f(x)}{a}}{y_1(x) y_2'(x) - y_2(x) y_1'(x)}
+\]
+
+Ora dobbiamo integrare
+
+\[
+    c_1(x) = \int_{}^{} {c_1'(x)} \: dx 
+\]
+
+e
+
+\[
+    c_2(x) = \int_{}^{} {c_2'(x)} \: dx 
+\]
+
+Si ha che l'insieme delle soluzioni di (1):
+
+\[
+    y(t)  = \underbrace{c_1 y_1(x) + c_2 y_2(x)}_\text{generale} + \underbrace{c_1(x) y_1(x) + c_2 y_2'(x)}_\text{particolare}
+\]
+
+Assegnando le condizioni iniziali: 
+
+\[
+    y(x_0) = y_0
+\]
+
+\[
+    y'(x_0) = y_0'
+\]
+
+Quindi il problema di Cauchy mi viene:
+
+    \begin{equation}
+        \begin{cases}
+            ay''+ by'+cy= f(x)\\
+            y(x_0)=y_0\\
+            y'(x_0) = y_0'
+        \end{cases}\,.
+    \end{equation}
+
+Trovare le soluzioni dei seguenti problemi di Cauchy
+
+\textbf{Esempio 1} 
+
+    \begin{equation}
+        \begin{cases}
+            3y'' + 5y' + 2y=3e ^{2x}\\
+            y(0) = 0\\
+            y'(0) = 1
+        \end{cases}\,.
+    \end{equation}
+
+Scriviamo (1) e (2):
+
+1)
+\[
+    3y''+5y'+2y = 3 e^{2x}
+\]
+
+2)
+
+\[
+    3y''+5y'+2y = 0
+\]
+
+Risolvo:
+
+\[
+    3 \lambda ^{2} + 5 \lambda + 2 = 0
+\]
+
+$p = 6$ $s=5= 3+2$ 
+
+\[
+    3 \lambda^{2} + 3 \lambda + 2 \lambda + 2 =0
+\]
+
+\[
+    3 \lambda ( \lambda+1) + 2( \lambda + 1) =0
+\]
+
+\[
+    (3 \lambda +2 ) ( \lambda +1 ) =0
+\]
+
+\[
+    \lambda= -\frac{2}{3}, \lambda=-1
+\]
+
+quindi ho soluzioni linearmente indipendenti di (2):
+
+\[
+    y_1(x) = e ^{-\frac{2}{3}x}, y_2(x) = e ^{-x}
+\]
+
+Integrale generale di (1):
+
+\[
+    y_0(x) = c_1 e^{-\frac{2}{3}x} + c_2 e ^{-x},c_1,c_2 \in \mathbb{R}
+\]
+
+
+Una soluzione particolare di (1) e' dunque:
+
+\[
+    \bar{y} (x) = A e ^{2x}
+\]
+
+Ora derivo due volte:
+
+\[
+    \bar{y} '(x) = 2A e ^{2x}
+\]
+
+\[
+    \bar{y} ''(x) = 4A e ^{2x}
+\]
+
+sostituendo poi in (1):
+
+\[
+    12Ae ^{2x} + 10 A e ^{2x} + 2 A e ^{2x} = 3 e^{2x}
+\]
+
+\[
+    24A e ^{2x} = 3 e ^{2x}
+\]
+
+\[
+    A = \frac{1}{8}
+\]
+
+Adesso devo imporre le condizioni iniziali a queste due:
+
+\[
+    y(x) = c_1 e ^{-\frac{2}{3}x} + c_2 e ^{-x}+ \frac{1}{8}e ^{2x}
+\]
+
+\[
+    y'(x) = -\frac{2}{3}c_1 e ^{-\frac{2}{3}x} - c_2 e ^{-x}+ \frac{1}{4} e ^{2x}
+\]
+
+
+    \begin{equation}
+        \begin{cases}
+            c_1+c_2+\frac{1}{8}=0\\
+            -\frac{2}{3}c_1-c_2+\frac{1}{4}=1
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            c_1=c_2-\frac{1}{8}\\
+            \frac{2}{3}c_2+\frac{1}{12}-c_2+\frac{1}{4}=1
+        \end{cases}\,.
+    \end{equation}
+
+
+    \begin{equation}
+        \begin{cases}
+            c_1=c_2-\frac{1}{8}\\
+            -\frac{1}{3}c_2= 1- \frac{1}{3}
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            c_1=c_2-\frac{1}{8}\\
+            -\frac{1}{3}c_2=\frac{2}{3}
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            c_1=\frac{15}{8}\\
+            c_2=-2
+        \end{cases}\,.
+    \end{equation}
+
+
+Infine quindi la soluzione del problema:
+
+\[
+    y(x) = \frac{15}{8}e ^{-\frac{2}{3}x}- 2 e ^{-x}+ \frac{1}{8}e ^{2x}
+\]
+
+
+\textbf{Esempio 2} 
+
+    \begin{equation}
+        \begin{cases}
+    y''(x) -2y'(x)+ y(x) = 5sinx \\
+            y(0) = 0\\
+            y'(0) = 1
+        \end{cases}\,.
+    \end{equation}
+
+
+Risolvo l'equazione associata:
+
+\[
+    \lambda^{2}-2 \lambda + 1=0
+\]
+
+\[
+    (\lambda-1)^{2}=0
+\]
+
+quindi $\lambda_1=\lambda_2=1$
+
+
+Devo trovare:
+
+\[
+    y_0(x) = c_1 e ^{x} + c_2 x e ^{x},c_1,c_2 \in \mathbb{R}
+\]
+
+la soluzione particolare e' per essere sicuri di prendere il termine noto che e' un seno:
+
+\[
+    \bar{y} (x) = A cosx + B sinx
+\]
+
+le derivate:
+
+\[
+    \bar{y} '(x)  = -A sinx + B cosx
+\]
+
+\[
+    \bar{y} ''(x)  = -A cosx - B sinx
+\]
+    
+
+Sostituiamo a quella iniziale:
+
+\[
+    \cancel{-A cosx} \cancel{- Bsinx} + 2A sinx - 2B cosx+ \cancel{A cosx} + \cancel{Bsinx} = 5sinx
+\]
+
+e quindi $2A = 5$ e $B=0$:
+
+\[
+    \bar{y} (x) = \frac{5}{2} cosx
+\]
+
+adesso devo trovare:
+
+\[
+    y(x) = c_1 e ^{x}+ c_2 x e ^{x} + \frac{5}{2} cosx
+\]
+
+\[
+    y'(x)  = c_1 e ^{x} + c_2 e ^{x} + c_2x e ^{x} - \frac{5}{2}sinx
+\]
+
+Adesso impongo le condizioni iniziali:
+
+    \begin{equation}
+        \begin{cases}
+            c_1 +\frac{5}{2}=0\\
+            c_1+c_2= 1
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            c_1 = -\frac{5}{2}\\
+            c_2 = \frac{7}{2}
+        \end{cases}\,.
+    \end{equation}
+
+La soluzione del problema quindi:
+
+\[
+    y(x) = -\frac{5}{2}e ^{x}+ \frac{7}{2} x e ^{x} + \frac{5}{2} cosx
+\]
+
+\textbf{Esempio 3} 
+
+    \begin{equation}
+        \begin{cases}
+            y''+ 2y'+ 2y= 3x^{2}\\
+            y(0) = 0\\
+            y'(0) = 1
+        \end{cases}\,.
+    \end{equation}
+
+
+risolvo:
+
+\[
+    \lambda^{2}+2 \lambda+2 =0
+\]
+
+\[
+    \lambda= \frac{-1 \pm \sqrt{1-2}}{1}= -1 \pm 1
+\]
+
+le soluzioni sono complesse:
+
+\[
+    \alpha \pm  i \beta
+\]
+
+con $\alpha = -1$ e $\beta = 1$ quindi sostituisco:
+
+\[
+    y_0(x) = y_0(c_1,c_2) = e ^{-x}(c_1cosx + c_2 sinx)
+\]
+
+la soluzione particolare:
+
+\[
+    \bar{y} (x) = A x^{2}+Bx+C
+\]
+
+derivo due volte:
+
+\[
+    \bar{y} '(x) = 2Ax + B
+\]
+
+\[
+    \bar{y} ''(x) = 2A
+\]
+
+sostituisco in (1):
+
+\[
+    2A + 4Ax + 2B + 2Ax^{2}+2Bx + 2C = 3x^{2}
+\]
+
+\[
+    2Ax^{2} + 2(2A+B) x + 2(A+B+C) = 3x^{2}
+\]
+
+risolvo un sistema per le ingnite $A,B,C$ e quindi trovo che:
+
+    \begin{equation}
+        \begin{cases}
+            2A = 3\\
+            2A + B = 0\\
+            A+B+C= 0
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            A=\frac{3}{2}\\
+            B=-3\\
+            \frac{3}{2}-3+C=0
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            A=\frac{3}{2}\\
+            B=-3\\
+            C=\frac{3}{2}
+        \end{cases}\,.
+    \end{equation}
+
+
+Quindi la soluzione particolare:
+
+\[
+    \bar{y} (x) = \frac{3}{2}x^{2}-3x+\frac{3}{2}
+\]
+
+
+l'espressione quindi e':
+
+\[
+    y(x) = e ^{-x}(c_1 cosx + c_2 sinx ) + \frac{3}{2}x^{2}-3x+\frac{3}{2}
+\]
+
+derivo:
+
+\[
+    y'(x) = e ^{-x}(c_1 cosx+ c_2 sinx) + e ^{-x}(-c_1sinx+c_2 cosx) +3x -3
+\]
+
+quindi impongo le condizioni:
+
+    \begin{equation}
+        \begin{cases}
+            c_1 +\frac{3}{2}=0\\
+            -c_1+c_2 -3 = 1
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            c_1=-\frac{3}{2}\\
+            c_2=-\frac{5}{2}
+        \end{cases}\,.
+    \end{equation}
+
+Quindi la soluzione del problema:
+
+\[
+    y(x) = e ^{-x}(-\frac{3}{2}cosx + \frac{5}{2} sinx) + \frac{3}{2}x^{2}-3x + \frac{3}{2}
+\]
+
+\textbf{Esempio 4} 
+
+    \begin{equation}
+        \begin{cases}
+            y''-6y' + 9y = e ^{3x}\\
+            y(0) = 1\\
+            y'(0) = 0
+        \end{cases}\,.
+    \end{equation}
+
+
+
 \end{document}
+

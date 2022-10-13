@@ -1959,6 +1959,178 @@ Quindi la soluzione del problema:
         \end{cases}\,.
     \end{equation}
 
+\[
+    \lambda^{2} -6 \lambda + 9 = 0
+\]
+
+\[
+    \lambda_1=\lambda_2=3
+\]
+
+\[
+    y_0(x)  = c_1 e ^{3x}+ c_2 x e ^{3x}
+\]
+
+qua abbiamo il problema che $\lambda=3$ che e' la stessa del termine noto, devo quindi modificarla:
+
+\[
+    \bar{y} (x) = A x^{2}e ^{3x}
+\]
+
+dove il due della x viene dalla molteplicita', 2 in questo caso.
+
+Proviamo a risolverlo con il metodo di variazione delle costanti:
+
+\[
+    \bar{y} (x) = c_1(x) e ^{3x}+ c_2(x) x e^{3x}
+\]
+
+lo risolvo col sistema (porco dio):
+
+    \begin{equation}
+        \begin{cases}
+    c_1'(x)e ^{3x} + c_2'(x) x e ^{3x}=0 \\
+    c_1'(x) 3 e ^{3x} + c_2'(x) (e ^{3x} + 3x e ^{3x}) = e ^{3x}
+        \end{cases}\,.
+    \end{equation}
+
+% \[
+%     c_1'(x) = \frac{
+%                 \begin{pmatrix}
+% 0 & x e ^{3x}  \\
+%  e ^{3x} & (3x+1) e ^{3x}  \\
+% \end{pmatrix}
+%
+%     }{
+%
+%         \begin{pmatrix}
+% e ^{3x} & x e ^{3x}  \\
+% 3 e ^{3x} & (3x+1) e ^{3x}  \\
+% \end{pmatrix}
+%
+% \]
+%
+facnedolo viene:
+
+    \begin{equation}
+        \begin{cases}
+            c_1(x) = \int_{}^{} {-x} \: dx =-\frac{x^{2}}{2}\\
+            c_2(x) = \int_{}^{} {} \: dx  = x
+        \end{cases}\,.
+    \end{equation}
+
+\[
+    \bar{y} (x) = - \frac{x^{2}}{2}e ^{3x} + x x e ^{3x} = \frac{x^{2}}{2}e ^{3x}
+\]
+
+
+\textbf{Risoluzione esercizio 6 appunti prof} 
+
+    \begin{equation}
+        \begin{cases}
+            y'= \frac{sinx}{cosy}\\
+            y( \frac{\pi}{2} = \frac{\pi}{6}
+        \end{cases}\,.
+    \end{equation}
+
+questa e' a variabili separabili:
+
+\[
+    y'(x) cosy(x) = sinx
+\]
+
+\[
+    \int_{}^{} {y'(x) cosy(x)} \: dx = \int_{}^{} {sinx} \: dx 
+\]
+
+\[
+    \int_{}^{} {cosy} \: dy = \int_{}^{} {sinx} \: dx 
+\]
+
+\[
+    sin y = -cos x +c
+\]
+
+impongo adesso le condiizoni:
+
+\[
+    sin y( \frac{\pi}{2}) = - cos \frac{\pi}{2} + c
+\]
+
+\[
+    sin \frac{\pi}{6} = c
+\]
+
+quindi:
+
+\[
+    \frac{1}{2}=c
+\]
+
+quindi sostituisco la c:
+
+\[
+    sin y(x) = - cos x + \frac{1}{2}
+\]
+
+Devo fare l'arcosin e vedo dove e' definita la cosa:
+
+\[
+    -1 \le sin y(x) \le 1
+\]
+
+ma anche:
+
+\[
+    -1 \le cosx + \frac{1}{2} \le 1
+\]
+
+impongo il sistema:
+
+    \begin{equation}
+        \begin{cases}
+            -cosx +\frac{1}{2}\ge -1\\
+            -cos x + \frac{1}{2} \le 1
+        \end{cases}\,.
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            cosx \le  \frac{3}{2}\\
+            cosx \ge -\frac{1}{2}
+        \end{cases}\,.
+    \end{equation}
+
+% \begin{tikzpicture}
+% \begin{axis}[
+%     xmin = -5, xmax = 5,
+%     ymin = -5, ymax = 5]
+%     \addplot[
+%         domain = -5:5,
+%         samples = 200,
+%         smooth,
+%         thick,
+%         blue,
+%     ] {sinx};
+% \end{axis}
+% \end{tikzpicture}
+
+Prendo la soluzione nell'intervallo:
+
+\[
+    -\frac{2}{3}\pi \le  x \le  \frac{2}{3}\pi
+\]
+
+la soluzione del problema: 
+
+\[
+    y(x) = arcsin(-cosx +\frac{1}{2})
+\]
+   
+
+
+
+
 
 
 \end{document}

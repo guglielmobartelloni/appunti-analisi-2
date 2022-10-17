@@ -1428,6 +1428,9 @@ e quindi ho la soluzione:
 
 \section{Lezione 6}
 
+\subsection{Determinazione della soluzione particolare per EDO II ordine}
+
+
 Dobbiamo vedere ora come si determina la soluzione particolare.
 
 \[
@@ -1445,7 +1448,7 @@ Dobbiamo vedere ora come si determina la soluzione particolare.
 La $\bar{y}$ e' la soluzione particolare, ci sono due modi:
 
 \begin{itemize}
-    \item Si procede ad occhio, per similutidne guardando l'espressione di $f(x)$
+    \item Si procede ad occhio, per similitudine guardando l'espressione di $f(x)$
     \item Si usa il metodo di variazione delle costanti
 
         \[
@@ -1457,7 +1460,7 @@ La $\bar{y}$ e' la soluzione particolare, ci sono due modi:
 
 Vediamo come fare con quest'ultimo metodo.
 
-Poiche $\bar{y} (x)$ e' soluzione di (1) allora  $a\bar{y} ''+by'+c\bar{y}=f$
+Poiche $\bar{y} (x)$ e' soluzione di (1) allora  $a\bar{y} ''+b \bar{y}'+c\bar{y}=f$
 
 \[
     \bar{y} (x) = c_1(x) y_1(x) + c_2(x) y_2(x)
@@ -1477,13 +1480,13 @@ Adesso impongo che $c_1'(x) y_1(x) + c_2'(x) y_2(x) = 0$:
     \bar{y} ''(x) = c_1'(x) y_1'(x) + c_1(x) y_1''(x) + c_2'(x) y_2'(x) + c_2(x) y_2''(x)
 \]
 
-sapendo che $a \bar{y} ''+ b \bar{y} ' + c \bar{y}  = f$ sostituisco:
+sapendo che $a \bar{y} ''+ b \bar{y} ' + c \bar{y}  = f$ sostituisco quello che ho trovato sopra a questa espressione:
 
 \[
     \textbf{a}[c_1'(x) y_1'(x) + c_1(x) y_1''(x) + c_2'(x) y_2'(x) +c_2(x) y_2''(x)]+ \textbf{b}[c_1(x) y_1'(x) + c_2(x) y_2'(x)]+ \textbf{c}[c_1(x) y_1(x) + c_2(x) y_2(x)] = f(x)
 \]
 
-Adesso raccolgo a fattore comune le $c$:
+Adesso raccolgo a fattore comune le $c_i$:
 
 \[
     c_1(x) [ \underbrace{a y_1''(x) +b y_1'(x) + c y_1(x)}_\text{=0}] + c_2(x) [\underbrace{a y_2''(x) + b y_2'(x) + c y_2(x)}_\text{=0}]+ a [c_1'(x) y_1'(x)+ c_2'(x) y_2'(x)] = f(x)
@@ -1548,6 +1551,25 @@ y_1'(x) & y_2'(x)  \\
     = \frac{- y_2(x) \frac{f(x)}{a}}{y_1(x) y_2'(x) - y_2(x) y_1'(x)}
 \]
 
+\[
+c_2'(x) = 
+    \frac{
+\begin{vmatrix}
+y_1(x) & 0  \\
+y_1'(x) & \frac{f(x)}{a}  \\
+\end{vmatrix}
+    }{
+\begin{vmatrix}
+y_1(x) & y_2(x)  \\
+y_1'(x) & y_2'(x)  \\
+\end{vmatrix}
+    }
+\]
+
+\[
+    = \frac{- y_1(x) \frac{f(x)}{a}}{y_1(x) y_2'(x) - y_2(x) y_1'(x)}
+\]
+
 Ora dobbiamo integrare
 
 \[
@@ -1563,7 +1585,7 @@ e
 Si ha che l'insieme delle soluzioni di (1):
 
 \[
-    y(t)  = \underbrace{c_1 y_1(x) + c_2 y_2(x)}_\text{generale} + \underbrace{c_1(x) y_1(x) + c_2 y_2'(x)}_\text{particolare}
+    y(t)  = \underbrace{c_1 y_1(x) + c_2 y_2(x)}_\text{generale} + \underbrace{c_1(x) y_1'(x) + c_2 y_2'(x)}_\text{particolare}
 \]
 
 Assegnando le condizioni iniziali: 
@@ -2129,9 +2151,6 @@ la soluzione del problema:
     y(x) = arcsin(-cosx +\frac{1}{2})
 \]
    
-
-
-
 
 
 

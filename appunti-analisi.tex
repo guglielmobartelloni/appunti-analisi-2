@@ -1530,19 +1530,21 @@ $det A = a_{11} a_{22} - a_{12} a_{21}$
 Il metodo:
 
 \[
-    c_1'(x) = \frac{
-\begin{pmatrix}
+c_1'(x) = 
+    \frac{
+\begin{vmatrix}
 0 & y_2(x)  \\
 \frac{f(x)}{a} & y_2'(x)  \\
-\end{pmatrix}
-
+\end{vmatrix}
     }{
-\begin{pmatrix}
+\begin{vmatrix}
 y_1(x) & y_2(x)  \\
 y_1'(x) & y_2'(x)  \\
-\end{pmatrix}
+\end{vmatrix}
     }
+\]
 
+\[
     = \frac{- y_2(x) \frac{f(x)}{a}}{y_1(x) y_2'(x) - y_2(x) y_1'(x)}
 \]
 

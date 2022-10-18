@@ -220,6 +220,7 @@ E quindi ho dimostrato che:
 
 \end{proof}
 
+\newpage
 
 \section{Lezione 2}
 \subsection{Facciamo vedere che il teorema precedente valeva anche per $n>1$}
@@ -441,6 +442,8 @@ Esercizio per casa:
     u' + \frac{u}{t} = e ^{t}
 \]
 
+\newpage
+
 \section{Lezione 3}
 
 Solitamente si suppongono delle condizioni iniziali nel risolvere le equazioni differenziali (problema di Cauchy).
@@ -615,6 +618,7 @@ uso la proprietà dei logaritmi:
 
 
 
+\newpage
 
 \section{Lezione 4}
 
@@ -1085,6 +1089,8 @@ Il piu ampio intervallo e':
     0 \in (-\infty, \frac{2}{3}^{ \frac{3}{4}}) 
 \]
 
+\newpage
+
 \section{Lezione 5}
 
 Ritorniamo alle equazione del secondo ordine.
@@ -1425,6 +1431,8 @@ e quindi ho la soluzione:
 \[
     y(x) = e ^{\lambda x}(c_1x+c_2) = c_1x e^{\lambda x}+ c_2 e ^{\lambda x}
 \]
+
+\newpage
 
 \section{Lezione 6}
 
@@ -2148,6 +2156,7 @@ la soluzione del problema:
     y(x) = arcsin(-cosx +\frac{1}{2})
 \]
    
+\newpage
 
 \section{Lezione 7}
 
@@ -2160,7 +2169,9 @@ In particolare:
     \item funzioni a valori vettoriali $g: A \in \mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$
 \end{itemize}
 
-Il vettore $n \in \mathbb{R}^{n}$ e' una n-pla $x=(x_1,x_2,...,x_n)$
+\defn{Vettore}{ Il vettore $n \in \mathbb{R}^{n}$ e' una n-pla $x=(x_1,x_2,...,x_n)$ }
+
+
 
 Operazioni in $\mathbb{R}^{n}$:
 
@@ -2196,10 +2207,10 @@ Operazioni in $\mathbb{R}^{n}$:
         \]
 
         \[
-            <x,y> = x\cdot y := \sum^{n}_{i=1} x_i y_i
+            \langle x,y \rangle  = x \bullet y := \sum^{n}_{i=1} x_i y_i
         \]
 
-        L'operazione quindi va $<,>: \mathbb{R}^{n} \times \mathbb{R}^{n} \rightarrow \mathbb{R}$
+        L'operazione quindi va $\langle , \rangle : \mathbb{R}^{n} \times \mathbb{R}^{n} \rightarrow \mathbb{R}$
 
         \textbf{Esempio} 
 
@@ -2212,7 +2223,7 @@ Operazioni in $\mathbb{R}^{n}$:
         \]
 
         \[
-            <x,y> = x \cdot y = 48
+            \langle x,y \rangle  = x \bullet y = 48
         \]
 
         Il prodotto scalare verifica le seguenti proprita'
@@ -2221,7 +2232,7 @@ Operazioni in $\mathbb{R}^{n}$:
             \item \textbf{Bilinearita'} (lineare su ogni fattore):
 
                 \[
-                    (\alpha x_1 + \beta x_2) \bullet y = <(\alpha x_1 + \beta x_2), y> = \alpha <x_1,y>+ \beta<x_2,y> = \alpha x_1 \bullet y + \beta x_2 \bullet y
+                    (\alpha x_1 + \beta x_2) \bullet y = \langle (\alpha x_1 + \beta x_2), y \rangle  = \alpha \langle x_1,y \rangle+ \beta \langle x_2,y \rangle = \alpha x_1 \bullet y + \beta x_2 \bullet y
                 \]
 
                 \[
@@ -2249,32 +2260,35 @@ Operazioni in $\mathbb{R}^{n}$:
                 \]
 
                 \[
-                    x \bullet x = <x,x> = \sum^{n}_{i=1} x_i^{2}\ge 0
+                    x \bullet x = \langle x,x \rangle = \sum^{n}_{i=1} x_i^{2}\ge 0
                 \]
 
                 \[
-                    x \bullet x = <x,x> = 0 \Leftrightarrow x = 0 = (0,...,0)\ \text{vettore nullo}
+                    x \bullet x = \langle x,x \rangle = 0 \Leftrightarrow x = 0 = (0,...,0)\ \text{vettore nullo}
                 \]
 
         \end{enumerate}
 
 
-        \textbf{Norma} 
-
+        \defn{Norma}{
         Il numero reale (non negativo)
 
         \[
-          |x|:=  \sqrt{x \bullet x} = \sqrt{<x,x>}
+          |x|:=  \sqrt{x \bullet x} = \sqrt{\langle x,x \rangle}
         \]
 
 
         si chiama \textbf{lunghezza} o \textbf{norma} del vettore
+
+        }
+
            
 \end{itemize}
 
+\newpage
 
   % proposizione 
-\teorema{Formula di Carnot}{
+\proposizione{Formula di Carnot}{
 
     \[
         \forall x,y \in \mathbb{R}^{n}
@@ -2289,11 +2303,11 @@ Operazioni in $\mathbb{R}^{n}$:
 
 \begin{proof}
        \[
-           |x+ y| ^{2} = < x+y , x+y> = (x+y) \bullet (x+y) \overset{\text{bilinearita'}}{=} <x,x+y> + <y,x+y> \overset{\text{sempre bilinearita'}}{=} 
+           |x+ y| ^{2} = \langle x+y , x+y \rangle = (x+y) \bullet (x+y) \overset{\text{bilinearita'}}{=} \langle x,x+y \rangle + \langle y,x+y \rangle \overset{\text{sempre bilinearita'}}{=} 
        \]    
 
        \[
-           =<x,x> + <x,y> + <y,x> + <y,y> = <x,x> + 2<x,y> + <y,y>= 
+           =\langle x,x \rangle + \langle x,y \rangle + \langle y,x \rangle + \langle y,y \rangle = \langle x,x \rangle + 2\langle x,y \rangle + \langle y,y \rangle= 
        \]
 
        \[
@@ -2310,20 +2324,20 @@ Altra cosa interessante:
 
 
 
- \teorema{Disuguaglianza di Cauchy-Schwarz}{
+ \proposizione{Disuguaglianza di Cauchy-Schwarz}{
 
      \[
          \forall x,y \in \mathbb{R}^{n}
      \]
 
      \[
-         |<x,y>| \le |x| |y|
+         |\langle x,y \rangle| \le |x| |y|
      \]
 
      si ha:
 
      \[
-         x\bullet y = |x| |y|  \Leftrightarrow y = 0 \text{ oppure } x=\lambda y \text{ con } \lambda \in \mathbb{R}\ge 0
+         x\bullet y = |x| |y|  \Leftrightarrow y = 0 \lor x=\lambda y \text{ con } \lambda \in \mathbb{R}\ge 0
      \]
 
  }
@@ -2343,7 +2357,7 @@ Altra cosa interessante:
      Sia dunque $\mathbb{R}^{n} \rightarrow y \neq 0$ e consideriamo la funzione reale di una variabile reale $t \rightarrow |x+ty|^{2}\ge 0$ polinomio di secondo grado in t
 
      \[
-         |x + ty| ^{2} \overset{\text{Carnot}}{=} |x|^{2} + |ty|^{2} + 2<x,ty>  = |x|^{2} + |y|^{2}t^{2} + 2 <x,y> t
+         |x + ty| ^{2} \overset{\text{Carnot}}{=} |x|^{2} + |ty|^{2} + 2\langle x,ty \rangle  = |x|^{2} + |y|^{2}t^{2} + 2 \langle x,y \rangle t
      \]
 
      e' un polinomio di II grado in t dove $|y|^{2}> 0 $ essendo $y \neq 0$
@@ -2351,13 +2365,10 @@ Altra cosa interessante:
      Il nostro $\frac{\Delta}{4}$ deve essere non positivo:
 
      \[
-
          (x\bullet y ) ^{2} - |x| ^{2}|y|^{2} \le 0
      \]
 
-
      \[
-         
          (x\bullet y ) ^{2}\le  |x| ^{2}|y|^{2} 
      \]
 
@@ -2366,7 +2377,7 @@ Altra cosa interessante:
      Si verifica, se si ha che
 
      \[
-         <x,y> = |x| |y|
+         \langle x,y \rangle = |x| |y|
      \]
 
      si ha che il $\Delta$ del trinomio di II grado e' nullo e dunque $t \in \mathbb{R}$ per cui $|x+ty|^{2}=0$ ovvero $x +ty=0$ $\rightarrow x=-ty$
@@ -2375,7 +2386,7 @@ Altra cosa interessante:
 
 
      \[
-         t = - \frac{<x,y>}{|y|^{2}}
+         t = - \frac{\langle x,y \rangle}{|y|^{2}}
      \]
 
      si ricorda che $|y|>0$ essendo y non nullo
@@ -2399,23 +2410,30 @@ Altra cosa interessante:
  \forall \lambda \in \mathbb{R},x \in \mathbb{R}^{n}    
  \]
 
- ed anche la disugualgianza triangolare:
+ ed anche 
+
+ \defn{Disuguaglianza triangolare}{
+ La disugualgianza triangolare si definisce come:
 
  \[
      |x+y| \le |x|+|y|
  \]
    
-se $|x+y| = |x| + |y|$ allora $y =0$ oppure $x= \lambda y $ con $\lambda \ge 0$:
+se $|x+y| = |x| + |y|$ $\rightarrow $ $y =0$ $\lor$ $x= \lambda y $ con $\lambda \ge 0$:
+
+ }
+
+ 
 
 \begin{proof}
        Dimostriamo la disuguaglianza triangolare, considero:
 
        \[
-           |x+y|^{2} = <x+y , x+y> = |x|^{2}+|y|^{2} + 2<x,y> \le 
+           |x+y|^{2} = \langle x+y , x+y \rangle = |x|^{2}+|y|^{2} + 2 \langle x,y \rangle \le 
        \]
 
        \[
-           \le |x|^{2} + |y| ^{2} + 2|<x,y>| \le \underbrace{|x| ^{2} + |y|^{2} + 2|x|\bullet |y|}_{(|x|+|y|)^{2}}
+           \le |x|^{2} + |y| ^{2} + 2|\langle x,y \rangle| \le \underbrace{|x| ^{2} + |y|^{2} + 2|x|\bullet |y|}_{(|x|+|y|)^{2}}
        \]
 
        estraendo e passando alle radici si ha
@@ -2426,15 +2444,19 @@ se $|x+y| = |x| + |y|$ allora $y =0$ oppure $x= \lambda y $ con $\lambda \ge 0$:
 \end{proof}
 
 
-\textbf{Distanza euclidea} 
 
-si definisce come $d(x,y)$:
+\defn{Distanza Euclidea}{
+Distanza Euclidea si definisce come $d(x,y)$:
 
 \[
     d(x,y) := |x-y| \ge 0
 \]
 
-   
+}
+
+
+
+
 
 
 \end{document}

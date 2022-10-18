@@ -26,6 +26,11 @@
 \usepackage{xcolor}
 \usepackage{FiraSans}
 \usepackage{listings}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
 \usepackage{pgfplots}
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{hyperref}
@@ -210,3 +215,11 @@
 % \newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
 % \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
 % \newcommand{\nt}[1]{\begin{note}#1\end{note}}
+
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1

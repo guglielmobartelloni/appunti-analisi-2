@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="240mm"
+   height="120mm"
+   viewBox="0 0 240 120"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   sodipodi:docname="disegno-punto-di-accumulazione-esempio-1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.99437388"
+     inkscape:cx="302.20021"
+     inkscape:cy="148.83738"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1440"
+     inkscape:window-height="786"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-177)">
+    <path
+       style="opacity:0.422951;fill:#c0c0c0;stroke:#ff3f3f;stroke-width:0.264999"
+       d="m 87.54043,184.71633 v 90.73339"
+       id="path185" />
+    <path
+       style="opacity:0.422951;fill:#c0c0c0;stroke:#ff3f3f;stroke-width:0.264999"
+       d="M 44.967575,233.67511 H 202.22105"
+       id="path187" />
+    <path
+       style="opacity:0.422951;fill:#c0c0c0;stroke:#ff3f3f;stroke-width:0.264999;fill-opacity:0;stroke-opacity:1;stroke-dasharray:0.264999,0.264999;stroke-dashoffset:0"
+       id="path241"
+       sodipodi:type="arc"
+       sodipodi:cx="87.008263"
+       sodipodi:cy="233.67511"
+       sodipodi:rx="20.319897"
+       sodipodi:ry="20.319897"
+       sodipodi:start="0"
+       sodipodi:end="6.2756537"
+       sodipodi:arc-type="slice"
+       d="M 107.32816,233.67511 A 20.319897,20.319897 0 0 1 87.046523,253.99497 20.319897,20.319897 0 0 1 66.68851,233.75163 20.319897,20.319897 0 0 1 86.893482,213.35554 20.319897,20.319897 0 0 1 107.32758,233.52207 l -20.319317,0.15304 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;opacity:0.422951;fill:#c0c0c0;stroke:#ff3f3f;stroke-width:0.264999"
+       x="107.76253"
+       y="237.93239"
+       id="text455"><tspan
+         sodipodi:role="line"
+         id="tspan453"
+         style="stroke-width:0.265"
+         x="107.76253"
+         y="237.93239">1</tspan></text>
+    <path
+       style="opacity:0.422951;fill:#c0c0c0;fill-opacity:0;stroke:#ff3f3f;stroke-width:0.529998;stroke-opacity:1;stroke-dasharray:0.529998,0.529998;stroke-dashoffset:0"
+       id="path3039"
+       sodipodi:type="arc"
+       sodipodi:cx="87.008057"
+       sodipodi:cy="233.67511"
+       sodipodi:rx="40.639793"
+       sodipodi:ry="40.639793"
+       sodipodi:start="0"
+       sodipodi:end="6.2756537"
+       sodipodi:arc-type="slice"
+       d="M 127.64785,233.67511 A 40.639793,40.639793 0 0 1 87.084577,274.31483 40.639793,40.639793 0 0 1 46.368551,233.82815 40.639793,40.639793 0 0 1 86.778496,193.03596 40.639793,40.639793 0 0 1 127.6467,233.36903 l -40.638643,0.30608 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;opacity:0.422951;fill:#c0c0c0;fill-opacity:0;stroke:#ff3f3f;stroke-width:0.264999;stroke-opacity:1"
+       x="128.25072"
+       y="238.19847"
+       id="text3095"><tspan
+         sodipodi:role="line"
+         id="tspan3093"
+         style="stroke-width:0.265"
+         x="128.25072"
+         y="238.19847">2</tspan></text>
+  </g>
+</svg>

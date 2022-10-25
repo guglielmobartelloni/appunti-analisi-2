@@ -2517,11 +2517,11 @@ la distanza si puo scrivere anche:
     cioe':
 
     \[
-        \forall \epsilon >0 , \exists \bar{N} \in \mathbb{N}
+        \forall \varepsilon >0 , \exists \bar{N} \in \mathbb{N}
     \]
 
     \[
-        d(x_n, x ) < \epsilon, \forall n \ge \bar{N} 
+        d(x_n, x ) < \varepsilon, \forall n \ge \bar{N} 
     \]
 
     \[
@@ -2604,7 +2604,7 @@ Abbiamo parlato di questa roba per definire i limiti attraverso gli intorni sfer
 Quindi:
 
 \[
-\{ x_n\} \subset X \text{ converge a } x_0 \in X \Leftrightarrow \forall \epsilon >0 , \exists n_\epsilon, x_n \in B(x_0,\epsilon), \forall n \ge n_\epsilon
+\{ x_n\} \subset X \text{ converge a } x_0 \in X \Leftrightarrow \forall \varepsilon >0 , \exists n_\varepsilon, x_n \in B(x_0,\varepsilon), \forall n \ge n_\varepsilon
 \]
 
 \defn{Sottoinsieme limitato}{$A \subset X$ si dice limitato se esiste una palla aperta in cui $A$ risulta interamente contenuto:
@@ -2677,6 +2677,176 @@ Sia
     A_2= \{ (x,y) \in \mathbb{R}^{2}, x^{2}+ 2y +1  \le  0\}
 \]
 
+
+\section{Lezione 9}
+
+\subsection{Limiti di Funzioni in piu variabili}
+
+\defn{Punto di accumulazione}{
+
+    Un punto $x_0 \in R^{n}$ di accumulazione per $A \subseteq R^{n}$ si dice punto di accumulazione se in ogni intorno circolare di $x_0$ c'e' almeno un punto di $A$ diverso da $x_0$
+
+}
+
+
+\textbf{Esempi} 
+
+\begin{itemize}
+    \item I punti che costituiscono l'insieme dei punti interni di $A: \dot A$  sono punti di accumulazione
+    \item I punti di frontiera, ovvero i punti di $\delta A$ possono essere punti di accumulazione di $A$ oppure non esserlo in quest'ultimo caso si dice che e' un punto isolato
+\end{itemize}
+
+\newpage
+
+\defn{Convergenza in $\mathbb{R}^{n}$}{Data una successione $ \{x_n\}\in \mathbb{R}^{n}$ questa si dice che converge a $x_0 \in  \mathbb{R}^{n}$ se:
+
+\[
+    \lim_{ n \to +\infty } d(x_n,x_0)=0
+\]
+
+questo equivale a dire $\forall \varepsilon >0, \exists \bar{N} \in \mathbb{N}$ e $\forall n \ge \bar{N}$ si ha:
+
+\[
+    d(x_n,x_0) < \varepsilon
+\]
+
+}
+
+\defn{Punto di accumulazione con limiti}{
+
+    $x_0$ e' di accumulazione per $A$ $\Leftrightarrow x_0$ e' il limite di una successione di elementi di $A$ tutti diversi da $x_0$
+}
+
+
+\textbf{Esempio di punti di accumulazione} 
+
+\[
+    A \{\bar{x}  \in R^{2};1<\underbrace{|x|}_\text{d(x,0)}<2\}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-punto-di-accumulazione-esempio-1}
+    \caption{disegno punto di accumulazione esempio 1}
+    \label{fig:disegno-punto-di-accumulazione-esempio-1}
+\end{figure}
+
+
+Tutti i punti di $A \in \mathbb{R}^{2}$ sono punti di accumulaione
+
+I punti del disegno sono sia punti di frontiera che di accumulazione
+
+
+Nel caso di $\emptyset, \mathbb{R}^{n}$ gli insiemi sono contemporaneamente sia aperti che chiusi.
+
+
+\defn{Chiusura di un insieme $A \subset \mathbb{R}^{n}$}{
+
+    Si indica con $\bar{A} $ e' un sottoinsieme di $\mathbb{R}^{n}$ dato dall'unione di $A$ e dei suoi punti di accumulazione ($DA$)
+
+    $\bar{A} $ e' un insieme chiuso. Lo si puo' pensare come l'intersezione dei chiusi contenenti $A$.
+
+    Si puo' inoltre dimostrare che:
+
+    \[
+        \bar{A} = A \cup \delta A
+    \]
+
+}
+
+\defn{Dominio}{ Un dominio $D$ in $\mathbb{R}^{n}$ e' la chiusura di un insieme aperto:
+
+    \[
+        D = \bar{A}  = A \cup \delta A
+    \]
+}
+
+Consideriamo ora le funzioni in piu' variabili $f: A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}$
+
+\defn{Limite di funzioni in piu variabili}{
+
+Sia $x_0 \in \mathbb{R}^{n}$ un punto di accumulazione per $A$
+
+Si dice che $f(\bar{x})$ tende (ha limite) a $l$ per $\bar{x} $ che tende a $x_0$:
+
+\[
+    \lim_{ \bar{x}  \to x_0 } f(\bar{x} ) = l
+\]
+
+scrivendolo tramite gli intorni: se $\forall $ intorno $U \subset \mathbb{R}$ di $l$ esiste un intorno di $x_0$ (sferico) $I(x_0,r)$ con $r>0$ 
+
+tale che $f(\bar{x}) \in U$ $\forall x \in \underbrace{I(x_0,r)}_{B(x_0,r)}\cap (A\{x_0\})$ 
+
+L'altra definizione con i delta:
+
+\[
+    \forall \varepsilon>0\  \exists \delta >0
+\]
+
+tale che 
+
+\[
+    \underbrace{|f(x) - l|}_{d(f(x),l) \in \mathbb{R}} <\varepsilon
+\]
+
+$\forall \bar{x} \in A \setminus \{x_0\}$ con $|x-x_0| < \delta$
+}
+
+\subsection{Proprieta dei limiti di funzioni in piu variabili}
+
+Adesso parliamo di un po' di proprieta':
+
+\begin{itemize}
+    \item Il limite quando esiste e' \textbf{unico}
+    \item I limiti di \textbf{somme} e di \textbf{prodotti} di funzioni sono dati dalla somma e dal prodotto dei limiti (se definito)
+    \item Il limite del \textbf{quoziente} di due funzioni e' il quoziente dei limiti (se definito)
+\end{itemize}
+
+\textbf{Esempi} 
+
+Sia 
+
+\[
+    f(x,y) = \frac{x^{2}}{\sqrt{x^{2}+y^{2}}}
+\]
+
+La mia $f: \underbrace{\mathbb{R}^{2}\setminus \{(0,0)\}}_\text{A aperto}\rightarrow \mathbb{R}$
+
+Il punto $(0,0)$ e' punto di accumulazione per $A$ 
+
+Vogliamo vedere che succede quando la funzione tente a questo punto di accumulazione:
+
+\[
+    \lim_{ (x,y) \to (0,0) } f(x,y) = 0
+\]
+
+questo significa che $\forall \varepsilon >0 , \exists \delta >0$ tale che $|f(x,y) -0| = |f(x,y)| <\varepsilon$ $\forall (x,y) \in A = \mathbb{R}^{2}\setminus \{(0,0)\}$ con $0< \sqrt{x^{2}+y^{2}}<\delta$:
+
+\[
+    \underbrace{0\le}_\text{sempre positiva} f(x,y) = \frac{x^{2}}{\sqrt{x^{2}+y^{2}}} \le \frac{x^{2}+y^{2}}{\sqrt{x^{2}+y^{2}}} \overset{\text{razionalizzo}}{=} \sqrt{x^{2}+y^{2}}
+\]
+
+E dunque  $\forall \varepsilon$ si ha:
+
+\[
+    0 \le f(x,y) < \varepsilon
+\]
+
+per ogni $(x,y) \neq (0,0)$ t.c. $\sqrt{x^{2}+y^{2}} < \varepsilon$
+
+
+\textbf{Esercizio per casa}
+
+Mostrare che 
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{x}{\sqrt{x^{2}+y^{2}}} \text{ non esiste}
+\] 
+
+\[
+    \forall \varepsilon >0, \exists \delta >0 
+\]
 
 \end{document}
 

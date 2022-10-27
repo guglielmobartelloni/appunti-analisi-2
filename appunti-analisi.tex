@@ -3051,5 +3051,48 @@ questa e' una curva  passante per $P_0= (x_0,y_0)$:
 
 si arriva alla stessa coclusione di non esistenza del limite se la restrizione di $f(x,y)$ ad una curva (come sopra) non ha limite. Ovviamente non e' vero il viceversa
 
+\subsection{Coordinate polari}
+
+Abbiamo $(\rho,\theta)$ dove:
+
+\[
+    \rho = \bar{ OP} = d(P,O) = \sqrt{x^{2}+y^{2}}
+\]
+
+\[
+    \theta = arctan \frac{y}{x}
+\]
+
+\begin{equation}
+    \begin{cases}
+           x= x_0+ \rho cos \theta\\
+           y = y_0+ \rho sin \theta
+    \end{cases}\,.
+\end{equation}
+
+Scriviamo i limiti con le coordinate polari:
+
+\[
+    \lim_{ (x,y) \to (x_0,y_0) } f(x,y)
+\]
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-polari}
+    \caption{disegno polari}
+    \label{fig:disegno-polari}
+\end{figure}
+
+\teorema{}{Sia $f: D \subset \mathbb{R}^{2} \rightarrow  \mathbb{R}$ e sia $P_0=(x_0,y_0) \in D$ allora:
+
+    \[
+        \lim_{ (x,y) \to (x_0,y_0) } f(x,y)  = l \Leftrightarrow \lim_{ \rho \to 0^{+} } f(x_0+\rho cos \theta, y_0+\rho sin \theta) = l
+    \]
+
+    uniformenmente rispetto a $\theta$
+
+}
+
+
 \end{document}
 

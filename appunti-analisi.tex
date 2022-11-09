@@ -3095,7 +3095,7 @@ Scriviamo i limiti con le coordinate polari:
 
 \newpage
 
-\section{Lezione 12}
+\section{Lezione 11}
 
 \defn{}{Limite per coordinate polari: 
 
@@ -3186,7 +3186,7 @@ trasformiamo in coordinate polri:
 infatti:
 
 \[
-    0 \le |\rho cos\theta sin \theta -0| = |\rho \frac{sin2tetha}{2} \le \frac{1}{2}\rho \rightarrow 0
+    0 \le |\rho cos\theta sin \theta -0| = |\rho \frac{sin2\theta}{2} \le \frac{1}{2}\rho \rightarrow 0
 \]
 
 \textbf{Esercizio} 
@@ -3285,7 +3285,7 @@ allora per studiare il limite vediamo che sucede muovendoci verso l'origine lung
 Consideriamo allora $y=x^{2}$:
 
 \[
-    f(x,x^{2})= \frac{xlog(1+x^{3}))}{x^{2}(x^{2}+x^{4}} = \frac{xlog(1+x^{3})}{x^{4}(1+x^{2}}= \frac{log(1+x^{3})}{x^{3}(1+x^{2})} = 1
+    f(x,x^{2})= \frac{xlog(1+x^{3})}{x^{2}(x^{2}+x^{4}} = \frac{xlog(1+x^{3})}{x^{4}(1+x^{2}}= \frac{log(1+x^{3})}{x^{3}(1+x^{2})} = 1
 \]
  
 
@@ -3350,9 +3350,9 @@ Studiamo la continuita della funzione nel sottoinsieme di definizione:
 \[
 f(x,y)=
     \begin{cases}
-        2x+3y+10\text{      se } (x-1)^{2}+(y-3)^{2}\ge 4\\
-        x+4y+10\text{      se } (x-1)^{2}+(y-3)^{2}<4
-    \end{cases}\,.
+        2x+3y+10 & \text{se $(x-1)^{2}+(y-3)^{2}\ge 4$} \\
+        x+4y+10 & \text{se $(x-1)^{2}+(y-3)^{2}<4$}
+    \end{cases}
 \]
 
 devo vedere cosa succede al confine (in 4) quindi:
@@ -3413,7 +3413,225 @@ quindi risoliamo:
     \end{cases}\,.
 \end{equation}
 
+\section{Lezione 12}
 
+\subsection{Rappresentazioni di funzioni}
+
+Per poter rappresentare le funzioni ci serviamo delle \textbf{sezioni} che ci permettono di usare dei sottoinsiemi per le rappresentazioni e quindi di semplificare.
+
+\textbf{Esempio} 
+
+\[
+    f(x,y)=x^{2}-y
+\]
+
+il suo grafico sara':
+
+\[
+    \{(x,y,z) \in \mathbb{R}^{3},z=x^{2}-y\}
+\]
+
+Provo a sezionarlo con $x=k$.
+
+Nel piano $(y,z)$ la sezione e' data dal grafico di:
+
+\[
+    z= k^{2}-y
+\]
+
+questo sara' rappresentato da un fascio di rette a $z=-y$:
+
+\begin{figure}[ht]
+    \centering
+    \incfig{grafico-sezione-esempio}
+    \caption{grafico-sezione-esempio}
+    \label{fig:grafico-sezione-esempio}
+\end{figure}
+
+
+\subsection{Insiemi di livello (curva di livello)}
+
+Nel caso in cui $z=k$.
+
+\textbf{Esempio} 
+
+Consideriamo i punti $(x,y)$ che stanno nell'insieme di livello $k=1$ della funzoine $f(x,y)=x^{2}+y^{2}$:
+
+\[
+    E_k = \{(x,y) \in \mathbb{R}^{2},x^{2}+y^{2}=k\}
+\]
+
+sono i punti che stanno sulla circonferenza di centro $(0,0)$ di raggio 1:
+
+\[
+    \{(x,y) \in \mathbb{R}^{2},x^{2}+y^{2}=1\} = E_1
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{curva-di-livello-esempio}
+    \caption{curva di livello esempio}
+    \label{fig:curva-di-livello-esempio}
+\end{figure}
+
+Vediamo qualche altro esempio.
+
+\textbf{Esempio} 
+
+Determinare l'insieme di definizione delle sequenti funzioni:
+
+\textbf{1} 
+
+\[
+    z=\sqrt{1-x^{2}-y^{2}}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-curva-1}
+    \caption{disegno-curva-1}
+    \label{fig:disegno-curva-1}
+\end{figure}
+
+\textbf{2} 
+
+\[
+    z=\sqrt{1-x^{2}}+\sqrt{1-y^{2}}
+\]
+
+devo imporrre il dominio:
+
+\[
+    \{(x,y) \in \mathbb{R}^{2},x^{2}\le 1,y^{2}\le 1\}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{curva-di-livello-2}
+    \caption{curva di livello 2}
+    \label{fig:curva-di-livello-2}
+\end{figure}
+
+
+\textbf{3} 
+
+\[
+    z= \frac{1}{\sqrt{y-\sqrt{x}}}
+\]
+
+\[
+    D=\{(x,y) \in \mathbb{R}^{2} y-\sqrt{x}>0,x \ge 0\}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{curva-di-livello-3}
+    \caption{curva di livello 3}
+    \label{fig:curva-di-livello-3}
+\end{figure}
+
+\section{Lezione 13}
+
+\textbf{Risoluzione esercizio}
+
+\[
+    z = x^{2}+9y^{2}
+\]
+
+Il dominio:
+
+\[
+    E_k= \{(x,y) \in \mathbb{R}^{2};x^{2}+9y^{2}=k\}
+\]
+
+se $k=0$:
+
+\[
+    E_0=(0,0)\text{ origine}
+\]
+
+se $k>0$ allora otteniamo delle ellissi:
+
+\[
+    \frac{x^{2}}{a^{2}}+ \frac{y^{2}}{ \frac{k}{9}} = 1
+\]
+
+\textbf{Altro esercizio} 
+
+\[
+    z= \frac{y}{x^{2}}
+\]
+
+dominio
+
+\[
+    E_k = \{(x,y) \in \mathbb{R}^{2};x+2y=k\}
+\]
+
+\[
+    y=-\frac{1}{2} + \frac{x}{2}
+\]
+
+
+Fascio di rette parallele a $y = -\frac{1}{2}x$
+
+\begin{figure}[ht]
+    \centering
+    \incfig{fascio-di-rette-parallelo}
+    \caption{fascio di rette parallelo}
+    \label{fig:fascio-di-rette-parallelo}
+\end{figure}
+
+\textbf{Altro eserizio} 
+
+\[
+    z= \underbrace{\frac{y}{x^{2}}}_{f(x,y)}
+\]
+
+dominio: 
+
+\[
+    E_k = \{(x,y) \in \mathbb{R}^{2}; x \neq  0; \frac{y}{x^{2}}=k\}
+\]
+
+se $k=0$, e' $E_0$ privata dell'origine:
+
+\[
+    \frac{y}{x^{2}}=0
+\]
+
+se $k>0$:
+
+\[
+    \frac{y}{x^{2}} = k
+\]
+
+\[
+    y = kx^{2}
+\]
+
+quindi sono parabole con concavita verso l'alto.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-bello-parabole-verso-l'altro}
+    \caption{disegno bello parabole verso l'altro}
+    \label{fig:disegno-bello-parabole-verso-l'altro}
+\end{figure}
+
+
+se $k<0$ avranno concavita verso il basso
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-bello-parabole-verso-il-basso}
+    \caption{disegno bello parabole verso il basso}
+    \label{fig:disegno-bello-parabole-verso-il-basso}
+\end{figure}
 
 \end{document}
 

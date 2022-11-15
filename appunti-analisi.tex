@@ -3965,5 +3965,124 @@ Adesso facciamo per $x=2$:
 \]
 
 
+Per le funzioni in due variabili la derivabilita' non implica la continuita':
+
+\[
+    derivabile \centernot\implies continua
+\]
+
+\textbf{Esempio} 
+
+Calcolare, se esistono, le derivate parziali in $(0,0)$:
+
+
+    \[
+        f(x,y)=
+     \begin{cases}
+        \frac{xy^{2}}{x^{2}+y^{4}} & \text{se $(x,y)\neq (0,0)$} \\
+        0 & \text{se $(x,y)=(0,0)$}
+    \end{cases}
+    \]
+
+Consideriamo le tracce:
+
+\[
+    f(x,0) = 0 ; f(0,y) =0
+\]
+
+Dunque ottengo due funzioni identicamente nulle che sono derivabil con derivata nulla:
+
+\[
+    f_x(0,0) = f_y(0,0) = 0
+\]
+
+Osserviamo pero che in $(0,0)$ la funzione non e' continua perche':
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{xy^{2}}{x^{2}+y^{4}} \text{ non esiste}
+\]
+
+quello che ci servira' sara' il concetto di \textbf{differenziabilita'}.
+
+\subsection{Gradiente}
+
+Se $f: A \subset \mathbb{R}^{2}\rightarrow \mathbb{R}$ e' derivabile in $P_0=(x_0,y_0)$:
+
+\[
+    \nabla f(x_0,y_0)=(\frac{\partial f}{\partial x}(x_0,y_0), \frac{\partial f}{\partial y}(x_0,y_0)) \in \mathbb{R}^{2}
+\]
+
+gradiente di $f$ in $P_0$ (e' un vettore).
+
+In generale in $n$ variabili:
+
+\[
+    \nabla f(\bar{x} ) = (\frac{\partial f}{\partial x_1}(\bar{x} ), \frac{\partial f}{\partial x_2}(\bar{x} ),..., \frac{\partial f}{\partial x_n}(\bar{x} )) \in \mathbb{R}^{n}
+\]
+
+\subsection{Significato geometrico delle derivate parziali}
+
+Nelle funzioni di una variabile:
+
+$f'(x_0)$: rappresenta retta tangente al grafico di f nel punto $P_0=(x_0,f(x_0))$
+
+Nelle due:
+
+\[
+    \frac{\partial f}{\partial x}(x_0,y_0), \frac{\partial f}{\partial y}(x_0,y_0)
+\]
+
+\[
+    graf(f) = \{(x,y,z) \in \mathbb{R}^{3}, z = f(x,y), \forall (x,y) \in A \subset \mathbb{R}^{3}\}
+\]
+
+\begin{tikzpicture}[bullet/.style={circle,fill,inner sep=1pt},
+ declare function={f(\x,\y)=2-0.5*pow(\x-1.25,2)-0.5*pow(\y-1,2);}]
+ \begin{axis}[view={150}{45},colormap/blackwhite,axis lines=middle,%
+    zmax=2.2,zmin=0,xmin=-0.2,xmax=2.4,ymin=-0.2,ymax=2,%
+    xlabel=$x$,ylabel=$y$,zlabel=$z$,
+    xtick=\empty,ytick=\empty,ztick=\empty]
+  \addplot3[surf,shader=interp,domain=0.6:2,domain y=0.5:1.2,opacity=0.7] 
+   {f(x,y)};
+  \addplot3[thick,domain=0.6:2,samples y=1]  ({x},1.2,{f(x,1.2)}); 
+  \draw[dashed] (1.75,0,0) node[above left]{$x_0$} -- (1.75,1.2,0)
+  node[bullet] (b1) {}  -- (0,1.2,0) node[above right]{$y_0$}
+  (1.75,1.2,0) -- (1.75,1.2,{f(1.75,1.2)})node[bullet] {};
+  \draw (1.75,1.2,{f(1.75,1.2)}) -- (0.75,1.2,{f(1.75,1.2)+0.5})
+  coordinate[pos=0.5] (aux1);
+  \draw[opacity=0.5,upper left=gray!80!black,upper right=gray!60,
+lower left=gray!60,lower right=gray!80!black] (2,1.2,0) -- (0.6,1.2,0)
+   -- (0.6,1.2,2.2) -- (2,1.2,2.2) -- cycle;
+  \addplot3[surf,shader=interp,domain=0.6:2,domain y=1.2:1.9,opacity=0.7] 
+   {f(x,y)};
+ \end{axis}
+ \draw (aux1) -- ++ (-1,1) node[above,align=center]{slope in $x$ direction\\
+  $\partial_xf(x,y)|_{x=x_0,y=y_0}$};
+ \node[anchor=north west] at (b1) {$(x_0,y_0)$}; 
+ %
+ \begin{axis}[xshift=6.5cm,view={150}{45},colormap/blackwhite,axis lines=middle,%
+    zmax=2.2,zmin=0,xmin=-0.2,xmax=2.4,ymin=-0.2,ymax=2,%
+    xlabel=$x$,ylabel=$y$,zlabel=$z$,
+    xtick=\empty,ytick=\empty,ztick=\empty]
+  \addplot3[surf,shader=interp,domain=0.6:1.75,domain y=0.5:1.9,opacity=0.7] 
+   {f(x,y)};
+   \addplot3[thick,domain=0.5:1.9,samples y=1]  (1.75,{x},{f(1.75,x)}); 
+  \draw[dashed] (1.75,0,0) node[above left]{$x_0$} -- (1.75,1.2,0)
+  node[bullet] (b2){}
+  -- (0,1.2,0) node[above right]{$y_0$}
+  (1.75,1.2,0) -- (1.75,1.2,{f(1.75,1.2)})node[bullet] {};
+  \draw (1.75,1.2,{f(1.75,1.2)}) -- (1.75,0.2,{f(1.75,1.2)+0.2})
+   coordinate[pos=0.5] (aux2);
+  \draw[opacity=0.5,upper left=gray!80!black,upper right=gray!60,
+lower left=gray!60,lower right=gray!80!black] (1.75,0.5,0) -- (1.75,1.9,0)
+   -- (1.75,1.9,2.2) -- (1.75,0.5,2.2) -- cycle;
+  \addplot3[surf,shader=interp,domain=1.75:2,domain y=0.5:1.9,opacity=0.7] 
+   {f(x,y)};
+ \end{axis}
+ \draw (aux2) -- ++ (0.3,1) node[above,align=center]{slope in $y$ direction\\
+  $\partial_yf(x,y)|_{x=x_0,y=y_0}$};
+ \node[anchor=north east] at (b2) {$(x_0,y_0)$};
+\end{tikzpicture}
+
 \end{document}
 

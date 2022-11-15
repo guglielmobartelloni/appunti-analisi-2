@@ -3796,5 +3796,174 @@ quindi alla fine il limite:
     \lim_{ (x,y) \to (0,0) } f(x,y)=0
 \]
 
+\section{Lezione 14}
+
+\subsection{Calcolo differenziale di funzioni di piu variabili}
+
+\textbf{Derivate Parziali}
+
+$f'(x_0)$ misura il tasso di variazione istantanea di f sul punto $x_0$:
+
+\[
+    \lim_{ h \to 0 } \frac{f(x_0+h)-f(x_0)}{h}
+\]
+
+se esiste ed e' finito allora f e' derivabile in $x_0$ ed $f'(x_0) = limite$.
+
+Quindi $f'(x_0)$ rappresenta la pendenza della retta tangente al grafico f nel punto $p_0=(x_0,f(x_0))$
+
+\textbf{Esempio} 
+
+sia $f: \mathbb{R}^{2}\rightarrow \mathbb{R}$ e $P_0=(x_0,y_0)$ 
+
+Vogliamo calolare la derivata parziale di $f$ fatta rispetto a $x$ calcolata in $(x_0,y_0)$:
+
+\[
+    \lim_{ h \to 0 } \frac{f(x_0+h,y_0) -f(x_0,y_0)}{h}
+\]
+
+purche' esista, finito.
+
+Anche la derivata parziale di $f$ rispetto ad $y$ nel punto $(x_0,y_0)$:
+
+\[
+    \lim_{ h \to 0 } \frac{f(x_0,y_0+h) - f(x_0,y_0)}{h}
+\]
+
+purche' esista, finito.
+
+Queste due derivate si indicano:
+
+\[
+    \frac{\partial f}{\partial x}(x_0,y_0) = f_x(x_0,y_0) = D_xf(x_0,y_0)
+\]
+
+\[
+    \frac{\partial f}{\partial y}(x_0,y_0) = f_y(x_0,y_0)= D_yf(x_0,y_0)
+\]
+
+\textbf{In generale}:
+
+\[
+    f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}
+\]
+
+$A$ definito
+
+\[
+    \bar{n} = (x_1,...,x_n) \rightarrow f(\bar{x} ) = f(x_1,...,x_n) \in \mathbb{R}
+\]
+
+Sia $P_0= (x_1,...,x_i,...,x_n) \in A$
+
+Si definisce \textbf{derivata parziale di $f$ fatta rispetto a $x_i$ nel punto $P_0=(x_1,...,x_n)$}:
+
+\[
+    \lim_{ h \to 0 } \frac{f(x_1,...,x_{i-1},x_{i+h},x_{i+1},...,x_n) - f(x_1,...,x_{i-1},x_{i+h},x_{i+1},...,x_n)}{h}
+\]
+
+se tale limite esiste ed e' finito.
+
+Si indica:
+
+\[
+    \frac{\partial f}{\partial x_i}; D_{x_i}f;f_{x_i}
+\]
+
+Vediamo quindi avendo:
+
+\[
+    f_x(x_0,y_0),f_y(x_0,y_0)
+\]
+
+Derivata parziale rispetto ad $x$ nel punto $P_0=(x_0,y_0)$ tengo fermo $y=y_0$ rispetto a $x$:
+
+\[
+    g_1(x)= f(x,y_0) 
+\]
+
+questa e' una funzione che dipende solo da $x$ (quindi diventa di una sola variabile), se questa e' derivabile in $x_0$ cioe':
+
+\[
+    \lim_{ h \to 0 } \frac{g_1(x_0+h)-g_1(x_0)}{h} := g_1'(x_0) = \frac{\partial f}{\partial x}(x_0,y_0)
+\]
+
+se esiste finito.
+
+Analogamente per $x=x_0$:
+
+\[
+    f(x_0,y) := g_2(y)
+\]
+
+se $g_2(y)$ e' derivabile in $y_0$:
+
+\[
+    g_2'(y_0)  = \lim_{ h \to 0 } \frac{g_2(y_0+h)-g_2(y_0)}{h} = \frac{\partial f}{\partial y}(x_0,y_0)
+\]
+
+
+\textbf{Esempio di calcolo delle derivate parziali} 
+
+Sia 
+
+\[
+f(x,y) = x \sin(xy^{3})+x^{5}y+2y^{2} 
+\]
+
+($f: \mathbb{R}^{2}\rightarrow \mathbb{R})$
+
+
+\[
+    \frac{\partial f}{\partial x}(x,y) = \sin(xy^{3}) + x \cos(xy^{3}) y^{3}+5x^{4}y = \sin(xy^{3}) +xy^{3} \cos(xy^{3}) + 5x^{4}y
+\]
+
+\[
+    \frac{\partial f}{\partial y}(x,y)  = x \cos(xy^{3}) 3xy^{2}+x^{5}+4y = 3 x^{2}y^{2} \cos(xy^{3}) + x^{5}+4y
+\]
+
+Se $P_0 = (2,1) = (x_0,y_0)$:
+
+\[
+    \frac{\partial f}{\partial x}(2,1) = \sin(2) + 2 \cos(2) + 5\cdot 2^{4} 
+\]
+
+\[
+    \frac{\partial f}{\partial y}(2,1)  = 3\cdot 4 \cos(2) + 2^{5}+4 = 12 \cos(2) +32 + 4
+\]
+
+Usiamo il metodo delle tracce (quello di prima) con $y=1$:
+
+\[
+    f(x,1) = g_1(x)  = x \sin(x) + x^{5}+2 \cdot 1^{2} = c \sin x + x^{5}+2
+\]
+
+Sto semplicemente sostituendo e poi derivo:
+
+\[
+    g_1'(x) = \sin x+ x \cos x + 5x^{4}
+\]
+
+\[
+    g_1'(2) = \sin 2 + 2 \cos 2 + 5 \cdot 2^{4} = \frac{\partial f}{\partial x}(2,1)
+\]
+
+infatti torna uguale all'atro metodo.
+
+Adesso facciamo per $x=2$:
+
+\[
+    f(2,y) := g_2(y) = 2 \sin(2y^{3}) + 2^{5} \cdot y + 2y^{2} = 2 \sin(2y^{3}) + 32y + 2y^{2}
+\]
+
+\[
+    g_2'(y) = 2 \cos(2y^{3}) 6y^{2} + 32 + 4y
+\]
+
+\[
+    g_2'(1) = 12 \cos(2) + 32 + 4 = \frac{\partial f}{\partial x}(2,1)
+\]
+
+
 \end{document}
 

@@ -4123,5 +4123,234 @@ quindi:
     z = 2x+4y-5
 \]
 
+\newpage
+
+\section{Lenzione 15}
+
+\subsection{Differenziabilita'}
+
+Per dire che $z = f(x_0,y_0) + f_x(x_0,y_0) (x-x_0) + f_y(x_0,y_0) (y-y_0) $ e' l'equazione del piano tangente, devo vedere anche la differenziabilita' (il piano contiene le rette $T_1$ e $T_2$ che hanno in comune $P_0$).
+
+
+Il fatto che la funzione ad \textbf{una variabile} sia derivabile in un punto mi dice che esiste la retta tangente in quel punto.
+
+
+Nelle due variabili questo non accade, bisogna vedere altro.
+
+Prima parliamo delle curve:
+
+\subsubsection{Curve in $\mathbb{R}^{n}$}
+
+\defn{Curva}{
+Una curva e' un'applicazione continua:
+
+\[
+    \varphi: I \subset \mathbb{R} \rightarrow \mathbb{R}^{n}
+\]
+
+per $I=[a,b]$:
+
+\[
+   \bar{\varphi}(t) = (\varphi_1(t),\varphi_2(t),...,\varphi_n(t)) \in \mathbb{R}^{n}
+\]
+
+Le equazioni parametriche sono:
+
+$\varphi=$\begin{equation}
+    \begin{cases}
+           x_1(t)=\varphi_1(t)\\
+           x_2(t) = \varphi_2(t)\\
+   &\;\;\vdots \notag \\
+           x_n(t) = \varphi_n(t)
+
+    \end{cases}\,.
+\end{equation}
+
+}
+
+
+l'immagine della curva e' chiamata sostegno della curva:
+
+\[
+    \varphi(I) \subset \mathbb{R}^{n}
+\]
+
+\textbf{Esempi} 
+
+Curve cartesiane
+
+Sia $f:[a,b]\rightarrow \mathbb{R}$ continua il suo grafico e' il sostegno della curva piana data da:
+
+\[
+    \varphi:[a,b]\rightarrow \mathbb{R}^{2}
+\]
+
+\[
+    \varphi(t) = (\varphi_1(t), \varphi_2(t))
+\]
+
+definita da:
+
+\begin{equation}
+    \begin{cases}
+           x_1(t) = t\\
+           x_2(t) = f(t) 
+    \end{cases}\,.
+\end{equation}
+
+
+\defn{Curva regolare}{
+Una curva si dice regolare se l'applicazione $\varphi$ e' di classe $C^{1}$ (le derivate prime sono continue) e $\varphi'(t) \neq 0$
+
+In particolare $\varphi'(t) \neq 0$ significa che il vettore:
+
+\[
+    (\varphi_1'(t),...,\varphi_n'(t)) = \varphi'(t)
+\]
+
+non ha mai tutte le componenti contemporaneamente nulle.
+}
+
+
+\textbf{Esempio} 
+
+Se $f \in \mathbb{C}^{1}([a,b])$ e $\varphi'(t) = (1,f'(t))$
+
+allora la retta tangente alla curva nel punto $\varphi(t_0)$ e' proprio la retta tangente al grafico di f nel punto $(x_0,f(x_0))=(t_0,f(t))$
+
+Se $\varphi(t)$ e' regolare allora il vettore $\varphi'(t_0)$ si chiama vettore tangente alla curva nel punto $\varphi(t_0) \in \mathbb{R}^{3}$
+
+\textbf{Esempio di due curve con stesso sostegno} 
+
+Consideriamo le due applicazioni a valori vettoriali:
+
+\[
+    \underbrace{\varphi:[0,2\pi] \rightarrow \mathbb{R}^{2}}_{\varphi(t) = (\varphi_1(t),\varphi_2(t))}
+\]
+
+\[
+    \underbrace{\psi: [0,4\pi] \rightarrow  \mathbb{R}^{2}}_{\psi(t) = (\psi_1(t),\psi_2(t))}
+\]
+
+
+\begin{equation}
+    \begin{cases}
+           \varphi_1(t) = \cos t\\
+           \varphi_2(t) = \sin t
+    \end{cases}\,.
+\end{equation}
+
+
+\begin{equation}
+    \begin{cases}
+           \psi_1(t) = \cos t\\
+           \psi_2(t) = \sin t
+    \end{cases}\,.
+\end{equation}
+
+Il sostegno delle due curve e' lo stesso vanno entrambe a $\mathbb{R}^{2}$
+
+Le curve pero' sono diverse perche il dominio e' diverso.
+
+
+Possiamo scrivere le derivati parziali con notazione vettoriale.
+
+\[
+    f: A\subseteq \mathbb{R}^{n}\rightarrow \mathbb{R} \text{ con A aperto}
+\]
+
+quindi posso scrivere la derivata parziale:
+
+\[
+f_{x_i} (\bar{x} ) = \frac{\partial f}{\partial x_i}(\bar{x} )
+\]
+
+nel modo sequente, definisco $\forall i = 1,...,n$:
+
+\[
+    \bar{e_i}  = (0,...0,1,0,....,0) 
+\]
+
+quindi la derivata e' data dal sequente limite purche esista e sia finito:
+
+\[
+\lim_{ h \to 0 } \frac{f(\bar{x} + h \bar{e_i}) - f(\bar{x} )}{h} = f_{x_i}(\bar{x} )
+\]
+
+espandendo:
+
+\[
+    f( \bar{x} +h \bar{e_i} ) = f( x_1,...,x_{i-1},x_i+h , x_{i+1},...,x_n)
+\]
+
+vediamo che dipende solo da h:
+
+\[
+    g(h) = f(\bar{x} ,h \bar{e_i} )
+\]
+
+Se g e' derivabile allora si ha:
+
+\[
+    g'(0) = \frac{\partial f}{\partial x_i}(\bar{x} )
+\]
+
+perche' espandnedo:
+
+\[
+    g'(0) = \lim_{ h \to 0 } \frac{g(h) - g(0)}{h-0} = \lim_{ h \to 0 } \frac{g(\bar{x} +h \bar{e_i} ) - f(\bar{x} )}{h}
+\]
+
+se io ho $\bar{v} $ direzione in $\mathbb{R}^{n}$ di modulo 1:
+
+\[
+    |\bar{v} | = \sqrt{\sum^{n}_{i=1} v_i^{2}}
+\]
+
+Derivata direzionale:
+
+\[
+    D_v f(\bar{x} ) = \lim_{ h \to 0 } \frac{f(\bar{x} +h \bar{v} ) -f(\bar{x} )}{h}
+\]
+
+
+\textbf{Esempio} 
+
+\[
+    f: A \subseteq \mathbb{R}^{3} \rightarrow  \mathbb{R}
+\]
+
+\[
+    \bar{v} = (a,b,c) \in \mathbb{R}^{3}
+\]
+
+\[
+    a^{2}+b^{2}+c^{2}= 1\ (||\bar{v} || =1)
+\]
+
+Calcoliamo la derivata direzionale:
+
+\[
+    D_v f(\bar{x_0} ) = \lim_{ h \to 0 } \frac{f(\bar{x_0} + h \bar{v} ) -f(\bar{x_0} )}{h}
+\]
+
+dove:
+
+\[
+    \bar{x_0} = (x_0,y_0,z_0)
+\]
+
+\[
+    D_v f(P_0) = D_v f(\bar{x_0} ) = \lim_{ h \to 0 } \frac{f(x_0+ha,y_0+hb,z_0+hc) - f(x_0,y_0,z_0)}{h}
+\]
+
+questo esiste se il limite esiste e finito.
+
+dire che quindi $f$ e' derivabile in $\bar{x} \in A$ e' come dire che esiste il vettore gradicente:
+
+\[
+   \nabla f(\bar{x} ) 
+\]
+
 \end{document}
 

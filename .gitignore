@@ -7,5 +7,4 @@
 *.out
 *.synctex.gz
 *.toc
-.vscode/ltex.dictionary.it.txt
-.vscode/ltex.disabledRules.it.txt
+.vscode/*

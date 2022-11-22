@@ -4370,14 +4370,14 @@ f è derivabile in $\bar{x} =(x_1,...,x_n) \in A$ è lo stesso che dire che esis
 \defn{}{ Si dice che $f$ è differenziabile in $\bar{x} \in A $ se $f$ è derivabile in $\bar{x} $ ed inoltre vale la sequente relazione:
 
     \[
-        \lim_{ h \to 0 } \frac{f( \bar{x} + \bar{h} ) - f( \bar{x} ) - <\nabla f(\bar{x} ), \bar{h} >}{|\bar{h} |} =0
+        \lim_{ h \to 0 } \frac{f( \bar{x} + \bar{h} ) - f( \bar{x} ) - \langle  \nabla f(\bar{x} ), \bar{h} \rangle}{|\bar{h} |} =0
     \]
 
 
     dove $\bar{h} \in \mathbb{R}^{n}$ e in particolare $|\bar{h} | = \sqrt{\sum^{n}_{i=1} h_i^{2}}$, inlotre :
 
     \[
-    <\nabla f(\bar{x} ), \bar{h} > = \frac{\partial f}{\partial x_1}(\bar{x} )h_1+ \frac{\partial f}{\partial x_2}(\bar{x} ) h_2+ ... + \frac{\partial f}{\partial x_n}(\bar{x} ) h_n
+    \langle  \nabla f(\bar{x} ), \bar{h} \rangle = \frac{\partial f}{\partial x_1}(\bar{x} )h_1+ \frac{\partial f}{\partial x_2}(\bar{x} ) h_2+ ... + \frac{\partial f}{\partial x_n}(\bar{x} ) h_n
     \]
 
     Se $f$ è differenziabile in ogni punto di $A$ si dice che $f$ è differenziabile in $A$
@@ -4388,13 +4388,13 @@ f è derivabile in $\bar{x} =(x_1,...,x_n) \in A$ è lo stesso che dire che esis
 \defn{}{ Definisco $L : \mathbb{R}^{n} \rightarrow \mathbb{R}$ (funzione lineare) è l'applicazione che ad $\bar{h} $ associa il prodotto scalare:
 
     \[
-        <\nabla f(\bar{x} ) , \bar{h} >
+        \langle  \nabla f(\bar{x} ) , \bar{h} \rangle
     \]
 
     si chiama differenziale di $f$ in $\bar{x} $ e si indica con $d f(x)$ è un'applicazione lineare da $\mathbb{R}^{n}$ in $\mathbb{R}$ della variabile $\bar{h} $
 
     \[
-        d f(\bar{x} ) (\bar{h} ) = < \nabla f(\bar{x} ) , \bar{h} >
+        d f(\bar{x} ) (\bar{h} ) = \langle \nabla f(\bar{x} ) , \bar{h}  \rangle
     \]
 }
 
@@ -4410,7 +4410,7 @@ In $\mathbb{R}^{n}$ ogni funzionale lineare si rappresenta come un opportuno pro
 Se $L: \mathbb{R}^{n}\rightarrow \mathbb{R}$ è lineare allora esiste $\bar{l} \in \mathbb{R}^{n}$ t.c.:
 
 \[
-    L(\bar{h} ) = <\bar{h} , \bar{l} >
+    L(\bar{h} ) = \langle \bar{h} , \bar{l}  \rangle
 \]
 
 $\forall \bar{h} \in \mathbb{R}^{n}$
@@ -4418,7 +4418,7 @@ $\forall \bar{h} \in \mathbb{R}^{n}$
 Se dunque $f: A \subset \mathbb{R}^{n}\rightarrow \mathbb{R}$ è differenziabile in $\bar{x} \in A$ se è derivabile in $\bar{x} $ ($\exists \nabla f(\bar{x} ) \in \mathbb{R}^{n}$) e se:
 
 \[
-    f(\bar{x} + \bar{h} ) = f(\bar{x} ) + <\nabla f(\bar{x} ), \bar{h} > + o(|h|)
+    f(\bar{x} + \bar{h} ) = f(\bar{x} ) + \langle \nabla f(\bar{x} ), \bar{h}  \rangle + o(|h|)
 \]
 
 per $h \rightarrow 0$.
@@ -4523,6 +4523,25 @@ il cui grafico è il grafico del piano tangente al grafico $f$ si chiama \textbf
 
 
 e l'applicazione delle $f$ mediantem tale piano viene detta approssimazione lineare della $f$ in $(x_0,y_0)$
+
+\textbf{Esercizio per casa} 
+
+Data la funzione:
+
+\[
+    f(x,y) = \begin{cases}
+        \frac{x^{3}+2y^{4}}{x^{2}y^{2}} & \text{se $(x,y) \neq (0,0)$} \\
+        0 & \text{se $(x,y) = (0,0)$}
+    \end{cases}
+\]
+
+\begin{enumerate}
+    \item Stabilire in quali punti del piano è derivabile, calcolando esplicitamente le derivate in tale caso
+    \item Stabilire in quali punti del piano è differenziabile
+    \item Stabilire il più grande aperto $A \subset \mathbb{R}^{2}$ su cui $f$ è $\mathbb{C}^{1}$
+\end{enumerate}
+
+
 
 \end{document}
 

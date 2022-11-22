@@ -29,12 +29,12 @@ Problema di Cauchy: problema con condizioni iniziali.
 
 \defn{}{Una equazione di ordine n è una equazione del tipo:
 \[
-    F(x,y(x),y'(x),...,y^{(n-1)}(x),y^{(n)}(x))=0
+    F(x,y(x),y'(x),\ldots,y^{(n-1)}(x),y^{(n)}(x))=0
 \]
 \[
     x \in I \subseteq \mathbb{R}
 \]
-dove l'incognita è la qualunque y(x). F è funzione di (n+2) variabili $x,y(x),y'(x)....$
+dove l'incognita è la qualunque y(x). F è funzione di (n+2) variabili $x,y(x),y'(x)\ldots.$
 }
 
 
@@ -49,7 +49,7 @@ Per esempio:
 è di ordine 3
 
 \defn{Soluzione (curva) integrale}{La soluzione di una EDO di ordine n sull'intervallo I \[
-        (*) F(x,y(x),y'(x),...) = 0
+        (*) F(x,y(x),y'(x),\ldots) = 0
 \]
 \[
     x \in I \subseteq \mathbb{R}
@@ -57,7 +57,7 @@ Per esempio:
 
 $\varphi(x)$ che sia definita (almeno) in I e ivi derivabile fino all'ordine n per cui valga (*), ovvero:
 \[
-    F(x,\varphi(x),\varphi ' (x), ... ) = 0 
+    F(x,\varphi(x),\varphi ' (x), \ldots ) = 0 
 \]
 
 $\forall x \in I$
@@ -73,7 +73,7 @@ Chiaramente cambia a seconda dell'intervallo
 \defn{Forma normale}{Una Equazione Differenziale Ordinaria (EDO) di ordine n si dice in forma normale se è in forma
 
     \[
-        y^{(n)} = f(x,y(x),y'(x),....,y^{(n-1)}), x \in I
+        y^{(n)} = f(x,y(x),y'(x), \ldots ,y^{(n-1)}), x \in I
     \]
     
     Esempio:
@@ -85,11 +85,11 @@ Chiaramente cambia a seconda dell'intervallo
 
 \defn{EDO di ordine n lineare}{Una EDO di ordine n si dice lineare se è nella forma
     \[
-        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}+... + a_2(x)y''(x)+a_1(x)y'(x)+a_0y(x)=f(x),x \in I
+        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}+ \ldots + a_2(x)y''(x)+a_1(x)y'(x)+a_0y(x)=f(x),x \in I
     \]
 
     Dove le funzioni \[
-        a_0(x),a_1(x),a_2(x),...,a_n(x),f(x)
+        a_0(x),a_1(x),a_2(x), \ldots,a_n(x),f(x)
     \]
 
     sono assegnate (continue) in I
@@ -2169,7 +2169,7 @@ In particolare:
     \item funzioni a valori vettoriali $g: A \in \mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$
 \end{itemize}
 
-\defn{Vettore}{ Il vettore $n \in \mathbb{R}^{n}$ è una n-pla $x=(x_1,x_2,...,x_n)$ }
+\defn{Vettore}{ Il vettore $n \in \mathbb{R}^{n}$ è una n-pla $x=(x_1,x_2, \ldots,x_n)$ }
 
 
 
@@ -2183,7 +2183,7 @@ Operazioni in $\mathbb{R}^{n}$:
         \]
 
         \[
-            c \textbf{x} = (cx_1,...,cx_n)
+            c \textbf{x} = (cx_1, \ldots ,cx_n)
         \]
 
     \item somma
@@ -2193,11 +2193,11 @@ Operazioni in $\mathbb{R}^{n}$:
         \]
 
         \[
-       \textbf{x}  =(x_1,...,x_n), \textbf{y}  = (y_1,...,y_n)
+       \textbf{x}  =(x_1, \ldots ,x_n), \textbf{y}  = (y_1, \ldots ,y_n)
         \]
 
         \[
-            \textbf{x}+ \textbf{y} = (x_1+y_1,...,x_n+y_n)
+            \textbf{x}+ \textbf{y} = (x_1+y_1, \ldots dots ,x_n+y_n)
         \]
 
     \item prodotto scalare
@@ -2256,7 +2256,7 @@ Operazioni in $\mathbb{R}^{n}$:
                 \]
 
                 \[
-                    x=(x_1,...,x_n)
+                    x=(x_1, \ldots ,x_n)
                 \]
 
                 \[
@@ -2264,7 +2264,7 @@ Operazioni in $\mathbb{R}^{n}$:
                 \]
 
                 \[
-                    x \bullet x = \langle x,x \rangle = 0 \Leftrightarrow x = 0 = (0,...,0)\ \text{vettore nullo}
+                    x \bullet x = \langle x,x \rangle = 0 \Leftrightarrow x = 0 = (0, \ldots ,0)\ \text{vettore nullo}
                 \]
 
         \end{enumerate}
@@ -2349,7 +2349,7 @@ Altra cosa interessante:
      \]
 
      \[
-         y=0=(0,...,0) 
+         y=0=(0, \ldots ,0) 
      \]
      
      questo caso va bene.
@@ -2505,7 +2505,7 @@ la distanza si può scrivere anche:
 \defn{Successione}{ Una successione è un elenco ordinato di numeri $\{x_n\} \subset \mathbb{R}^{n}$ (gli elementi della successione sono elementi di $\mathbb{R}^{n}$ ovvero n-ple di reali)
 
     \[
-        x_n= (x_n^{1}, x_n^{2}, ..., x_n ^{n})
+        x_n= (x_n^{1}, x_n^{2},  \ldots , x_n ^{n})
     \]
 
     si dice che converge a $x \in \mathbb{R}^{n}$ se:
@@ -2525,7 +2525,7 @@ la distanza si può scrivere anche:
     \]
 
     \[
-        |x_n - x| = \sqrt{(x_n^{1}-x^{1})^{2}+ ... +(x_n^{n}-x^{n})^{2}}
+        |x_n - x| = \sqrt{(x_n^{1}-x^{1})^{2}+  \ldots  +(x_n^{n}-x^{n})^{2}}
     \]
 
 }
@@ -3851,15 +3851,15 @@ Queste due derivate si indicano:
 $A$ definito
 
 \[
-    \bar{n} = (x_1,...,x_n) \rightarrow f(\bar{x} ) = f(x_1,...,x_n) \in \mathbb{R}
+    \bar{n} = (x_1, \ldots ,x_n) \rightarrow f(\bar{x} ) = f \ldots 1,...,x_n) \in \mathbb{R}
 \]
 
-Sia $P_0= (x_1,...,x_i,...,x_n) \in A$
+Sia $P_0= (x_1, \ldots  \ldots i,...,x_n) \in A$
 
-Si definisce \textbf{derivata parziale di $f$ fatta rispetto a $x_i$ nel punto $P_0=(x_1,...,x_n)$}:
+Si definisce \textbf{derivata parziale di $f$ fatta rispetto a $x_i$ nel punto $P_0=(x_1, \ldots ,x_n)$}:
 
 \[
-    \lim_{ h \to 0 } \frac{f(x_1,...,x_{i-1},x_{i+h},x_{i+1},...,x_n) - f(x_1,...,x_{i-1},x_{i+h},x_{i+1},...,x_n)}{h}
+    \lim_{ h \to 0 } \frac{f(x_1, \ldots ,x_{i-1},x_{i+h},x_{ \ldots },...,x_n \ldots  f(x_1,...,x_{i-1},x \ldots +h},x_{i+1},...,x_n)}{h}
 \]
 
 se tale limite esiste ed è finito.
@@ -4017,7 +4017,7 @@ gradiente di $f$ in $P_0$ (È un vettore).
 In generale in $n$ variabili:
 
 \[
-    \nabla f(\bar{x} ) = (\frac{\partial f}{\partial x_1}(\bar{x} ), \frac{\partial f}{\partial x_2}(\bar{x} ),..., \frac{\partial f}{\partial x_n}(\bar{x} )) \in \mathbb{R}^{n}
+    \nabla f(\bar{x} ) = (\frac{\partial f}{\partial x_1}(\bar{x} ), \frac{\partial f}{\partial x_2}(\bar{x} ), \ldots , \frac{\partial f}{\partial x_n}(\bar{x} )) \in \mathbb{R}^{n}
 \]
 
 \subsection{Significato geometrico delle derivate parziali}
@@ -4151,7 +4151,7 @@ Una curva è un'applicazione continua:
 per $I=[a,b]$:
 
 \[
-   \bar{\varphi}(t) = (\varphi_1(t),\varphi_2(t),...,\varphi_n(t)) \in \mathbb{R}^{n}
+   \bar{\varphi}(t) = (\varphi_1(t),\varphi_2(t), \ldots ,\varphi_n(t)) \in \mathbb{R}^{n}
 \]
 
 Le equazioni parametriche sono:
@@ -4205,7 +4205,7 @@ Una curva si dice regolare se l'applicazione $\varphi$ è di classe $C^{1}$ (le 
 In particolare $\varphi'(t) \neq 0$ significa che il vettore:
 
 \[
-    (\varphi_1'(t),...,\varphi_n'(t)) = \varphi'(t)
+    (\varphi_1'(t), \ldots ,\varphi_n'(t)) = \varphi'(t)
 \]
 
 non ha mai tutte le componenti contemporaneamente nulle.
@@ -4267,10 +4267,10 @@ Quindi posso scrivere la derivata parziale:
 f_{x_i} (\bar{x} ) = \frac{\partial f}{\partial x_i}(\bar{x} )
 \]
 
-nel modo seguente, definisco $\forall i = 1,...,n$:
+nel modo seguente, definisco $\forall i = 1, \ldots ,n$:
 
 \[
-    \bar{e_i}  = (0,...0,1,0,....,0) 
+    \bar{e_i}  = (0, \ldots 0,1,0,....,0) 
 \]
 
 quindi la derivata è data dal seguente limite, purché esista e sia finito:
@@ -4360,10 +4360,10 @@ dire che quindi $f$ è derivabile in $\bar{x} \in A$ è come dire che esiste il 
 
 Avendo una funzione $f:A\subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ con $A$ aperto
 
-f è derivabile in $\bar{x} =(x_1,...,x_n) \in A$ è lo stesso che dire che esiste:
+f è derivabile in $\bar{x} =(x_1, \ldots ,x_n) \in A$ è lo stesso che dire che esiste:
 
 \[
-    \nabla f(\bar{x} ) = ( \frac{\partial f}{\partial x_1}(\bar{x} ),..., \frac{\partial f}{\partial x_n}(\bar{x} ) )
+    \nabla f(\bar{x} ) = ( \frac{\partial f}{\partial x_1}(\bar{x} ), \ldots , \frac{\partial f}{\partial x_n}(\bar{x} ) )
 \]
 
 
@@ -4377,7 +4377,7 @@ f è derivabile in $\bar{x} =(x_1,...,x_n) \in A$ è lo stesso che dire che esis
     dove $\bar{h} \in \mathbb{R}^{n}$ e in particolare $|\bar{h} | = \sqrt{\sum^{n}_{i=1} h_i^{2}}$, inoltre:
 
     \[
-    \langle  \nabla f(\bar{x} ), \bar{h} \rangle = \frac{\partial f}{\partial x_1}(\bar{x} )h_1+ \frac{\partial f}{\partial x_2}(\bar{x} ) h_2+ ... + \frac{\partial f}{\partial x_n}(\bar{x} ) h_n
+    \langle  \nabla f(\bar{x} ), \bar{h} \rangle = \frac{\partial f}{\partial x_1}(\bar{x} )h_1+ \frac{\partial f}{\partial x_2}(\bar{x} ) h_2+ \ldots  + \frac{\partial f}{\partial x_n}(\bar{x} ) h_n
     \]
 
     Se $f$ è differenziabile in ogni punto di $A$ si dice che $f$ è differenziabile in $A$
@@ -4498,13 +4498,13 @@ Se pongo:
 allora:
 
 \[
-    f(x,y) = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0) + \underbrace{o(\sqrt{(x-x_0)^{2}+(y-y_0)^{2}}}_\text{$d(P,P_0)$}
+    f(x,y) = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0) + \underbrace{o(\sqrt{(x-x_0)^{2}+(y-y_0)^{2}})}_\text{$d(P,P_0)$}
 \]
 
 E dunque per le funzioni differenziabili si ha che il piano di equazione $z= f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)$ dista (ha un errore) dal grafico di $f$ per una quantità che va a zero più rapidamente di quanto $P$ si avvicina a $P_0$.
 
 \[
-    f(x,y) - [f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)] = \underbrace{o(\sqrt{(x-x_0)^{2}+(y-y_0)^{2}}}_\text{$d(P,P_0)$}
+    f(x,y) - [f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)] = \underbrace{o(\sqrt{(x-x_0)^{2}+(y-y_0)^{2}})}_\text{$d(P,P_0)$}
 \]
 
 quindi:

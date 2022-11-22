@@ -925,7 +925,7 @@ Impongo le condizioni di Cauchy e trovo c sostituendo:
     y=3e ^{ \frac{x^{2}}{2}}-2
 \]
 
-Quindi la soluzione completa È:
+Quindi la soluzione completa è:
 
     \begin{equation}
         \begin{cases}
@@ -1023,7 +1023,7 @@ Ponendo le condizioni di Cauchy:
     y(0)=2
 \]
 
-La soluzione È:
+La soluzione è:
 
 \[
     2 e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
@@ -1035,7 +1035,7 @@ La soluzione È:
     y'=\sqrt[3]{x}y^{2}
 \]
 
-Una soluzione È:
+Una soluzione è:
 
 \[
     y=0
@@ -1065,7 +1065,7 @@ quindi:
     c = -2
 \]
 
-ergo il la soluzione È:
+ergo il la soluzione è:
 
 \[
     y(x) = -\frac{4}{3 \sqrt[3]{x^{4}} - 2}
@@ -1083,7 +1083,7 @@ quindi:
     x \neq (\frac{2}{3}^{ \frac{3}{4}})
 \]
 
-Il più ampio intervallo È:
+Il più ampio intervallo è:
 
 \[
     0 \in (-\infty, \frac{2}{3}^{ \frac{3}{4}}) 
@@ -1515,7 +1515,7 @@ Ottengo il sistema di 2 equazioni nelle due incognite ($c_1'(x),c_2'(x)$) non om
         \end{cases}\,.
     \end{equation}
 
-La matrice dei coefficienti del sistema È:
+La matrice dei coefficienti del sistema è:
 
 \[
 \begin{bmatrix}
@@ -3773,7 +3773,7 @@ vediamo l'esponente:
     \frac{x^{2}-y^{2}}{x^{2}+y^{2}} \le |\frac{x^{2}-y^{2}}{x^{2}+y^{2}}| = \frac{|x^{2}-y^{2}|}{x^{2}+y^{2}}  \le \frac{|x^{2}|+|y^{2}|}{x^{2}+y^{2}} = \frac{x^{2}+y^{2}}{x^{2}+y^{2}} = 1
 \]
 
-quindi l'esponenziale È:
+quindi l'esponenziale è:
 
 \[
     0< e ^{ \frac{x^{2}-y^{2}}{x^{2}+y^{2}}} < e
@@ -4084,7 +4084,7 @@ lower left=gray!60,lower right=gray!80!black] (1.75,0.5,0) -- (1.75,1.9,0)
  \node[anchor=north east] at (b2) {$(x_0,y_0)$};
 \end{tikzpicture}
 
-L'equazione del piano tangente alla funzione nel punto $P_0$ È:
+L'equazione del piano tangente alla funzione nel punto $P_0$ è:
 
 \[
     z = f(x_0,y_0) + f_x(x_0,y_0) (x-x_0) + f_y(x_0,y_0) (y-y_0) 
@@ -4259,7 +4259,9 @@ Possiamo scrivere le derivati parziali con notazione vettoriale.
     f: A\subseteq \mathbb{R}^{n}\rightarrow \mathbb{R} \text{ con A aperto}
 \]
 
-quindi posso scrivere la derivata parziale:
+\textbf{Scrittura alternativa della derivata parziale} 
+
+Quindi posso scrivere la derivata parziale:
 
 \[
 f_{x_i} (\bar{x} ) = \frac{\partial f}{\partial x_i}(\bar{x} )
@@ -4351,6 +4353,195 @@ dire che quindi $f$ è derivabile in $\bar{x} \in A$ è come dire che esiste il 
 \[
    \nabla f(\bar{x} ) 
 \]
+
+\section{Lezione 16}
+
+\subsection{Differenziabilita'}
+
+Avendo una funzione $f:A\subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ con $A$ aperto
+
+f è derivabile in $\bar{x} =(x_1,...,x_n) \in A$ è lo stesso che dire che esiste:
+
+\[
+    \nabla f(\bar{x} ) = ( \frac{\partial f}{\partial x_1}(\bar{x} ),..., \frac{\partial f}{\partial x_n}(\bar{x} ) )
+\]
+
+
+\defn{}{ Si dice che $f$ è differenziabile in $\bar{x} \in A $ se $f$ è derivabile in $\bar{x} $ ed inoltre vale la sequente relazione:
+
+    \[
+        \lim_{ h \to 0 } \frac{f( \bar{x} + \bar{h} ) - f( \bar{x} ) - \langle  \nabla f(\bar{x} ), \bar{h} \rangle}{|\bar{h} |} =0
+    \]
+
+
+    dove $\bar{h} \in \mathbb{R}^{n}$ e in particolare $|\bar{h} | = \sqrt{\sum^{n}_{i=1} h_i^{2}}$, inlotre :
+
+    \[
+    \langle  \nabla f(\bar{x} ), \bar{h} \rangle = \frac{\partial f}{\partial x_1}(\bar{x} )h_1+ \frac{\partial f}{\partial x_2}(\bar{x} ) h_2+ ... + \frac{\partial f}{\partial x_n}(\bar{x} ) h_n
+    \]
+
+    Se $f$ è differenziabile in ogni punto di $A$ si dice che $f$ è differenziabile in $A$
+}
+
+\newpage
+
+\defn{}{ Definisco $L : \mathbb{R}^{n} \rightarrow \mathbb{R}$ (funzione lineare) è l'applicazione che ad $\bar{h} $ associa il prodotto scalare:
+
+    \[
+        \langle  \nabla f(\bar{x} ) , \bar{h} \rangle
+    \]
+
+    si chiama differenziale di $f$ in $\bar{x} $ e si indica con $d f(x)$ è un'applicazione lineare da $\mathbb{R}^{n}$ in $\mathbb{R}$ della variabile $\bar{h} $
+
+    \[
+        d f(\bar{x} ) (\bar{h} ) = \langle \nabla f(\bar{x} ) , \bar{h}  \rangle
+    \]
+}
+
+$f$ è differenziabile in $\bar{x} \in A$ se esiste un funzionale \textbf{lineare} $L: \mathbb{R}^{n} \rightarrow \mathbb{R}$ t.c.:
+
+\[
+    \lim_{ h \to 0 } \frac{f(x+h) -f(x) - L(h)}{|h|} = 0
+\]
+
+In $\mathbb{R}^{n}$ ogni funzionale lineare si rappresenta come un opportuno prodotto scalare.
+
+
+Se $L: \mathbb{R}^{n}\rightarrow \mathbb{R}$ è lineare allora esiste $\bar{l} \in \mathbb{R}^{n}$ t.c.:
+
+\[
+    L(\bar{h} ) = \langle \bar{h} , \bar{l}  \rangle
+\]
+
+$\forall \bar{h} \in \mathbb{R}^{n}$
+
+Se dunque $f: A \subset \mathbb{R}^{n}\rightarrow \mathbb{R}$ è differenziabile in $\bar{x} \in A$ se è derivabile in $\bar{x} $ ($\exists \nabla f(\bar{x} ) \in \mathbb{R}^{n}$) e se:
+
+\[
+    f(\bar{x} + \bar{h} ) = f(\bar{x} ) + \langle \nabla f(\bar{x} ), \bar{h}  \rangle + o(|h|)
+\]
+
+per $h \rightarrow 0$.
+
+
+\textbf{Geometricamente} 
+
+La differenziabilità è legata all'esistenza del piano tangente al grafico della $f$ nel punto.
+
+Supponiamo che $f$ sia differenziabile in $\bar{x_0} \in A $ allora tornando alla relazione (che ci definisce la differenziabilità):
+
+\[
+    f(x_0+h) = f(x_0) +\langle \nabla f(x_0) , \bar{h} \rangle  + o(\bar{h} )
+\]
+
+riscrivendolo per $x_0$:
+
+\[
+    f(x) = f(x_0) + \langle \nabla f(x_0), x-x_0 \rangle + o(|x-x_0|)
+\]
+
+e dunque la funzione lineare $\bar{x} \rightarrow  f(\bar{x_0} ) + \langle \nabla f(\bar{x_0} ), x-x_0 \rangle$ ci fornisce un'approssimazione lineare della $f(x)$ nel punto $x_0$ a meno di infinitesimi di ordine superiore alla distanza tra $x$ e $x_0$:
+
+\[
+    d(x,x_0) = |x- x_0|
+\]
+
+Il grafico di questa funzione lineare rappresenta il piano tangente al grafico di $f$ nel punto $x_0$ in cui la $f$ è differenziabile.
+
+
+Se $f: \mathbb{R} \rightarrow \mathbb{R}$ è derivabile in $x_0$ ($\exists f'(x_0)$):
+
+\[
+    f(x) = \underbrace{f(x_0) + f'(x_0) (x-x_0)}_\text{retta tangente al grafico di f nel punto} + o(|x-x_0|)
+\]
+
+\subsection{Differenziale per le funzioni in due variabili} 
+
+Consideriamo:
+
+\[
+    P_0 = (x_0,y_0)
+\]
+
+con $f$ differenziabile in $P_0$.
+
+L'equazione del piano tangente al grafico di $f$ nel punto:
+
+\[
+    z= f(P_0) + \langle \nabla f(P_0), \underbrace{P-P_0}_\text{vettore in $\mathbb{R}^{2}$} \rangle
+\]
+
+ovvero, sapendo che $\nabla f(P_0) = ( \frac{\partial f}{\partial x}(x_0,y_0), \frac{\partial f}{\partial y}(x_0,y_0))$:
+
+\[
+    \underbrace{z = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)}_\text{equazione del piano tangente nel punto ($x_0,y_0,f(x_0,y_0)$)}
+\]
+
+
+Scriviamo la definizione di differenziale in $\bar{h} $ nel nostro caso in due variabili ($\bar{h} =(h,k)$):
+
+\[
+    f(x_0+h,y_0+k) = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) h + \frac{\partial f}{\partial y}(x_0,y_0) k + \underbrace{o(\sqrt{h^{2}+k^{2}})}_\text{$|h|$}
+\]
+
+per $(h,k) \rightarrow  (0,0)$.
+
+Se pongo:
+
+\begin{equation}
+    \begin{cases}
+           x_0+h = x\\
+           y_0+ k = y
+    \end{cases}\,.
+\end{equation}
+
+allora:
+
+\[
+    f(x,y) = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0) + \underbrace{o(\sqrt{(x-x_0)^{2}+(y-y_0)^{2}}}_\text{$d(P,P_0)$}
+\]
+
+E dunque per le funzioni differenziabili si ha che il piano di equazione $z= f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0)(x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)$ dista (ha un errore) dal grafico di $f$ per una quantità che va a zero più rapidamente di quanto $P$ si avvicina a $P_0$.
+
+\[
+    f(x,y) - [f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)] = \underbrace{o(\sqrt{(x-x_0)^{2}+(y-y_0)^{2}}}_\text{$d(P,P_0)$}
+\]
+
+quindi:
+
+\[
+    \lim_{ (x,y) \to (x_0,y_0) } \frac{f(x,y) - [f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)] }{\sqrt{(x-x_0)^{2}+(y-y_0)^{2}}}= 0
+\]
+
+La funzione $L: \mathbb{R}^{2} \rightarrow \mathbb{R}$:
+
+\[
+    L(x,y) = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0) (x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0) (y-y_0)
+\]
+
+il cui grafico è il grafico del piano tangente al grafico $f$ si chiama \textbf{linearizzazione} di $f(x,y)$ in $(x_0,y_0)$
+
+
+e l'applicazione delle $f$ mediantem tale piano viene detta approssimazione lineare della $f$ in $(x_0,y_0)$
+
+\textbf{Esercizio per casa} 
+
+Data la funzione:
+
+\[
+    f(x,y) = \begin{cases}
+        \frac{x^{3}+2y^{4}}{x^{2}y^{2}} & \text{se $(x,y) \neq (0,0)$} \\
+        0 & \text{se $(x,y) = (0,0)$}
+    \end{cases}
+\]
+
+\begin{enumerate}
+    \item Stabilire in quali punti del piano è derivabile, calcolando esplicitamente le derivate in tale caso
+    \item Stabilire in quali punti del piano è differenziabile
+    \item Stabilire il più grande aperto $A \subset \mathbb{R}^{2}$ su cui $f$ è $\mathbb{C}^{1}$
+\end{enumerate}
+
+
 
 \end{document}
 

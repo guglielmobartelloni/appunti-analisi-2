@@ -4530,7 +4530,7 @@ Data la funzione:
 
 \[
     f(x,y) = \begin{cases}
-        \frac{x^{3}+2y^{4}}{x^{2}y^{2}} & \text{se $(x,y) \neq (0,0)$} \\
+        \frac{x^{3}+2y^{4}}{x^{2}+y^{2}} & \text{se $(x,y) \neq (0,0)$} \\
         0 & \text{se $(x,y) = (0,0)$}
     \end{cases}
 \]
@@ -4538,8 +4538,191 @@ Data la funzione:
 \begin{enumerate}
     \item Stabilire in quali punti del piano è derivabile, calcolando esplicitamente le derivate in tale caso
     \item Stabilire in quali punti del piano è differenziabile
-    \item Stabilire il più grande aperto $A \subset \mathbb{R}^{2}$ su cui $f$ è $\mathbb{C}^{1}$
+    \item Stabilire il più grande aperto $A \subseteq \mathbb{R}^{2}$ su cui $f$ è $\mathbb{C}^{1}$
 \end{enumerate}
+
+\textbf{Soluzione} 
+
+\begin{enumerate}
+    \item Osserviamo che se $(x,y) \neq (0,0)$ non presenta problemi è derivabile; le sue derivate parziali:
+
+        \[
+            \frac{\partial f}{\partial x}(x,y) = \frac{3x^{2}(x^{2}+y^{2}-2x(x^{3}+2y^{4})}{(x^{2}+y^{2})^{2}}= \frac{x^{4}+3x^{2}y^{2}-4xy^{4}}{(x^{2}+y^{2})^{2})}
+        \]
+
+        \[
+            \frac{\partial f}{\partial y}(x,y) = \frac{8y^{3}(x^{2}+y^{2}) - 2y(x^{3}+2y^{4})}{(x^{2}+y^{2})^{2}}= \frac{8x^{2}y^{3}+8y^{5}-2x^{3}y-4y^{5}}{(x^{2}+y^{2})^{2}} = \frac{4y^{5}+8x^{2}y^{3}-2x^{3}y}{(x^{2}+y^{2})^{2}}
+        \]
+
+        derivabilita' in $(0,0)$:
+
+        \[
+            f(0,y) = \frac{2y^{4}}{y^{2}} = 2y^{2}
+        \]
+
+        \[
+            \frac{\partial f}{\partial y}(0,0) = 0
+        \]
+
+        \[
+            f(x,0) = \frac{x^{3}}{x^{2}} = x
+        \]
+
+        \[
+            \frac{\partial f}{\partial x}(x,0) = 1 = f_x(0,0)
+        \]
+
+    \item 
+        essendo $f \in \mathbb{C}^{1}(A)$ dove $A = \mathbb{R}^{2} \{(0,0)\} \rightarrow f \text{ è differenziabile}$, bisogna vedere che cosa succese in $(0,0)$
+
+        Per essere differenziabile in $(0,0)$ deve essere:
+
+        \[
+            f(x,y) - f(0,0) - \frac{\partial f}{\partial x}(0,0) (x-0) - \frac{\partial f}{\partial y}(0,0) (y-0) = o(\sqrt{x^{2}+y^{2}})
+        \]
+        
+        e quindi devo verificare:
+
+        \[
+            \lim_{ (x,y) \to (0,0) } \frac{ \frac{x^{3}+2y^{4}}{x^{2}+y^{2}}-0 -1(x-0) -0(y-0)}{\sqrt{x^{2}+y^{2}}} = \lim_{ (x,y) \to (0,0) } \frac{ \frac{x^{3}+2y^{4}- x^{3}-xy^{2}}{x^{2}+y^{2}}}{\sqrt{x^{2}+y^{2}}} = 0
+        \]
+
+        % \[
+        %
+        % % \lim_{ (x,y) \to (0,0) } \frac{2y^{4}-xy^{2}}{(x^{2}+y^{2})^{ \frac{3}{2}}}}
+        %     
+        % \]
+
+        provo a risolverlo ponenodo $y=x$:
+
+        \[
+            \lim_{ x \to 0 } \frac{2x^{4}-x^{3}}{(2x^{2})^{ \frac{3}{2}}} = \frac{1}{2 \sqrt{2}}
+        \]
+
+        proviamo a risolverlo $y=x^{2}$:
+
+        \[
+           \lim_{ (x,y) \to (0,0) }  \frac{2y^{4}-xy^{2}}{(x^{2}+y^{2})^{ \frac{3}{2}}} = \lim_{ x \to 0 } \frac{x^{5}(2x^{3}-1)}{x^{3}(1+x^{2})^{ \frac{3}{2}}} = 0
+        \]
+
+\end{enumerate}
+
+
+
+\newpage
+
+\section{Lezione 17}
+
+\teorema{}{ $f$ è differenziabile in $\bar{x_0} \subset A \rightarrow $ f è continua in $\bar{x_0} $ }
+
+
+\begin{proof}
+     Per dimosttrare che $f$ è continua in $\bar{x_0} $ devo far vedere che:
+
+     \[
+         \lim_{ h \to 0 } f(x+h) = f( \bar{x_0} ) 
+     \]
+
+     \[
+         \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{0}]
+     \]
+
+     usiamo Cauchy-Schwarz:
+
+     \[
+      \langle \nabla f(x_0),h \rangle   \le  | \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  | \underbrace{\nabla f(x_0)}_\text{lunghezza del vettore} || \underbrace{h}_\text{0}|
+     \]
+\end{proof}
+
+
+\teorema{Teorema del differenziale}{ Sia $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto, derivabile in $A$. 
+
+    Se le derivate parziali $f_{x_1}, ..., f_{x_n}$ sono continue in $\bar{x} \in A$ allora $f$ è differenziabile in $\bar{x} $
+
+}
+
+\begin{proof}
+       Per $n=2$, $f = f(x,y)$ con $(x,y) \in A \subseteq \mathbb{R}^{2}$ 
+
+       $\bar{h} = (h,k)$:
+
+       \[
+           f(x+h,y+k) - f(x,y) \overset{\text{aggiungo e tolgo $f(x,y+k)$}}{=} 
+       \]
+
+       \[
+           = f(x+h,y+k) + f(x,y+k) - f(x,y+k) - f(x,y) = 
+       \]
+
+       \[
+           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso LaGrange ad ognuna delle funzioni}}{=}
+       \]
+
+       Applico due volte il teorema di Lagrange sugli intervalli di estremi $x,x+h$ e $y,y+k$:
+
+       \[
+           \exists x_1 \in  \text{ intervallo aperto di estremi } x,x+h
+       \]
+
+       \[
+           \exists y_1 \in  \text{ intervallo aperto di estremi } y,y+k
+       \]
+
+       \[
+           = \frac{\partial f}{\partial x}(x_1,y+k) (\cancel{x} +h \cancel{-x}) + \frac{\partial f}{\partial y}(x,y_1) ( \cancel{y} + k \cancel{-y}) = 
+       \]
+
+       \[
+           =\frac{\partial f}{\partial x}(x_1,y+k) h + \frac{\partial f}{\partial y}(x,y_1)k 
+       \]
+
+       a questo punto faccio vedere la definizione di differenziabilita e sostituisco quello sopra:
+
+       \[
+           \frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = \frac{f_x(x_1,y+k) h + f_y(x,y_1) k -f_x(x,y) - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+       \]
+
+       \[
+           = \frac{[f_x(x_1,y+k) - f_x(x,y)] h + [f_y(x,y_1) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}
+       \]
+
+       metto tutto in valore assoluto e maggioro:
+
+       \[
+           = |\frac{[f_x(x_1,y+k) - f_x(x,y)] h + [f_y(x,y_1) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}| \le 
+       \]
+
+       \[
+       \le |f_x(x_1,y+k) - f_x(x,y_1)| \frac{|h|}{\sqrt{h^{2}+k^{2}}} + | f_y(x,y_1) - f_y(x,y)| \frac{|k|}{\sqrt{h^{2}+k^{2}}} \le 
+       \]
+
+       \[
+            \le  |f_x(x_1,y+k) - f_x(x,y) | + |f_y(x,y_1) - f_y(x,y) |
+       \]
+
+       vediamo che succede quando $(h,k) \rightarrow (0,0)$:
+
+        $(x_1,y_1) \rightarrow (x,y)$ le funzioni $f_x$ e $f_y$ sono continue in $(x,y)$
+
+        dunque se passo al limite:
+
+        \[
+              |\underbrace{f_x(x,y) - f_x(x,y)}_\text{0} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{0} |
+        \]
+
+\end{proof}
+
+Quindi una funzione $g: A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}$ continua in $A$ si dice classe $\mathbb{C}^{0}$ e si scrive $f \in \mathbb{C}^{0}(A)$
+
+
+Se la funzione è derivabile in $A$ e se le derivate parziali sono continue in $A$ si dice che è di classe $\mathbb{C}^{1}$ su $A$ e si scrive $f \in \mathbb{C}^{1}(A)$.
+
+
+In generale $f \in \mathbb{C}^{k}(A), k \in \mathbb{N}$
+
+
+
+
 
 
 

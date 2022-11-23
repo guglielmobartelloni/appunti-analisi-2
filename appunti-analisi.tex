@@ -4624,14 +4624,21 @@ Data la funzione:
      \]
 
      \[
-         \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{0}]
+         \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{$\rightarrow 0$}]
      \]
 
      usiamo Cauchy-Schwarz:
 
      \[
-      \langle \nabla f(x_0),h \rangle   \le  | \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  | \underbrace{\nabla f(x_0)}_\text{lunghezza del vettore} || \underbrace{h}_\text{0}|
+      \langle \nabla f(x_0),h \rangle   \le  \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  \underbrace{|\nabla f(x_0)|}_\text{lunghezza del vettore} | \underbrace{h}_\text{$\rightarrow 0$}| \overset{\text{numero moltiplicato $0$}}{=} 0
      \]
+
+     quindi abbiamo che:
+
+     \[
+         \lim_{ h \to 0 } [f(x_0) + \underbrace{\langle \nabla f(x_0),h \rangle}_\text{$\rightarrow 0$} + \underbrace{o(|h|)}_\text{$\rightarrow 0$}] = f(x_0)
+     \]
+
 \end{proof}
 
 
@@ -4655,7 +4662,7 @@ Data la funzione:
        \]
 
        \[
-           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso LaGrange ad ognuna delle funzioni}}{=}
+           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso Lagrange ad ognuna delle funzioni}}{=}
        \]
 
        Applico due volte il teorema di Lagrange sugli intervalli di estremi $x,x+h$ e $y,y+k$:
@@ -4707,7 +4714,7 @@ Data la funzione:
         dunque se passo al limite:
 
         \[
-              |\underbrace{f_x(x,y) - f_x(x,y)}_\text{0} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{0} |
+              |\underbrace{f_x(x,y) - f_x(x,y)}_\text{$\rightarrow 0$} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{$\rightarrow 0$} |
         \]
 
 \end{proof}

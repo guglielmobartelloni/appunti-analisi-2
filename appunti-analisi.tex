@@ -4547,14 +4547,14 @@ Data la funzione:
     \item Osserviamo che se $(x,y) \neq (0,0)$ non presenta problemi è derivabile; le sue derivate parziali:
 
         \[
-            \frac{\partial f}{\partial x}(x,y) = \frac{3x^{2}(x^{2}+y^{2}-2x(x^{3}+2y^{4})}{(x^{2}+y^{2})^{2}}= \frac{x^{4}+3x^{2}y^{2}-4xy^{4}}{(x^{2}+y^{2})^{2})}
+            \frac{\partial f}{\partial x}(x,y) = \frac{3x^{2}(x^{2}+y^{2})-2x(x^{3}+2y^{4})}{(x^{2}+y^{2})^{2}}= \frac{x^{4}+3x^{2}y^{2}-4xy^{4}}{(x^{2}+y^{2})^{2}}
         \]
 
         \[
             \frac{\partial f}{\partial y}(x,y) = \frac{8y^{3}(x^{2}+y^{2}) - 2y(x^{3}+2y^{4})}{(x^{2}+y^{2})^{2}}= \frac{8x^{2}y^{3}+8y^{5}-2x^{3}y-4y^{5}}{(x^{2}+y^{2})^{2}} = \frac{4y^{5}+8x^{2}y^{3}-2x^{3}y}{(x^{2}+y^{2})^{2}}
         \]
 
-        derivabilita' in $(0,0)$:
+        derivabilità in $(0,0)$:
 
         \[
             f(0,y) = \frac{2y^{4}}{y^{2}} = 2y^{2}
@@ -4573,7 +4573,7 @@ Data la funzione:
         \]
 
     \item 
-        essendo $f \in \mathbb{C}^{1}(A)$ dove $A = \mathbb{R}^{2} \{(0,0)\} \rightarrow f \text{ è differenziabile}$, bisogna vedere che cosa succese in $(0,0)$
+        essendo $f \in \mathbb{C}^{1}(A)$ dove $A = \mathbb{R}^{2} \{(0,0)\} \rightarrow f \text{ è differenziabile}$, bisogna vedere che cosa succede in $(0,0)$
 
         Per essere differenziabile in $(0,0)$ deve essere:
 
@@ -4593,7 +4593,7 @@ Data la funzione:
         %     
         % \]
 
-        provo a risolverlo ponenodo $y=x$:
+        provo a risolverlo ponendo $y=x$:
 
         \[
             \lim_{ x \to 0 } \frac{2x^{4}-x^{3}}{(2x^{2})^{ \frac{3}{2}}} = \frac{1}{2 \sqrt{2}}
@@ -4617,20 +4617,20 @@ Data la funzione:
 
 
 \begin{proof}
-     Per dimosttrare che $f$ è continua in $\bar{x_0} $ devo far vedere che:
+     Per dimostrare che $f$ è continua in $\bar{x_0} $ devo far vedere che:
 
      \[
          \lim_{ h \to 0 } f(x+h) = f( \bar{x_0} ) 
      \]
 
      \[
-         \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{$\rightarrow 0$}]
+        \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{$\rightarrow 0$}]
      \]
 
      usiamo Cauchy-Schwarz:
 
      \[
-      \langle \nabla f(x_0),h \rangle   \le  \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  \underbrace{|\nabla f(x_0)|}_\text{lunghezza del vettore} | \underbrace{h}_\text{$\rightarrow 0$}| \overset{\text{numero moltiplicato $0$}}{=} 0
+        \langle \nabla f(x_0),h \rangle   \le  \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  \underbrace{|\nabla f(x_0)|}_\text{lunghezza del vettore} | \underbrace{h}_\text{$\rightarrow 0$}| \overset{\text{numero moltiplicato $0$}}{=} 0
      \]
 
      quindi abbiamo che:
@@ -4638,7 +4638,6 @@ Data la funzione:
      \[
          \lim_{ h \to 0 } [f(x_0) + \underbrace{\langle \nabla f(x_0),h \rangle}_\text{$\rightarrow 0$} + \underbrace{o(|h|)}_\text{$\rightarrow 0$}] = f(x_0)
      \]
-
 \end{proof}
 
 
@@ -4683,10 +4682,14 @@ Data la funzione:
            =\frac{\partial f}{\partial x}(x_1,y+k) h + \frac{\partial f}{\partial y}(x,y_1)k 
        \]
 
-       a questo punto faccio vedere la definizione di differenziabilita e sostituisco quello sopra:
+       a questo punto faccio vedere la definizione di differenziabilità e sostituisco quello sopra:
 
        \[
-           \frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = \frac{f_x(x_1,y+k) h + f_y(x,y_1) k -f_x(x,y) - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+           \frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+       \]
+
+       \[
+           = \frac{f_x(x_1,y+k) h + f_y(x,y_1) k -f_x(x,y) - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
        \]
 
        \[
@@ -4714,7 +4717,7 @@ Data la funzione:
         dunque se passo al limite:
 
         \[
-              |\underbrace{f_x(x,y) - f_x(x,y)}_\text{$\rightarrow 0$} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{$\rightarrow 0$} |
+            |\underbrace{f_x(x,y) - f_x(x,y)}_\text{$\rightarrow 0$} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{$\rightarrow 0$} |
         \]
 
 \end{proof}
@@ -4725,7 +4728,7 @@ Quindi una funzione $g: A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}$ continu
 Se la funzione è derivabile in $A$ e se le derivate parziali sono continue in $A$ si dice che è di classe $\mathbb{C}^{1}$ su $A$ e si scrive $f \in \mathbb{C}^{1}(A)$.
 
 
-In generale $f \in \mathbb{C}^{k}(A), k \in \mathbb{N}$
+In generale $f \in \mathbb{C}^{k}(A), k \in \mathbb{N}$ (se f è derivabile fino all'ordine k, con derivate fino all'ordine k continue)
 
 
 

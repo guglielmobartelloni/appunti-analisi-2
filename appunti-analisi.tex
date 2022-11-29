@@ -411,7 +411,7 @@ Se metto tutto insieme \textbf{l'integrale generale} diventa:
 
 $A(x)$ è \textbf{una} primitiva di $a(x)$ scelta una volta per tutte.
 
-\textbf{Non} occorre mettere una costante arbitraria (ovvero considerare come $A(x) + K,K \in \mathbb{R}$ ) poiché l'integrale generale non cambia
+\textbf{Non} occorre mettere una costante arbitraria (ovvero considerare come $A(x) + K,K \in \mathbb{R}$) poiché l'integrale generale non cambia
 
 \textbf{Non} serve neanche nell'integrale perché verrebbe buttato dentro $c$ dell'integrale generale
 
@@ -1413,7 +1413,7 @@ divido per a:
  u''(x) + (2 \lambda + \frac{b}{a})u'(x) = 0
 \]
 
-sapendo che $-\frac{b}{a} = 2 \lambda$ :
+sapendo che $-\frac{b}{a} = 2 \lambda$:
 
 \[
  u''(x) + (\cancel{2 \lambda} + \cancel{\frac{b}{a}})u'(x) = 0
@@ -3913,7 +3913,7 @@ Sia
 f(x,y) = x \sin(xy^{3})+x^{5}y+2y^{2} 
 \]
 
-($f: \mathbb{R}^{2}\rightarrow \mathbb{R})$
+$(f: \mathbb{R}^{2}\rightarrow \mathbb{R})$
 
 
 \[
@@ -4663,7 +4663,7 @@ Data la funzione:
        \]
 
        \[
-           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso Lagrange ad ognuna delle funzioni}}{=}
+           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso Lagrange a ognuna delle funzioni}}{=}
        \]
 
        Applico due volte il teorema di Lagrange sugli intervalli di estremi $x,x+h$ e $y,y+k$:
@@ -4746,12 +4746,13 @@ In generale $f \in \mathbb{C}^{k}(A), k \in \mathbb{N}$ (se f è derivabile fino
 }
 
 \proposizione{}{Se $f: A \subseteq \mathbb{R}^{n}\rightarrow \mathbb{R}$, $A$ aperto, $x_0 \in A$.
+Se $f$ è differenziabile in $x_0$
 
     \begin{itemize}
-        \item Se $f$ è differenziabile in $x_0$ $\rightarrow$ $f$ è continua in $x_0$
-        \item Se $f$ è differenziabile in $x_0$ $\rightarrow$ $f$ ha tutte le derivate direzionali in $x_0$ (secondo tutte le direzioni $\bar{v} $) e si ha $\frac{\partial f}{\partial v}(x_0) = D_{ \bar{v} } f(x_0) = L(\bar{v} ), \forall v \in \mathbb{R}^{n} $
+        \item $f$ è continua in $x_0$
+        \item $f$ ha tutte le derivate direzionali in $x_0$ (secondo tutte le direzioni $\bar{v} $) e si ha $\frac{\partial f}{\partial v}(x_0) = D_{ \bar{v} } f(x_0) = L(\overrightarrow{v} ), \forall v \in \mathbb{R}^{n} $
 
-            In particolare, $\bar{v} \rightarrow \frac{\partial f}{\partial v}(x_0)$ è un'applicazione lineare e il differenziale è unico (se esiste).
+            In particolare, $\overrightarrow{v} \mapsto \frac{\partial f}{\partial v}(x_0)$ è un'applicazione lineare e il differenziale è unico (se esiste).
     \end{itemize}
 }
 
@@ -4768,10 +4769,10 @@ Vogliamo ora interpretare $\frac{\partial f}{\partial h}(x_0)= \langle \nabla f(
 Se $|h| = 1$ è un vettore di norma 1 (direzione) allora:
 
 \[
-    |\frac{\partial f}{\partial h}(x_0) | \le \underbrace{|\nabla f(x_0) |}_\text{valore massimo che puo' assumere la derivata direzionale} 
+    |\frac{\partial f}{\partial h}(x_0) | \le \underbrace{|\nabla f(x_0) |}_\text{valore massimo che può assumere la derivata direzionale} 
 \]
 
-Si ha l'uguaglianza se $\nabla f(x_0) = 0$ oppure se $\bar{h} $ è parallela al vettore $\nabla f(x_0)$ (cioe' $h = \lambda \nabla f(x_0), \lambda \ge 0$)
+Si ha l'uguaglianza se $\nabla f(x_0) = 0$ oppure se $\bar{h} $ è parallela al vettore $\nabla f(x_0)$ (cioè $h = \lambda \nabla f(x_0), \lambda \ge 0$)
 
 Quindi ricapitolando:
 
@@ -4787,7 +4788,7 @@ Quindi ricapitolando:
 
 \teorema{Regola della catena}{
 
-consideriamo una curva continua $\gamma : [-1,1] \subset \mathbb{R} \rightarrow A\subseteq \mathbb{R}^{n}\ curva$ e supponiamo $\gamma(t)$ vettore (di $n$ componenti) sia derivabile, cioe':
+consideriamo una curva continua $\gamma : [-1,1] \subset \mathbb{R} \rightarrow A\subseteq \mathbb{R}^{n}\ curva$ e supponiamo $\gamma(t)$ vettore (di $n$ componenti) sia derivabile, cioè:
 
 \[
     \gamma(t) = (\gamma_1(t),\ldots,\gamma_n(t) )
@@ -4818,11 +4819,11 @@ allora se $f: A \rightarrow \mathbb{R}$ è differenziabile in $x_0$, la funzione
     F'(0) = \frac{\partial F}{\partial t} (0) = \frac{\partial (f \circ g)}{\partial t}(0) = \langle \nabla f(x_0), \underbrace{\gamma'(0)}_\text{direzione $\bar{v} $} \rangle
 \]
 
-questo si chiama \textbf{teorema delle derivate delle funzioni compose} o regola della catena.
+Questo si chiama \textbf{teorema delle derivate delle funzioni composte} o regola della catena.
 
 }
 
-dunque la crescita di $f$ in $x_0$ lungo una qualsiasi curva $\gamma$ regolare ($\gamma \in \mathbb{C}^{(1)}$) uscente da $x_0$ con velocita' $\gamma'(0) = v$ dipende dalla curva solamente attraverso il vettore (tangente) velovita' $\bar{v} $.
+Dunque la crescita di $f$ in $x_0$ lungo una qualsiasi curva $\gamma$ regolare ($\gamma \in \mathbb{C}^{(1)}$) uscente da $x_0$ con velocità $\gamma'(0) = v$ dipende dalla curva solamente attraverso il vettore (tangente) velocità $\bar{v} $.
 
 
 Ha dunque senso interpretare la derivata direzionale:
@@ -4836,12 +4837,12 @@ come la pendenza di $f$ in $x_0$ nella direzione $\bar{v} $ con $|v|=1$
 \proposizione{}{Se $\nabla f(x_0) \neq 0$, allora il vettore $\nabla f(x_0) \in \mathbb{R}^{n}$ punta nel verso di massima pendenza.}
 
 \begin{proof}
-       Dimostrato dalle considerazioni fatte fino ad ora.    
+       Dimostrato dalle considerazioni fatte fino a ora.    
 \end{proof}
 
-\textbf{Proprieta'} 
+\textbf{Proprietà} 
 
-Se non è nulla, la lunghezza del gradiente di una funzione differenziabile in un punto, indica la direzione e il verso di \textbf{massima pendenza}  del grafico di $f$ nel putno. E dunque se considero la derivata direzionale di $f$ (nel punto) nella direzione del vettore gradiente trovo il valore della massima pendenza, che è appunto la lunghezza del vettore gradiente $|\nabla f(x_0)|$:
+Se non è nulla, la lunghezza del gradiente di una funzione differenziabile in un punto, indica la direzione e il verso di \textbf{massima pendenza}  del grafico di $f$ nel punto. E dunque se considero la derivata direzionale di $f$ (nel punto) nella direzione del vettore gradiente trovo il valore della massima pendenza, che è appunto la lunghezza del vettore gradiente $|\nabla f(x_0)|$:
 
 \[
     v_{max} 

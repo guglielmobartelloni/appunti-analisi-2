@@ -4902,6 +4902,106 @@ Vediamo effettivamente la derivata direzionale della $f$ secondo questa direzion
     D_{\bar{v} } f(P) = D_{\bar{v} } f(2,0) = \langle \nabla f(2,0), \bar{v}  \rangle = (1,2) \cdot (\frac{1}{\sqrt{5}}\ \frac{2}{\sqrt{5}})^{T} = \frac{1}{\sqrt{5}}+ \frac{4}{\sqrt{5}} = \frac{5}{\sqrt{5}} \overset{\text{razionalizzo}}{=} \sqrt{5}
 \]
 
+\section{Lezione 19}
+
+\teorema{Derivazione della funzione composta}{
+    Supponiamo $\gamma(t)$ derivabile $\forall t \in I$ ovvero $\gamma'(t)$ è definito $\forall t \in I$ con $\gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t))$ e supponiamo che $f$ sia differenziabille in $\gamma(t) \in A$ (data $f: A \subseteq \mathbb{R}^{n}\rightarrow \mathbb{R}$) allora la funzione composta $F= f \circ \gamma: I \rightarrow \mathbb{R}$ è derivabile in t.
+
+
+    Inoltre:
+
+    \[
+        F'(t) = \langle \nabla f(\gamma(t)), \gamma'(t) \rangle = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(\gamma(t))\gamma_i'(t)
+    \]
+
+}
+
+\begin{proof}
+       Inizio dimostrando che $f$ è derivabile, ovvero che esiste finito il limite del rapporto incrementale:
+
+       \[
+           \frac{F(t+h) - F(t)}{h} = \frac{F(\gamma(t+h)) - F(\gamma(t))}{h} = \langle \nabla f(\gamma(t+h)), \underbrace{\frac{\gamma(t+h) - \gamma(t)}{h}}_\text{$1$} \rangle + \underbrace{\frac{o(\gamma(t+h) - \gamma(t)|)}{h}}_\text{$2$}
+       \]
+
+       se $h \rightarrow 0$.
+
+       \begin{enumerate}
+        \item \[
+            \lim_{ h \to 0 } \frac{\gamma(t+h) - \gamma(t)}{h} = \gamma'(t)
+        \]
+
+    \item \[
+        \lim_{ h \to 0 } \frac{o(|\gamma(t+h) - \gamma(t)|)}{h} \overset{\text{moltiplico e divido per il numeratore}}{=} \lim_{ h \to 0 } \underbrace{\frac{|o(|\gamma(t+h) - \gamma(t)|)|}{|\gamma(t+h) - \gamma(t)|}}_\text{$0$} \cdot \underbrace{\frac{| \gamma(t+h) - \gamma(t)|}{|h|}}_\text{quantita' finita} = 0 
+    \]
+
+    Quantita' finita perché:
+
+    \[
+        \lim_{ h \to 0 } \frac{|\gamma(t+h) - \gamma(t)|}{|h|} = \lim_{ h \to 0 } ( \sum^{n}_{i=1} (\frac{\gamma_i(t+h) - \gamma_i(t)}{h})^{2})^{ \frac{1}{2}} = ( \sum^{n}_{i=1} ( \gamma_i'(t))^{2})^{ \frac{1}{2}} = \underbrace{| \gamma'(t)|}_\text{lunghezza di un vettore} >0
+    \]
+
+       \end{enumerate}
+
+\end{proof}
+
+\textbf{Esercizio} 
+
+\[
+    f(x,y)= x e ^{y}
+\]
+
+\[
+    \gamma(t) = (x(t), y(t)) = (\cos (t) , \sin (t))
+\]
+
+\[
+    F(t) = (f \circ \gamma) (t) = f(\gamma(t)) = \cos (t) e ^{\sin (t)}
+\]
+
+\[
+    F'(t) = -\sin (t) e ^{\sin (t)} \cos (t)
+\]
+
+Le derivate parziali sono:
+
+\[
+    \frac{\partial f}{\partial x} = e ^{y} 
+\]
+
+\[
+    \frac{\partial f}{\partial y} = x e ^{y}
+\]
+
+\[
+    F'(t) = \langle \nabla f(\gamma(t)), \gamma'(t) \rangle  
+\]
+
+dove:
+
+\[
+    \nabla f(\gamma(t)) = (e ^{\sin (t)}, \cos (t) e ^{\sin (t)})
+\]
+
+e:
+
+\[
+    \gamma'(t) = (-\sin (t), \cos (t))
+\]
+
+quindi:
+
+\[
+    F'(t) = e ^{\sin(t)} (- \sin (t)) + \cos (t) e ^{\sin (t)}\cos (t)
+\]
+
+\teorema{Formula del gradiente}{Se $f(x,y)$ è differenziabile in $P=(x,y)$ allora $f$ ammette derivate direnzionali in $(x,y)$ per ogni direzione. Inlotre per ogni versore $\bar{v}= (a,b)$, vale:
+
+    \[
+        D_{\bar{v} }f(x,y) = \langle \nabla f(x,y), \bar{v}  \rangle = \frac{\partial f}{\partial x}(x,y)\cdot a + \frac{\partial f}{\partial y}(x,y) \cdot b
+    \]
+
+}
+
 
 \end{document}
 

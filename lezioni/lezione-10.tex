@@ -1,0 +1,223 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 10}
+
+\proposizione{}{Se 
+
+    \[
+        \lim_{ (x,y) \to (x_0,y_0) } f(x,y)=l
+    \]
+
+    allora per ogni sottoinsieme $C$ di $A$ (si sottintende che $P_0=(x_0,y_0)$ sia punto di accumulazione per $C$)
+
+    Si deve avere:
+
+    \[
+        \lim_{ \underbrace{(x,y) \to (x_0,y_0)}_{(x,y) \in C} } f(x,y)=l
+    \]
+
+}
+
+\textbf{Esercizi} 
+
+\textbf{1} 
+
+Mostriamo che:
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{xy}{x^{2}+y^{2}}
+\]
+
+non esiste.
+
+Restringiamo lo studio di funzione lungo l'asse x ($y=0$):
+
+\[
+    f(x,0) = 0
+\]
+
+\[
+    \lim_{ \underbrace{(x,y) \to (0,0)}_{y=0} } f(x,y)
+\]
+
+Stessa cosa lungo l'asse y ($x=0$):
+
+\[
+    \lim_{ \underbrace{(x,y) \to (0,0)}_{x=0} } f(x,y)
+\]
+
+Candidato limite è a 0 
+
+
+Adesso ci spostiamo con altri parametri tipo la bisettrice del primo e del terzo quadrante $y=x$:
+
+\[
+    \lim_{ \underbrace{(x,y) \to (0,0)}_{y=x} } f(x,y) = \lim_{ x \to 0 } f(x,x)=
+\]
+
+
+\[
+    = \lim_{ x \to 0 } \frac{x^{2}}{x^{2}+y^{2}} = \lim_{ x \to 0 } \frac{x^{2}}{2x^{2}}= \frac{1}{2}
+\]
+
+\textbf{2} 
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{xy^{2}}{x^{2}+y^{4}}
+\]
+
+$f:\mathbb{R}^{2}\setminus (0,0) \rightarrow \mathbb{R}$
+
+per $y=0$ viene a 0 e anche per $x=0$
+
+Considero quindi qualunque retta passante per l'origine:
+
+\[
+    y= mx
+\]
+
+con $m \neq 0$ e $x \neq 0$:
+
+\[
+    \lim_{ \underbrace{(x,y) \to (0,0)}_{y=mx} } f(x,y) = \lim_{ x \to 0 } f(x,mx) = \lim_{ x \to 0 } \frac{m^{2}x^{3}}{x^{2}+m^{4}x^{4}}= 0
+\]
+
+ma questo non basta, devo controllare anche il caso della parabola $y^{2}=x$:
+
+
+\[
+    \lim_{ \underbrace{(x,y) \to (0,0)}_{x=y^{2}} } f(x,y) = \lim_{ y \to 0 } f(y^{2},y) = \lim_{ y \to 0 } \frac{y^{4}}{y^{4}+y^{4}} = \lim_{ y \to 0 } \frac{y^{4}}{2y^{4}} = \frac{1}{2} \neq 0
+\]
+
+\defn{Funzione continua in più variabili}{ Sia una funzione e sia $P_0$ un punto di accumulazione per a, si dice che la funzione è continua in $P_0$ se:
+
+    \[
+        \lim_{ P \to P_0 } f(P) = f(P_0)
+    \]
+
+    se $P_0$ è un punto isolato per $A$ per convenzione $f$ è continua
+
+}
+
+\textbf{Esempi} 
+
+Avendo queste due funzioni 
+
+\[
+    f(x,y)=x
+\]
+
+\[
+    g(x,y) = y
+\]
+
+devo mostrare che $f$ e $g$ sono continue in ogni punto:
+
+Consideriamo la $f$
+ 
+Sia dunque $(x_0,y_0) \in  \mathbb{R}^{2}$ e $\varepsilon >0$ dobbiamo mostrare che $\exists \delta= \delta(\varepsilon) >0$:
+
+\[
+     d(f(x,y)- f(x_0,y_0) ) < \varepsilon
+\]
+
+se $d(P,P_0) < \delta$ 
+
+scritto meglio
+
+\[
+    d(P,P_0) = \sqrt{(x-x_0)^{2}+(y-y_0)^{2}}
+\]
+
+mostriamo che $\sqrt{(x-x_0)^{2}+(y-y_0)^{2}} < \delta $ si ha $|x-x_0|< \varepsilon$:
+
+
+\[
+|x-x_0| = \sqrt{(x-x_0)^{2}}\le \sqrt{(x - x_0) ^{2} + (y- y_0) ^{2}} < \delta
+\]
+
+dobbiamo prendere quindi $ \delta =\varepsilon$
+
+
+\teorema{}{Siano $f$ e $g$ continue (sugli opportuni domini) allora:
+
+    \begin{itemize}
+        \item $f+g , f\cdot g$ sono continue 
+        \item se $g \neq 0$ allora $\frac{f}{g}$ è continua
+        \item se $g>0$ allora $f^{g}$ è continua
+        \item la funzione comporta $g \circ f$ è continua (dove è definita)
+    \end{itemize}
+}
+
+Sono dunque funzioni continue:
+
+\begin{itemize}
+    \item I polinomi in due variabili 
+    \item Le funzioni razionali (rapporti, quoziente di polinomi)
+    \item Le funzioni elementari 
+\end{itemize}
+
+
+Condizione necessaria affinché $f(x,y)$ ammetta limite $l$ quando $(x,y) \rightarrow  (x_0,y_0)$ è che per ogni curva regolare di equazione:
+
+\begin{equation}
+    \begin{cases}
+           x=x(t)\\
+           y=y(t)
+    \end{cases}\,.
+\end{equation}
+
+questa è una curva  passante per $P_0= (x_0,y_0)$:
+
+\[
+    \lim_{ t \to t_0 } f(x(t), y(t)) 
+\]
+
+si arriva alla stessa conclusione di non esistenza del limite se la restrizione di $f(x,y)$ ad una curva (come sopra) non ha limite. Ovviamente non è vero il viceversa
+
+\subsection{Coordinate polari}
+
+Abbiamo $(\rho,\theta)$ dove:
+
+\[
+    \rho = \bar{ OP} = d(P,O) = \sqrt{x^{2}+y^{2}}
+\]
+
+\[
+    \theta = arctan \frac{y}{x}
+\]
+
+\begin{equation}
+    \begin{cases}
+           x= x_0+ \rho cos \theta\\
+           y = y_0+ \rho sin \theta
+    \end{cases}\,.
+\end{equation}
+
+Scriviamo i limiti con le coordinate polari:
+
+\[
+    \lim_{ (x,y) \to (x_0,y_0) } f(x,y)
+\]
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-polari}
+    \caption{disegno polari}
+    \label{fig:disegno-polari}
+\end{figure}
+
+\teorema{}{Sia $f: D \subset \mathbb{R}^{2} \rightarrow  \mathbb{R}$ e sia $P_0=(x_0,y_0) \in D$ allora:
+
+    \[
+        \lim_{ (x,y) \to (x_0,y_0) } f(x,y)  = l \Leftrightarrow \lim_{ \rho \to 0^{+} } f(x_0+\rho cos \theta, y_0+\rho sin \theta) = l
+    \]
+
+    uniformemente rispetto a $\theta$
+
+}
+
+
+\end{document}

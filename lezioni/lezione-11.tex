@@ -1,0 +1,324 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 11}
+
+\defn{}{Limite per coordinate polari: 
+
+    \[
+        \lim_{ \rho \to 0^{+} } f(x_0+\rho cos\theta,y_0+\rho sen \theta) = l
+    \]
+
+    ovvero che:
+
+    \[
+        \forall \varepsilon>0,\exists \sigma>0
+    \]
+
+    per ogni:
+
+    \[
+        \underbrace{0<\rho<\sigma}_{\rho \rightarrow 0^{+}},\forall \theta \in (0,2\pi)
+    \]
+
+    si ha:
+
+    \[
+        |f(x_0+\rho cos\theta, y_0+\rho sin \theta ) -l| < \varepsilon
+    \]
+}
+
+\begin{proof}
+       per far vedere che vale il limite è sufficiente mostrare che esiste una funzione $g$ che dipende solo da $\rho$ (non negativa) $g(\rho)\ge 0$ tale che:
+
+       \[
+        |f(x_0+\rho cos\theta, y_0+\rho sin \theta ) -l| \le  g(\rho)
+       \]
+
+       dove $g(\rho) \rightarrow 0$ per $\rho \rightarrow 0^{+}$
+
+       e poi faccio vedere che quindi (per il teorema dei due carabinieri):
+
+       \[
+        0\le |f(x_0+\rho cos\theta, y_0+\rho sin \theta ) -l| \le  g(\rho) = 0
+       \]
+
+\end{proof}
+
+
+Se accade che il limite dipende da $\theta$:
+
+\[
+       \lim_{ \rho \to 0^{+} }  f(x_0+\rho cos\theta, y_0+\rho sin \theta )
+\]
+
+allora il limite non esiste
+
+
+\textbf{Esempio già visto} 
+
+Avevamo già mostrato che il limite non esiste:
+
+\[
+\lim_{ (x,y) \to (0,0) } \frac{xy}{x^{2}+y^{2}}
+\]
+
+\begin{equation}
+    \begin{cases}
+           x=\rho cos \theta\\
+           y = \rho sin \theta
+    \end{cases}\,.
+\end{equation}
+
+il limite diventa:
+
+\[
+    \lim_{ \rho \to 0^{+} } \frac{\rho cos\theta \rho sin \theta}{\rho ^{2} cos^{2}\theta + \rho ^{2}sin ^{2}\theta}  = \lim_{ \rho \to 0^{+} } \frac{\rho^{2} cos\theta sin \theta}{\rho^{2}}  = \frac{1}{2} sin 2\theta
+\]
+
+
+\textbf{Altro esempio} 
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{xy}{\sqrt{x^{2}+y^{2}}}
+\]
+
+trasformiamo in coordinate polari:
+
+\[
+    \lim_{ \rho \to 0^{+} } \frac{\rho cos\theta \rho sin \theta}{\sqrt{\rho^{2}}} = \lim_{ \rho \to 0^{+} } \frac{\rho ^{2} cos\theta sin \theta}{\rho}=0
+\]
+
+infatti:
+
+\[
+    0 \le |\rho cos\theta sin \theta -0| = |\rho \frac{sin2\theta}{2} \le \frac{1}{2}\rho \rightarrow 0
+\]
+
+\textbf{Esercizio} 
+
+Calcolare se esistono i seguenti limiti e far vedere che non esistono:
+
+\textbf{1} 
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{arctan(x+y)^{2}}{x^{2}}  
+\]
+
+consideriamo la funzione lungo l'asse x quindi con $y=0$:
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{arctan(x+y)^{2}}{x^{2}}= \lim_{ x \to 0 }  \frac{arctan x^{2} }{x^{2}} \overset{\text{limite notevole}}{=} 1
+\]
+
+vedo per la bisettrice ($y=x$):
+
+\[
+     \lim_{ (x,y) \to (0,0) } \frac{arctan(x+y)^{2}}{x^{2}} =  \lim_{ (x,y) \to (0,0) } \frac{arctan(x+x)^{2}}{x^{2}} =  \lim_{ (x,y) \to (0,0) } \frac{arctan 4x^{2}}{x^{2}} = 4
+\]
+
+quindi il limite non esiste.
+
+\textbf{2} 
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{(x+y)^{2}}{x^{2}+y^{2}}
+\]
+
+vediamo cosa succede lungo l'asse x ($y=0$):
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{(x+y)^{2}}{x^{2}+y^{2}} = \lim_{ (x,y) \to (0,0) } \frac{x^{2}}{x^{2}} = 1
+\]
+
+per $y=x$:
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{(x+y)^{2}}{x^{2}+y^{2}} = \lim_{ (x,y) \to (0,0) } \frac{(x+x)^{2}}{x^{2}+x^{2}} = 2
+\]
+
+quindi il limite non esiste.
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{x^{2}-y^{2}}{x^{2}+y^{2}+5} = 0
+\]
+
+questo perché è continua.
+
+\textbf{4} 
+
+\[
+    \lim_{ (x,y) \to (0,0) } \frac{xlog(1+x^{3})}{y(x^{2}+y^{2})}
+\]
+
+
+passiamo in coordinate polari e dunque il limite diventa:
+
+\[
+    \lim_{ \rho \to 0^{+} } \frac{\rho cos \theta log(1+\rho^{3}cos^{3}\theta}{\rho sin\theta (\rho ^{2} cos^{2} \theta + \rho^{2}sin^{2}\theta}=\lim_{ \rho \to 0^{+} } \frac{\rho cos \theta log(1+\rho^{3}cos^{3}\theta)}{\rho^{3}sin\theta}  =
+\]
+
+\[
+    =\lim_{ \rho \to 0^{+} } \frac{\rho^{4}cos^{4}\theta}{\rho^{3}sin \theta}
+\]
+
+\[
+    = \lim_{ \rho \to 0^{+} } \rho M(\theta)
+\]
+
+dove $M(\theta)= \frac{cos^{4}\theta}{sin\theta}$ si nota che per ogni $\theta$ finito il limite è zero. Candidato limite è 0
+
+Per poter applicare il teorema del confronto (caramba) valutiamo dunque:
+
+\[
+    \underbrace{sup}_{\theta} | \rho M(\theta)| = sup |\rho \frac{cos^{4}\theta}{sin\theta}|
+\]
+
+se la nostra funzione è limitata per ogni $\theta$ allora:
+
+\[
+    |M(\theta)| \le \bar{e} 
+\]
+
+il sup cioè è finito sono a posto ma $M(\theta)$ non è limitata (per esempio $\theta= \pi$ è un asintoto verticale):
+
+\[
+    \lim_{ \theta \to \pi } \frac{cos^{4}\theta}{sin\theta}= +\infty
+\]
+
+allora per studiare il limite vediamo che succede muovendoci verso l'origine lungo curve che sono tangenti all'asse x.
+
+Consideriamo allora $y=x^{2}$:
+
+\[
+    f(x,x^{2})= \frac{xlog(1+x^{3})}{x^{2}(x^{2}+x^{4})} = \frac{xlog(1+x^{3})}{x^{4}(1+x^{2})}= \frac{log(1+x^{3})}{x^{3}(1+x^{2})} = 1
+\]
+ 
+
+\textbf{5} 
+
+Studiare, al variare di $\alpha >0 \in \mathbb{R}$, l'esistenza del seguente limite:
+
+\[
+    \lim_{ (x,y) \to (1,0) } \frac{x^{2}-2x+1+y^{2}}{(x^{2}-2x+1)^{\alpha}} = \lim_{ (x,y) \to (1,0) } \frac{(x-1)^{2}y}{((x-1)^{2}+y^{2})^{\alpha}} 
+\]
+
+passiamo in coordinate polari:
+
+\[
+    (x,y) \rightarrow (1,0)
+\]
+
+\begin{equation}
+    \begin{cases}
+           x = 1+\rho cos \theta\\
+           y = \rho sin\theta
+    \end{cases}\,.
+\end{equation}
+
+
+allora:
+
+\[
+    \lim_{ \rho \to 0^{+} } \frac{(1 + \rho cos\theta -1 )^{2} \rho sin\theta}{((1+\rho cos\theta -1)^{2}+\rho^{2}sin^{2}\theta)^{\alpha}} = \lim_{ \rho \to 0^{+} } \frac{\rho^{2}cos^{2}\theta\rho sin\theta}{(\rho^{2}cos^{2}\theta+\rho^{2}sin^{2}\theta)^{\alpha}} = \lim_{ \rho \to 0^{+} } \frac{\rho^{3}cos^{2}\theta sin \theta}{\rho ^{2 \alpha}} =
+\]
+
+
+\[
+    = \lim_{ \rho \to 0^{+} } \rho^{3-2 \alpha} cos^{2}\theta sin \theta
+\]
+
+poiché $|cos^{2}\theta sin\theta|\le 1$ se dunque $3-2 \alpha >0$ si ha:
+
+\[
+    0 \le |\rho^{3-2 \alpha}cos^{2}\theta sin \theta | \le \rho^{3-2 \alpha}
+\]
+
+
+dunque se:
+
+\[
+    0 < \alpha < \frac{3}{2} \text{ il limite vale 0}
+\]
+
+quindi dobbiamo studiare questa condizione ($\alpha=\frac{3}{2}$):
+
+\[
+    \lim_{ \rho \to 0^{+} } cos^{2}\theta sin \theta = cos^{2}\theta sin \theta
+\]
+
+dipende da $\theta$ quindi il limite non esiste. Stessa conclusione per $\alpha>\frac{3}{2}$ il limite viene $\pm \infty$ a seconda della scelta di $\theta$
+
+\textbf{6 - Studio di continuità}
+
+Studiamo la continuità della funzione nel sottoinsieme di definizione:
+
+\[
+f(x,y)=
+    \begin{cases}
+        2x+3y+10 & \text{se $(x-1)^{2}+(y-3)^{2}\ge 4$} \\
+        x+4y+10 & \text{se $(x-1)^{2}+(y-3)^{2}<4$}
+    \end{cases}
+\]
+
+devo vedere cosa succede al confine (in 4) quindi:
+
+\[
+    \lim_{ P \to P_0 } f(P)
+\]
+
+con $P_0 \in $ circonferenza, io voglio:
+
+\begin{equation}
+    \begin{cases}
+    2x+3y+10 = x +4y +10\\
+    \underbrace{(x-1)^{2} + (y-3)^{2}=4}_\text{dentro la circonferenza}    \end{cases}\,.
+\end{equation}
+
+quindi risolviamo:
+
+\begin{equation}
+    \begin{cases}
+           x-y=0\\
+           (x-1)^{2}+(y-3)^{2} = 4
+    \end{cases}\,.
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+           x=y\\
+           y^{2}-2y+1+y^{2}-6y+9=4
+    \end{cases}\,.
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+           x=y\\
+           2y^{2}-8y + 6 = 0
+    \end{cases}\,.
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+           x=y\\
+           y^{2}+4y+3=0
+    \end{cases}\,.
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+           x=y\\
+           (y-3)(y-1) = 0
+    \end{cases}\,.
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+           x=1,x=3\\
+           y=1,y=3
+    \end{cases}\,.
+\end{equation}
+
+
+\end{document}

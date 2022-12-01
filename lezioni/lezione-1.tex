@@ -1,0 +1,211 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 1}
+
+\subsection{Equazioni differenziali}
+
+Le equazioni differenziali sono equazioni in cui l'incognita è un equazione insieme a qualche sua derivata.
+
+\subsubsection{Equazioni differenziali ordinarie}
+
+Noi vedremo quelle del primo ordine lineari e di secondo ordine con coefficienti costanti
+
+Problema di Cauchy: problema con condizioni iniziali.
+
+
+\defn{}{Una equazione di ordine n è una equazione del tipo:
+\[
+    F(x,y(x),y'(x),\ldots,y^{(n-1)}(x),y^{(n)}(x))=0
+\]
+\[
+    x \in I \subseteq \mathbb{R}
+\]
+dove l'incognita è la qualunque y(x). F è funzione di (n+2) variabili $x,y(x),y'(x)\ldots.$
+}
+
+
+
+L'\textbf{ordine} è dato dal massimo ordine di derivazione che compare.
+
+
+Per esempio:
+\[
+    y'''+2y''+5y = e^x
+\]
+è di ordine 3
+
+\defn{Soluzione (curva) integrale}{La soluzione di una EDO di ordine n sull'intervallo I \[
+        (*) F(x,y(x),y'(x),\ldots) = 0
+\]
+\[
+    x \in I \subseteq \mathbb{R}
+\]
+
+$\varphi(x)$ che sia definita (almeno) in I e ivi derivabile fino all'ordine n per cui valga (*), ovvero:
+\[
+    F(x,\varphi(x),\varphi ' (x), \ldots ) = 0 
+\]
+
+$\forall x \in I$
+
+Chiaramente cambia a seconda dell'intervallo
+}
+
+\defn{Integrale Generale}{Si chiama integrale \textbf{generale} di (*) in I l'insieme di tutte le soluzioni di (*) in I}
+
+
+È possibile definire un'espressione più esplicita
+
+\defn{Forma normale}{Una Equazione Differenziale Ordinaria (EDO) di ordine n si dice in forma normale se è in forma
+
+    \[
+        y^{(n)} = f(x,y(x),y'(x), \ldots ,y^{(n-1)}), x \in I
+    \]
+    
+    Esempio:
+    \[
+        y'''=-5y'+sinx
+    \]
+    Quella sopra è un EDO di III ordine normale.
+}
+
+\defn{EDO di ordine n lineare}{Una EDO di ordine n si dice lineare se è nella forma
+    \[
+        a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}+ \ldots + a_2(x)y''(x)+a_1(x)y'(x)+a_0y(x)=f(x),x \in I
+    \]
+
+    Dove le funzioni \[
+        a_0(x),a_1(x),a_2(x), \ldots,a_n(x),f(x)
+    \]
+
+    sono assegnate (continue) in I
+
+    Esempio:
+    \[
+        xy''+5y = sin x
+    \]
+
+}
+
+
+Quando $f(x)=0$ allora l'equazione si dice l'\textbf{omogenea associata} 
+
+
+Nel nostro caso le equazioni di secondo ordine lineari saranno a \textbf{coefficienti costanti}
+
+
+Vediamo come si risolve il problema della determinazione delle soluzioni di EDO lineari
+
+
+\subsubsection{I ordine (n=1)}
+
+\[
+    F(x,y(x),y'(x))=0
+\]
+
+La considero in forma normale:
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x), x \in [a,b]
+\]
+
+dove le funzioni $a(x)$ e $f(x)$ sono continue in $[a,b]$
+
+
+Se $f(x)=0$ si ottiene omogenea associata:
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Come si determina l'integrale generale di (1)?
+
+Il teorema che enunciamo vale per tutte le EDO lineari di ordine n
+
+\teorema{}{L'integrale generale di (1) in $[a,b]$ è dato dalla somma dell'integrale generale dell'omogenea associata (2)
+con un integrale particolare noto di (1)
+\[
+\int_{{}}^{{}} {gen} (1) = \int_{{}}^{{}} {gen(2)}  + \int_{{}}^{{}} {particolare} (1)
+\]
+}
+
+\begin{proof}
+    
+
+
+
+Sia $y(x)$ una soluzione qualsiasi di (1) ($y(x)$ appartiene all'integrale generale di (1))
+e sia $\bar y(x)$ una soluzione particolare (nota) di (1). Voglio far vedere è che la loro differenza è una soluzione qualsiasi di (2)
+
+Dunque per ipotesi n ha che:
+\[
+    y'(x)+a(x)y(x) = f(x), \forall x \in [a,b]
+\]
+
+\[
+    \bar y'(x) + a(x) \bar y(x) = f(x)
+\]
+
+Entrambe soddisfano la (1)
+
+Sottraggo membro a membro le due:
+
+\[
+    y'(x)-\bar y'(x) + a(x)y(x) - a(x) \bar y(x) = f(x) - f(x)
+\]
+
+\[
+    y'(x)-\bar y'(x) + a(x)[y(x) - \bar y(x)]=0
+\]
+
+Si può scrivere anche (le derivate raccolte):
+\[
+    [y(x)-\bar y(x)]' + a(x)[y(x) - \bar y(x)]=0
+\]
+
+E dunque  la funzione $y(x) - \bar y(x) = z(x)$ è soluzione di (2)
+Quindi:
+\[
+    y(x) = \bar y(x) + z(x)
+\]
+
+Viceversa se $z(x)$ è una qualsiasi soluzione di (2) e $\bar y(x)$ è una soluzione particolare di (1) 
+voglio mostrare che la loro somma è soluzione di (1)
+
+Pongo:
+\[
+    y(x) = z(x) + \bar y(x)
+\]
+
+Devo mostrare che $y(x)$ verifica (1)
+
+sapendo che:
+\[
+    z'(x) + a(x)z(x) = 0
+\]
+
+\[
+    \bar y'(x) + a(x) \bar y(x) = f(x)
+\]
+
+\[
+    y'(x) = (z(x) + \bar y(x) )' = z'(x) + \bar y'(x) =
+    -a(x)z(x)-a(x)\bar y(x) + f(x) = -a(x) [z(x) + \bar y(x)] +f(x)
+\]
+
+E quindi ho dimostrato che:
+\[
+    y'(x) = -a(x)y(x) + f(x)
+\]
+
+\[
+    y'(x) +  a(x)y(x) = f(x)
+\]
+
+\[
+    y(x) = z(x) + \bar y(x)
+\]
+
+\end{proof}
+
+\end{document}

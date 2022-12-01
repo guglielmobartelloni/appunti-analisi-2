@@ -35,6 +35,7 @@
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 
+
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage[framemethod=TikZ]{mdframed}
@@ -46,6 +47,8 @@
     linkcolor=black,
     urlcolor=black
 }
+
+\usepackage{subfiles}
 
 \geometry{margin=1in, headsep=0.25in}
 \setcounter{secnumdepth}{0}
@@ -224,7 +227,7 @@
 
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
-    \import{./figures/}{#2.pdf_tex}
+    \import{\subfix{./figures/}}{#2.pdf_tex}
 }
 
 \pdfsuppresswarningpagegroup=1

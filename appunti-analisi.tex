@@ -4937,7 +4937,7 @@ Vediamo effettivamente la derivata direzionale della $f$ secondo questa direzion
     Quantita' finita perché:
 
     \[
-        \lim_{ h \to 0 } \frac{|\gamma(t+h) - \gamma(t)|}{|h|} = \lim_{ h \to 0 } ( \sum^{n}_{i=1} (\frac{\gamma_i(t+h) - \gamma_i(t)}{h})^{2})^{ \frac{1}{2}} = ( \sum^{n}_{i=1} ( \gamma_i'(t))^{2})^{ \frac{1}{2}} = \underbrace{| \gamma'(t)|}_\text{lunghezza di un vettore} >0
+        \lim_{ h \to 0 } \frac{|\gamma(t+h) - \gamma(t)|}{|h|} = \lim_{ h \to 0 } ( \sum^{n}_{i=1} (\frac{\gamma_i(t+h) - \gamma_i(t)}{h})^{2})^{ \frac{1}{2}} = \sqrt{\sum^{n}_{i=1} ( \gamma_i'(t))^{2}} = \underbrace{| \gamma'(t)|}_\text{lunghezza di un vettore} >0
     \]
 
        \end{enumerate}
@@ -5001,6 +5001,65 @@ quindi:
     \]
 
 }
+
+\newpage
+
+\subsection{Derivate successive}
+
+Data $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto ed $f$ derivabile su $A$, risultano ben definite le funzioni $\frac{\partial f}{\partial x_i} \forall i=1,\ldots,n$ $(\frac{\partial f}{\partial x_i}: A \rightarrow \mathbb{R}$, vogliamo vedere se è pero' ulteriormente derivabile.
+
+\defn{Derivate seconde}{ Se $\exists$ sono della forma:
+
+    \[
+        \frac{\partial^{2} f}{\partial x_i \partial x_j} 
+    \]
+
+    e si ottengono al variare di $i,j$ da $1$ ad $n$.
+}
+
+\defn{Matrice di Hasse}{Attraverso le derivate seconde si ottiene una matrice $n\times n$ che ha come elementi tutte le derivate seconde. Questa è chiamata matrice di Hasse, e si indica come:
+
+\[
+    Hf= \begin{bmatrix}
+        \frac{\partial^{2} f}{\partial x_1 \partial x_1} & \frac{\partial^{2} f}{\partial x_1 \partial x_2} & \ldots & \frac{\partial^{2} f}{\partial x_1 \partial x_n}\\
+        \frac{\partial^{2} f}{\partial x_2 \partial x_1}& \ldots & \ldots & \ldots \\
+        \ldots & \ldots & \ldots & \ldots \\
+        \frac{\partial^{2} f}{\partial x_n \partial x_1}& \ldots & \ldots & \frac{\partial^{2} f}{\partial x_n \partial x_n} 
+    \end{bmatrix}
+\]
+
+}
+
+\textbf{Nota:} se la matrice di Hasse è ben definita, e quindi esistono tutte le derivate seconde allora $f$ è derivabile 2 volte in $x_0$.
+
+\defn{Derivate Pure}{
+    Sono quelle che derivano per la stessa variabile:
+
+    \[
+        \frac{\partial^{2} f}{\partial x_i \partial x_i} = \frac{\partial^{2} f}{(\partial x_i)^{2}}
+    \]
+
+}
+
+\defn{Derivate Miste}{ 
+
+    \[
+        \frac{\partial^{2} f}{\partial x_i \partial x_j}
+    \]
+}
+
+\newpage
+
+\textbf{Esempio matrice di Hesse} 
+Caso $n=2$:
+
+\[
+    Hf(x,y) = \begin{bmatrix}
+    \frac{\partial^{2} f}{\partial x^{2}}(x,y) & \frac{\partial^{2} f}{\partial x \partial y}(x,y)\\
+    \frac{\partial^{2} f}{\partial y \partial x}(x,y) & \frac{\partial^{2} f}{\partial y^{2}}(x,y)  
+    \end{bmatrix}
+\]
+
 
 
 \end{document}

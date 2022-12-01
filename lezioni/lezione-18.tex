@@ -1,0 +1,173 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 18}
+
+\defn{}{Sia $A \subseteq \mathbb{R}^{n}$ con $A$ aperto, $f:A \rightarrow R$ una funzione e sia $x_0 \in A$. Si dice che $f$ è differenziabile in $x_0$ se $\exists L:\mathbb{R}^{n}\rightarrow \mathbb{R}$ funzione lineare t.c.:
+
+    \[
+        \lim_{ h \to 0 } \frac{f(x_0+h) - f(x_0) -L(h)}{|h|} = 0
+    \]
+
+    dove $L(h) = \langle \nabla f(x_0), h \rangle$
+}
+
+\proposizione{}{Se $f: A \subseteq \mathbb{R}^{n}\rightarrow \mathbb{R}$, $A$ aperto, $x_0 \in A$.
+Se $f$ è differenziabile in $x_0$
+
+    \begin{itemize}
+        \item $f$ è continua in $x_0$
+        \item $f$ ha tutte le derivate direzionali in $x_0$ (secondo tutte le direzioni $\bar{v} $) e si ha $\frac{\partial f}{\partial v}(x_0) = D_{ \bar{v} } f(x_0) = L(\overrightarrow{v} ), \forall v \in \mathbb{R}^{n} $
+
+            In particolare, $\overrightarrow{v} \mapsto \frac{\partial f}{\partial v}(x_0)$ è un'applicazione lineare e il differenziale è unico (se esiste).
+    \end{itemize}
+}
+
+Vogliamo ora interpretare $\frac{\partial f}{\partial h}(x_0)= \langle \nabla f(x_0), h \rangle$:
+
+\[
+    \nabla f(x_0) = (\frac{\partial f}{\partial x}(x_0),\ldots, \frac{\partial f}{\partial x_n}(x_0))^{T}
+\]
+
+\[
+    |\frac{\partial f}{\partial h}(x_0)| = |\langle \nabla f(x_0),h \rangle | \overset{\text{disuguaglianza di Cauchy-Swartz}}{\le } \underbrace{| \nabla f(x_0)|}_\text{lungheza in $\mathbb{R}^{n}$} \underbrace{|\bar{h} |}_\text{lunghezza in $\mathbb{R}^{n}$}
+\]
+
+Se $|h| = 1$ è un vettore di norma 1 (direzione) allora:
+
+\[
+    |\frac{\partial f}{\partial h}(x_0) | \le \underbrace{|\nabla f(x_0) |}_\text{valore massimo che può assumere la derivata direzionale} 
+\]
+
+Si ha l'uguaglianza se $\nabla f(x_0) = 0$ oppure se $\bar{h} $ è parallela al vettore $\nabla f(x_0)$ (cioè $h = \lambda \nabla f(x_0), \lambda \ge 0$)
+
+Quindi ricapitolando:
+
+\begin{enumerate}
+    \item Se $\nabla f(x_0) = 0$ allora \textbf{tutte} le derivate direzionali della $f$ in $x_0$ sono zero
+    \item Se $\nabla f(x_0) \neq  0$ allora al variare di $\bar{h} $ nell'insieme di vettori di $\mathbb{R}^{n}$ di modulo (lunghezza) 1, si ha che la $\frac{\partial f}{\partial h}(x_0)$ è \textbf{massima} (raggiunge il suo massimo) quando:
+
+        \[
+            \bar{h} = \frac{\nabla f(x_0)}{\underbrace{|\nabla f(x_0) |}_\text{lunghezza}}
+        \]
+\end{enumerate}
+
+
+\teorema{Regola della catena}{
+
+consideriamo una curva continua $\gamma : [-1,1] \subset \mathbb{R} \rightarrow A\subseteq \mathbb{R}^{n}\ curva$ e supponiamo $\gamma(t)$ vettore (di $n$ componenti) sia derivabile, cioè:
+
+\[
+    \gamma(t) = (\gamma_1(t),\ldots,\gamma_n(t) )
+\]
+
+esiste:
+
+\[
+    \gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t))
+\]
+
+e supponiamo che $\gamma(0) = x_0 \in A$ e $\gamma'(0) = \bar{v} \in \mathbb{R}^{n}$, 
+
+
+allora se $f: A \rightarrow \mathbb{R}$ è differenziabile in $x_0$, la funzione composta $F \rightarrow f(\gamma(t))$ da $[-1,1] \rightarrow \mathbb{R}$:
+
+\[
+    F= f \circ g : [-1,1] \rightarrow \mathbb{R}
+\]
+
+\[
+    F(t) = (f \circ g) (t) = f(\gamma(t))
+\]
+
+è differenziabile in $0$:
+
+\[
+    F'(0) = \frac{\partial F}{\partial t} (0) = \frac{\partial (f \circ g)}{\partial t}(0) = \langle \nabla f(x_0), \underbrace{\gamma'(0)}_\text{direzione $\bar{v} $} \rangle
+\]
+
+Questo si chiama \textbf{teorema delle derivate delle funzioni composte} o regola della catena.
+
+}
+
+Dunque la crescita di $f$ in $x_0$ lungo una qualsiasi curva $\gamma$ regolare ($\gamma \in \mathbb{C}^{(1)}$) uscente da $x_0$ con velocità $\gamma'(0) = v$ dipende dalla curva solamente attraverso il vettore (tangente) velocità $\bar{v} $.
+
+
+Ha dunque senso interpretare la derivata direzionale:
+
+\[
+    \frac{\partial f}{\partial \bar{v} } (x_0) = D_{\bar{v}}f(x_0)
+\]
+
+come la pendenza di $f$ in $x_0$ nella direzione $\bar{v} $ con $|v|=1$
+
+\proposizione{}{Se $\nabla f(x_0) \neq 0$, allora il vettore $\nabla f(x_0) \in \mathbb{R}^{n}$ punta nel verso di massima pendenza.}
+
+\begin{proof}
+       Dimostrato dalle considerazioni fatte fino a ora.    
+\end{proof}
+
+\textbf{Proprietà} 
+
+Se non è nulla, la lunghezza del gradiente di una funzione differenziabile in un punto, indica la direzione e il verso di \textbf{massima pendenza}  del grafico di $f$ nel punto. E dunque se considero la derivata direzionale di $f$ (nel punto) nella direzione del vettore gradiente trovo il valore della massima pendenza, che è appunto la lunghezza del vettore gradiente $|\nabla f(x_0)|$:
+
+\[
+    v_{max} 
+\]
+
+è la direzione del $\nabla f(x_0)$
+
+
+\textbf{Esempio} 
+
+Cerchiamo la \textbf{direzione di massima crescita}  per la funzione:
+
+\[
+    f(x,y) = xe^{y}
+\]
+
+nel punto $P=(2,0)$
+
+Per quando detto, la direzione giusta è quella che risulta parallela al vettore gradiente:
+
+\[
+    \nabla f(P) = \nabla f(2,0) \in \mathbb{R}^{2}
+\]
+
+\[
+    \frac{\partial f}{\partial x}(x,y)  = e ^{y}
+\]
+
+\[
+    \frac{\partial f}{\partial y}(x,y) = xe^{y}
+\]
+
+quindi:
+
+\[
+    \nabla(P) = \nabla f(2,0) = (1,2)
+\]
+
+
+Calcoliamo la norma (lunghezza):
+\[
+    |\nabla f(P) | = \sqrt{1^{2}+2^{2}} = \sqrt{5}
+\]
+
+quindi:
+
+\[
+    \bar{v}_{max} = \frac{(1,2)}{\sqrt{5}} = (\frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}})
+\]
+
+e quindi abbiamo trovato la direzione di massima crescita.
+
+
+Vediamo effettivamente la derivata direzionale della $f$ secondo questa direzione (la $\bar{v}$) (secondo la direzione del versore $\bar{v} =( \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}})$ ha il valore massimo possibile che è la lunghezza di $\nabla f(P)$):
+
+\[
+    D_{\bar{v} } f(P) = D_{\bar{v} } f(2,0) = \langle \nabla f(2,0), \bar{v}  \rangle = (1,2) \cdot (\frac{1}{\sqrt{5}}\ \frac{2}{\sqrt{5}})^{T} = \frac{1}{\sqrt{5}}+ \frac{4}{\sqrt{5}} = \frac{5}{\sqrt{5}} \overset{\text{razionalizzo}}{=} \sqrt{5}
+\]
+
+\end{document}

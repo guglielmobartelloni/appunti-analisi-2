@@ -1,0 +1,228 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 2}
+\subsection{Facciamo vedere che il teorema precedente valeva anche per $n>1$}
+
+Supponiamo che $u$ e $v$ siamo due soluzioni di (1), cioè che:
+
+$Lu=f$ e $Lv=f$ su $I$
+
+La differenza di queste diventano soluzione su $I=[a,b]$ dell'omogenea associata
+
+Usando la proprietà della linearità:
+
+\[
+    L(\lambda u+\mu v) = \lambda L u + \mu L v
+\]
+
+\[
+    L(u-v) = Lu-Lv = f- f=0
+\]
+
+Se indichiamo con $V_0$ l'insieme di tutte le soluzioni dell'equazione omogenea associata ($Lw=0$ su $I=[a,b]$ e $V_0$ è l'insieme delle $w \in \mathbb{C}^n(I)$) e con $\bar u(t)$ una soluzione nota di (1)
+
+\[
+    u(x) = \bar u(x) +w(x)
+\]
+
+L'uguaglianza sopra, al variare di $w(x)$ in $V_0$ ci dà tutte le soluzioni del problema di partenza. 
+
+(Il problema quindi, diventa solo di studiare il problema omogeneo)
+
+\subsection{Torniamo al I ordine}
+
+Adesso ritorniamo al problema di I ordine (in forma normale):
+
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x)
+\]
+
+dove $a()$ e $f()$ sono continue su $[a,b]$
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Secondo il teorema della prima lezione:
+
+\[
+    y(x)=z(x)+\bar y(x)
+\]
+
+Come si determina l'insieme di tutte le soluzioni (integrale generale) di (2), cioè:
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0,x \in [a,b]
+\]
+
+Sia $A(x)$ una \textbf{primitiva} di $a(x)$:
+
+\[
+    A(x) = \int_{{}}^{{}} {a(x)} \: d{x} {}
+\]
+
+Moltiplichiamo i due membri della (2) per $e^{A(x)}$:
+
+\[
+    e^{A(x)} y'(x) + e ^{A(x)}a(x) y(x)=0, x \in [a,b]
+\]
+
+La posso scrivere anche (la derivata di $e ^{A(x)}y(x)$):
+
+\[
+    (e ^{A(x)} y(x))' = e ^{A(x)}a(x)y(x) + e ^{A(x)}y'(x)
+\]
+
+quindi (sempre chiaramente nell'intervallo $[a,b]$):
+
+\[
+    (e ^{A(x)}y(x))'=0
+\]
+
+Questo mi dice che:
+
+\[
+    e ^{A(x)}y(x) = costante=c \in \mathbb{R}
+\]
+
+porto dall'altra parte:
+
+\[
+    y(x) = c e ^{-A(x)}
+\]
+
+espandendo $A(x)$:
+
+\[
+    y(x) = c e ^{\int_{{}}^{{}} {a(x)} \: d{x} {}}
+\]
+
+posso considerare le soluzioni come:
+
+\[
+    y(x) = c z_0
+\]
+
+dove $z_0$ è una soluzione particolare di (2).
+
+Infatti $e ^{-A(x)}$ è soluzione di (2)
+
+\begin{proof}
+    \[
+    e ^{-A(x)} = -a(x) e ^{-A(x)}
+\]
+
+ovvero
+
+\[
+    (e ^{-A(x)})'+a(x) e ^{-A(x)}=0
+\]
+    
+\end{proof}
+
+
+\subsubsection{Determinazione dell'integrale particolare}
+
+Sappiamo:
+
+\[
+    (1)\ y'(x)+a(x)y(x)=f(x)
+\]
+
+\[
+    (2)\ y'(x)+a(x)y(x)=0
+\]
+
+Cerco l'integrale particolare a \textbf{occhio} oppure uso il \textbf{metodo della variazione della costante}
+
+\paragraph{Metodo della variazione della costante}
+
+Cerco questa $c(x)$ in questa forma:
+
+\[
+    \bar y(x) = c(x) e ^{-A(x)}
+\]
+
+Ovviamente la cerco dopo che so che $\bar y(x)$ è soluzione del problema.
+
+\begin{proof}
+    Poiché $\bar y(x)$ è soluzione di (1) si ha che $\bar y'(x)+a(x) \bar y(x)=f(x)$ da cui sostituendo $\bar y(x) = c(x) e ^{-A(x)}$:
+
+    \[
+        (c(x) e ^{-A(x)})'+ a(x) c(x) e ^{-A(x)} = f(x)
+    \]
+    
+    Deriviamo:
+
+    \[
+        c'(x) e ^{-A(x)} - c(x) a(x) e ^{-A(x)} + a(x) c(x) e ^{-A(x)}= f(x)
+    \]
+    
+    semplifico
+
+    \[
+        c'(x) e ^{-A(x)} = f(x)
+    \]
+
+    \[
+        c'(x) = f(x) e ^{A(x)} \rightarrow c(x) = \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{} {}
+    \]
+
+    e dunque:
+
+    \[
+        \bar y(x) = e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+    \]
+
+    Cioè l'integrale particolare
+\end{proof}
+
+\subsection{Formula integrale generale}
+
+Se metto tutto insieme \textbf{l'integrale generale} diventa:
+
+\[
+    y(x) = c e ^{-A(x)} + e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+\]
+
+\subsubsection{Osservazioni sulla formula}
+
+$A(x)$ è \textbf{una} primitiva di $a(x)$ scelta una volta per tutte.
+
+\textbf{Non} occorre mettere una costante arbitraria (ovvero considerare come $A(x) + K,K \in \mathbb{R}$) poiché l'integrale generale non cambia
+
+\textbf{Non} serve neanche nell'integrale perché verrebbe buttato dentro $c$ dell'integrale generale
+
+
+\subsubsection{Esempi}
+
+\[
+    y'(x) = 5y(x) + e ^{x}
+\]
+
+in questo caso $a(x) = -5$
+
+\[
+    A(x) = - \int_{{}}^{{}} {5} \: d{x} {}=-5x
+\]
+
+Quindi: 
+
+\[
+    e ^{-A(x)}=e ^{5x}
+\]
+
+\[
+    y(x) = c e ^{5x} + e ^{5x} \int_{{}}^{{}} {e^x e ^{-5x}} \: d{x} {} = c e ^{5x} + e ^{5x} \int_{{}}^{{}} {e ^{-4x}} \: d{} {} = c e ^{5x} + e ^{5x} (\frac{1}{4} e ^{-4x}) = c e ^{5x} - \frac{1}{4} e ^{x}
+\]
+
+Esercizio per casa:
+
+\[
+    u' + \frac{u}{t} = e ^{t}
+\]
+
+
+\end{document}

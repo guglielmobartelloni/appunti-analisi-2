@@ -1,0 +1,177 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 3}
+
+Solitamente si suppongono delle condizioni iniziali nel risolvere le equazioni differenziali (problema di Cauchy).
+
+\begin{equation}
+    \begin{cases}
+      y'(x)+a(x)y(x)=f(x)\\
+      y(x_0)=y_0
+    \end{cases}\,.
+\end{equation}
+
+Praticamente gli integrali della formula generale diventano definiti tra $x_0$ e $x$.
+
+Quindi:
+
+\[
+    y(x) = ce ^{-A(x)}+ e ^{-A(x)} \int_{{}}^{{}} {e ^{A(x)}f(x)} \: d{x} {} = c e ^{-\int_{{x_0}}^{{x}} {a(t)} \: d{t} {}}+e ^{- \int_{{x_0}}^{{x}} {a(t)} \: d{t} {}}\int_{{x_0}}^{{x}} {e ^{\int_{{x_0}}^{{s}} {a(t)} \: d{t} {}}f(s)} \: d{s} {}\\
+\]
+
+\[
+    y(x_0)=y_0=c
+\]
+
+
+Voglio trovare la soluzione generale in questo caso, parto dall'omogenea:
+
+\[
+    y'+x(x)y(x) = 0
+\]
+
+\[
+    e ^{\int_{{x_0}}^{{x}} {a(x)} \: d{t} {}} = e ^{A(x)}
+\]
+
+
+\subsection{Il problema di Cauchy}
+
+Quindi introduciamo il problema di Cauchy:
+
+\begin{equation}
+    \begin{cases}
+      y'+a(x)y = f(x)\\
+      y(x_0) = y_0
+    \end{cases}\,.
+\end{equation}
+
+dove $x \in I = [a,b]$ e $x_0 \in I$
+
+con le ipotesi fatte ($a(x)$ e $f(x)$ continue in I) ha una e una sola soluzione (SOLUZIONE UNICA)
+
+con l'espressione esplicita determinata.
+
+\textbf{Esempio 1}
+
+Determinare la soluzione del problema di Cauchy:
+
+\begin{equation}
+    \begin{cases}
+      y'(x)=5y(x) + e ^{x}\\
+      y(0)=0
+    \end{cases}\,.
+\end{equation}
+
+\[
+    A(x)=\int_{{0}}^{{x}} {a(t)} \: d{t} {}= - \int_{{0}}^{{x}} {5} \: d{t} {}= -5x
+\]
+
+\[
+    y(x)=0e ^{5x} + e ^{5x}\int_{{0}}^{{x}} {e ^{-5t}e ^{t}} \: d{t} {}=
+\]
+
+\[
+    = e ^{5x} \Eval{[ -\frac{1}{4} e ^{-4t}]}{0}{x} = e ^{5x}(-\frac{1}{4} e ^{-4x}+\frac{1}{4})= - \frac{1}{4} e ^{x}+ \frac{1}{4} e ^{5x}
+\]
+
+\textbf{Esempio 2}
+
+Determinare l'integrale generale della EDO:
+
+\[
+    y'+\frac{1}{\sqrt{x}} y=1
+\]
+
+e trovare le eventuali soluzioni tali che:
+
+\[
+    \lim_{x \to \infty} y(x) = +\infty
+\]
+
+Soluzione: 
+
+l'equazione è definita per ogni $x>0$
+
+\[
+    a(x) = \frac{1}{\sqrt{x}} 
+\]
+
+\[
+    A(x) = \int_{{}}^{{}} {\frac{1}{\sqrt{x}} } \: d{x} {}
+\]
+
+
+L'integrale generale:
+
+\[
+    y(x) = c e ^{-\int_{{}}^{{}} {\frac{1}{\sqrt{x}} } \: d{x} {}}+ e ^{-\int_{{}}^{{}} {\frac{1}{\sqrt{x}} } \: d{x} {}}( \int_{{}}^{{}} {e ^{\int_{{\frac{1}{\sqrt{x}} }}^{{}} {} \: d{x} {+1}}} \: d{x} {})=
+\]
+
+\[
+    =e ^{2 \sqrt{x}} (e+ \int_{{}}^{{}} {e ^{2\sqrt{x}}} \: d{x} {})
+\]
+
+Risolvo l'integrale pongo $t = 2 \sqrt{x}$ quindi $ dt = \frac{1}{\sqrt{x}}dx \rightarrow dx = \frac{t}{2} dt $:
+
+\[
+    \int_{{}}^{{}} {e ^{2 \sqrt{x}}} \: d{x} {}= \int_{{}}^{{}} {e ^{t}\frac{t}{2} } \: d{t} {} = e ^{x}\frac{t}{2} - \int_{{}}^{{}} {e ^{t}\frac{1}{2} } \: d{t} {}=
+\]
+
+\[
+    = e ^{t} \frac{t}{2} - \frac{1}{2 e ^{t}} 
+    \overset{\text{risostituisco}}{=} e ^{2 \sqrt{x}} \frac{2 \sqrt{x}}{2} - \frac{1}{2} e ^{2 \sqrt{x}}
+\]
+
+Ora riscrivo l'integrale generale:
+
+\[
+    y(x) = e ^{-2 \sqrt{x}}[ c + e ^{2 \sqrt{x}}(\sqrt{x}- \frac{1}{2} )]= c e ^{-2 \sqrt{x}}+ \sqrt{x} - \frac{1}{2} 
+\]
+
+Adesso soddisfo la richiesta (quali sono le soluzioni che vanno all'infinito)
+
+\[
+    \lim_{x \to \infty} c ^{-2 \sqrt{x}} + \sqrt{x} - \frac{1}{2} = +\infty
+\]
+
+questo vale per $\forall c \in \mathbb{R}$
+
+
+\textbf{Esempio 3}
+
+\begin{equation}
+    \begin{cases}
+      y' + \frac{2y}{x} = \frac{1}{2} \\
+      y(-1)=2
+    \end{cases}\,.
+\end{equation}
+
+Considero l'intervallo dove sta il $x_0=-1$ quindi $(-\infty,0)$
+
+\[
+    A(x) = \int_{{-1}}^{{x}} {\frac{1}{t} } \: d{t} {} = \Eval{[2 log|t|]}{-1}{x} = 2 log|x| - 2 log|-1| = 2 log|x| = 
+\]
+
+per via dell'intervallo il valore assoluto viene preso col meno:
+
+\[
+    =2 log(-x)  
+\]
+
+quindi l'integrale generale:
+
+\[
+    y(x) = 2 e ^{-2log(-x)}+ e^{-2log(-x)}(\int_{{-1}}^{{x}} {e ^{2log(-t)}\frac{1}{t ^{2}} } \: d{t} {})=
+\]
+
+uso la proprietà dei logaritmi:
+
+\[
+    = 2 e ^{log \frac{1}{x ^{2}} }+ e ^{log \frac{1}{x ^{2}} }\int_{{-1}}^{{x}} {e ^{log t ^{2}}} \: d{t} {}= \frac{2}{x ^{2}} + \frac{1}{x ^{2}} \int_{{-1}}^{{x}} {1} \: d{t} {} = \frac{2}{x ^{2}} + \frac{1}{x ^{2}} \Eval{[t]}{-1}{x} 
+     = \frac{2 }{x ^{2}} + \frac{1}{x ^{2}} (x+1)
+\]
+
+\end{document}

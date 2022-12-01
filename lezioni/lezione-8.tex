@@ -1,0 +1,224 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 8}
+
+La distanza euclidea verifica le proprietà (le stesse del valore assoluto):
+
+\begin{enumerate}
+    \item  $d(x,y) \ge 0, d(x,y) \in \mathbb{R}$
+    \item  $d(x,y) = 0 \Leftrightarrow x=y$
+    \item  $d(x,y) = d(y,x)$ simmetria
+    \item  $d(x,y) \le d(x,z) + d(z,y), \forall x,y,z \in \mathbb{R}^{n} $ disuguaglianza triangolare
+\end{enumerate}
+
+\defn{Spazio metrico}{ Uno spazio metrico è un insieme X dotato di un'applicazione definita: $X \times X \rightarrow \mathbb{R}$ che verifica la proprietà sopra:
+
+    \[
+        (\mathbb{R}^{n},\underbrace{d}_\text{distanza euclidea}) \text{ spazio metrico}
+    \]
+
+    esistono altre distanze che ci definiscono relative metriche equivalenti
+
+}
+
+
+\textbf{Esempio} 
+
+\[
+    \mathbb{R}^{2},\forall x,y \in \mathbb{R}^{2}
+\]
+
+\[
+    x=(x_1,x_2),y=(y_1,y_2)
+\]
+
+\[
+    d(x,y) = \sqrt{(x_1-y_1)^{2}+(x_2-y_2)^{2}}
+\]
+
+la distanza si può scrivere anche:
+   
+\[
+    d_1(x,y) = |x_2-x_1| + |y_2-y_1| \text{ dove abbiamo usato i valori assoluti}
+\]
+
+\subsection{Successioni convergenti in $\mathbb{R}^{n}$}
+
+\defn{Successione}{ Una successione è un elenco ordinato di numeri $\{x_n\} \subset \mathbb{R}^{n}$ (gli elementi della successione sono elementi di $\mathbb{R}^{n}$ ovvero n-ple di reali)
+
+    \[
+        x_n= (x_n^{1}, x_n^{2},  \ldots , x_n ^{n})
+    \]
+
+    si dice che converge a $x \in \mathbb{R}^{n}$ se:
+
+    \[
+    d(x_n,x) \xrightarrow[] {n \rightarrow +\infty} 0
+    \]
+
+    cioè:
+
+    \[
+        \forall \varepsilon >0 , \exists \bar{N} \in \mathbb{N}
+    \]
+
+    \[
+        d(x_n, x ) < \varepsilon, \forall n \ge \bar{N} 
+    \]
+
+    \[
+        |x_n - x| = \sqrt{(x_n^{1}-x^{1})^{2}+  \ldots  +(x_n^{n}-x^{n})^{2}}
+    \]
+
+}
+
+\proposizione{}{ Sia $\{x_n\} \subset \mathbb{R}^{n}$ una successione in $\mathbb{R}^{n}$. Si ha:
+
+    \begin{enumerate}
+        \item (\textbf{Unicità}) $\{x_n\}$ ha massimo un unico limite (se $\{x_n\}$ ammette limite questo è unico)
+        \item (\textbf{Limitatezza}) ogni successione convergente è limitata: 
+
+             \[
+                 \exists x_0 \in \mathbb{R}^{n},M \in \mathbb{R}
+             \]
+
+             \[
+                 d(x_n,x_0) \le M, \forall n
+             \]
+
+         \item (\textbf{Sottosuccessione}) Se $\{x_n\}$ convergente a $x \in  \mathbb{R}^{n}$ (o in $X$) allora ogni sottosuccessione ${x_{n_k}}$ estratta da ${x_n}$ converge allo stesso limite
+    \end{enumerate}
+
+}
+
+\subsection{Elementi di topologia in $\mathbb{R}^{n}$ (in X)}
+
+Sia $x_0 \in \mathbb{R}^{n}$ fissato e $r>0$
+
+Si ha la seguente definizione
+
+\defn{}{Si definisce palla aperta, disco aperto, intorno sferico di centro $x_0$ e raggio $r$ l'insieme e che si indica con $B(x_0,r)$ l'insieme:
+
+    \[
+        B(x_0,r) := \{ x \in \mathbb{R}^{n}, d(x,x_0)<r\} \subset \mathbb{R}^{n}
+    \]
+
+    praticamente un intorno di $x_0$ in $\mathbb{R}^{n}$
+
+
+}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disco-aperto}
+    \caption{disco aperto}
+    \label{fig:disco-aperto}
+\end{figure}
+
+\textbf{Esempio in $(\mathbb{R}^{2},d)$ e $(\mathbb{R}^{2},d_1)$} 
+
+\[
+    d(x,y) = \sqrt{\sum^{r}_{i=1} (x_i-y_i)^{2}}
+\]
+
+\[
+    d_1(x,y) = |x_1-y_1| + |x_2-y_2|
+\]
+
+se $x_0=0$ e $r=1$
+
+\[
+    B(0,1)  = \{\bar{x} \in \mathbb{R}^{2}, d(x,0) <1\} = \{x \in  \mathbb{R}^{2}, \sqrt{x_1^{2}+y_1^{2}}<1\}
+\]
+
+questo è un cerchio
+
+
+\[
+    B(0,1)  = \{\bar{x} \in \mathbb{R}^{2}, d_1(x,0) <1\} = \{x \in  \mathbb{R}^{2}, \underbrace{|x_1-0|}_{x_1} + \underbrace{|y_1-0|}_{y_1}<1\}
+\]
+
+questo è un rombo (parallelogramma).
+
+
+Abbiamo parlato di questa roba per definire i limiti attraverso gli intorni sferici
+
+Quindi:
+
+\[
+\{ x_n\} \subset X \text{ converge a } x_0 \in X \Leftrightarrow \forall \varepsilon >0 , \exists n_\varepsilon, x_n \in B(x_0,\varepsilon), \forall n \ge n_\varepsilon
+\]
+
+\defn{Sottoinsieme limitato}{$A \subset X$ si dice limitato se esiste una palla aperta in cui $A$ risulta interamente contenuto:
+
+    \[
+        \exists r>0,\exists x_0 \in X \text{ t.c. } A \subset B(x_0,r)
+    \]
+}
+
+\defn{Punto interno}{
+
+Un punto di $x_0 \in X$ si dice interno ad $A$ dove $A \subset X$ e non solo $x_0 \in A$ ma esiste (almeno) un suo intorno sferico interamente contenuto in $A$:
+
+\[
+    \exists r>0\ B(x_0,r) \subset A
+\]
+
+$\dot A$ insieme di punti interni ad $A$
+
+}
+
+\defn{Punto esterno}{ $x_0 \in X$ si dice esterno ad $A$ ($A \subset X$) se non solo $x_0$ non appartiene ad $A$ ma vi è almeno un suo intorno sferico completamente disgiunto ad $A$
+
+
+    \[
+        x_0 \in A \text{ e } \exists r>0\ B(x_0,r)\cap A = \emptyset
+    \]
+
+}
+
+
+I punti che non sono ne esterni ne interni si dicono di frontiera.
+
+
+\defn{Insieme aperto}{$A \subset X$ si dice aperto se $A = \emptyset$ oppure se ogni punto è un punto interno di $A$ (ovvero per ogni punto di $A$ c'è un intorno sferico tutto contenuto in $A$)}
+
+
+\defn{Insieme chiuso}{ Un insieme $C \subset X$ si chiuso se il suo complementare è un insieme aperto:
+
+    \[
+        X \setminus  C = A
+    \]
+
+}
+
+
+\textbf{Esempio} 
+
+Sia
+
+\[
+    A_2= \{ (x,y) \in \mathbb{R}^{2}, x \neq y^{2}\} \subset \mathbb{R}^{2}
+\]
+
+\begin{figure}[ht]
+    \centering
+    \incfig{esercizio-su-insieme-chiuso-1}
+    \caption{esercizio su insieme chiuso 1}
+    \label{fig:esercizio-su-insieme-chiuso-1}
+\end{figure}
+
+
+\textbf{Esercizio per casa} 
+
+\[
+    A_1= \{ (x,y) \in \mathbb{R}^{2}, x^{2}+ y^{2} < 25\}
+\]
+
+\[
+    A_2= \{ (x,y) \in \mathbb{R}^{2}, x^{2}+ 2y +1  \le  0\}
+\]
+
+\end{document}

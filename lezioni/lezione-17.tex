@@ -1,0 +1,124 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 17}
+
+\teorema{}{ $f$ è differenziabile in $\bar{x_0} \subset A \rightarrow $ f è continua in $\bar{x_0} $ }
+
+
+\begin{proof}
+     Per dimostrare che $f$ è continua in $\bar{x_0} $ devo far vedere che:
+
+     \[
+         \lim_{ h \to 0 } f(x+h) = f( \bar{x_0} ) 
+     \]
+
+     \[
+        \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{$\rightarrow 0$}]
+     \]
+
+     usiamo Cauchy-Schwarz:
+
+     \[
+        \langle \nabla f(x_0),h \rangle   \le  \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  \underbrace{|\nabla f(x_0)|}_\text{lunghezza del vettore} | \underbrace{h}_\text{$\rightarrow 0$}| \overset{\text{numero moltiplicato $0$}}{=} 0
+     \]
+
+     quindi abbiamo che:
+
+     \[
+         \lim_{ h \to 0 } [f(x_0) + \underbrace{\langle \nabla f(x_0),h \rangle}_\text{$\rightarrow 0$} + \underbrace{o(|h|)}_\text{$\rightarrow 0$}] = f(x_0)
+     \]
+\end{proof}
+
+
+\teorema{Teorema del differenziale}{ Sia $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto, derivabile in $A$. 
+
+    Se le derivate parziali $f_{x_1}, \ldots, f_{x_n}$ sono continue in $\bar{x} \in A$ allora $f$ è differenziabile in $\bar{x} $
+
+}
+
+\begin{proof}
+       Per $n=2$, $f = f(x,y)$ con $(x,y) \in A \subseteq \mathbb{R}^{2}$ 
+
+       $\bar{h} = (h,k)$:
+
+       \[
+           f(x+h,y+k) - f(x,y) \overset{\text{aggiungo e tolgo $f(x,y+k)$}}{=} 
+       \]
+
+       \[
+           = f(x+h,y+k) + f(x,y+k) - f(x,y+k) - f(x,y) = 
+       \]
+
+       \[
+           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso Lagrange a ognuna delle funzioni}}{=}
+       \]
+
+       Applico due volte il teorema di Lagrange sugli intervalli di estremi $x,x+h$ e $y,y+k$:
+
+       \[
+           \exists x_1 \in  \text{ intervallo aperto di estremi } x,x+h
+       \]
+
+       \[
+           \exists y_1 \in  \text{ intervallo aperto di estremi } y,y+k
+       \]
+
+       \[
+           = \frac{\partial f}{\partial x}(x_1,y+k) (\cancel{x} +h \cancel{-x}) + \frac{\partial f}{\partial y}(x,y_1) ( \cancel{y} + k \cancel{-y}) = 
+       \]
+
+       \[
+           =\frac{\partial f}{\partial x}(x_1,y+k) h + \frac{\partial f}{\partial y}(x,y_1)k 
+       \]
+
+       a questo punto faccio vedere la definizione di differenziabilità e sostituisco quello sopra:
+
+       \[
+           \frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+       \]
+
+       \[
+           = \frac{f_x(x_1,y+k) h + f_y(x,y_1) k -f_x(x,y) - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+       \]
+
+       \[
+           = \frac{[f_x(x_1,y+k) - f_x(x,y)] h + [f_y(x,y_1) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}
+       \]
+
+       metto tutto in valore assoluto e maggioro:
+
+       \[
+           = |\frac{[f_x(x_1,y+k) - f_x(x,y)] h + [f_y(x,y_1) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}| \le 
+       \]
+
+       \[
+       \le |f_x(x_1,y+k) - f_x(x,y_1)| \frac{|h|}{\sqrt{h^{2}+k^{2}}} + | f_y(x,y_1) - f_y(x,y)| \frac{|k|}{\sqrt{h^{2}+k^{2}}} \le 
+       \]
+
+       \[
+            \le  |f_x(x_1,y+k) - f_x(x,y) | + |f_y(x,y_1) - f_y(x,y) |
+       \]
+
+       vediamo che succede quando $(h,k) \rightarrow (0,0)$:
+
+        $(x_1,y_1) \rightarrow (x,y)$ le funzioni $f_x$ e $f_y$ sono continue in $(x,y)$
+
+        dunque se passo al limite:
+
+        \[
+            |\underbrace{f_x(x,y) - f_x(x,y)}_\text{$\rightarrow 0$} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{$\rightarrow 0$} |
+        \]
+
+\end{proof}
+
+Quindi una funzione $g: A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}$ continua in $A$ si dice classe $\mathbb{C}^{0}$ e si scrive $f \in \mathbb{C}^{0}(A)$
+
+
+Se la funzione è derivabile in $A$ e se le derivate parziali sono continue in $A$ si dice che è di classe $\mathbb{C}^{1}$ su $A$ e si scrive $f \in \mathbb{C}^{1}(A)$.
+
+
+In generale $f \in \mathbb{C}^{k}(A), k \in \mathbb{N}$ (se f è derivabile fino all'ordine k, con derivate fino all'ordine k continue)
+
+\end{document}

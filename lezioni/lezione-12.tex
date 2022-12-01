@@ -1,0 +1,126 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 12}
+
+\subsection{Rappresentazioni di funzioni}
+
+Per poter rappresentare le funzioni ci serviamo delle \textbf{sezioni} che ci permettono di usare dei sottoinsiemi per le rappresentazioni e quindi di semplificare.
+
+\textbf{Esempio} 
+
+\[
+    f(x,y)=x^{2}-y
+\]
+
+il suo grafico sarà:
+
+\[
+    \{(x,y,z) \in \mathbb{R}^{3},z=x^{2}-y\}
+\]
+
+Provo a sezionarlo con $x=k$.
+
+Nel piano $(y,z)$ la sezione è data dal grafico di:
+
+\[
+    z= k^{2}-y
+\]
+
+questo sarà rappresentato da un fascio di rette a $z=-y$:
+
+\begin{figure}[ht]
+    \centering
+    \incfig{grafico-sezione-esempio}
+    \caption{grafico-sezione-esempio}
+    \label{fig:grafico-sezione-esempio}
+\end{figure}
+
+
+\subsection{Insiemi di livello (curva di livello)}
+
+Nel caso in cui $z=k$.
+
+\textbf{Esempio} 
+
+Consideriamo i punti $(x,y)$ che stanno nell'insieme di livello $k=1$ della funzione $f(x,y)=x^{2}+y^{2}$:
+
+\[
+    E_k = \{(x,y) \in \mathbb{R}^{2},x^{2}+y^{2}=k\}
+\]
+
+sono i punti che stanno sulla circonferenza di centro $(0,0)$ di raggio 1:
+
+\[
+    \{(x,y) \in \mathbb{R}^{2},x^{2}+y^{2}=1\} = E_1
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{curva-di-livello-esempio}
+    \caption{curva di livello esempio}
+    \label{fig:curva-di-livello-esempio}
+\end{figure}
+
+Vediamo qualche altro esempio.
+
+\textbf{Esempio} 
+
+Determinare l'insieme di definizione delle seguenti funzioni:
+
+\textbf{1} 
+
+\[
+    z=\sqrt{1-x^{2}-y^{2}}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno-curva-1}
+    \caption{disegno-curva-1}
+    \label{fig:disegno-curva-1}
+\end{figure}
+
+\textbf{2} 
+
+\[
+    z=\sqrt{1-x^{2}}+\sqrt{1-y^{2}}
+\]
+
+devo imporre il dominio:
+
+\[
+    \{(x,y) \in \mathbb{R}^{2},x^{2}\le 1,y^{2}\le 1\}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{curva-di-livello-2}
+    \caption{curva di livello 2}
+    \label{fig:curva-di-livello-2}
+\end{figure}
+
+
+\textbf{3} 
+
+\[
+    z= \frac{1}{\sqrt{y-\sqrt{x}}}
+\]
+
+\[
+    D=\{(x,y) \in \mathbb{R}^{2} y-\sqrt{x}>0,x \ge 0\}
+\]
+
+
+\begin{figure}[ht]
+    \centering
+    \incfig{curva-di-livello-3}
+    \caption{curva di livello 3}
+    \label{fig:curva-di-livello-3}
+\end{figure}
+
+\end{document}

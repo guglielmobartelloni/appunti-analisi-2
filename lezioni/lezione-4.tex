@@ -1,0 +1,474 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 4}
+
+\subsection{Edo a variabili separabili}
+
+Una EDO si dice a variabili separabili se è della forma:
+
+\[
+    y'(x) = f(x) g(y(x))
+\]
+
+Parte che dipende da y viene moltiplicata a quella che dipende da x.
+
+Dove le funzioni f e g sono continue nei loro domini di definizione
+
+Il procedimento per risolverle è il seguente:
+
+\begin{enumerate}
+    \item Si cercano le soluzioni costanti $g(y)=0$ (cioè gli zeri)
+
+        Si determinano gli eventuali $\bar y$ reali t.c. $g(\bar y)$
+
+        $y(x)= \bar y$ sono soluzioni singolari del problema 
+        
+    \item Se $y \neq \bar y$ si procede separando le variabili, ovvero dividiamo per $g(y)$
+\end{enumerate}
+
+E quindi alla fine abbiamo:
+
+\[
+    \frac{y'(x)}{g(y(x))} = f(x) \overset{\text{integro rispetto ad x}}{=} \int_{{}}^{{}} {\frac{y'(x)}{g(y(x))} } \: d{x} {} = \int_{{}}^{{}} {f(x)} \: d{x} {}
+\]
+
+Uso la sostituzione $y = y(x)$ e $dy = y'(x) dx$:
+
+\[
+    \int_{{}}^{{}} {\frac{1}{g(y)} } \: d{y} = {\int_{{}}^{{}} {f(x)} \: d{x} {}}
+\]
+
+Chiamate $G$ e $F$ una primitiva di $\frac{1}{g} $ e di $f$ rispettivamente:
+
+\[
+    G(y(x)) = F(x) + c
+\]
+
+Applico la funzione inversa di $G$ a entrambi i membri per scrivere esplicitamente la soluzione:
+
+\[
+    y(x) = G ^{-1} (F(x) + c)
+\]
+
+\textbf{Esempio}
+
+Determinare tutte le soluzioni dell'equazione differenziale:
+
+È non lineare
+
+\[
+    y'(x) = (1-y)(2-y)x
+\]
+
+Le prime due parentesi sono $g(y)$ il resto $f(x)$
+
+\begin{enumerate}
+    \item Trovare le soluzioni costanti
+
+        Pongo $y'(x) = 0 $:
+
+        \[
+            (1-y)(2-y) = 0
+        \]
+
+        quindi $y=1$ e $y=2$
+
+    \item Cerchiamo le altre soluzioni dividendo per $g(y)$
+
+        \[
+            \frac{y'(x)}{(1-y(x))(2-y(x))} = x
+        \]
+
+        Quindi integro:
+
+        \[
+            \int_{{}}^{{}} {\frac{1}{(1-y)(2-y)} } \: d{y} {}= \int_{{}}^{{}} {x} \: d{x} {}
+        \]
+
+        Uso i fratti semplici per risolvere il primo membro:
+
+        \[
+            \frac{A}{1-y} + \frac{B}{2-y} = \frac{1}{(1-y)(2-y)} 
+        \]
+
+        \[
+            A(2-y)+B(1-y) = 1
+        \]
+
+        \[
+            (-A -B) y +2A + B = 1
+        \]
+
+        \begin{equation}
+            \begin{cases}
+              -A -B = 0\\
+              2A+B= 1
+            \end{cases}\,.
+        \end{equation}
+
+        $A=1$ e $B=1$
+        
+        Quindi:
+
+        \[
+            \int_{{}}^{{}} {\frac{1}{1-y}} \: d{y} {}- \int_{{}}^{{}} {\frac{1}{2-y} } \: d{y} {} = \int_{{}}^{{}} {x} \: d{x} {}
+        \]
+
+        \[
+            -log|1-y| + log|2-y| = \frac{x ^{2}}{2} +c
+        \]
+
+        \[
+            log|\frac{2-y}{1-y} | = \frac{x ^{2}}{2} +c
+        \]
+
+        Adesso devo esplicitare per $y$ quindi passo agli esponenziali:
+
+        \[
+            |\frac{2-y}{1-y} | = e^{(\frac{x ^{2}}{2} +c)}
+        \]
+
+        \[
+            |\frac{2-y}{1-y} | = e^{(\frac{x ^{2}}{2})} e ^{c} = c_1 e ^{\frac{x ^{2}}{2} } >0
+        \]
+
+        Tolgo il valore assoluto:
+
+        \[
+            \frac{2-y}{1-y} = \pm c_1 e ^{\frac{x ^{2}}{2} }\overset{\text{usando un'altra costante}}{=}c_2 e ^{\frac{x ^{2}}{2} }
+        \]
+
+        \[
+            \frac{2-y}{1-y} = c_2 e ^{\frac{x ^{2}}{2} }
+        \]
+
+        Con $c_2 \in \mathbb{R}$
+
+        Noi vogliamo trovare la $y(x)$ (per semplicità pongo $c_2 = c$):
+
+        \[
+            \frac{2-y}{1-y} = c e ^{\frac{x ^{2}}{2} }
+        \]
+
+        Porto di la il denominatore:
+
+        \[
+            2-y = c ^{\frac{x ^{2}}{2} } (1-y)
+        \]
+
+        Porto di la le cose:
+
+        \[
+            (c e ^{\frac{x ^{2}}{2} })y = c ^{\frac{x ^{2}}{2} }-2
+        \]
+
+        E quindi le due soluzioni (quella costante e quella non) sono:
+
+        \begin{equation}
+            \begin{cases}
+            y(x) = \frac{c e ^{\frac{x ^{2}}{2} }-2}{c e ^{\frac{x ^{2}}{2} }-1}   \\
+            y=1
+            \end{cases}\,.
+        \end{equation}
+
+\end{enumerate}
+
+\textbf{Esercizio Problema di Cauchy}
+
+Risolviamo ora il problema:
+
+\begin{equation}
+    \begin{cases}
+      y'=(1-y)(2-y)x\\
+      y(0)=3
+    \end{cases}\,.
+\end{equation}
+
+e decidiamo qual è il più ampio intervallo su cui è definita la soluzione
+
+Avendo già risolto la EDO imponiamo la condizione $y(0) = 3$:
+
+\[
+    y(0) = \frac{c-2}{c-1} = 3
+\]
+
+\[
+    c-2 = 3c -3
+\]
+
+\[
+    c = \frac{1}{2} 
+\]
+
+La soluzione del problema è quindi (sostituisco la c trovata all'equazione):
+
+\[
+    y(x) = \frac{\frac{1}{2} e ^{\frac{x ^{2}}{2} }-2}{\frac{1}{2} e ^{\frac{x ^{2}}{2} }-1} 
+\]
+
+\[
+    y(x) = \frac{ e ^{\frac{x ^{2}}{2} }-4}{ e ^{\frac{x ^{2}}{2} }-2} 
+\]
+
+La soluzione è definita nel più ampio intervallo contenente $x_0 = 0 $ (per cui l'espressione ha senso) nel nostro caso il denominatore $\neq 0$
+
+\[
+    e ^{\frac{x ^{2}}{2} } - 2 \neq 0
+\]
+
+\[
+    e ^{\frac{x ^{2}}{2} }  \neq 2
+\]
+
+\[
+    x ^{2} \neq 2 log 2
+\]
+
+\[
+    x \neq \pm \sqrt{2 log2}
+\]
+
+Quindi l'intervallo più ampio è quello che contiene zero ed è compreso tra le regole che abbiamo appena trovato:
+
+\[
+    0 \in (-\sqrt{2log2},+\sqrt{2log2}) 
+\]
+
+Osserviamo che la soluzione:
+
+\[
+    y(x) = \frac{ e ^{\frac{x ^{2}}{2} }-4}{ e ^{\frac{x ^{2}}{2} }-2} 
+\]
+
+è definita $\forall x \in \mathbb{R}$ con $x \neq \pm \sqrt{2log2}$
+
+
+Il motivo per cui la soluzione del problema di Cauchy è definita su un intervallo si capisce bene se si pensa al significato fisico del nostro problema:
+
+\begin{equation}
+    \begin{cases}
+        \text{x tempo}\\
+        \text{y(x) evoluzione del sistema}\\
+        \text{condizione iniziale}
+    \end{cases}\,.
+\end{equation}
+
+Se partendo dall'istante iniziale ($x_0$) e procedendo in avanti o a ritroso nel tempo troviamo un istante per cui il sistema non esiste (nel caso di prima $\pm \sqrt{2log2}$) la $y(x)$ non esiste più, non ha senso domandarsi che cosa succede oltre quell'istante
+
+Se lo vedo dal punto di vista matematico se accettassimo soluzioni definite su intervalli disgiunti non avremmo più l'unicità della soluzione (ce ne sarebbero 3 nel nostro caso e non una come volevo) perché avremmo rami distinti della funzione $y(x)$ definiti su intervalli disgiunti che non si raccordano tra di loro, dunque la condizione iniziale $y(x_0) = y_0$ non determina i valore della funzione $y(x)$ negli intervalli che non contengono l'istante iniziale $x_0$
+
+\begin{itemize}
+    \item \textbf{ Soluzione in piccolo (locale) } (è definita in un intorno di $x_0$)
+    \item \textbf{ Soluzione in grande (globale) } (è definita in tutto l'intervallo)
+\end{itemize}
+
+\textbf{Esercizio per casa}
+
+\begin{equation}
+    \begin{cases}
+      y'(x) = xy(x)+2x\\
+      y(0) = 1
+    \end{cases}\,.
+\end{equation}
+
+\textbf{Soluzione} 
+
+Raccolgo: 
+
+\[
+    y'(x)=x(y+2)
+\]
+
+Trovo le soluzioni stazionarie:
+
+\[
+    y+2=0
+\]
+
+\[
+    y=-2
+\]
+
+Trovo le altre:
+
+\[
+    \int_{}^{} {\frac{1}{y+2}} \: dy = \int_{}^{} {x} \: dx 
+\]
+
+\[
+    y+2 = c e ^{ \frac{x^{2}}{2}}+c
+\]
+
+Impongo le condizioni di Cauchy e trovo c sostituendo:
+
+\[
+    y=3e ^{ \frac{x^{2}}{2}}-2
+\]
+
+Quindi la soluzione completa è:
+
+    \begin{equation}
+        \begin{cases}
+            y=-2\\
+            y=3e ^{ \frac{x^{2}}{2}}-2
+        \end{cases}\,.
+    \end{equation}
+
+
+
+\subsection{EDO lineari del II ordine}
+
+\[
+    a_2(x)y''(x) + a_1(x) y'(x) + a_0(x) y(x) = f(x)
+\]
+
+con $a_0(),a_1(),a_2(),f()$ continue in I
+
+In forma normale:
+
+\[
+    y''(x) + a(x) y'(x) + b(x)y(x) = f(x)
+\]
+
+se pongo $f(x) = 0$ ho la omogenea associata (2)
+
+le sue soluzioni sono linearmente indipendenti
+
+Se abbiamo due soluzioni $y_1$ e $y_2$ di:
+
+\[
+    a_2(x)y''(x) + a_1(x) y'(x) + a_0(x) y(x) = 0
+\]
+
+Poniamo:
+
+\[
+    y(x) = c_1 y_1(x) + c_2 y_2(x)
+\]
+
+io so che le soluzioni soddisfano l'equazione (per definizione):
+
+\[
+    a_2(x)y_1''(x) + a_1(x) y_1'(x) + a_0(x) y_1(x) = 0
+\]
+
+\[
+    a_2(x)y_2''(x) + a_1(x) y_2'(x) + a_0(x) y_2(x) = 0
+\]
+
+adesso:
+
+\[
+    y(x) = c_1 y_1(x) + c_2 y_2(x)
+\]
+
+Derivo due volte:
+
+\[
+    y'(x) = c_1 y_1'(x) + c_2 y_2'(x)
+\]
+
+\[
+    y''(x) = c_1 y_1''(x) + c_2 y_2''(x)
+\]
+
+\[
+    a_2(x) [ c_1y_1''(x) + c_2 y_2 ''(x) ] + a_1(x)[ c_1 y_1'(x) + c_2 y_2'(x) ] + a_0(x) [ c_1 y_1(x) + c_2 y_2(x)]= 
+\]
+
+\[
+    = c_1[a_2(x) y_1''(x) + a_1(x) y_1'(x) + a_0(x) y_1(x)] + c_2 [a_2(x) y_2''(x) + a_1(x) y_2'(x) + a_0(x) y_2(x)] \overset{\text{dato che è soluzione}}{=} 0
+\]
+
+\subsection{Lineare indipendenza}
+
+
+$y_1(x)$ e $y_2(x)$ sono linearmente indipendenti su I se:
+
+\[
+    c_1y_1(x) +c_2y_2(x) = 0 \Leftrightarrow c_1=c_2=0
+\]
+
+\textbf{Esercizi per Casa} 
+
+\textbf{Esercizio 1}
+
+\[
+    y(x) = ce ^{x^{2}-x}+e ^{x^{2}-x}\int_{}^{} {xe ^{x}} \: dx = c e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
+\]
+
+Ponendo le condizioni di Cauchy:
+
+\[
+    y(0)=2
+\]
+
+La soluzione è:
+
+\[
+    2 e ^{x^{2}-x}+xe ^{x^{2}}-e ^{x^{2}}
+\]
+
+\textbf{Esercizio 2} 
+
+\[
+    y'=\sqrt[3]{x}y^{2}
+\]
+
+Una soluzione è:
+
+\[
+    y=0
+\]
+
+Le altre le trovo facendo l'integrale di:
+
+\[
+    \int_{}^{} { \frac{1}{y^{2}}} \: dy = \int_{}^{} {\sqrt[3]{x}} \: dx  
+\]
+
+quindi $y(x)$:
+
+\[
+    y(x)  = \frac{4}{3 \sqrt[3]{x^{4}}+c}
+\]
+
+impongo le condizioni e trovo c:
+
+\[
+    y(0) = \frac{-4}{0+c} = 2
+\]
+
+quindi:
+
+\[
+    c = -2
+\]
+
+ergo il la soluzione è:
+
+\[
+    y(x) = -\frac{4}{3 \sqrt[3]{x^{4}} - 2}
+\]
+
+il denominatore deve essere $\neq 0$:
+
+\[
+3 \sqrt[3]{x^{4}} - 2 \neq 0
+\]
+
+quindi:
+
+\[
+    x \neq (\frac{2}{3}^{ \frac{3}{4}})
+\]
+
+Il più ampio intervallo è:
+
+\[
+    0 \in (-\infty, \frac{2}{3}^{ \frac{3}{4}}) 
+\]
+
+\end{document}

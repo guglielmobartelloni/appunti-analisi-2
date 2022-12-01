@@ -111,7 +111,7 @@ Data $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto ed $f$ d
 \defn{Derivate seconde}{ Se $\exists$ sono della forma:
 
     \[
-        \frac{\partial^{2} f}{\partial x_i \partial x_j} 
+        \frac{\partial^{2} f}{\partial x_i \partial x_j} = f_{x_i x_j}
     \]
 
     e si ottengono al variare di $i,j$ da $1$ ad $n$.
@@ -125,6 +125,11 @@ Data $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto ed $f$ d
         \frac{\partial^{2} f}{\partial x_2 \partial x_1}& \ldots & \ldots & \ldots \\
         \ldots & \ldots & \ldots & \ldots \\
         \frac{\partial^{2} f}{\partial x_n \partial x_1}& \ldots & \ldots & \frac{\partial^{2} f}{\partial x_n \partial x_n} 
+    \end{bmatrix} = \begin{bmatrix}
+        f_{x_1 x_1}& f_{x_1 x_2}& \ldots & f_{x_1 x_n}\\
+        f_{x_2 x_1}& \ldots & \ldots & \ldots \\
+        \ldots & \ldots & \ldots & \ldots \\
+        f_{x_n x_1}& \ldots & \ldots & f_{x_n x_n} 
     \end{bmatrix}
 \]
 
@@ -157,7 +162,7 @@ Caso $n=2$:
     Hf(x,y) = \begin{bmatrix}
     \frac{\partial^{2} f}{\partial x^{2}}(x,y) & \frac{\partial^{2} f}{\partial x \partial y}(x,y)\\
     \frac{\partial^{2} f}{\partial y \partial x}(x,y) & \frac{\partial^{2} f}{\partial y^{2}}(x,y)  
-    \end{bmatrix}
+    \end{bmatrix}  
 \]
 
 

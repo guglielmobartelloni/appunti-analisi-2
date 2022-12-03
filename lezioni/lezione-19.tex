@@ -26,14 +26,16 @@
        quando $h \rightarrow 0$:
 
        \begin{enumerate}
-        \item \[
-            \lim_{ h \to 0 } \frac{\gamma(t+h) - \gamma(t)}{h} = \gamma'(t)
+        \item
+            \[\lim_{ h \to 0 } \frac{\gamma(t+h) - \gamma(t)}{h} = \gamma'(t) \hspace{19em}\]
+
+        \item
+        \[
+            \lim_{ h \to 0 } \frac{o(|\gamma(t+h) - \gamma(t)|)}{h} {=} \lim_{ h \to 0 } {\frac{|o(|\gamma(t+h) - \gamma(t)|)|}{|h|}} \cdot {\frac{| \gamma(t+h) - \gamma(t)|}{|\gamma(t+h) - \gamma(t)|}} =
         \]
-
-    \item \[
-        \lim_{ h \to 0 } \frac{o(|\gamma(t+h) - \gamma(t)|)}{h} \overset{\text{moltiplico e divido per il numeratore}}{=} \lim_{ h \to 0 } \underbrace{\frac{|o(|\gamma(t+h) - \gamma(t)|)|}{|\gamma(t+h) - \gamma(t)|}}_\text{$0$ per definizione di o-piccolo} \cdot \underbrace{\frac{| \gamma(t+h) - \gamma(t)|}{|h|}}_\text{quantita' finita} = 0 
-    \]
-
+        \[
+            = \lim_{ h \to 0 } \underbrace{\frac{|o(|\gamma(t+h) - \gamma(t)|)|}{|\gamma(t+h) - \gamma(t)|}}_\text{$0$ per definizione di o-piccolo} \cdot \underbrace{\frac{| \gamma(t+h) - \gamma(t)|}{|h|}}_\text{quantità finita} = 0
+        \]
     Quantità finita perché:
 
     \[
@@ -205,7 +207,7 @@ dunque:
     f_{yy}(x,y) = x ^{y}
 \]
 
-quindi la matrice Hessiana diventa:
+quindi l'Hessiana diventa:
 
 \[
     Hf = \begin{bmatrix}

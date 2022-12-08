@@ -123,8 +123,10 @@ Se le $f_{xy}$ e $f_{yk}$ sono continue in $(x_0,y_0)$, allora $f_{xy}(x_0,y_0) 
        \begin{tikzpicture}
            \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
            \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
-           % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
-           % \draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
+           \draw[densely dotted] (1,1) -- (2,1) node[left] {$P_0$};
+           \draw[densely dotted] (1,1) -- (1,2);
+           \draw[densely dotted] (2,1) -- (2,2);
+           \draw[densely dotted] (1,2) -- (2,2);
        \end{tikzpicture}
 
        Passando al limite (per $P \rightarrow P_0$) succede che:
@@ -221,7 +223,7 @@ DISEGNO DA FARE
        \begin{tikzpicture}
            \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
            \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
-           % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
+          % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
            % \draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
        \end{tikzpicture}
 

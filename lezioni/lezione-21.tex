@@ -1,0 +1,198 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 21}
+
+\subsection{Formule di Taylor}
+
+$A \subseteq \mathbb{R}^{n}$ con $A$ aperto e $f:A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ di classe $\mathbb{C}^{k}$ per qualche $k \in \mathbb{N}$ (regolare di regolarita' k).
+
+Siano $\bar{x}$ e $\bar{x} +\bar{h} $ due punti in $A$ tali che il segmento (di $\mathbb{R}^{n}$) che ha come estremi $\bar{x} $ e $\bar{x} + \bar{h} $, indicato con $[\bar{x} +\bar{x} +\bar{h} ] \subset \mathbb{R}^{n}$, sia tutto contenuto in $A$.
+
+       \[
+           [\bar{x} , \bar{x} +\bar{h} ] = \{\bar{x} (t) \in \mathbb{R}^{n}, \bar{x} (t) = \bar{x} +\bar{th}, t \in [0,1]\} \subset \mathbb{R}^{n}
+       \]
+
+       Consideriamo $f \in \mathbb{C}^{1}$ e 
+
+       \[
+           F(t) = f(x(t)) = f(\bar{x} +\bar{th} ) 
+       \]
+
+       $\forall t \in [0,1]$ ($t \rightarrow  \bar{x} (t) = \bar{x} + \bar{th} \xrightarrow[]{\text{$f$}}f(\bar{x} (t))$
+
+       \[
+           F'(t) \overset{\text{regola della catena}}{=} \langle \nabla f(\bar{x} +\bar{th} ),\bar{h}  \rangle = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i} (\bar{x} +\bar{th} ) h_i
+       \]
+
+       Se $f \in  \mathbb{C}^{2}$:
+
+       \[
+           F''(t) = (F'(t))' \overset{\text{regola della catena ancora}}{=} \sum^{n}_{j=1} \frac{\partial f}{\partial x_j} ( \frac{\partial f}{\partial x_i}(\bar{x} +\bar{th} ) h_i) h_j = \sum^{n}_{i,j=1} \frac{\partial^{2} f}{\partial x_i \partial x_j} (\bar{x} + \bar{th} ) h_i h_j
+       \]
+
+       Questo è un polinomio quadratico.
+
+\defn{Formula di Taylor con resto di Lagrange}{
+   Sia $f \in \mathbb{C}^{k}(A)$, scriviamo la formula di Taylor di ordine $k-1$ con \textbf{resto di Lagrange}
+
+   Osserviamo che $F(0) = f(x), F(1) = f(x+h)$. Esiste $\theta \in (0,1)$ tale che:
+
+   \[
+       F(1)  = F(0) + F'(0)(1-0) + \frac{F''(0)}{2}(1-0)^{2}+\ldots+ \frac{F^{k}(\theta)}{k!}(1-0)^{k} =
+   \]
+
+   \[
+       = F(0) + F'(0) + \frac{F''(0)}{2}+\ldots+ \underbrace{\frac{F^{k}(\theta)}{k!}}_\text{resto di Lagrange}
+   \]
+}
+       
+
+
+\newpage
+
+Con $k=1$ ritroviamo il teorema di Lagrange (una versione in più variabili).
+
+\proposizione{}{
+
+    Sia $f:A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}, f \in \mathbb{C}^{1}(A)$. Siano $x$ e $x+h$ punti tali che $[x,x+h] \subset A$. Allora $\exists \theta \in (0,1)$ (a cui corrisponde un puto del sgmento $x(\theta) = x+ \theta h$) tale che:
+
+    \[
+        f(x+h) = f(x) + \langle \nabla f(x+ \theta h), h \rangle = f(x) + \sum^{n}_{i=1}  \frac{\partial f}{\partial x_i}(x+\theta h) \cdot h_i
+    \]
+
+}
+
+\begin{proof}
+       Immediata applicando Taylor con k=1:
+
+       \[
+           F(1) = F(0) + F'(\theta)
+       \] 
+\end{proof}
+
+
+Per $k=2$
+
+\proposizione{}{
+
+Sia $f: A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}, f \in \mathbb{C}^{2}(A)$ e $x$ e $x+h$ punti come sopra. Allora $\exists \theta \in (0,1)$ tale che:
+
+\[
+    f(x+h) = f(x) + \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(x) \cdot h_i + \sum^{n}_{i,j=1} \frac{\partial^{2} f}{\partial x_i \partial x_j}(x+ \theta h) h_i h_j =
+\]
+
+
+\[
+    = f(x) + \langle \nabla f(x),h \rangle + \frac{1}{2}\langle Hf(x+\theta h) \cdot h, h \rangle
+\]
+
+}
+
+\begin{proof}
+       Di nuovo viene da Taylor per $k=2$:
+
+       \[
+           F(1) = F(0) + F'(0) + \frac{F''(\theta)}{2}
+       \]
+\end{proof}
+
+
+\subsection{Resto di Peano}
+
+\defn{}{
+
+$f \in \mathbb{C}^{2}(A)$, stesse ipotesi di sopra. Allora:
+
+\[
+    f(x+h) = f(x) + \langle \nabla f(x),h \rangle + \frac{1}{2} \langle Hf(x) \cdot h, h \rangle + o(|h|)
+\]
+
+}
+
+\defn{Resto di peano in due variabili}{
+
+    Dati $\bar{x} =(x_0,y_0)$, $\bar{h}  = (h,k)$:
+
+    \[
+        f(x_0 + h, y_0 + k) = f(x_0,y_0) + \frac{\partial f}{\partial x}(x_0,y_0)h + \frac{\partial f}{\partial x}(x_0,y_0) k +
+    \]
+
+    \[
+        + \frac{1}{2} [ \frac{\partial^{2} f}{\partial x \partial x} (x_0,y_0)h^{2}+ 2 \frac{\partial^{2} f}{\partial x \partial y}(x_0,y_0)hk+ \frac{\partial^{2} f}{\partial y \partial y}(x_0,y_0) k ^{2}] + o(h^{2}+k^{2})
+    \]
+
+    Il pezzo tra parentesi quadre si verifica facendo i conti espliciti (prodotto scalare tra matrice per vettore e un vettore) considerando che $f_{xy} = f_{yx}$ perché $f \in \mathbb{C}^{2}$ (per il teorema di Shwarz).
+    
+}
+
+Si ha quindi un polinomio in due variabili $p_2(x,y)$ di ordien 2 che meglio approssima la funzoine f vicino a $(x_0,y_0)$ è dato da (chiamando come sempre $x= x_0+h, y=y_0+k$):
+
+\[
+    f(x,y) = p_2(x,y) + o((x-x_0)^{2} + (y-y_0)^{2})
+\]
+
+con $p_2(x,y)$:
+
+\[
+    p_2(x,y) = f(x_0,y_0) + f_x(x_0,y_0) (x-x_0) + f_y(x_0,y_0) (y-y_0) + 
+\]
+
+\[
+    + \frac{1}{2} [ f_{xx}(x_0,y_0)(x-x_0)^{2} + 2 f_{xy}(x_0,y_0)(x-x_0)(y-y_0) + f_{yy}(x_0,y_0)(y-y_0)^{2} ] 
+\]
+
+$p_2$ è l'unico polinomio per cui la differenza (errore) $f(x,y) - p_2(x,y)$ va a 0 per $x \rightarrow x_0$ più rapidamente della distganza:
+
+\[
+    d(\bar{x} ,\bar{x_0} )^{2} = (x-x_0)^{2}+(y-y_0)^{2}
+\]
+
+
+\newpage
+
+\subsection{Massimi e Minimi Locali}
+
+\defn{Massimo e minimo locale}{
+
+$f: D \subset \mathbb{R}^{n} \rightarrow  \mathbb{R}$, $D$ dominio (cioe' aperto insieme alla sua frontiera). Si dice che $x_0 \in D$ è un punto di minimo locale se esiste un intorno sferico $B(x_0, \sigma) $ tale che:
+
+\[
+    f(x_0) \le f(x)
+\]
+
+$\forall x \in D \cap B(x_0, \sigma)$
+
+La definizione è analoga per il punto di massimo locale.
+
+}
+
+
+\defn{Massimo/Minimo stretto}{
+
+    Il punto di minimo o massimo locale si dice stretto se la disuguaglianza è stretta.
+}
+
+\defn{Massimo/Minimo globale}{ Se la disuguaglianza vale per tutto il dominio $\forall x \in D$ e non solo per la palla}
+
+
+Dall’Analisi 1 sappiamo che i punti di minimo e massimo vanno ricercati tra i cosiddetti punti stazionari.
+
+Se $x_0$ è punto di minimo (massimo) locale interno a $D$(quindi $x_0 \in A$) allora vale l’estensione in più variabili del Teorema di Fermat infatti:
+
+
+\teorema{Teorema di Fermat per funzioni in più variabili}{
+
+    Sia $f:D \subset \mathbb{R}^{n} \rightarrow  \mathbb{R}$, sia $x_0 \in A$ punto di estremo locale per $f$. Se $f$ è differenziabile in $x_0$ allora:
+
+    \[
+        \nabla f(x_0) = 0
+    \]
+
+}
+
+
+
+
+\end{document}

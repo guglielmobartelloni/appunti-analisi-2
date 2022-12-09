@@ -6,7 +6,7 @@
 
 \subsection{Formule di Taylor}
 
-$A \subseteq \mathbb{R}^{n}$ con $A$ aperto e $f:A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ di classe $\mathbb{C}^{k}$ per qualche $k \in \mathbb{N}$ (regolare di regolarita' k).
+$A \subseteq \mathbb{R}^{n}$ con $A$ aperto e $f:A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ di classe $\mathbb{C}^{k}$ per qualche $k \in \mathbb{N}$ (regolare di regolarità k).
 
 Siano $\bar{x}$ e $\bar{x} +\bar{h} $ due punti in $A$ tali che il segmento (di $\mathbb{R}^{n}$) che ha come estremi $\bar{x} $ e $\bar{x} + \bar{h} $, indicato con $[\bar{x} +\bar{x} +\bar{h} ] \subset \mathbb{R}^{n}$, sia tutto contenuto in $A$.
 
@@ -20,7 +20,7 @@ Siano $\bar{x}$ e $\bar{x} +\bar{h} $ due punti in $A$ tali che il segmento (di 
            F(t) = f(x(t)) = f(\bar{x} +\bar{th} ) 
        \]
 
-       $\forall t \in [0,1]$ ($t \rightarrow  \bar{x} (t) = \bar{x} + \bar{th} \xrightarrow[]{\text{$f$}}f(\bar{x} (t))$
+       $\forall t \in [0,1]$ $t \rightarrow  \bar{x} (t) = \bar{x} + \bar{th} \xrightarrow[]{\text{$f$}}f(\bar{x} (t))$
 
        \[
            F'(t) \overset{\text{regola della catena}}{=} \langle \nabla f(\bar{x} +\bar{th} ),\bar{h}  \rangle = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i} (\bar{x} +\bar{th} ) h_i
@@ -56,7 +56,7 @@ Con $k=1$ ritroviamo il teorema di Lagrange (una versione in più variabili).
 
 \proposizione{}{
 
-    Sia $f:A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}, f \in \mathbb{C}^{1}(A)$. Siano $x$ e $x+h$ punti tali che $[x,x+h] \subset A$. Allora $\exists \theta \in (0,1)$ (a cui corrisponde un puto del sgmento $x(\theta) = x+ \theta h$) tale che:
+    Sia $f:A \subset \mathbb{R}^{n} \rightarrow \mathbb{R}, f \in \mathbb{C}^{1}(A)$. Siano $x$ e $x+h$ punti tali che $[x,x+h] \subset A$. Allora $\exists \theta \in (0,1)$ (a cui corrisponde un punto del segmento $x(\theta) = x+ \theta h$) tale che:
 
     \[
         f(x+h) = f(x) + \langle \nabla f(x+ \theta h), h \rangle = f(x) + \sum^{n}_{i=1}  \frac{\partial f}{\partial x_i}(x+\theta h) \cdot h_i
@@ -111,7 +111,7 @@ $f \in \mathbb{C}^{2}(A)$, stesse ipotesi di sopra. Allora:
 
 }
 
-\defn{Resto di peano in due variabili}{
+\defn{Resto di Peano in due variabili}{
 
     Dati $\bar{x} =(x_0,y_0)$, $\bar{h}  = (h,k)$:
 
@@ -123,11 +123,11 @@ $f \in \mathbb{C}^{2}(A)$, stesse ipotesi di sopra. Allora:
         + \frac{1}{2} [ \frac{\partial^{2} f}{\partial x \partial x} (x_0,y_0)h^{2}+ 2 \frac{\partial^{2} f}{\partial x \partial y}(x_0,y_0)hk+ \frac{\partial^{2} f}{\partial y \partial y}(x_0,y_0) k ^{2}] + o(h^{2}+k^{2})
     \]
 
-    Il pezzo tra parentesi quadre si verifica facendo i conti espliciti (prodotto scalare tra matrice per vettore e un vettore) considerando che $f_{xy} = f_{yx}$ perché $f \in \mathbb{C}^{2}$ (per il teorema di Shwarz).
+    Il pezzo tra parentesi quadre si verifica facendo i conti espliciti (prodotto scalare tra matrice per vettore e un vettore) considerando che $f_{xy} = f_{yx}$ perché $f \in \mathbb{C}^{2}$ (per il teorema di Schwarz).
     
 }
 
-Si ha quindi un polinomio in due variabili $p_2(x,y)$ di ordien 2 che meglio approssima la funzoine f vicino a $(x_0,y_0)$ è dato da (chiamando come sempre $x= x_0+h, y=y_0+k$):
+Si ha quindi un polinomio in due variabili $p_2(x,y)$ di ordine 2 che meglio approssima la funzione f vicino a $(x_0,y_0)$ è dato da (chiamando come sempre $x= x_0+h, y=y_0+k$):
 
 \[
     f(x,y) = p_2(x,y) + o((x-x_0)^{2} + (y-y_0)^{2})
@@ -143,7 +143,7 @@ con $p_2(x,y)$:
     + \frac{1}{2} [ f_{xx}(x_0,y_0)(x-x_0)^{2} + 2 f_{xy}(x_0,y_0)(x-x_0)(y-y_0) + f_{yy}(x_0,y_0)(y-y_0)^{2} ] 
 \]
 
-$p_2$ è l'unico polinomio per cui la differenza (errore) $f(x,y) - p_2(x,y)$ va a 0 per $x \rightarrow x_0$ più rapidamente della distganza:
+$p_2$ è l'unico polinomio per cui la differenza (errore) $f(x,y) - p_2(x,y)$ va a 0 per $x \rightarrow x_0$ più rapidamente della distanza:
 
 \[
     d(\bar{x} ,\bar{x_0} )^{2} = (x-x_0)^{2}+(y-y_0)^{2}
@@ -156,7 +156,7 @@ $p_2$ è l'unico polinomio per cui la differenza (errore) $f(x,y) - p_2(x,y)$ va
 
 \defn{Massimo e minimo locale}{
 
-$f: D \subset \mathbb{R}^{n} \rightarrow  \mathbb{R}$, $D$ dominio (cioe' aperto insieme alla sua frontiera). Si dice che $x_0 \in D$ è un punto di minimo locale se esiste un intorno sferico $B(x_0, \sigma) $ tale che:
+$f: D \subset \mathbb{R}^{n} \rightarrow  \mathbb{R}$, $D$ dominio (cioè aperto insieme alla sua frontiera). Si dice che $x_0 \in D$ è un punto di minimo locale se esiste un intorno sferico $B(x_0, \sigma) $ tale che:
 
 \[
     f(x_0) \le f(x)
@@ -177,9 +177,9 @@ La definizione è analoga per il punto di massimo locale.
 \defn{Massimo/Minimo globale}{ Se la disuguaglianza vale per tutto il dominio $\forall x \in D$ e non solo per la palla}
 
 
-Dall’Analisi 1 sappiamo che i punti di minimo e massimo vanno ricercati tra i cosiddetti punti stazionari.
+Da Analisi 1 sappiamo che i punti di minimo e massimo vanno ricercati fra i punti stazionari (derivata prima nulla).
 
-Se $x_0$ è punto di minimo (massimo) locale interno a $D$(quindi $x_0 \in A$) allora vale l’estensione in più variabili del Teorema di Fermat infatti:
+Se $x_0$ è punto di minimo (massimo) locale interno a $D$(quindi $x_0 \in A$) allora vale l'estensione in più variabili del Teorema di Fermat infatti:
 
 
 \teorema{Teorema di Fermat per funzioni in più variabili}{

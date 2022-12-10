@@ -192,6 +192,41 @@ Se $x_0$ è punto di minimo (massimo) locale interno a $D$(quindi $x_0 \in A$) a
 
 }
 
+\begin{proof}
+    Supponiamo $x_0$ punto di massimo relativo. Allora $x_0$ è punto di massimo relativo anche per la restrizione di $f$ lungo una qualsisi retta passnte per $x_0$. Dunque consideriamo $v \in \mathbb{R}^{n}$ la direzione di tale retta, quindi $x_0 + tv$ sono i punti su tale retta.
+
+    La funzione in \textbf{una} variabile:
+
+        \[
+        F(t) = f(x_0 + tv)
+    \] 
+
+    è definita in un intorno di $t=0$ e per ipotesi, siccome $x_0$ è punto di massimo per $f$, allora $t=0$ è punto di massimo per $F$.
+
+    Per il Teorema di Fermat (in una variabile) su $F$ si ha:
+
+    \[
+        F'(0) = \langle \nabla f(x_0),v \rangle = 0
+    \]
+
+    per ogni direzione $v$. Siccome $v \neq \emptyset$ (perché $|v| = 1$), allora necessariamente $\nabla f(x_0) = 0$.
+
+\end{proof}
+
+    \defn{Punti stazionari}{
+    I punti $x_0 \in A$ tali che $\nabla f(x_0) = 0$ si dicono \textbf{punti stazionari} (o \textbf{critici}). 
+    }
+
+    \defn{Sella}{
+L'essere punto stazionarie è condizione necessaria ma non sufficiente per essere punto di estremo: in una variabile un punto stazionario che non era un punto di estremo si diceva flesso, in più variabili si parla di \textbf{sella}.
+    }
+    
+    
+
+    
+
+
+
 
 
 

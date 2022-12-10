@@ -213,41 +213,4 @@ Se $f \in \mathbb{C}^{(2)} (A) \xrightarrow[]{\text{Shwarz}} f_{xy}(x,y) = f_yx(
 
 Se $f \in \mathbb{C}^{k}(A)$ allora l'ordine di derivazione non conta sulle derivate parziali fino all'ordine k.
 
-\subsection{Accenni per Taylor in più variabili}
-
-$A \subseteq \mathbb{R}^{n}$ con $A$ aperto e $f:A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ di classe $\mathbb{C}^{k}$ per qualche $k \in \mathbb{N}$ (regolare di regolarita' k).
-
-Siano $\bar{x}$ e $\bar{x} +\bar{h} $ due punti in $A$ tali che il segmento (di $\mathbb{R}^{n}$) che ha come estremi $\bar{x} $ e $\bar{x} + \bar{h} $, indicato con $[\bar{x} +\bar{x} +\bar{h} ] \subset \mathbb{R}^{n}$, sia tutto contenuto in $A$.
-
-DISEGNO DA FARE
-       \begin{tikzpicture}
-           \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
-           \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
-          % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
-           % \draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
-       \end{tikzpicture}
-
-       \[
-           [\bar{x} , \bar{x} +\bar{h} ] = \{\bar{x} (t) \in \mathbb{R}^{n}, \bar{x} (t) = \bar{x} +\bar{th}, t \in [0,1]\} \subset \mathbb{R}^{n}
-       \]
-
-       Consideriamo $f \in \mathbb{C}^{1}$ e 
-
-       \[
-           F(t) = f(x(t)) = f(\bar{x} +\bar{th} ) 
-       \]
-
-       $\forall t \in [0,1]$ ($t \rightarrow  \bar{x} (t) = \bar{x} + \bar{th} \xrightarrow[]{\text{$f$}}f(\bar{x} (t))$
-
-       \[
-           F'(t) \overset{\text{regola della catena}}{=} \langle \nabla f(\bar{x} +\bar{th} ),\bar{h}  \rangle = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i} (\bar{x} +\bar{th} ) h_i
-       \]
-
-       Se $f \in  \mathbb{C}^{2}$:
-
-       \[
-           F''(t) = (F'(t))' \overset{\text{regola della catena ancora}}{=} \sum^{n}_{j=1} \frac{\partial f}{\partial x_j} ( \frac{\partial f}{\partial x_i}(\bar{x} +\bar{th} ) h_i) h_j = \sum^{n}_{i,j=1} \frac{\partial^{2} f}{\partial x_i \partial x_j} (\bar{x} + \bar{th} ) h_i h_j
-       \]
-
-       Questo è un polinomio quadratico.
 \end{document}

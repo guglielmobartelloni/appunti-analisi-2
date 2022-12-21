@@ -1,0 +1,285 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\newcommand\DrawBlock[3]{
+\ifx#1b\relax
+  \path[draw]
+    (lm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklf)
+    (bm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklb)
+    (lm#2) -- ++(0,0,#3) coordinate (blockrf)
+    (bm#2) -- ++(0,0,#3) coordinate (blockrb);
+  \filldraw[fill=white,draw=black]
+    (lm\the\numexpr#2-1\relax) -- (blocklf) -- (blocklb) -- (blockrb) -- (blockrf) -- (lm#2);
+\else  
+  \ifx#1f\relax
+    \path[draw]
+      (fm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklf)
+      (lm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklb)
+      (fm#2) -- ++(0,0,#3) coordinate (blockrf)
+      (lm#2) -- ++(0,0,#3) coordinate (blockrb);
+    \filldraw[fill=white,draw=black]
+      (fm\the\numexpr#2-1\relax) -- (blocklf) -- (blocklb) -- (blockrb) -- (blockrf) -- (fm#2);
+  \fi
+\fi
+\draw (blocklf) -- (blockrf);
+}
+
+\begin{document}
+
+\section{Lezione 24}
+
+\subsection{Integrali Multipli}
+
+\subsubsection{Integrali doppi su rettangoli}
+
+% Quello che in sostanza si cerca di fare è arrivare alla definizione di integrale cercando l'area di un rettangolo (come ad analisi I)
+
+$R \in \mathbb{R}^{2}$ rettangolo chiuso $R = [a,b]\times [c,d]$ :
+
+\[
+    R = \{(x,y) \in \mathbb{R}^{2}: a \le x \le b, c \le y \le d \}
+\]
+
+$D_1$ suddivisione di $[a,b]$, $D_2$ suddivisione di $[c,d]$.
+$D_1 \{x_0,x_1,\ldots,x_n\}$ con $\alpha = x_0 < x_1 < \ldots < x_n = b$ ($n+1$ punti ordinati)
+
+$D_2 \{y_0,y_1,\ldots,y_n\}$ con $\alpha = y_0 < y_1 < \ldots < y_n = b$ ($n+1$ punti ordinati)
+
+
+$D = D_1 \times D_2$ suddivisione di $R$ (tanti rettagnolini)
+
+$[a,b]$ è suddiviso in $n$ intervalli $[x_{i-1}, x_i]$ con $i = 1 \ldots n$
+
+$[c,d]$ è suddiviso in $m$ intervalli $[y_{j-1}, y_j]$ con $j = 1 \ldots m$
+
+$R$ è suddiviso in $n\cdot m$ rettangolini $R_{ij} = [x_{i-1}, x_i] \times [y_{j-1}, y_j]$:
+
+\[
+    R_{ij} = \{(x,y) \in \mathbb{R}^{2}: x_{i-1} \le x \le x_i, y_{j-1} \le  y \le y_i\}
+\]
+
+\textbf{Area}: $A_{ij} = A(R_{ij}) = (x_i - x_{i-1}) \cdot (y_j - y_{j-1})$
+
+
+\newpage 
+
+Supponiamo $f: R \rightarrow \mathbb{R}$ limitata (ovvero $\exists m,M$ t.c. $m \le f(x,y) \le M$ $\forall (x,y) \in R$) e per $i=1 \ldots n, j= 1 \ldots m$ consideriamo:
+
+\[
+    m_{ij} = \underbrace{inf}_\text{$(x,y) \in R_{ij}$} f(x,y)
+\]
+
+\[
+    M_{ij} = \underbrace{sup}_\text{$(x,y) \in R_{ij}$} f(x,y)
+\]
+
+\defn{Somma inferiore}{ Definiamo somma inferiore di $f$ rispetto a $D$:
+
+    \[
+        s(f,D) = \sum^{n}_{i=1} \sum^{m}_{j=1} m_{ij} \cdot A_{ij}
+    \]
+
+}
+
+\defn{Somma superiore}{ Definiamo somma superiore di $f$ rispetto a $D$:
+
+    \[
+        s(f,D) = \sum^{n}_{i=1} \sum^{m}_{j=1} M_{ij} \cdot A_{ij}
+    \]
+
+}
+
+Vale sempre per ogni suddivisione $D$ di $R$:
+
+\[
+    m \underbrace{(b-a)(d-c)}_\text{area di $R$} \le s(f,D) \le S(f,D) \le M(b-a) (d-c)
+\]
+
+dunque risultano ben definite le quantita':
+
+\[
+    \begin{pmatrix}
+     \underbrace{inf }_\text{$D$}S(f,D)& \underbrace{sup}_\text{$D$} s(f,D) 
+    \end{pmatrix}
+\]
+
+quindi si puo' avere:
+
+\begin{itemize}
+    \item $sup s(f,D) < inf S(f,D)$ 
+    \item $sup s(f,D) = inf S(f,D)$ in questo caso $f$ si dice integrabile
+\end{itemize}
+
+\newpage
+
+\defn{Funzione integrabile secondo Riemann}{ Sia $f: R = [a,b] \times [c,d] \rightarrow \mathbb{R}$ limitata, si dice integrabile secondo Riemann se:
+
+\[
+    sup s(f,D) = inf S(f,D)
+\]
+
+In tal caso il valore comune si dice \textbf{integrale}  di $f$ su $R$ si indica in vari modi:
+
+\[
+    \int_{R}^{} {f}
+\]
+
+\[
+    \iint_R {f}
+\]
+
+\[
+    I(f,R)
+\]
+
+\[
+    \iint_{R} f(x,y) dx dy 
+\]
+
+\[
+    \int_{b}^{a} {\int_{d}^{c} {f(x,y) dx dy}} 
+\]
+
+}
+
+La classe delle funzioni integrabili secondo Riemann su $R$ si indica $\mathbb{R}(R)$.
+
+
+\proposizione{}{
+Ogni funzione costante $f(x,y) = K$ è integrabile su $\mathbb{R}$:
+
+\[
+   \iint_R {K} \: dx dy   = K(b-a) (d-c)
+\]
+
+}
+
+\textbf{Esempio di funzione non integrabile} 
+
+$R = [0,1] \times [0,1]$:
+
+\[
+    f(x,y) = \begin{cases}
+        1 & \text{se $(x,y) \in Q$ razionale} \\
+         0& \text{altrimenti}
+    \end{cases}
+\]
+
+\[
+    s = \sum^{n}_{i=1} \sum^{m}_{j=1} \underbrace{0}_\text{inf $f$} (x_i - x_{i-1})(y_j - y_{j-1}) = 0
+\]
+
+
+\[
+    S = \sum^{n}_{i=1} \sum^{m}_{j=1} \underbrace{1}_\text{inf $f$} (x_i - x_{i-1})(y_j - y_{j-1}) = 1 (b-a) (d-c) = 1
+\]
+
+Essendo due valori diversi ($s \neq S$) allora non è integrabile
+
+\subsubsection{Interpretazione Geometrica}
+
+Nel caso unidimensionale l'integrale era l'area del sottografico (trapezioide). In due varibili è il valore di un solido detto \textbf{cilindroide}.
+
+Sia $f \in \mathbb{R}(R)$ e $f \ge 0$.
+
+Il suo integrale $\iint_R {f}$ si puo' interpretare come volume di $T$ solido in $\mathbb{R}^{3}$ detto cilindroide, delimitato dal basso da $R$ e dall'alto dal grafico di $f$.
+
+\begin{tikzpicture}[y={(0:1cm)},x={(225:0.86cm)}, z={(90:1cm)}]
+
+% coordinates for the lower grid
+\path
+  (1,3,0) coordinate (bm0) -- 
+  (4,3,0) coordinate (fm0) coordinate[midway] (lm0) --
+  (4,8,0) coordinate[pos=0.25] (fm1) coordinate[midway] (fm2) coordinate[pos=0.75] (fm3) coordinate (fm4) --
+  (1,8,0) coordinate (bm4) coordinate[midway] (lm4)--
+  (bm0) coordinate[pos=0.25] (bm3) coordinate[midway] (bm2) coordinate[pos=0.75] (bm1);
+\draw[dashed]
+  (lm0) -- 
+  (lm4) coordinate[pos=0.25] (lm1) coordinate[midway] (lm2) coordinate[pos=0.75] (lm3);
+
+% the blocks
+\DrawBlock{b}{1}{4}
+\DrawBlock{b}{2}{3.7}
+\DrawBlock{b}{3}{4.3}
+\DrawBlock{b}{4}{5}
+\DrawBlock{f}{1}{3.3}
+\DrawBlock{f}{2}{3.5}
+\DrawBlock{f}{3}{4}
+\DrawBlock{f}{4}{4.7}
+
+\foreach \Point/\Height in {lm1/3.7,lm2/4.3,lm3/5}
+  \draw[ultra thin,dashed,opacity=0.2] (\Point) -- ++(0,0,\Height);
+
+% the lower grid
+\foreach \x in {1,2,3}
+  \draw[dashed] (fm\x) -- (bm\x);
+\draw[dashed] (fm0) -- (bm0) -- (bm4);
+\draw (fm0) -- (fm4) -- (bm4);
+\draw[dashed] (lm0) -- (lm4);
+
+% coordinates for the surface
+\coordinate (curvefm0) at ( $ (fm0) + (0,0,4) $ );
+\coordinate (curvebm0) at ( $ (bm0) + (0,0,4) $ );
+\coordinate (curvebm4) at ( $ (bm4) + (0,0,6) $ );
+\coordinate (curvefm4) at ( $ (fm4) + (0,0,5.7) $ );
+
+% the surface
+\filldraw[ultra thick,fill=gray!25,fill opacity=0.2]
+  (curvefm0) to[out=-30,in=210] 
+  (curvefm4) to[out=-4,in=260]
+  (curvebm4) to[out=215,in=330]
+  (curvebm0) to[out=240,in=-20]
+  (curvefm0);
+
+% lines from grid to surface
+\draw[very thick,name path=leftline] (curvefm0) -- (fm0);
+\draw[very thick] (curvefm4) -- (fm4);
+\draw[very thick,name path=rightline] (curvebm4) -- (bm4);
+\draw[very thick,dashed] (curvebm0) -- (bm0);
+
+% coordinate system
+\coordinate (O) at (0,0,0);
+\draw[-latex] (O) -- +(5,0,0) node[above left] {$x$};
+\path[name path=yaxis] (O) -- +(0,10,0) coordinate (yaxisfinal) node[above] {$y$};
+\draw[-latex] (O) -- +(0,0,5) node[left] {$z$};
+\path[name intersections={of=yaxis and leftline,by={yaxis1}}];
+\path[name intersections={of=yaxis and rightline,by={yaxis2}}];
+\draw (O) -- (yaxis1);
+\draw[densely dashed,opacity=0.1] (yaxis1) -- (yaxis2);
+\draw[-latex] (yaxis2) -- (yaxisfinal);
+
+% for debugging
+%\foreach \Name in {bm0,fm0,lm0,fm1,fm2,fm3,fm4,bm4,lm4,bm1,bm2,bm3,lm1,lm2,lm3,%
+%curvefm0,curvebm0,curvebm4,curvefm4}
+%  \node at (\Name) {\Name};  
+\end{tikzpicture}
+
+Ogni addendo di $s$ e $S$ è un parallelepipedo (alto $m_{ij}$ per $s$ e basso $M_{ij}$ per $S$).
+
+Quindi $s$ è il volume del solido \textbf{contenuto} in $T$ e $S$ il volume del solido \textbf{che contiene} $T$.
+
+
+Siccome l'integrale è $sup s = inf S$ abbiamo che esso è proprio il volume di T.
+
+\teorema{}{ Sia $f: R \rightarrow \mathbb{R}$ limitata, allora $f$ è integrabile secondo Riemann su $R ( f \in \mathbb{R}(R)) \Leftrightarrow  \forall \varepsilon$ esiste una suddivisione $D_\varepsilon$ di $R$ per cui:
+
+    \[
+        S(f,D_{\varepsilon}) - s(f,D_{\varepsilon}) < \varepsilon
+    \]
+
+}
+
+
+\proposizione{}{Se $f$ è continua su $R$ (quindi limitata) allora è integrabile.}
+
+
+\newpage 
+
+\subsection{Calcolo degli integrali doppi}
+
+Si fanno variare $x$ e $y$ separatamente, per ottenere due integrali semplici.
+
+Integrare parzialmente rispetto ad $x$: considero le tracce di $f$ con $y$ fissato e integro rispetto a $x$. 
+
+Integrare parzialmente rispetto ad $y$: considero le tracce di $f$ con $x$ fissato e integro rispetto a $y$. 
+
+\end{document}

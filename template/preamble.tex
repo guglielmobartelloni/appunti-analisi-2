@@ -27,8 +27,9 @@
 \usepackage[most]{tcolorbox}
 \usepackage{xcolor}
 \usepackage{FiraSans}
+\usepackage{esint}
 \usepackage{listings}
-\usetikzlibrary{shadings}
+\usetikzlibrary{shadings,calc,intersections}
 \usepackage{centernot}
 
 \usepackage{import}
@@ -230,6 +231,30 @@
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
     \import{\subfix{./figures/}}{#2.pdf_tex}
+}
+
+
+\newcommand\DrawBlock[3]{
+\ifx#1b\relax
+  \path[draw]
+    (lm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklf)
+    (bm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklb)
+    (lm#2) -- ++(0,0,#3) coordinate (blockrf)
+    (bm#2) -- ++(0,0,#3) coordinate (blockrb);
+  \filldraw[fill=white,draw=black]
+    (lm\the\numexpr#2-1\relax) -- (blocklf) -- (blocklb) -- (blockrb) -- (blockrf) -- (lm#2);
+\else  
+  \ifx#1f\relax
+    \path[draw]
+      (fm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklf)
+      (lm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklb)
+      (fm#2) -- ++(0,0,#3) coordinate (blockrf)
+      (lm#2) -- ++(0,0,#3) coordinate (blockrb);
+    \filldraw[fill=white,draw=black]
+      (fm\the\numexpr#2-1\relax) -- (blocklf) -- (blocklb) -- (blockrb) -- (blockrf) -- (fm#2);
+  \fi
+\fi
+\draw (blocklf) -- (blockrf);
 }
 
 \pdfsuppresswarningpagegroup=1

@@ -1,0 +1,387 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 22}
+
+\textbf{Esercizio}
+
+\[
+    f(x,y) = 2x^{2} - 2xy +y^{2}
+\]
+
+Cerco i punti critici quindi quelli dove $\nabla f(x,y) = 0$
+
+\[
+    \begin{cases}
+           4x -2y = 0\\
+           -2x +2y = 0
+    \end{cases}\, =
+    \begin{cases}
+           x= 0\\
+           y = 0
+    \end{cases}\,.
+\]
+
+Unico punto critico $(0,0)$ $f(0,0)=0$
+
+Osserviamo che:
+
+\[
+    f(x,y) = x^{2} + (x-y)^{2}
+\]
+
+è una somma di due quadrati quindi:
+
+\[
+    f(x,y) > f(0,0),\forall (x,y) \neq (0,0)
+\]
+
+Quindi si ha che $(0,0)$ è  un punto di \textbf{minimo globale} (assoluto) stretto.
+
+
+\textbf{Esercizio 1} 
+
+\[
+    f(x,y) = x^{2}-y^{2}
+\]
+
+\[
+    \nabla f(x,y) = (2x, -2y)
+\]
+
+anche qui $(0,0)$ unico punto critico:
+
+\[
+    f(0,0) = 0
+\]
+
+$(0,0)$ è una sella cioe' ne' minimo ne' massimo infatti:
+
+\[
+    f(x,y) - f(0,0) = \underbrace{x^{2}-y^{2}-0}_\text{a seconda del valore di $(x,y)$ si ha un cambiamento di segno}
+\]
+
+$\forall (x,y) \in B(0,r)$ con $r>0$. Vediamolo meglio:
+
+\begin{itemize}
+    \item Per $f(x,0)$ (considero l'incremento muovendomi lungo l'asse):
+
+        rimane $x^{2} \rightarrow  f(x,0)=x^{2}\ge 0$ $\forall x$
+    \item Per $f(0,y) = -y^{2} <0$ $\forall y$:
+
+        abbiamo quindi un cambiamento di segno nell'intorno sferico (quindi ne' minimo ne' massimo)
+\end{itemize}
+
+\newpage
+
+
+\subsection{Classificazione dei punti critici}
+
+\subsubsection{Test dell'hessiana}
+
+Sia $f: A \subseteq \mathbb{R}^{2} \rightarrow \mathbb{R}$, $A$ aperto con $f \in \mathbb{C}^{2}(A)$
+
+Sia $(x_0,y_0) \in A$ un punto critico per $f$ (ovvero $\nabla f(x_0,y_0) = 0$) per cui il determinante della matrice Hessiana sia $\neq 0$ cioe':
+
+\[
+    det (Hf(x_0,y_0)) = det \begin{bmatrix}
+    f_{xx}(x_0,y_0) & f_{xy}(x_0,y_0)\\
+    f_{xy}(x_0,y_0) & f_{yy}(x_0,y_0)  
+    \end{bmatrix} = f_{xx}(x_0,y_0) f_{yy}(x_0,y_0) - f_{xy}^{2}(x_0,y_0) \neq 0
+\]
+
+se la condizione sopra vale allora posso usare il test.
+
+In particolare:
+
+\begin{itemize}
+    \item Se $det(Hf(x_0,y_0))>0$ e $f_{xx}(x,y)>0$  $\rightarrow (x_0,y_0)$ è punto di minimo locale
+    \item Se $det(Hf(x_0,y_0))>0$ e $f_{xx}(x,y)<0$  $\rightarrow (x_0,y_0)$ è punto di massimo locale
+    \item Se $det(Hf(x_0,y_0))<0$ $\rightarrow (x_0,y_0)$ è una sella
+\end{itemize}
+
+\textbf{Osservazione importante} 
+
+Se $det(Hf(x_0,y_0)) =0$ il test dell'hessiana \textbf{non} fornisce informazioni. Devo quindi fare un'analisi diretta dell'incremento subito dalla funzione cioe':
+
+\[
+  \Delta f(x,y) = f(x,y)-f(x_0,y_0)
+\]
+
+$\forall (x,y) \in A \cap B(x_0,y_0)$
+
+
+\begin{proof}
+       È basata sull'approssimazione al secondo ordine della nostra funzione attraverso la formula di Taylor (al II ordine) col resto di Peano.
+
+       \[
+           \underbrace{f(\bar{x_0} + \bar{h} )}_\text{$f(x,y)$} = \underbrace{f(\bar{x_0} )}_\text{$f(x_0,y_0)$} + \langle \underbrace{\nabla f(\bar{x_0} )}_\text{$=0$},\bar{h}  \rangle + \frac{1}{2} \langle Hf(\bar{x_0} )\bar{h} ,\bar{h}   \rangle + o(|\bar{h} |^{2})
+       \]
+
+       osserviamo che:
+
+       \begin{equation} \label{quadratica hessiana}
+           \frac{1}{2} \langle Hf(\bar{x_0} )\bar{h} ,\bar{h}   \rangle
+       \end{equation}
+
+       è un polinomio di II grado in $h,k$ i cui coefficienti sono le derivate seconde quindi ci fornisce il \textbf{segno} 
+
+
+       per $h \rightarrow 0$ abbiamo:
+
+       \begin{itemize}
+        \item $\bar{x_0} +\bar{h} =x$
+        \item $\bar{h} = \bar{x} - \bar{x_0} $
+        \item $\bar{h} =(h,k)$
+       \end{itemize}
+
+       Vediamo cosa succede:
+
+       \[
+           f(x,y) - f(x_0,y_0) = \underbrace{\frac{\partial f}{\partial x}(x_0,y_0)}_\text{$=0$}(x-x_0) + \underbrace{\frac{\partial f}{\partial y}(x_0,y_0)}_\text{$=0$} (y-y_0) + \frac{1}{2}[f_{xx}(x_0,y_0)(x-x_0)^{2} + 2 f_{xy}(x_0,y_0) (x-x_0) (y-y_0) 
+       \]
+
+       \[
+           + f_{yy}(x_0,y_0) (y-y_0)^{2}] + o((x-x_0)^{2}+(y-y_0)^{2})
+       \]
+
+
+       Osserviamo adesso \ref{quadratica hessiana} forma quadratica dell'hessiana in $\bar{h} \in \mathbb{R}^{n}$ è un polinomio di grado 2 omogeneo nelle variabili $h_1,\ldots,h_n$
+
+       Ad ogni forma quadratica è associata una matrice:
+
+       \[
+           q(\bar{h} ) = \sum^{n}_{i,j=1} a_{ij} h_i h_j \leftrightarrow \langle A \bar{h} , \bar{h}  \rangle
+       \]
+
+       dove $A = (a_{ij})$. Notiamo che tutti i $h_i^{2}$ hanno coefficienti $a_{ii}$ (stanno sulla diagonale).
+       
+       Nel nostro caso la matrice associata è la matrice Hessiana, che è \textbf{simmetrica} ($a_{ij} = a_{ji}$ per il teorema di Schwarz).
+
+       Quindi per avere il coefficiente di posto $ij$, siccome $a_{ij} = a_{ji} \rightarrow a_{ij} + a_{ji} = 2a_{ij}$, devo dividere il coefficiente per 2.
+
+
+\textbf{Esempio} 
+
+$n=2$ e $\bar{h} =(h_1,h_2)$
+
+Sappiamo in generale che:
+
+\[
+    q(h_1,h_2) = a_{11} h_1^{2} + \underbrace{2a_{12} h_1 h_2}_\text{A simmetrica} + a_{22}h_2^{2}
+\]
+
+per una matrice $2\times 2$:
+:
+
+\[
+    A= \begin{pmatrix}
+        \overbrace{1}^\text{$a_{11}$} & \overbrace{5}^\text{$2a_{12}$}\\
+        \underbrace{5}_\text{$2a_{21}$} & \underbrace{4}_\text{$a_{22}$}
+    \end{pmatrix} \leftrightarrow 
+    q(h_1,h_2) = h_1^{2}+4 h_2^{2}+ 10 h_1 h_2
+\]
+
+per una matrice $3\times 3$:
+
+\[
+    A = \begin{pmatrix}
+    2 & -2 & 5\\
+    -2 & 3 & 0\\
+    5 & 0 & 4
+    \end{pmatrix} \leftrightarrow
+    q(\bar{h} ) = 2 h_1^{2}+3 h_2^{2}+ 4 h_3^{2} - 4 h_1 h_2 + 10 h_1 h_3
+\]
+
+\newpage
+
+\textbf{Studiamo il segno} 
+
+Adesso studiamo il segno della quadratica hessiana
+
+\defn{}{ $q(\bar{h} )$ si dice \textbf{definita positiva} se $\forall h \neq 0$ si ha $q(\bar{h} ) >0$}
+
+\defn{}{ $q(\bar{h} )$ si dice \textbf{definita negativa} se $\forall h \neq 0$ si ha $q(\bar{h} ) <0$}
+
+\defn{}{ $q(\bar{h} )$ si dice \textbf{indefinita} se $\exists \bar{h_1}, \bar{h_2} \in \mathbb{R}^{2}$ t.c. $q(\bar{h_1} ) <0<q(\bar{h_2} )$ cioe' cambia segno}
+
+\textbf{Nota} 
+
+Per studiare il segno possiamo usare anche il segno degli autovalori.
+
+\textbf{Conclusione} 
+
+Vediamo quindi cosa succede:
+
+\begin{itemize}
+    \item $det(Hf(x_0,y_0)>0$ e $f_{xx}(x_0,y_0)>0 \rightarrow $ la forma quadratica corrispondente è definita positiva
+    \item $det(Hf(x_0,y_0)>0$ e $f_{xx}(x_0,y_0)<0 \rightarrow $ la forma quadratica corrispondente è definita negativa
+    \item $det(Hf(x_0,y_0)<0$ $\rightarrow $ la forma quadratica corrispondente è indefinita
+\end{itemize}
+
+\end{proof}
+ 
+\textbf{Esempio 1} 
+
+Classificare i punti critici delle seguenti funzioni:
+
+\[
+    f(x,y) = 2x^{3}-6xy + 3y^{2}
+\]
+
+\[
+    \nabla f(x,y)=0 = \begin{cases}
+               6x^{2}-6y=0\\
+               -6x + 6y =0
+        \end{cases}\,. = \begin{cases}
+        (0,0)\\
+        (1,1)
+        \end{cases}
+\]
+
+Test dell'hessiana:
+
+\[
+    f_{xx}(x,y) = 12x
+\]
+
+\[
+    f_{xy}(x,y)= -6
+\]
+
+\[
+    f_{yy}(x,y) = 6
+\]
+
+quindi:
+
+\[
+    H f(x,y) = \begin{pmatrix}
+    12x & -6\\
+    -6 & 6 
+    \end{pmatrix}
+\]
+
+sostiuiamogli i punti trovati prima:
+
+\[
+    Hf(0,0) = \begin{bmatrix}
+    0 & -6\\
+    -6 & 6
+    \end{bmatrix}
+\]
+
+quindi:
+
+\[
+    det (Hf(0,0)) = -36 <0 \rightarrow \text{ sella}
+\]
+
+\[
+    Hf(1,1) = \begin{bmatrix}
+    12 & -6\\
+    -6 & 6
+    \end{bmatrix}
+\]
+
+quindi:
+
+\[
+    det (Hf(1,1)) = 36 >0 \text{ e } f_{xx}(1,1) = 12 \rightarrow \text{ minimo locale}
+\]
+
+\textbf{Altro esercizio} 
+
+\[
+    f(x,y) = x^{3} + (x-y)^{2}
+\]
+
+\[
+    \nabla f(x,y)=0
+\]
+
+\[
+        \begin{cases}
+    3x^{2}+2(x-y) = 0\\
+    -2(x-y) = 0
+        \end{cases}\, = \begin{cases}
+    3x^{2}= 0\\
+    x-y= 0
+        \end{cases}\, = x = y =0
+\]
+
+\[
+    f_{xx}(x,y) = 6x+2
+\]
+
+\[
+    f_{xy}(x,y) = -2
+\]
+
+\[
+    f_{yy}(x,y) = 2
+\]
+
+\[
+    H f(x,y) = \begin{pmatrix}
+        6x+2 & -2\\
+        -2 & 2
+    \end{pmatrix}
+\]
+
+\[
+    det(H f(x,y)) = 2(6x+2) -4
+\]
+
+\[
+    det(H f(0,0)) = 4-4 = 0
+\]
+
+Quindi non posso applicare il test dell'hessiana.
+
+Allora considero l'incremento in un intorno sferico dell'origine:
+
+\[
+    \Delta f(x,y) = f(x,y) - f(0,0) = x^{3}+(x-y)^{2} -0 = x^{3}+(x-y)^{2}
+\]
+
+e dunque, si puo' escludere che in $(0,0)$ ci sia minimo o massimo relativo (perché il segno cambia).
+
+Restringiamo adesso la funzione lungo un cammino $y=x$:
+
+\[
+    \Delta f(x,x) = x^{3}
+\]
+
+questa cambia segno dipendentemente dal valore di $x$ dunque $(0,0)$ è un punto di sella.
+
+
+\subsection{Massimi e minimi su domini limitati e chiusi di $\mathbb{R}^{2}$}
+
+In questo caso (domini limitati e chiusi) vale:
+
+\teorema{Weistrass}{ Sia $f: K \rightarrow \mathbb{R}$ con $K$ \textbf{limitato e chiuso} di $\mathbb{R}^{2}$ continua allora $f$ è \textbf{limitata} ed assume minimo e massimo su $K$, ovvero:
+
+    \[
+        \exists (x_m,y_m),(x_n,y_n) \in K
+    \]
+
+    t.c.
+
+    \[
+        f(x_m,y_m) \le f(x,y) \le f(x_n, y_n) \forall x,y \in K
+    \]
+
+    cioe' 
+    \begin{itemize}
+        \item $f(x_m, y_m)$ valore minimo assoluto di $f$ su $K$ 
+        \item $f(x_n, y_n)$ valore massimo assoluto di $f$ su $K$
+    \end{itemize}
+
+
+}
+
+
+
+\end{document}

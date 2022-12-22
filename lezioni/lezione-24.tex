@@ -1,27 +1,5 @@
 \documentclass[../appunti-analisi.tex]{subfiles}
 
-\newcommand\DrawBlock[3]{
-\ifx#1b\relax
-  \path[draw]
-    (lm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklf)
-    (bm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklb)
-    (lm#2) -- ++(0,0,#3) coordinate (blockrf)
-    (bm#2) -- ++(0,0,#3) coordinate (blockrb);
-  \filldraw[fill=white,draw=black]
-    (lm\the\numexpr#2-1\relax) -- (blocklf) -- (blocklb) -- (blockrb) -- (blockrf) -- (lm#2);
-\else  
-  \ifx#1f\relax
-    \path[draw]
-      (fm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklf)
-      (lm\the\numexpr#2-1\relax) -- ++(0,0,#3) coordinate (blocklb)
-      (fm#2) -- ++(0,0,#3) coordinate (blockrf)
-      (lm#2) -- ++(0,0,#3) coordinate (blockrb);
-    \filldraw[fill=white,draw=black]
-      (fm\the\numexpr#2-1\relax) -- (blocklf) -- (blocklb) -- (blockrb) -- (blockrf) -- (fm#2);
-  \fi
-\fi
-\draw (blocklf) -- (blockrf);
-}
 
 \begin{document}
 
@@ -78,13 +56,17 @@ Supponiamo $f: R \rightarrow \mathbb{R}$ limitata (ovvero $\exists m,M$ t.c. $m 
         s(f,D) = \sum^{n}_{i=1} \sum^{m}_{j=1} m_{ij} \cdot A_{ij}
     \]
 
+    cioe' la somma dei parallelepipedi piccoli (vedi figura)
+
 }
 
 \defn{Somma superiore}{ Definiamo somma superiore di $f$ rispetto a $D$:
 
     \[
-        s(f,D) = \sum^{n}_{i=1} \sum^{m}_{j=1} M_{ij} \cdot A_{ij}
+        S(f,D) = \sum^{n}_{i=1} \sum^{m}_{j=1} M_{ij} \cdot A_{ij}
     \]
+
+    cioe' la somma dei parallelepipedi grandi (vedi figura)
 
 }
 
@@ -170,7 +152,7 @@ $R = [0,1] \times [0,1]$:
 
 
 \[
-    S = \sum^{n}_{i=1} \sum^{m}_{j=1} \underbrace{1}_\text{inf $f$} (x_i - x_{i-1})(y_j - y_{j-1}) = 1 (b-a) (d-c) = 1
+    S = \sum^{n}_{i=1} \sum^{m}_{j=1} \underbrace{1}_\text{sup $f$} (x_i - x_{i-1})(y_j - y_{j-1}) = 1 (b-a) (d-c) = 1
 \]
 
 Essendo due valori diversi ($s \neq S$) allora non è integrabile

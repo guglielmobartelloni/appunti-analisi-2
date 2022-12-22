@@ -221,10 +221,13 @@ Siano $\bar{x}$ e $\bar{x} +\bar{h} $ due punti in $A$ tali che il segmento (di 
 
 DISEGNO DA FARE
        \begin{tikzpicture}
-           \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
-           \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
-          % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
+            \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
+            \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
+            % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
            % \draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
+            \draw[dashed] (1,1) -- (2,3);
+            \node[label=left:{$\bar{x}$}] at (1,1) {};
+            \node[label=right:{$\bar{x}+\bar{h}$}] at (2,3) {};
        \end{tikzpicture}
 
        \[

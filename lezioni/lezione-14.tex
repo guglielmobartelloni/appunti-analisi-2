@@ -242,6 +242,8 @@ Nelle due:
     graf(f) = \{(x,y,z) \in \mathbb{R}^{3}, z = f(x,y), \forall (x,y) \in A \subset \mathbb{R}^{3}\}
 \]
 
+
+\begin{center}
 \begin{tikzpicture}[bullet/.style={circle,fill,inner sep=1pt},
  declare function={f(\x,\y)=2-0.5*pow(\x-1.25,2)-0.5*pow(\y-1,2);}]
  \begin{axis}[view={150}{45},colormap/blackwhite,axis lines=middle,%
@@ -289,6 +291,7 @@ lower left=gray!60,lower right=gray!80!black] (1.75,0.5,0) -- (1.75,1.9,0)
   $\partial_yf(x,y)|_{x=x_0,y=y_0}$};
  \node[anchor=north east] at (b2) {$(x_0,y_0)$};
 \end{tikzpicture}
+\end{center}
 
 L'equazione del piano tangente alla funzione nel punto $P_0$ è:
 

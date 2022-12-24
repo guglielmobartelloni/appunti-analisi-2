@@ -84,22 +84,31 @@ se $k>0$:
 
 quindi sono parabole con concavità verso l'alto.
 
-% \begin{figure}[ht]
-%     \centering
-%     \incfig{disegno-bello-parabole-verso-l'altro}
-%     \caption{disegno bello parabole verso l'altro}
-%     \label{fig:disegno-bello-parabole-verso-l'altro}
-% \end{figure}
+\begin{center}
+\begin{tikzpicture}
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$}; % assi %coordinate
+    \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+    %parabole y/x^2=k
+    \foreach \k in {1,2,3,2.5} {
+        \draw[red, thick] plot[domain=-1.5:1.5] (\x, {\k*(\x)^2});
+    }
+\end{tikzpicture}
+\end{center}
 
 
 se $k<0$ avranno concavità verso il basso
 
-% \begin{figure}[ht]
-%     \centering
-%     \incfig{disegno-bello-parabole-verso-il-basso}
-%     \caption{disegno bello parabole verso il basso}
-%     \label{fig:disegno-bello-parabole-verso-il-basso}
-% \end{figure}
+\begin{center}
+\begin{tikzpicture}
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$}; % assi %coordinate
+    \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+    %parabole y/x^2=k
+    \foreach \k in {-1,-2,-3,-2.5} {
+        \draw[red, thick] plot[domain=-1.5:1.5] (\x, {\k*(\x)^2});
+    }
+\end{tikzpicture}
+\end{center}
+
 
 \newpage
 

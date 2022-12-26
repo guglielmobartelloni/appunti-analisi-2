@@ -33,12 +33,18 @@ con $g \in \mathbb{C}^{1}$ e g soggetto a:
   \draw (0,0) circle (1.5cm);
   \draw[->,ultra thick] (-5,0)--(5,0) node[right]{$x$};
   \draw[->,ultra thick] (0,-5)--(0,5) node[above]{$y$};
+
+  % etichette per le coordinate
+  \node[above] at (2,0) {(2,0)};
+  \node[below] at (-2,0) {(-2,0)};
+  \node[right] at (0,2) {(0,2)};
+  \node[left] at (0,-2) {(0,-2)};
 \end{tikzpicture}
 \end{center}
 
 Problema di minimo e massimo di $f$ rispetto al vincolo $V$.
 
-Se nel vincolo riesco ad esplicitare una variabile in funzione dell'altra $\rightarrow y=y(x)$.
+Se nel vincolo riesco a esplicitare una variabile in funzione dell'altra $\rightarrow y=y(x)$.
 
 Se $y=y(x),g(x,y) = k$ diventa $g(x,y(x))=k$ funziona di \textbf{una} sola variabile.
 
@@ -83,7 +89,7 @@ Sia $f$ che $g \in \mathbb{C}^{1}(\mathbb{R}^{2})$
 Quello che faccio è disegnare gli insiemi di livello della funzione $f$:
 
 \[
-    E_c = \{(x,y) \in \mathbb{R}^{2}, \underbrace{xy = c}_\text{la funzione equivale ad una costante}, c \in \mathbb{R}\}
+    E_c = \{(x,y) \in \mathbb{R}^{2}, \underbrace{xy = c}_\text{la funzione equivale a una costante}, c \in \mathbb{R}\}
 \]
 
 Voglio trovare il valore massimo di $f$ in $V$ e dunque devo trovare il \textbf{più grande} valore di $c$ per cui l'insieme di livello interseca il vincolo $V$.

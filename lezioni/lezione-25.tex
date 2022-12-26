@@ -1,0 +1,121 @@
+\documentclass[../appunti-analisi.tex]{subfiles}
+
+\begin{document}
+
+\section{Lezione 25}
+
+\subsection{Integrazione doppia su domini più generali}
+
+Sia $D \subset \mathbb{R}^{2} $ limitato e sia $f$ limitata in $D$ ($f: D \rightarrow \mathbb{R}$)
+
+e consideriamo l'estensione della $f$ (che chiameremo $\bar{f}$) a $D$:
+
+\[
+    \bar{f} (x,y) = \begin{cases}
+        f(x,y) & \text{se $(x,y) \in D$} \\
+        0 & \text{se $(x,y) \in R \setminus D $}
+    \end{cases}
+\]
+
+$\bar{f} $ è in un rettangolo $R$ ed è limitata.
+
+
+\defn{}{$f$ è limitata su $D \subset \mathbb{R}^{2}$ con D insieme limitato di $\mathbb{R}^{2}$.
+
+    Diciamo che $f$ è integrabile (secondo Reimann) su D, se la $\bar{f} $ è integrabile su $R$ (secondo Reimann) e in tal caso si scrive:
+
+    \[
+        \iint_D {f(x,y)} \: d x d y = \iint_R {\bar{f} (x,y)} \: dx d y 
+    \]
+
+}
+
+\textbf{Osservazione} 
+
+La definizione \textbf{non} dipende dalla scelta di $R$ (dove $R$ rettagolo che contiene D)  
+
+
+\defn{Insieme numerabile (Peano-Jordan)}{Un sottoinsieme limitato del piano $D \subset \mathbb{R}^{2}$ si dice misurabile (secondo Peano-Jordan) se la funzione $f(x,y)=1$ è integrabile su D 
+
+In tal caso poniamo:
+
+\[
+    Area(D) = |D| \cdot \iint {1} \: dx d y
+\]
+
+e dunque ogni rettangolo $R = [a,b] \times [c,d]$ è miusrabile secondo Peano-Jordan:
+
+\[
+    |R| = \int_{a}^{b} {\int_{c}^{d} {1} \: dx } \: dx  = (b-a) (d-c)
+\]
+}
+
+
+Tutti gli insiemi che conosciamo della geometria elementare (quadrati, rettangoli, poligoni, cerchi) sono misurabili e la loro misuora (secondo Peano-Jordan) è l'area che conosciamo:
+
+\[
+    Q = [0,1] \times [0,1]
+\]
+
+quadrato con le componenti razionali:
+
+\[
+    f() = \begin{cases}
+        1 & \text{se $(x,y) \in Q$ e $(x,y)$ razionali} \\
+         0 & \text{altrimenti}
+    \end{cases}
+\]
+
+non è Riemann integrabile.
+
+
+\subsubsection{Proprieta}
+
+Siano $f$ e $g$ integrabili su D ( siano $f,g \in R(D)$) e $c \in \mathbb{R}$:
+
+\begin{enumerate}
+    \item Linearita'
+        \begin{enumerate}
+            \item $f+g$ è integrabile:
+
+                \[
+                    \iint_D {(f+g)} \: dx d y  = \iint_D {f} \: dx d y + \iint_D {g} \: dx d y 
+                \]
+            \item $c\cdot f$ è integrabile:
+
+                \[
+                    \iint_D {c f()} \: dx  d y = c \iint_D {f()} \: dx  d y 
+                \]
+
+            \item \[
+                \iint_D {[\alpha f() + \beta g() } \: dx d y = \alpha \iint_D {f()} \: dx d y + \beta \iint_D {g()} \: dx d y 
+            \]
+        \end{enumerate}
+
+    \item Monotonia
+        \begin{enumerate}
+            \item Se $f \le g$ allora:
+
+                \[
+                    \iint_D {f()} \: dx d y = \iint_D {g()} \: dx d y 
+                \]
+            \item $|f| \in R(D)$ e si ha $\left|\iint_D {f()} \: dx d y \right| \le \iint_D {\left|f()\right|} \: dx d y  $
+
+                In particolare se $D$ è misurabile e se $M_1= \underbrace{sup}_\text{D} | f(x,y)$:
+
+                \[
+                    \left|\iint_D {f(x,y)} \: dx d y\right| \le M_1(D)
+                \]
+
+        \end{enumerate}
+        
+\end{enumerate}
+
+
+\subsection{Regioni semplici del piano}
+
+
+
+
+
+\end{document}

@@ -112,8 +112,283 @@ Siano $f$ e $g$ integrabili su D ( siano $f,g \in R(D)$) e $c \in \mathbb{R}$:
 \end{enumerate}
 
 
+\newpage 
+
 \subsection{Regioni semplici del piano}
 
+Sono insiemi misurabili (secondo Peano-Jordan) e su queste regioni possiamo usare le formule di riduzione.
+
+Una regione $D_1 \subset \mathbb{R}^{2}$ si dice \textbf{y-semplice} (o normale rispetto all'asse x) se è compresa tra i grafici di due funzioni della variabile x.
+
+\textbf{Esempio} 
+
+DISEGNO DA FARE
+
+\[
+    D_1= \{(x,y) \in \mathbb{R}^{2}, a \le x \le b, g_1(x) \le y \le g_2(x)\}
+\]
+
+dove $g_1,g_2$ sono continue in $[a,b]$ e $g_1(x) \le g_2(x)$.
+
+$D_1$ è l'insieme di segmenti verticali se $x \in [a,b]$
+
+\[
+    (D_1)x = \{y \in \mathbb{R}, g_1(x) \le y \le g_2(x)\} = \begin{cases}
+        [g_1(x),g_2(x)] & \text{se $x \in [a,b]$} \\
+        \emptyset & \text{altrimenti}
+    \end{cases}
+\]
+
+$D_2$ è \textbf{x-semplice} (normale rispetto all'asse y)
+
+DISEGNO DA FARE
+
+
+\[
+    D_2= \{(x,y) \in \mathbb{R}^{2}, c \le y \le d, h_1(y) \le x \le h_2(y)\}
+\]
+ 
+dove $h_1,h_2$ sono continue $[c,d]$ e $h_1(y) \le h_2(y)$.
+
+$D_2$ è l'insieme di segmenti orizzontali:
+
+\[
+    (D_2) y = \{x \in \mathbb{R}, h_1(y) \le x \le h_2(y)\} = \begin{cases}
+        h_1(y),h_2(y) & \text{se $y \in [c,d]$} \\
+        \emptyset & \text{altrimenti}
+    \end{cases}
+\]
+
+
+$D_1$ e $D_2$ sono misurabili secondo Peano-Jordan.
+
+\[
+    Area(D_1) = \int_{a}^{b} {[g_2(x) -g_1(x)]} \: dx 
+\]
+
+cioe':
+
+\[
+    \iint_{D_1} {1} \: d x d y = \int_{a}^{b} {dx \int_{g_1(x)}^{g_2(x)} {1} \: y }
+\]
+
+mentre:
+
+\[
+    Area(D_2) = \int_{c}^{d} {[h_2(x) -h_1(x)]} \: dx 
+\]
+
+cioe':
+
+\[
+    \iint_{D_2} {1} \: d x d y = \int_{c}^{d} {dx \int_{h_1(x)}^{h_2(x)} {1} \: y }
+\]
+
+
+\teorema{Formule di riduzione}{ Ogni funzione continua su un'insieme semplice $D \subset \mathbb{R}^{2}$ è integrabile su tale insieme e valgono le formule di riduzione:
+
+    \begin{enumerate}
+        \item Se $D$ è y-semplice allora:
+
+            \[
+                \iint_D {f(x,y)} \: d x d y = \int_{a}^{b} {d x \int_{g_1(x)}^{g_2(x)} {f(x,y)} \: d y } 
+            \]
+        \item Se $D$ è x-semplice allora:
+
+            \[
+                \iint_D {f(x,y)} \: d x d y = \int_{c}^{d} {d x \int_{h_1(x)}^{h_2(x)} {f(x,y)} \: d y } 
+            \]
+    \end{enumerate}
+
+}
+
+\textbf{Esempio} 
+
+Dato:
+
+\[
+    E = \{(x,y) \in \mathbb{R}^{2}| 0 \le x \le 2, -x \le y \le x^{2}\}
+\]
+
+Rappresentarlo come insieme x-semplice (o come unione di insiemi x-semplici)
+
+
+DISEGNO DA FARE
+
+
+x-semplice unione di segmenti orizzontali
+
+\[
+    E = \{(x,y) \in \mathbb{R}^{2}; -2 \le y \le 0, \underbrace{-y}_\text{$h_1(y)$} \le x \le \underbrace{2}_\text{$h_2(y)$}\} \cup \{(x,y) \in \mathbb{R}^{2}; 0 \le y \le 4, \underbrace{\sqrt{y}}_\text{$g_1(x)$} \le  x \le \underbrace{2}_\text{$g_2(x)$}\}
+\]
+
+
+DISEGNO
+
+$D_1$ è y-semplice.
+
+$D_2$ è x-semplice.
+
+$D = D_1 \cup D_2$ non è semplice
+
+\[
+    \iint_D {f()} = \iint_{D_1} {f()} \iint_{D_2} {f()}
+\]
+
+\subsubsection{Proprieta' di additivita' rispetto ai domini di integrazione}
+
+Supponiamo che $D_1,D_2,\ldots,D_k \in \mathbb{R}^{2}$ sono semplici e che non abbiamo due a due punti in comune oltre ad una parte di frontiera allora ogni funzione continua in $D = D_1 \cup \ldots \cup D_k$ è integrabile e:
+
+\[
+    \iint_D {f(x,y)} \: d x d y = \iint_{D_1} {f(x,y)} \: d x d y + \ldots + \iint_{D_k} {f(x,y)} \: d x d y  
+\]
+
+\newpage
+
+\textbf{Esempio}
+
+\[
+    \int_{0}^{1} {\int_{x}^{1} {e ^{y^{2}}} \: dy } \: dx 
+\]
+
+\begin{itemize}
+    \item y-semplice
+        \[
+            D = \{(x,y) \in \mathbb{R}^{2}, 0 \le x \le 1, x \le y \le 1\}
+        \]
+    \item x-semplice
+        \[
+            D = \{(x,y) \in \mathbb{R}^{2}, 0 \le y \le 1, 0 \le x \le y\}
+        \]
+\end{itemize}
+
+\[
+    \iint_D {e ^{y^{2}}} \: d y d x = \int_{0}^{1} {\left(\int_{x}^{1} {e ^{y^{2}}} \: d y \right)} \: dx = \int_{0}^{1} {\left(\int_{0}^{y} {e ^{y^{2}}} \: dx \right)} \: d  y = \int_{0}^{1} {e ^{y^{2}}\left(\int_{0}^{y} {} \: dx \right)} \: dy  =
+\]
+
+\[
+    = \int_{0}^{1} {y e ^{y^{2}}} \: dy  = \Eval{[\frac{1}{2} e ^{y^{2}}]}{0}{1} = \frac{1}{2} (2 -1) = -\frac{1}{2}
+\]
+
+dove $\int_{0}^{1} {\left(\int_{x}^{1} {e ^{y^{2}}} \: dy \right)} \: dx $ è una funzione continua e dunque ammette primitiva $F(y)$ quindi otteniamo:
+
+\[
+    \int_{0}^{1} {\left(\int_{x}^{1} {e ^{y^{2}}} \: dy \right)} \: dx  = \int_{0}^{1} {\Eval{[F(y)]}{x}{1} } \: dx = \int_{0}^{1} {\left(F(1) - F(x) \right)} \: dx =
+\]
+
+\[
+    = \int_{0}^{1} {F(1)} \: d x - \int_{x}^{1} {F(x)} \: dx = F(1) - \int_{0}^{1} {F(x)} \: dx  =
+\]
+
+\[
+    = F(1) - \Eval{[xF(x)]}{0}{1} + \int_{0}^{1} {x F'(x)} \: dx = \cancel{F(1)} \cancel{- F(1)} + 0 + \int_{0}^{1} {xF'(x)} \: dx
+\]
+
+\[
+    = \underbrace{\int_{0}^{1} {x e^{x^{2}}} \: dx }_\text{risultato come sopra}
+\]
+
+\subsection{Cambiamento di variabili degli integrali doppi (non la spiega in realta boh)}
+
+In analisi I, abbiamo utilizzato il \textbf{metodo della sostituzione}:
+
+$x$ e $t$ allora $x=\varphi(t)$, dove $\varphi$ è $\mathbb{C}^{1}$ ed invertibile:
+
+\[
+    \int_{a}^{b} {f(x)} \: dx = \int_{\varphi^{-1}(a)}^{\varphi^{-1}(b)} {f(\varphi(t))\varphi'(t)} \: dt 
+\]
+
+dove $d x = \varphi'(t) dt$
+
+
+\subsection{Integrali doppi in coordinate polari}
+
+Consideriamo l'applicazione (vettore): $F: \mathbb{R}^{2} \rightarrow \mathbb{R}$ cosi definita:
+
+\[
+    (\rho, \theta) \rightarrow (\underbrace{x(\rho, \theta)}_\text{$F_1(\rho, \theta)$}, \underbrace{y(\rho, \theta)}_\text{$F_2(\rho,\theta)$})
+\]
+
+\[
+    F = \begin{cases}
+        x=\rho \cos \theta\\
+         y = \rho \sin \theta
+    \end{cases}
+\]
+
+
+Consideriamo la matrice Jacobiana associata a $F(2\times 2 )$
+
+\[
+    DF(\rho,\theta) = JF(\rho,\theta)
+\]
+
+\[
+    DF(\rho,\theta) = JF(\rho,\theta) = \begin{vmatrix}
+    \nabla F_1(\rho,\theta)\\
+     \nabla F_2(\rho,\theta)
+    \end{vmatrix} = \begin{vmatrix}
+    \frac{\partial F_1}{\partial \rho}(\rho,\theta) & \frac{\partial F_1}{\partial \theta}(\rho,\theta)\\
+    \frac{\partial F_2}{\partial \rho}(\rho,\theta) & \frac{\partial F_2}{\partial \theta}(\rho,\theta)
+    \end{vmatrix} = \begin{vmatrix}
+    \cos \theta & \rho \sin \theta\\
+    \sin \theta & \rho \cos \theta 
+    \end{vmatrix}
+\]
+
+calcoliamo il determinante:
+
+\[
+    det JF(\rho,\theta) = \rho \cos^{2}\theta+ \rho \sin^{2}\theta = \rho \neq 0 \Leftrightarrow \theta \neq 0
+\]
+
+Quindi $\rho=0 \Leftrightarrow (x,y) = (0,0)$
+
+La funzione $F$ non è iniettiva (non c'è corrispondenza 1 a 1) per la periodicita' delle funzioni trigonometriche:
+
+\[
+    F(\rho, \theta + 2\pi) = F(\rho,\theta) = (\rho \cos (\theta+ 2\pi), \rho \sin (\theta + 2\pi) + \text{ valori associati}
+\]
+
+Restringiamo la funzione $F$ ad $A \subset \mathbb{R}^{2}$ aperto in cui:
+
+\[
+    A = (0, +\infty) \times (0, 2\pi) \text{ oppure } A=(0, +\infty) \times (-\pi, \pi)
+\]
+
+quindi l'applicazione:
+
+\[
+    F: A \subseteq \mathbb{R}^{2} \rightarrow \mathbb{R}
+\]
+
+è biettiva perché manda aperti in aperti.
+
+\newpage
+
+\teorema{}{Consideriamo l'applicazione verticale $F(\rho,\theta) = \left(F_1(\rho,\theta), F_2(\rho,\theta)\right)$ in cui $F: A \rightarrow \mathbb{R}^{2}$ in cui $A = (0,+\infty) \times (0,2\pi)$.
+
+Sia $S \subset (0,+\infty) \times (0,2\pi)$ un aperto misurabile nel piano $(\rho,\theta)$ con $\bar{S} \subset (0,\infty) \cdot (0,2\pi)$ e sia $T=F(S)$
+
+DISEGNO
+
+Allora per ogni funzione $f$ integrabile su $T$, continua e limitata, vale la sequente formula:
+
+\[
+    \iint_{T=F(S)} {f(x,y)} \: d x d y  = \iint_{S=F'(T)} {f( \rho \cos \theta, \rho \sin \theta) \underbrace{\rho}_\text{det $JF(\rho,\theta)$}} \: d \rho d \theta  
+\]
+
+}
+
+\textbf{Esempio} 
+
+Cerchio: $x^{2}+y^{2}=r^{2}$
+
+Coordinate polari:
+
+\[
+    \{(\rho,\theta) | 0 \le \rho \le r, 0 \le \theta \le  2\pi\}
+\]
 
 
 

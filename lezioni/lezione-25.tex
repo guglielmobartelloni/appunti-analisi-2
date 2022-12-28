@@ -390,7 +390,103 @@ Coordinate polari:
     \{(\rho,\theta) | 0 \le \rho \le r, 0 \le \theta \le  2\pi\}
 \]
 
+\[
+    c = \{(x,y) \in \mathbb{R}^{2}| r^{2} \le x^{2}+y^{2} \le R^{2}\}
+\]
+
+\[
+    \bar{c} = \{(\rho,\theta) | r \le \rho \le R, 0 \le \theta \le 2\pi\}
+\]
+
+DISEGNI SU DISEGNI CHE BELLO
 
 
+\textbf{Esempio} 
+
+\[
+    \iint_{u^{2}+v^{2} \le S} {v^{2}} \: dudv 
+\]
+
+\[
+    D= \{(u,v) \in \mathbb{R}^{2}, u^{2}+v^{2} \le S\}
+\]
+
+Trasformiamo in coordinate polari:
+
+\[
+    \bar{D} = \{(\rho,\theta) | 0 \le \rho \le \sqrt{5}, 0 \le \theta \le 2\pi\}
+\]
+
+\[
+    \iint_{u^{2}+v^{2} \le S} {v ^{2}} \: dudv = \int_{0}^{\sqrt{5}} {\int_{\theta}^{2\pi} {\rho^{2} \sin \theta \cdot \rho} \: d \rho } \: d \theta = \int_{0}^{\sqrt{5}} {\int_{\theta}^{2\pi} {\theta^{3} \sin \theta} \: d \theta } \: d \rho =  
+\]
+
+\[
+    \int_{0}^{\sqrt{5}} {\rho^{3} \left(\int_{\theta}^{2\pi} {\sin ^{2} \theta} \: d \theta \right)} \: d \rho = \int_{0}^{\sqrt{5}} {\rho^{3} \left( \int_{\theta}^{2\pi} { \frac{1- \cos 2 \theta}{2}} \: d \theta \right)} \: d \rho =   
+\]
+
+\[
+    = \int_{0}^{\sqrt{5}} {\rho^{3} \Eval{[ \frac{1}{2} \theta - \frac{\sin 2 \theta}{4}]}{0}{2\pi} } \: d \rho = \pi \int_{0}^{\sqrt{5}} {\rho^{3}} \: d \rho  = \pi \Eval{[ \frac{\rho^{4}}{4}]}{0}{\sqrt{5}}  = \frac{25}{4}\pi 
+\]
+
+\textbf{Esempio} 
+
+\[
+\iint_A {x^{2}+y^{2}} \: d x d y  
+\]
+
+\[
+    A = \{(x,y) \in \mathbb{R}^{2} | x^{2} + y^{2} \le 4\}
+\]
+
+\[
+    A = \underbrace{\{(x,y) \in \mathbb{R}, -2 \le x \le 2, - \sqrt{4-x^{2}} \le  y \le  \sqrt{4 -x^{2}}\}}_\text{dominio y-semplice}\]
+
+Vediamo il metodo lungo (complicato che non va bene):
+\[
+    \iint_A {x^{2}+y^{2}} \: d x d y = \int_{-2}^{2} {} \: dx  \int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} {\left(x^{2} + y^{2}\right)} \: d y  = \int_{-2}^{2} { \Eval{[x^{2}(y)+ \frac{y^{3}}{3}]}{-\sqrt{4-x^{2}}}{\sqrt{4-x^{2}}} } \: dx 
+\]
+
+ora passiamo in coordinate polari invece per facilitarci:
+
+\[
+    \bar{A}  = \{(\rho,\theta) | 0 \le \rho \le 2, 0 \le \theta \le 2\pi\}
+\]
+
+\[
+    \iint_A {x^{2}+y^{2}} \: d x d y = \int_{0}^{2} {\int_{0}^{2\pi} {\theta^{2} \rho} \: d \rho } \: d \theta = 2\pi \int_{0}^{2} {\rho^{3}} \: d \rho = 2\pi \Eval{[ \frac{\rho^{4}}{4}]}{0}{2} = 2\pi 
+\]
+
+\textbf{Esempio} 
+
+\[
+\iint_A {x} \: dx d y; \iint {y} \: d x d y  
+\]
+
+\[
+    A = \{(x,y) \in \mathbb{R}^{2} | x^{2}+y^{2} \le 1, x>0\}
+\]
+
+\[
+    \iint_A {y} \: d x d y =0 
+\]
+
+la funzione integranda:
+
+\[
+    f(x,y) = y, f(x,-y) = -y
+\]
+
+\[
+    \bar{A} = \{(\rho,\theta) | 0 \le \theta \le 1, - \frac{\pi}{2} \le \theta \le \frac{\pi}{2}\}
+\]
+
+\[
+    \iint_A {x} \: d x d y  = \int_{0}^{1} {\int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} {\rho \cos \theta \rho} \: d \rho } \: d \theta = \int_{0}^{1} {\rho^{2} \left(\int_{- \frac{\pi}{2}}^{ \frac{\pi}{2}} {\cos \theta} \: d \theta \right)} \: d \rho =  
+\]
+
+\[
+    =\int_{0}^{1} {\rho^{2}\Eval{[\sin \theta]}{ - \frac{\pi}{2}}{ \frac{\pi}{2}} } = 2 \int_{0}^{1} {\rho^{2}} \: d \rho = \Eval{[2 \frac{\rho^{3}}{3} ]}{0}{1} = \frac{2}{3}
+\]
 
 \end{document}

@@ -3,12 +3,71 @@
 
 \input{template/preamble}
 
+\newcommand{\myItalianTitle}{Titolo italiano}
+\newcommand{\myEnglishTitle}{Titolo inglese}
+% use the right myDegree option
+\newcommand{\myDegree}{Corso di Laurea in Informatica}
+%\newcommand{\myDegree}{
+	%Corso di Laurea Specialistica in Scienze e Tecnologie 
+	%dell'Informazione}
+\newcommand{\myName}{Guglielmo Bartelloni}
+\newcommand{\myProf}{Relatore}
+\newcommand{\myOtherProf}{Correlatore}
+\newcommand{\mySupervisor}{Nome Cognome}
+\newcommand{\myFaculty}{
+	Scuola di Scienze Matematiche, Fisiche e Naturali}
+\newcommand{\myUni}{\protect{
+	Universit\`a degli Studi di Firenze}}
+\newcommand{\myLocation}{Firenze}
+\newcommand{\myTime}{Anno Accademico 2022-2023}
+\newcommand{\myVersion}{Version 0.1}
+
 \begin{document}
 
-\title{Analisi 2}
-\author{Guglielmo Bartelloni}
 
-\maketitle
+\begin{titlepage}
+	\begin{center}
+   	\large
+      \hfill
+      \vfill
+      \begingroup
+         \includegraphics[scale=0.15]{logo/LOGO}\\
+%			\spacedallcaps{\myUni} \\ 
+			\myFaculty \\
+			\myDegree \\ 
+			\vspace{0.5cm}
+         \vspace{0.5cm}    
+      \endgroup 
+      \vfill 
+      \begingroup
+      	\color{red} Appunti Analisi Matematica 2 \\ $\ $\\
+	\bigskip
+      \endgroup
+      Autore: \myName
+      \vfill 
+      \vfill
+      Contributori: \emph{Martin Ligabue}\\
+      \vfill
+      \vfill
+      \myTime
+      \vfill                      
+	\end{center}        
+\end{titlepage}   
+%--------------------------------------------------------------
+% back titlepage
+%--------------------------------------------------------------
+   \newpage
+	\thispagestyle{empty}
+	\hfill
+	\vfill
+	\noindent\myName: 
+	\textit{Appunti Analisi Matematica 2,} 
+	\myDegree, \textcopyright\ \myTime
+%--------------------------------------------------------------
+% back titlepage end
+%--------------------------------------------------------------
+
+\newpage
 \tableofcontents
 \newpage
 \thispagestyle{empty}

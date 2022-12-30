@@ -26,9 +26,9 @@ con $a,b,c \in \mathbb{R}$ con $a \neq 0$ se no non sarebbe di ordine II, $f(x)$
 
 Adesso associamo il problema omogeneo:
 
-\[
+\begin{equation}\label{IIomogenea}
     ay''(x) + by'(x) + cy(x) = 0
-\]
+\end{equation}
 
 \textbf{Numeri complessi} 
 
@@ -66,7 +66,7 @@ Questo caso è facile. Se invece $b$ e $c$ non sono contemporaneamente nulli, de
     p(\lambda) = a \lambda^{2}+b \lambda + c =0
 \]
 
-La sua equazione associata a (2):
+La sua equazione associata a \ref{IIomogenea}:
 
 \[
     p(\lambda) =0 \Leftrightarrow  a \lambda^{2}+b \lambda + c =0, in\ \mathbb{C}
@@ -83,15 +83,16 @@ La sua equazione associata a (2):
 
 }
 
-
-\textbf{Proposizione} 
-
-$y(x) = e ^{\lambda x}$ è soluzione di (2) $\Leftrightarrow $ $\lambda$ è soluzione (radice) di $p(\lambda)=0$ dell'equazione caratteristica associata a (2)
+\proposizione{}{
+$y(x) = e ^{\lambda x}$ è soluzione di \ref{IIomogenea} $\Leftrightarrow $ $\lambda$ è soluzione (radice) di $p(\lambda)=0$ dell'equazione caratteristica associata a \ref{IIomogenea}
 
 Indico con $Ly$ l'equazione $Ly= ay''+by'+cy$
+}
+
+
 
 \begin{proof}
-    y è soluzione di (2) $\Leftrightarrow$ $Ly=0$ 
+    y è soluzione di \ref{IIomogenea} $\Leftrightarrow$ $Ly=0$ 
 
     Se considero $y(x) = e ^{\lambda x}$ 
 
@@ -128,7 +129,7 @@ Di solito le soluzioni di secondo grado si scrivono
     \lambda_{1,2} = \frac{-b \pm \sqrt{b ^{2}-4 ac}}{2a}
 \]
    
-Le soluzioni $\lambda_1$ e $\lambda_2$ sono soluzioni di ((2) $e ^{\lambda_1x}$ e $e ^{\lambda_2x}$)
+Le soluzioni $\lambda_1$ e $\lambda_2$ sono soluzioni di (\ref{IIomogenea} $e ^{\lambda_1x}$ e $e ^{\lambda_2x}$)
 
 Distinguiamo tre casi per le soluzioni:
 
@@ -185,7 +186,7 @@ dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
        \]
         che è diverso da zero quindi le soluzioni sono linearmente indipendenti
 
-        sia ora $y(x)$ una soluzione di (2):
+        sia ora $y(x)$ una soluzione di \ref{IIomogenea}:
 
         \[
             y(x) = e ^{\lambda_1 x}u(x)
@@ -193,7 +194,7 @@ dove $\alpha = -\frac{b}{2a}$ e $\beta = \frac{\sqrt{4ac - b^{2}}}{2a} >0$
 
         io devo determinare $u(x)$ per poi dimostrare che $y(x) = c_1e ^{\lambda_1 x}+c_2 e^{\lambda_2 x}$
 
-        Poiché $y(x) = e ^{\lambda_1 x}u(x)$ è soluzione di (2) si ha derivando e sostituendo:
+        Poiché $y(x) = e ^{\lambda_1 x}u(x)$ è soluzione di \ref{IIomogenea} si ha derivando e sostituendo:
 
         \[
             a( e ^{\lambda_1 x} u(x))'' + b(e ^{\lambda_1 x}u(x))'+ c e ^{\lambda_1 x}u(x) =0
@@ -291,10 +292,10 @@ Adesso voglio per il caso 2)
 \]
    
 \[
-    p(\lambda) =0 \Leftrightarrow e ^{\lambda x} \text{È soluzione di (2)}
+    p(\lambda) =0 \Leftrightarrow e ^{\lambda x} \text{È soluzione di \ref{IIomogenea}}
 \]
 
-sia quindi $y(x)$ una soluzione di (2) che scriviamo come:
+sia quindi $y(x)$ una soluzione di \ref{IIomogenea} che scriviamo come:
 
 \[
     y(x) = e ^{\lambda x}u(x) 

@@ -31,6 +31,8 @@ f è derivabile in $\bar{x} =(x_1, \ldots ,x_n) \in A$ è lo stesso che dire che
     Se $f$ è differenziabile in ogni punto di $A$ si dice che $f$ è differenziabile in $A$
 }
 
+Da notare che il prodotto scalare $\langle \nabla f(\bar{x} ), \bar{h}  \rangle$ rappresenta l'incremento che io faccio verso ogni direzione per poter ``vedere'' che cosa succede quando mi sposto un ``pochino'' in ogni direzione.
+
 \newpage
 
 \defn{}{ Definisco $L : \mathbb{R}^{n} \rightarrow \mathbb{R}$ (funzione lineare) è l'applicazione che ad $\bar{h} $ associa il prodotto scalare:
@@ -85,23 +87,18 @@ Supponiamo che $f$ sia differenziabile in $\bar{x_0} \in A $ allora tornando all
 riscrivendolo per $x_0$:
 
 \[
-    f(x) = f(x_0) + \langle \nabla f(x_0), x-x_0 \rangle + o(|x-x_0|)
+    f(x) = \underbrace{f(x_0)}_\text{punto di partenza} + \underbrace{\langle \nabla f(x_0), x-x_0 \rangle}_\text{il mio spostamento} + \underbrace{o(|x-x_0|)}_\text{l'errore che commetto spostandomi}
 \]
 
 e dunque la funzione lineare $\bar{x} \rightarrow  f(\bar{x_0} ) + \langle \nabla f(\bar{x_0} ), x-x_0 \rangle$ ci fornisce un'approssimazione lineare della $f(x)$ nel punto $x_0$ a meno di infinitesimi di ordine superiore alla distanza tra $x$ e $x_0$:
 
 \[
-    d(x,x_0) = |x- x_0|
+    \underbrace{d(x,x_0)}_\text{distanza euclidea} = |x- x_0|
 \]
 
-Il grafico di questa funzione lineare rappresenta il piano tangente al grafico di $f$ nel punto $x_0$ in cui la $f$ è differenziabile.
+Il grafico di questa funzione lineare rappresenta il piano tangente al grafico di $f$ nel punto $x_0$ in cui la $f$ è differenziabile. 
 
-
-Se $f: \mathbb{R} \rightarrow \mathbb{R}$ è derivabile in $x_0$ ($\exists f'(x_0)$):
-
-\[
-    f(x) = \underbrace{f(x_0) + f'(x_0) (x-x_0)}_\text{retta tangente al grafico di f nel punto} + o(|x-x_0|)
-\]
+(Questo è chiaro in due variabili perché io effettivamente mi sto spostando lungo sia le $x$ che le $y$ e quindi sto disegnando un piano)
 
 \subsection{Differenziale per le funzioni in due variabili} 
 

@@ -27,7 +27,7 @@ $f: A \subseteq \mathbb{R}^{2} \rightarrow \mathbb{R}$, $P_0=(x_0,y_0) \in A$
 $f$ derivabile due volte su $A$ (quindi esiste la matrice Hessiana).
 
 
-Se le $f_{xy}$ e $f_{yk}$ sono continue in $(x_0,y_0)$, allora $f_{xy}(x_0,y_0) = f_{yx}(x_0,y_0)$ (la matrice Hessiana è simmetrica).
+Se le $f_{xy}$ e $f_{yx}$ sono continue in $(x_0,y_0)$, allora $f_{xy}(x_0,y_0) = f_{yx}(x_0,y_0)$ (la matrice Hessiana è simmetrica).
 
 
 \begin{proof}
@@ -52,7 +52,7 @@ Se le $f_{xy}$ e $f_{yk}$ sono continue in $(x_0,y_0)$, allora $f_{xy}(x_0,y_0) 
        Lagrange a $F(x)$ nell'intervallo di estremi $x_0$, $x$, si ha che esiste un elemento $x_1$ in questo intervallo per cui:
 
        \[
-           F(x)- F(x_0) = F'(x_1) (x-x_0) = [f_x(x,y) - f_x(x_1,y_0) ] (x- x_0)  \overset{\text{applico Lagrange due volte come spiegato sotto}}{=}
+           F(x)- F(x_0) = F'(x_1) (x-x_0) = [f_x(x_1,y) - f_x(x_1,y_0) ] (x- x_0)  \overset{\text{applico Lagrange due volte come spiegato sotto}}{=}
        \]
 
        Sappiamo che $f$ è derivabile due volte, posso quindi applicare Lagrange a $f_x(x_1,y)$ nell'intervallo di estremi $y_0,y$. Quindi $\exists y_1$ nell'intervallo tale che:

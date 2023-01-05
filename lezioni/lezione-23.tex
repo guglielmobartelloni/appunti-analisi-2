@@ -22,57 +22,57 @@ con $g \in \mathbb{C}^{1}$ e g soggetto a:
     V= \{(x,y) \in A; g(x,y) =k\}
 \]
 
-\textbf{Esempio} 
-
-\[
-    V = \{(x,y) \in \mathbb{R}^{2}; x^{2}+y^{2}=4\}
-\]
-
-\begin{center}
-\begin{tikzpicture}[line width=1pt]
-  \draw (0,0) circle (1.5cm);
-  \draw[->,ultra thick] (-5,0)--(5,0) node[right]{$x$};
-  \draw[->,ultra thick] (0,-5)--(0,5) node[above]{$y$};
-
-  % etichette per le coordinate
-  \node[above] at (2,0) {(2,0)};
-  \node[below] at (-2,0) {(-2,0)};
-  \node[right] at (0,2) {(0,2)};
-  \node[left] at (0,-2) {(0,-2)};
-\end{tikzpicture}
-\end{center}
-
-Problema di minimo e massimo di $f$ rispetto al vincolo $V$.
-
-Se nel vincolo riesco a esplicitare una variabile in funzione dell'altra $\rightarrow y=y(x)$.
-
-Se $y=y(x),g(x,y) = k$ diventa $g(x,y(x))=k$ funziona di \textbf{una} sola variabile.
-
-Infatti nell'esempio di prima:
-
-\[
-    x^{2}+y^{2} = 4
-\]
-
-\[
-    V = \gamma([0,2\pi])
-\]
-
-\[
-    \gamma =
-        \begin{cases}
-            x=2 \cos t\\
-               y= 2 \sin t
-        \end{cases}\,.
-\]
-
-diventa:
-
-\[
-    x^{2}+y^{2} = 4 \cos ^{2} t + 4 \sin ^{2} t = 4 ( \cos ^{2} t + \sin ^{2} t) =4
-\]
-
-\subsection{Metodo dei moltiplicatori di Lagrange}
+% \textbf{Esempio} 
+%
+% \[
+%     V = \{(x,y) \in \mathbb{R}^{2}; x^{2}+y^{2}=4\}
+% \]
+%
+% \begin{center}
+% \begin{tikzpicture}[line width=1pt]
+%   \draw (0,0) circle (1.5cm);
+%   \draw[->,ultra thick] (-5,0)--(5,0) node[right]{$x$};
+%   \draw[->,ultra thick] (0,-5)--(0,5) node[above]{$y$};
+%
+%   % etichette per le coordinate
+%   \node[above] at (2,0) {(2,0)};
+%   \node[below] at (-2,0) {(-2,0)};
+%   \node[right] at (0,2) {(0,2)};
+%   \node[left] at (0,-2) {(0,-2)};
+% \end{tikzpicture}
+% \end{center}
+%
+% Problema di minimo e massimo di $f$ rispetto al vincolo $V$.
+%
+% Se nel vincolo riesco a esplicitare una variabile in funzione dell'altra $\rightarrow y=y(x)$.
+%
+% Se $y=y(x),g(x,y) = k$ diventa $g(x,y(x))=k$ funziona di \textbf{una} sola variabile.
+%
+% Infatti nell'esempio di prima:
+%
+% \[
+%     x^{2}+y^{2} = 4
+% \]
+%
+% \[
+%     V = \gamma([0,2\pi])
+% \]
+%
+% \[
+%     \gamma =
+%         \begin{cases}
+%             x=2 \cos t\\
+%                y= 2 \sin t
+%         \end{cases}\,.
+% \]
+%
+% diventa:
+%
+% \[
+%     x^{2}+y^{2} = 4 \cos ^{2} t + 4 \sin ^{2} t = 4 ( \cos ^{2} t + \sin ^{2} t) =4
+% \]
+%
+\subsubsection{Metodo dei moltiplicatori di Lagrange}
 
 \textbf{Esempio} 
 
@@ -81,6 +81,8 @@ Cerchiamo il massimo della funzione $f(x,y) = xy$ quando $(x,y) \in \mathbb{R}^{
 \[
     V= \{(x,y) \in \mathbb{R}^{2};\underbrace{ x^{2}+y^{2}=1}_\text{$g(x,y) = k$} x \ge 0, y \ge 0\}
 \]
+
+Quindi sto restringendo il dominio della mia funzione a questo cerchio.
 
 \textbf{Osservazione} 
 
@@ -109,7 +111,7 @@ Quindi si ha per $xy = \frac{1}{2}$:
 P_0 = ( \underbrace{\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}}_\text{per avere $c= \frac{1}{2}$})
 \]
 
-La curva di livello $c=\frac{1}{2}$ è tangente al vincolo $P_0$.
+La curva di livello $xy=\frac{1}{2}$ è tangente al vincolo $P_0$.
 
 Quindi $\nabla f(x_0,y_0)$ è \textbf{ortogonale} alla linea di livello $E_c$.
 
@@ -137,7 +139,7 @@ quindi:
     F'(t) \overset{\text{regola della catena}}{=} \langle \nabla f(\gamma(t)), \gamma'(t) \rangle = 0
 \]
 
-questa è la \textbf{condizione geometrica} (sono vettori perpendicolari).
+questa è la \textbf{condizione geometrica} (sono vettori perpendicolari, come in fisica se l'angolo è 90 allora il prodotto scalare fa 0).
 
 Il gradiente è, in ogni punto, perpendicolare al vettore tangente all'insieme di livello $f(x,y) = c$ quando questi ($E_c$) è il sostegno di una curva regolare.
 

@@ -118,16 +118,17 @@ Se le $f_{xy}$ e $f_{yx}$ sono continue in $(x_0,y_0)$, allora $f_{xy}(x_0,y_0) 
 
        $(x_1,y_1)$ e $(x_2,y_2)$ stanno nell'intervallo del rettangolo tratteggiato:
 
-       DA FINIRE IL DISEGNO
 
+       \begin{center}
        \begin{tikzpicture}
            \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
            \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
-           \draw[densely dotted] (1,1) -- (2,1) node[left] {$P_0$};
+           \draw[densely dotted] (1,1) -- (2,1) node[right] {$P_0$};
            \draw[densely dotted] (1,1) -- (1,2);
            \draw[densely dotted] (2,1) -- (2,2);
            \draw[densely dotted] (1,2) -- (2,2);
        \end{tikzpicture}
+       \end{center}
 
        Passando al limite (per $P \rightarrow P_0$) succede che:
 
@@ -218,14 +219,6 @@ Se $f \in \mathbb{C}^{k}(A)$ allora l'ordine di derivazione non conta sulle deri
 $A \subseteq \mathbb{R}^{n}$ con $A$ aperto e $f:A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$ di classe $\mathbb{C}^{k}$ per qualche $k \in \mathbb{N}$ (regolare di regolarità k).
 
 Siano $\bar{x}$ e $\bar{x} +\bar{h} $ due punti in $A$ tali che il segmento (di $\mathbb{R}^{n}$) che ha come estremi $\bar{x} $ e $\bar{x} + \bar{h} $, indicato con $[\bar{x} +\bar{x} +\bar{h} ] \subset \mathbb{R}^{n}$, sia tutto contenuto in $A$.
-
-DISEGNO DA FARE
-       \begin{tikzpicture}
-            \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
-            \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
-            % \draw[scale=0.5, domain=-3:3, smooth, variable=\x, blue] plot ({\x}, {\x*\x});
-            % \draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
-       \end{tikzpicture}
 
        \[
            [\bar{x} , \bar{x} +\bar{h} ] = \{\bar{x} (t) \in \mathbb{R}^{n}, \bar{x} (t) = \bar{x} +\bar{th}, t \in [0,1]\} \subset \mathbb{R}^{n}

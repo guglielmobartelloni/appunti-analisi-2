@@ -40,10 +40,10 @@ La definizione \textbf{non} dipende dalla scelta di $R$ (dove $R$ rettagolo che 
 In tal caso poniamo:
 
 \[
-    Area(D) = |D| \cdot \iint {1} \: dx d y
+    Area(D) = \underbrace{|D|}_\text{area} = \iint {1} \: dx d y
 \]
 
-e dunque ogni rettangolo $R = [a,b] \times [c,d]$ è miusrabile secondo Peano-Jordan:
+e dunque ogni rettangolo $R = [a,b] \times [c,d]$ è misurabile secondo Peano-Jordan:
 
 \[
     |R| = \int_{a}^{b} {\int_{c}^{d} {1} \: dx } \: dx  = (b-a) (d-c)
@@ -51,7 +51,7 @@ e dunque ogni rettangolo $R = [a,b] \times [c,d]$ è miusrabile secondo Peano-Jo
 }
 
 
-Tutti gli insiemi che conosciamo della geometria elementare (quadrati, rettangoli, poligoni, cerchi) sono misurabili e la loro misuora (secondo Peano-Jordan) è l'area che conosciamo:
+Tutti gli insiemi che conosciamo della geometria elementare (quadrati, rettangoli, poligoni, cerchi) sono misurabili e la loro misura (secondo Peano-Jordan) è l'area che conosciamo:
 
 \[
     Q = [0,1] \times [0,1]
@@ -97,11 +97,11 @@ Siano $f$ e $g$ integrabili su D ( siano $f,g \in R(D)$) e $c \in \mathbb{R}$:
             \item Se $f \le g$ allora:
 
                 \[
-                    \iint_D {f()} \: dx d y = \iint_D {g()} \: dx d y 
+                    \iint_D {f()} \: dx d y \le  \iint_D {g()} \: dx d y 
                 \]
             \item $|f| \in R(D)$ e si ha $\left|\iint_D {f()} \: dx d y \right| \le \iint_D {\left|f()\right|} \: dx d y  $
 
-                In particolare se $D$ è misurabile e se $M_1= \underbrace{sup}_\text{D} | f(x,y)$:
+                In particolare se $D$ è misurabile e se $M_1= \underbrace{sup}_\text{D} | f(x,y)|$:
 
                 \[
                     \left|\iint_D {f(x,y)} \: dx d y\right| \le M_1(D)
@@ -169,7 +169,7 @@ $D_1$ e $D_2$ sono misurabili secondo Peano-Jordan.
 cioe':
 
 \[
-    \iint_{D_1} {1} \: d x d y = \int_{a}^{b} {dx \int_{g_1(x)}^{g_2(x)} {1} \: y }
+    \iint_{D_1} {1} \: d x d y = \int_{a}^{b} {dx \int_{g_1(x)}^{g_2(x)} {1} \: d y }
 \]
 
 mentre:
@@ -181,7 +181,7 @@ mentre:
 cioe':
 
 \[
-    \iint_{D_2} {1} \: d x d y = \int_{c}^{d} {dx \int_{h_1(x)}^{h_2(x)} {1} \: y }
+    \iint_{D_2} {1} \: d x d y = \int_{c}^{d} {dx \int_{h_1(x)}^{h_2(x)} {1} \: d y }
 \]
 
 
@@ -196,7 +196,7 @@ cioe':
         \item Se $D$ è x-semplice allora:
 
             \[
-                \iint_D {f(x,y)} \: d x d y = \int_{c}^{d} {d x \int_{h_1(x)}^{h_2(x)} {f(x,y)} \: d y } 
+                \iint_D {f(x,y)} \: d x d y = \int_{c}^{d} {d y \int_{h_1(y)}^{h_2(y)} {f(x,y)} \: d x } 
             \]
     \end{enumerate}
 
@@ -232,7 +232,7 @@ $D_2$ è x-semplice.
 $D = D_1 \cup D_2$ non è semplice
 
 \[
-    \iint_D {f()} = \iint_{D_1} {f()} \iint_{D_2} {f()}
+    \iint_D {f()} = \iint_{D_1} {f()} + \iint_{D_2} {f()}
 \]
 
 \subsubsection{Proprietà di additività rispetto ai domini di integrazione}
@@ -366,11 +366,38 @@ quindi l'applicazione:
 
 \newpage
 
+\begin{figure}
+ \centering
+ \begin{tikzpicture}[
+     ele/.style={fill=black,circle,minimum width=.8pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt},
+     insieme/.style={circle, draw=blue!60, fill=blue!5, very thick, minimum size=40},
+     insiemeLel/.style={circle, draw=red!60, fill=red!5, very thick, minimum size=40},
+     ]
+  \node[insieme] (a1) at (0,4) {};    
+  % \node[ele,label=left:$c$] (a3) at (0,2) {};
+  % \node[ele,label=left:$d$] (a4) at (0,1) {};
+
+  \node[insiemeLel] (b1) at (4,4) {};
+  % \node[ele,,label=right:$3$] (b3) at (4,2) {};
+  % \node[ele,,label=right:$4$] (b4) at (4,1) {};
+
+
+  \draw[->,thick,shorten <=2pt,shorten >=2pt] (b1.center) .. controls +(down:7mm) and +(down:7mm) .. (a1.center) node[midway,above left] {$F^{-1}$};
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a1.center) .. controls +(up:7mm) and +(up:7mm) .. (b1.center) node[midway,above left] {F};
+  % \draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2) node[midway,above left] {F};
+  % \draw[->,thick,shorten <=2pt
+  % \draw[->,thick,shorten <=2pt,shorten >=2] (b2) -- (a2) node[midway,above left] {$F^{-1}$};
+  % \draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b3);
+ \end{tikzpicture}
+\label{fig:polari}
+\caption{Funzione per le coordinate polari invertibile}
+\end{figure}
+
+
 \teorema{}{Consideriamo l'applicazione verticale $F(\rho,\theta) = \left(F_1(\rho,\theta), F_2(\rho,\theta)\right)$ in cui $F: A \rightarrow \mathbb{R}^{2}$ in cui $A = (0,+\infty) \times (0,2\pi)$.
 
-Sia $S \subset (0,+\infty) \times (0,2\pi)$ un aperto misurabile nel piano $(\rho,\theta)$ con $\bar{S} \subset (0,\infty) \cdot (0,2\pi)$ e sia $T=F(S)$
+    Sia $S \subset (0,+\infty) \times (0,2\pi)$ un aperto misurabile nel piano $(\rho,\theta)$ con $\bar{S} \subset (0,\infty) \cdot (0,2\pi)$ e sia $T=F(S)$ (fig. \ref{fig:polari})
 
-DISEGNO
 
 Allora per ogni funzione $f$ integrabile su $T$, continua e limitata, vale la sequente formula:
 
@@ -380,25 +407,26 @@ Allora per ogni funzione $f$ integrabile su $T$, continua e limitata, vale la se
 
 }
 
-\textbf{Esempio} 
 
-Cerchio: $x^{2}+y^{2}=r^{2}$
-
-Coordinate polari:
-
-\[
-    \{(\rho,\theta) | 0 \le \rho \le r, 0 \le \theta \le  2\pi\}
-\]
-
-\[
-    c = \{(x,y) \in \mathbb{R}^{2}| r^{2} \le x^{2}+y^{2} \le R^{2}\}
-\]
-
-\[
-    \bar{c} = \{(\rho,\theta) | r \le \rho \le R, 0 \le \theta \le 2\pi\}
-\]
-
-DISEGNI SU DISEGNI CHE BELLO
+% \textbf{Esempio} 
+%
+% Cerchio: $x^{2}+y^{2}=r^{2}$
+%
+% Coordinate polari:
+%
+% \[
+%     \{(\rho,\theta) | 0 \le \rho \le r, 0 \le \theta \le  2\pi\}
+% \]
+%
+% \[
+%     c = \{(x,y) \in \mathbb{R}^{2}| r^{2} \le x^{2}+y^{2} \le R^{2}\}
+% \]
+%
+% \[
+%     \bar{c} = \{(\rho,\theta) | r \le \rho \le R, 0 \le \theta \le 2\pi\}
+% \]
+%
+% DISEGNI SU DISEGNI CHE BELLO
 
 
 \textbf{Esempio} 
@@ -411,7 +439,7 @@ DISEGNI SU DISEGNI CHE BELLO
     D= \{(u,v) \in \mathbb{R}^{2}, u^{2}+v^{2} \le S\}
 \]
 
-Trasformiamo in coordinate polari:
+Trasformiamo in coordinate polari (in questo caso ha senso perché la forma di A è un cerchio, in casi come questo conviene usare le coordinate polari):
 
 \[
     \bar{D} = \{(\rho,\theta) | 0 \le \rho \le \sqrt{5}, 0 \le \theta \le 2\pi\}

@@ -122,7 +122,16 @@ Una regione $D_1 \subset \mathbb{R}^{2}$ si dice \textbf{y-semplice} (o normale 
 
 \textbf{Esempio} 
 
-DISEGNO DA FARE
+\begin{center}
+    \begin{tikzpicture}
+        %asse x 
+        \draw[->] (1,1) -- (11,1); 
+        %asse y 
+        \draw[->] (1,1) -- (1,11);
+
+        \draw[scale=0.5, domain=1:11, smooth, variable=\x, blue] plot ({\x}, {sin(\x)+5});
+    \end{tikzpicture}
+\end{center}
 
 \[
     D_1= \{(x,y) \in \mathbb{R}^{2}, a \le x \le b, g_1(x) \le y \le g_2(x)\}

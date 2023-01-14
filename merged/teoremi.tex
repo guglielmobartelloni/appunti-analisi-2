@@ -1,0 +1,998 @@
+\documentclass[11pt]{article}
+
+
+\input{../template/preamble}
+
+\begin{document}
+\teorema{}{L'integrale generale di (1) in $[a,b]$ è dato dalla somma dell'integrale generale dell'omogenea associata (2)
+con un integrale particolare noto di (1)
+\[
+\int_{{}}^{{}} {gen} (1) = \int_{{}}^{{}} {gen(2)}  + \int_{{}}^{{}} {particolare} (1)
+\]
+}
+\begin{proof}
+
+
+Sia $y(x)$ una soluzione qualsiasi di (1) ($y(x)$ appartiene all'integrale generale di (1))
+e sia $\bar y(x)$ una soluzione particolare (nota) di (1). Voglio far vedere è che la loro differenza è una soluzione qualsiasi di (2)
+
+Dunque per ipotesi n ha che:
+\[
+    y'(x)+a(x)y(x) = f(x), \forall x \in [a,b]
+\]
+
+\[
+    \bar y'(x) + a(x) \bar y(x) = f(x)
+\]
+
+Entrambe soddisfano la (1)
+
+Sottraggo membro a membro le due:
+
+\[
+    y'(x)-\bar y'(x) + a(x)y(x) - a(x) \bar y(x) = f(x) - f(x)
+\]
+
+\[
+    y'(x)-\bar y'(x) + a(x)[y(x) - \bar y(x)]=0
+\]
+
+Si può scrivere anche (le derivate raccolte):
+\[
+    [y(x)-\bar y(x)]' + a(x)[y(x) - \bar y(x)]=0
+\]
+
+E dunque  la funzione $y(x) - \bar y(x) = z(x)$ è soluzione di (2)
+Quindi:
+\[
+    y(x) = \bar y(x) + z(x)
+\]
+
+Viceversa se $z(x)$ è una qualsiasi soluzione di (2) e $\bar y(x)$ è una soluzione particolare di (1) 
+voglio mostrare che la loro somma è soluzione di (1)
+
+Pongo:
+\[
+    y(x) = z(x) + \bar y(x)
+\]
+
+Devo mostrare che $y(x)$ verifica (1)
+
+sapendo che:
+\[
+    z'(x) + a(x)z(x) = 0
+\]
+
+\[
+    \bar y'(x) + a(x) \bar y(x) = f(x)
+\]
+
+\[
+    y'(x) = (z(x) + \bar y(x) )' = z'(x) + \bar y'(x) =
+    -a(x)z(x)-a(x)\bar y(x) + f(x) = -a(x) [z(x) + \bar y(x)] +f(x)
+\]
+
+E quindi ho dimostrato che:
+\[
+    y'(x) = -a(x)y(x) + f(x)
+\]
+
+\[
+    y'(x) +  a(x)y(x) = f(x)
+\]
+
+\[
+    y(x) = z(x) + \bar y(x)
+\]
+
+\end{proof}
+\teorema{}{Siano $f$ e $g$ continue (sugli opportuni domini) allora:
+
+    \begin{itemize}
+        \item $f+g , f\cdot g$ sono continue 
+        \item se $g \neq 0$ allora $\frac{f}{g}$ è continua
+        \item se $g>0$ allora $f^{g}$ è continua
+        \item la funzione comporta $g \circ f$ è continua (dove è definita)
+    \end{itemize}
+}
+\teorema{}{Sia $f: D \subset \mathbb{R}^{2} \rightarrow  \mathbb{R}$ e sia $P_0=(x_0,y_0) \in D$ allora:
+
+    \[
+        \lim_{ (x,y) \to (x_0,y_0) } f(x,y)  = l \Leftrightarrow \lim_{ \rho \to 0^{+} } f(x_0+\rho cos \theta, y_0+\rho sin \theta) = l
+    \]
+
+    uniformemente rispetto a $\theta$
+
+}
+\begin{proof}
+       per far vedere che vale il limite è sufficiente mostrare che esiste una funzione $g$ che dipende solo da $\rho$ (non negativa) $g(\rho)\ge 0$ tale che:
+
+       \[
+        |f(x_0+\rho cos\theta, y_0+\rho sin \theta ) -l| \le  g(\rho)
+       \]
+
+       dove $g(\rho) \rightarrow 0$ per $\rho \rightarrow 0^{+}$
+
+       e poi faccio vedere che quindi (per il teorema dei due carabinieri):
+
+       \[
+        0\le f(x_0+\rho cos\theta, y_0+\rho sin \theta ) -l \le  g(\rho) = 0
+       \]
+
+\end{proof}
+\teorema{}{ $f$ è differenziabile in $\bar{x_0} \subset A \rightarrow f$ è continua in $\bar{x_0} $ }
+\begin{proof}
+     Per dimostrare che $f$ è continua in $\bar{x_0} $ devo far vedere che:
+
+     \[
+         \lim_{ h \to 0 } f(x+h) = f( \bar{x_0} ) 
+     \]
+
+     \[
+        \lim_{ h \to 0 } f(x_0 + h ) \overset{\text{poiché $f$ è differenziabile}}{=} \lim_{ h \to 0 } [f(x_0) + \langle \nabla f(x_0),h \rangle + \underbrace{o(|h|)}_\text{$\rightarrow 0$}]
+     \]
+
+     usiamo Cauchy-Schwarz:
+
+     \[
+        \langle \nabla f(x_0),h \rangle   \le  \underbrace{\langle \nabla f(x_0),h \rangle}_\text{valore assoluto}| \le  \underbrace{|\nabla f(x_0)|}_\text{lunghezza del vettore} | \underbrace{h}_\text{$\rightarrow 0$}| \overset{\text{numero moltiplicato $0$}}{=} 0
+     \]
+
+     quindi abbiamo che:
+
+     \[
+         \lim_{ h \to 0 } [f(x_0) + \underbrace{\langle \nabla f(x_0),h \rangle}_\text{$\rightarrow 0$} + \underbrace{o(|h|)}_\text{$\rightarrow 0$}] = f(x_0)
+     \]
+\end{proof}
+\teorema{Teorema del differenziale}{ Sia $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto, derivabile in $A$. 
+
+    Se le derivate parziali $f_{x_1}, \ldots, f_{x_n}$ sono continue in $\bar{x} \in A$ allora $f$ è differenziabile in $\bar{x} $
+
+}
+\begin{proof}
+       Per $n=2$, $f = f(x,y)$ con $(x,y) \in A \subseteq \mathbb{R}^{2}$ 
+
+       $\bar{h} = (h,k)$:
+
+       \[
+           f(x+h,y+k) - f(x,y) \overset{\text{aggiungo e tolgo $f(x,y+k)$}}{=} 
+       \]
+
+       \[
+           = f(x+h,y+k) + f(x,y+k) - f(x,y+k) - f(x,y) = 
+       \]
+
+       \[
+           = [f(x+h,y+k) - f(x,y+k) ] + [f(x,y+k) - f(x,y)] \overset{\text{uso Lagrange a ognuna delle funzioni}}{=}
+       \]
+
+       Applico due volte il teorema di Lagrange sugli intervalli di estremi $x,x+h$ e $y,y+k$:
+
+       \[
+           \exists x_1 \in  \text{ intervallo aperto di estremi } x,x+h
+       \]
+
+       \[
+           \exists y_1 \in  \text{ intervallo aperto di estremi } y,y+k
+       \]
+
+       \[
+           = \frac{\partial f}{\partial x}(x_1,y+k) (\cancel{x} +h \cancel{-x}) + \frac{\partial f}{\partial y}(x,y_1) ( \cancel{y} + k \cancel{-y}) = 
+       \]
+
+       \[
+           =\frac{\partial f}{\partial x}(x_1,y+k) h + \frac{\partial f}{\partial y}(x,y_1)k 
+       \]
+
+       a questo punto faccio vedere la definizione di differenziabilità e sostituisco quello sopra:
+
+       \[
+           \frac{f(x+h,y+k) - f(x,y) - f_x(x,y)h - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+       \]
+
+       \[
+           = \frac{f_x(x_1,y+k) h + f_y(x,y_1) k -f_x(x,y) - f_y(x,y) k}{\sqrt{h^{2}+k^{2}}} = 
+       \]
+
+       \[
+           = \frac{[f_x(x_1,y+k) - f_x(x,y)] h + [f_y(x,y_1) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}
+       \]
+
+       metto tutto in valore assoluto e maggioro:
+
+       \[
+           = |\frac{[f_x(x_1,y+k) - f_x(x,y)] h + [f_y(x,y_1) - f_y(x,y)] k}{\sqrt{h^{2}+k^{2}}}| \le 
+       \]
+
+       \[
+       \le |f_x(x_1,y+k) - f_x(x,y_1)| \frac{|h|}{\sqrt{h^{2}+k^{2}}} + | f_y(x,y_1) - f_y(x,y)| \frac{|k|}{\sqrt{h^{2}+k^{2}}} \le 
+       \]
+
+       \[
+            \le  |f_x(x_1,y+k) - f_x(x,y) | + |f_y(x,y_1) - f_y(x,y) |
+       \]
+
+       vediamo che succede quando $(h,k) \rightarrow (0,0)$:
+
+        $(x_1,y_1) \rightarrow (x,y)$ le funzioni $f_x$ e $f_y$ sono continue in $(x,y)$
+
+        dunque se passo al limite:
+
+        \[
+            |\underbrace{f_x(x,y) - f_x(x,y)}_\text{$\rightarrow 0$} | + |\underbrace{f_y(x,y) - f_y(x,y)}_\text{$\rightarrow 0$} |
+        \]
+
+\end{proof}
+\teorema{Regola della catena}{
+
+consideriamo una curva continua $\gamma : [-1,1] \subset \mathbb{R} \rightarrow A\subseteq \mathbb{R}^{n}\ curva$ e supponiamo $\gamma(t)$ vettore (di $n$ componenti) sia derivabile, cioè:
+
+\[
+    \gamma(t) = (\gamma_1(t),\ldots,\gamma_n(t) )
+\]
+
+esiste:
+
+\[
+    \gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t))
+\]
+
+e supponiamo che $\gamma(0) = x_0 \in A$ e $\gamma'(0) = \bar{v} \in \mathbb{R}^{n}$, 
+
+
+allora se $f: A \rightarrow \mathbb{R}$ è differenziabile in $x_0$, la funzione composta $F \rightarrow f(\gamma(t))$ da $[-1,1] \rightarrow \mathbb{R}$:
+
+\[
+    F= f \circ g : [-1,1] \rightarrow \mathbb{R}
+\]
+
+\[
+    F(t) = (f \circ g) (t) = f(\gamma(t))
+\]
+
+è differenziabile in $0$:
+
+\[
+    F'(0) = \frac{\partial F}{\partial t} (0) = \frac{\partial (f \circ g)}{\partial t}(0) = \langle \nabla f(x_0), \underbrace{\gamma'(0)}_\text{direzione $\bar{v} $} \rangle
+\]
+
+Questo si chiama \textbf{teorema delle derivate delle funzioni composte} o regola della catena.
+
+}
+\begin{proof}
+       Dimostrato dalle considerazioni fatte fino a ora.    
+\end{proof}
+\teorema{Derivazione della funzione composta}{
+    Supponiamo $\gamma(t)$ derivabile $\forall t \in I$ ovvero $\gamma'(t)$ è definito $\forall t \in I$ con $\gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t))$ e supponiamo che $f$ sia differenziabile in $\gamma(t) \in A$ (data $f: A \subseteq \mathbb{R}^{n}\rightarrow \mathbb{R}$) allora la funzione composta $F= f \circ \gamma: I \rightarrow \mathbb{R}$ è derivabile in t.
+
+
+    Inoltre:
+
+    \[
+        F'(t) = \langle \nabla f(\gamma(t)), \gamma'(t) \rangle = \sum^{n}_{i=1} \frac{\partial f}{\partial x_i}(\gamma(t))\gamma_i'(t)
+    \]
+
+}
+\begin{proof}
+       Inizio dimostrando che $f$ è derivabile, ovvero che esiste finito il limite del rapporto incrementale:
+
+       \[
+           \frac{F(t+h) - F(t)}{h} = \frac{F(\gamma(t+h)) - F(\gamma(t))}{h} = \langle \nabla f(\gamma(t+h)), \underbrace{\frac{\gamma(t+h) - \gamma(t)}{h}}_\text{$1$} \rangle + \underbrace{\frac{o(\gamma(t+h) - \gamma(t)|)}{h}}_\text{$2$}
+       \]
+
+       quando $h \rightarrow 0$:
+
+       \begin{enumerate}
+        \item
+            \[\lim_{ h \to 0 } \frac{\gamma(t+h) - \gamma(t)}{h} = \gamma'(t) \hspace{19em}\]
+
+        \item
+        \[
+            \lim_{ h \to 0 } \frac{o(|\gamma(t+h) - \gamma(t)|)}{h} {=} \lim_{ h \to 0 } {\frac{|o(|\gamma(t+h) - \gamma(t)|)|}{|h|}} \cdot {\frac{| \gamma(t+h) - \gamma(t)|}{|\gamma(t+h) - \gamma(t)|}} =
+        \]
+        \[
+            = \lim_{ h \to 0 } \underbrace{\frac{|o(|\gamma(t+h) - \gamma(t)|)|}{|\gamma(t+h) - \gamma(t)|}}_\text{$0$ per definizione di o-piccolo} \cdot \underbrace{\frac{| \gamma(t+h) - \gamma(t)|}{|h|}}_\text{quantità finita} = 0
+        \]
+    Quantità finita perché:
+
+    \[
+        \lim_{ h \to 0 } \frac{|\gamma(t+h) - \gamma(t)|}{|h|} = \lim_{ h \to 0 } ( \sum^{n}_{i=1} (\frac{\gamma_i(t+h) - \gamma_i(t)}{h})^{2})^{ \frac{1}{2}} =
+    \]
+
+    \[
+        = \sqrt{\sum^{n}_{i=1} ( \gamma_i'(t))^{2}} = \underbrace{| \gamma'(t)|}_\text{lunghezza di un vettore} >0
+    \]
+
+       \end{enumerate}
+
+\end{proof}
+\teorema{Formula del gradiente}{Se $f(x,y)$ è differenziabile in $P=(x,y)$ allora $f$ ammette derivate direzionali in $(x,y)$ per ogni direzione. Inoltre per ogni versore $\bar{v}= (a,b)$, vale:
+
+    \[
+        D_{\overrightarrow{v} }f(x,y) = \langle \nabla f(x,y), \overrightarrow{v}  \rangle = \frac{\partial f}{\partial x}(x,y)\cdot a + \frac{\partial f}{\partial y}(x,y) \cdot b
+    \]
+
+}
+\begin{proof}
+    \[
+    e ^{-A(x)} = -a(x) e ^{-A(x)}
+\]
+
+ovvero
+
+\[
+    (e ^{-A(x)})'+a(x) e ^{-A(x)}=0
+\]
+    
+\end{proof}
+\begin{proof}
+    Poiché $\bar y(x)$ è soluzione di (1) si ha che $\bar y'(x)+a(x) \bar y(x)=f(x)$ da cui sostituendo $\bar y(x) = c(x) e ^{-A(x)}$:
+
+    \[
+        (c(x) e ^{-A(x)})'+ a(x) c(x) e ^{-A(x)} = f(x)
+    \]
+    
+    Deriviamo:
+
+    \[
+        c'(x) e ^{-A(x)} \cancel{- c(x) a(x) e ^{-A(x)}} \cancel{+ a(x) c(x) e ^{-A(x)}}= f(x)
+    \]
+    
+    semplifico
+
+    \[
+        c'(x) e ^{-A(x)} = f(x)
+    \]
+
+    \[
+        c'(x) = f(x) e ^{A(x)} \rightarrow c(x) = \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{} {}
+    \]
+
+    e dunque:
+
+    \[
+        \bar y(x) = e ^{-A(x)} \int_{{}}^{{}} {f(x) e ^{A(x)}} \: d{x} {}
+    \]
+
+    Cioè l'integrale particolare
+\end{proof}
+\teorema{Schwarz}{ Sia $f: A \subseteq \mathbb{R}^{n} \rightarrow \mathbb{R}$, $A$ aperto
+
+    e supponiamo che la $f$ sia derivabile due volte su $A$, quindi esistono tutte le $f_{x_i x_j}$, $\forall i,j=1,\ldots,n$ e sia $\bar{x_0} \in A$.
+
+
+    Se le $f_{x_i x_j}$, e le $f_{x_j x_i}$ con $i \neq j$ sono \textbf{continue}  in $x_0$, allora:
+
+    \[
+        f_{x_i x_j}(x_0) = f_{x_j x_i}(x_0)
+    \]
+
+}
+\begin{proof}
+       Sia $P_0=(x_0,y_0)$ e $P=(x,y)$ un punto qualsiasi su $A$, con $P \neq P_0$ (quindi $x \neq x_0, y \neq y_0$)
+
+       Consideriamo il valore della funzione nei punti:
+
+       \[
+           f(x_0,y_0) = f(x,y_0), f(x,y), f(x_0,y)
+       \]
+
+       \[
+           \underbrace{F(x)}_\text{dipende solo da $x$ ($y$ fissato)} = f(x,y) - f(x,y_0)
+       \]
+
+       \[
+           \underbrace{G(y)}_\text{dipende solo da $y$ ($x$ fissato)}  = f(x,y) - f(x_0,y)
+       \]
+
+       Applico il teorema di Lagrange (teorema del valore intermedio)
+
+       Lagrange a $F(x)$ nell'intervallo di estremi $x_0$, $x$, si ha che esiste un elemento $x_1$ in questo intervallo per cui:
+
+       \[
+           F(x)- F(x_0) = F'(x_1) (x-x_0) = [f_x(x_1,y) - f_x(x_1,y_0) ] (x- x_0)  \overset{\text{applico Lagrange due volte come spiegato sotto}}{=}
+       \]
+
+       Sappiamo che $f$ è derivabile due volte, posso quindi applicare Lagrange a $f_x(x_1,y)$ nell'intervallo di estremi $y_0,y$. Quindi $\exists y_1$ nell'intervallo tale che:
+
+       \[
+           f_x(x_1,y) - f_x(x_1,y_0) = \frac{\partial }{\partial y}(f_x(x_1,y_1))(y-y_0) = f_{xy}(x_1,y_1)(y-y_0)
+       \]
+
+       quindi la nostra espressione diventa:
+
+       \[
+           = f_{xy}(x_1,y_1)(x-x_0) (y-y_0)
+       \]
+
+       quindi abbiamo fatto vedere che:
+
+       \[
+           F(x) -F(x_0) = f_{xy}(x_1,y_1) (x-x_0)(y-y_0)
+       \]
+
+       Analogamente per $G(y)$ applico Lagrange quindi $\exists y_2$ nell'intervallo di estremi $y,y_0$ tale che:
+
+       \[
+           G(y) -G(y_0) = G'(y_2) (y-y_0) = [f_y(x,y_2) - f_y(x_0,y_2)] (y-y_0) \overset{\text{applico di nuovo Lagrange}}{=}
+       \]
+
+       applico quindi Lagrange a $f_y(x,y_2)$ nell'intervallo di estremi $x,x_0$ quindi $\exists x_2$ in questo intervallo:
+
+       \[
+           f_y(x,y_2) - f_y(x_0,y_2) = f_{yx}(x_2,y_2)(x-x_0)
+       \]
+
+       infine quindi:
+
+       \[
+           = f_{yx}(x_2,y_2)(x-x_0)(y-y_0)
+       \]
+
+
+       Notiamo che:
+
+       \[
+           F(x) - F(x_0) = G(x) -G(x_0)
+       \]
+
+       \[
+           G(x) - G(x_0) = f(x,y) - f(x_0,y) - (f(x,y_0) -f(x_0,y_0))
+       \] 
+
+       Le due espressioni sono quindi uguali, di conseguenza anche le espressioni ottenute precedentemente
+
+       Essendo $F(x) - F(x_0) = G(x) - G(x_0)$, segue che:
+
+       \[
+           f_{xy}(x_1,y_1)(x-x_0)(y-y_0) = f_{yx}(x_2,y_2)(x-x_0)(y-y_0)
+       \]
+
+       noi sappiamo che $(x,y) \neq (x_0,y_0)$ per ipotesi, quindi deve essere che:
+
+       \[
+           f_{xy}(x_1,y_1) = f_{yx}(x_2,y_2)
+       \]
+
+       $(x_1,y_1)$ e $(x_2,y_2)$ stanno nell'intervallo del rettangolo tratteggiato:
+
+
+       \begin{center}
+       \begin{tikzpicture}
+           \draw[->] (-3, 0) -- (4.2, 0) node[right] {$x$};
+           \draw[->] (0, -3) -- (0, 4.2) node[above] {$y$};
+           \draw[densely dotted] (1,1) -- (2,1) node[right] {$P_0$};
+           \draw[densely dotted] (1,1) -- (1,2);
+           \draw[densely dotted] (2,1) -- (2,2);
+           \draw[densely dotted] (1,2) -- (2,2);
+       \end{tikzpicture}
+       \end{center}
+
+       Passando al limite (per $P \rightarrow P_0$) succede che:
+
+       \[
+           (x,y) \rightarrow (x_0,y_0)
+       \]
+
+       \[
+           (x,y_0) \rightarrow (x_0,y_0)
+       \]
+
+       \[
+           (x_2,y_2) \rightarrow (x_0,y_0)
+       \]
+
+       ed essendo la funzione $f_{xy},f_{yx}$ continue in $P_0=(x_0,y_0)$, si ha:
+
+       \[
+           f_{xy}(x_0,y_0) = f_{yx}(x_0,y_0)
+       \]
+
+
+\end{proof}
+\begin{proof}
+       Immediata applicando Taylor con k=1:
+
+       \[
+           F(1) = F(0) + F'(\theta)
+       \] 
+\end{proof}
+\begin{proof}
+       Di nuovo viene da Taylor per $k=2$:
+
+       \[
+           F(1) = F(0) + F'(0) + \frac{F''(\theta)}{2}
+       \]
+\end{proof}
+\teorema{Teorema di Fermat per funzioni in più variabili}{
+
+    Sia $f:D \subset \mathbb{R}^{n} \rightarrow  \mathbb{R}$, sia $x_0 \in A$ punto di estremo locale per $f$. Se $f$ è differenziabile in $x_0$ allora:
+
+    \[
+        \nabla f(x_0) = 0
+    \]
+
+}
+\begin{proof}
+    Supponiamo $x_0$ punto di massimo relativo. Allora $x_0$ è punto di massimo relativo anche per la restrizione di $f$ lungo una qualsiasi retta passante per $x_0$. Dunque consideriamo $v \in \mathbb{R}^{n}$ la direzione di tale retta, quindi $x_0 + tv$ sono i punti su tale retta.
+
+    La funzione in \textbf{una} variabile:
+
+        \[
+        F(t) = f(x_0 + tv)
+    \] 
+
+    è definita in un intorno di $t=0$ e per ipotesi, siccome $x_0$ è punto di massimo per $f$, allora $t=0$ è punto di massimo per $F$.
+
+    Per il Teorema di Fermat (in una variabile) su $F$ si ha:
+
+    \[
+        F'(0) = \langle \nabla f(x_0),v \rangle = 0
+    \]
+
+    per ogni direzione $v$. Siccome $v \neq \emptyset$ (perché $|v| = 1$), allora necessariamente $\nabla f(x_0) = 0$.
+
+\end{proof}
+\begin{proof}
+       È basata sull'approssimazione al secondo ordine della nostra funzione attraverso la formula di Taylor (al II ordine) col resto di Peano.
+
+       \[
+           \underbrace{f(\bar{x_0} + \bar{h} )}_\text{$f(x,y)$} = \underbrace{f(\bar{x_0} )}_\text{$f(x_0,y_0)$} + \langle \underbrace{\nabla f(\bar{x_0} )}_\text{$=0$},\bar{h}  \rangle + \frac{1}{2} \langle Hf(\bar{x_0} )\bar{h} ,\bar{h}   \rangle + o(|\bar{h} |^{2})
+       \]
+
+       osserviamo che:
+
+       \begin{equation} \label{quadratica hessiana}
+           \frac{1}{2} \langle Hf(\bar{x_0} )\bar{h} ,\bar{h}   \rangle
+       \end{equation}
+
+       è un polinomio di II grado in $h,k$ i cui coefficienti sono le derivate seconde quindi ci fornisce il \textbf{segno} 
+
+
+       per $h \rightarrow 0$ abbiamo:
+
+       \begin{itemize}
+        \item $\bar{x_0} +\bar{h} =x$
+        \item $\bar{h} = \bar{x} - \bar{x_0} $
+        \item $\bar{h} =(h,k)$
+       \end{itemize}
+
+       Vediamo cosa succede:
+
+       \[
+           f(x,y) - f(x_0,y_0) = \underbrace{\frac{\partial f}{\partial x}(x_0,y_0)}_\text{$=0$}(x-x_0) + \underbrace{\frac{\partial f}{\partial y}(x_0,y_0)}_\text{$=0$} (y-y_0) + \frac{1}{2}[f_{xx}(x_0,y_0)(x-x_0)^{2} + 2 f_{xy}(x_0,y_0) (x-x_0) (y-y_0) 
+       \]
+
+       \[
+           + f_{yy}(x_0,y_0) (y-y_0)^{2}] + o((x-x_0)^{2}+(y-y_0)^{2})
+       \]
+
+
+       Osserviamo adesso \ref{quadratica hessiana} forma quadratica dell'hessiana in $\bar{h} \in \mathbb{R}^{n}$ è un polinomio di grado 2 omogeneo nelle variabili $h_1,\ldots,h_n$
+
+       Ad ogni forma quadratica è associata una matrice:
+
+       \[
+           q(\bar{h} ) = \sum^{n}_{i,j=1} a_{ij} h_i h_j \leftrightarrow \langle A \bar{h} , \bar{h}  \rangle
+       \]
+
+       dove $A = (a_{ij})$. Notiamo che tutti i $h_i^{2}$ hanno coefficienti $a_{ii}$ (stanno sulla diagonale).
+       
+       Nel nostro caso la matrice associata è la matrice Hessiana, che è \textbf{simmetrica} ($a_{ij} = a_{ji}$ per il teorema di Schwarz).
+
+       Quindi per avere il coefficiente di posto $ij$, siccome $a_{ij} = a_{ji} \rightarrow a_{ij} + a_{ji} = 2a_{ij}$, devo dividere il coefficiente per 2.
+
+
+\textbf{Esempio} 
+
+$n=2$ e $\bar{h} =(h_1,h_2)$
+
+Sappiamo in generale che:
+
+\[
+    q(h_1,h_2) = a_{11} h_1^{2} + \underbrace{2a_{12} h_1 h_2}_\text{A simmetrica} + a_{22}h_2^{2}
+\]
+
+per una matrice $2\times 2$:
+
+\[
+    A= \begin{pmatrix}
+        \overbrace{1}^\text{$a_{11}$} & \overbrace{5}^\text{$2a_{12}$}\\
+        \underbrace{5}_\text{$2a_{21}$} & \underbrace{4}_\text{$a_{22}$}
+    \end{pmatrix} \leftrightarrow 
+    q(h_1,h_2) = h_1^{2}+4 h_2^{2}+ 10 h_1 h_2
+\]
+
+per una matrice $3\times 3$:
+
+\[
+    A = \begin{pmatrix}
+    2 & -2 & 5\\
+    -2 & 3 & 0\\
+    5 & 0 & 4
+    \end{pmatrix} \leftrightarrow
+    q(\bar{h} ) = 2 h_1^{2}+3 h_2^{2}+ 4 h_3^{2} - 4 h_1 h_2 + 10 h_1 h_3
+\]
+
+\newpage
+
+\textbf{Studiamo il segno} 
+
+Adesso studiamo il segno della quadratica hessiana
+
+\defn{}{ $q(\bar{h} )$ si dice \textbf{definita positiva} se $\forall h \neq 0$ si ha $q(\bar{h} ) >0$}
+
+\defn{}{ $q(\bar{h} )$ si dice \textbf{definita negativa} se $\forall h \neq 0$ si ha $q(\bar{h} ) <0$}
+
+\defn{}{ $q(\bar{h} )$ si dice \textbf{indefinita} se $\exists \bar{h_1}, \bar{h_2} \in \mathbb{R}^{2}$ t.c. $q(\bar{h_1} ) <0<q(\bar{h_2} )$ cioè cambia segno}
+
+\textbf{Nota} 
+
+Per studiare il segno possiamo usare anche il segno degli autovalori.
+
+\textbf{Conclusione} 
+
+Vediamo quindi cosa succede:
+
+\begin{itemize}
+    \item $det(Hf(x_0,y_0)>0$ e $f_{xx}(x_0,y_0)>0 \rightarrow $ la forma quadratica corrispondente è definita positiva
+    \item $det(Hf(x_0,y_0)>0$ e $f_{xx}(x_0,y_0)<0 \rightarrow $ la forma quadratica corrispondente è definita negativa
+    \item $det(Hf(x_0,y_0)<0$ $\rightarrow $ la forma quadratica corrispondente è indefinita
+\end{itemize}
+
+\end{proof}
+\teorema{Weistrass}{ Sia $f: K \rightarrow \mathbb{R}$ con $K$ \textbf{limitato e chiuso} di $\mathbb{R}^{2}$ continua allora $f$ è \textbf{limitata} ed assume minimo e massimo su $K$, ovvero:
+
+    \[
+        \exists (x_m,y_m),(x_n,y_n) \in K
+    \]
+
+    t.c.
+
+    \[
+        f(x_m,y_m) \le f(x,y) \le f(x_n, y_n) \forall x,y \in K
+    \]
+
+    cioè
+    \begin{itemize}
+        \item $f(x_m, y_m)$ valore minimo assoluto di $f$ su $K$ 
+        \item $f(x_n, y_n)$ valore massimo assoluto di $f$ su $K$
+    \end{itemize}
+
+
+}
+\teorema{Moltiplicatori di Lagrange}{ Supponiamo che $f,g \in \mathbb{C}^{1}(A)$ dove $A \subseteq \mathbb{R}^{2}$ aperto.
+
+    Se $(x_0,y_0) \in A$ è un punto di estremo (minimo o massimo) per la $f$ nell'insieme $V$ ($(x_0,y_0)$ è punto di estremo vincolato):
+
+    \[
+        V=\{(x,y) \in A, g(x,y) = k\}
+    \]
+
+    e vale anche:
+
+    \[
+        \underbrace{\nabla g(x_0,y_0) \neq 0}_\text{$(x_0,y_0) \in V$ regolare per $g$}
+    \]
+
+    \textbf{allora} esiste $\lambda_0 \in \mathbb{R}$ t.c.:
+
+    \[
+        \underbrace{\nabla f(x_0,y_0) = \lambda_0 \nabla g(x_0,y_0)}_\text{equazione vettoriale}
+    \]
+
+}
+\teorema{}{ Sia $f: R \rightarrow \mathbb{R}$ limitata, allora $f$ è integrabile secondo Riemann su $R ( f \in \mathbb{R}(R)) \Leftrightarrow  \forall \varepsilon$ esiste una suddivisione $D_\varepsilon$ di $R$ per cui:
+
+    \[
+        S(f,D_{\varepsilon}) - s(f,D_{\varepsilon}) < \varepsilon
+    \]
+
+}
+\teorema{di riduzione}{ Sia $f \in \mathbb{R}(R)$ dove $R=[a,b]\times [c,d]$
+
+    \begin{enumerate}
+        \item Se, per ogni $y \in [c,d]$, esiste l'integrale:
+
+            \[
+                G(y)=\int_{a}^{b} {f(x,y)} \: dx 
+            \]
+
+            allora la funzione $y \rightarrow G(y)$ è integrabile in $[c,d]$ e vale la formula:
+
+            \[
+                \iint_R {f} = \int_{c}^{d} {G(y)} \: d y = \int_{c}^{d} {\left(\int_{a}^{b} {f(x,y)} \: dx \right)} \: d y 
+            \]
+
+        \item Se, per ogni $x \in [a,b]$ esiste l'integrale 
+
+            \[
+                H(x) = \int_{c}^{d} {f(x,y)} \: d x d y
+            \]
+
+            allora la funzione $x \rightarrow H(x)$ è integrabile in $[a,b]$ e vale la formula:
+            
+            \[
+                \iint_R {f} = \int_{a}^{b} {H(x)} \: dx = \int_{a}^{b} {\left(\int_{c}^{d} {f(x,y)} \: d y \right)} \: dx 
+            \]
+
+    \end{enumerate}
+}
+\teorema{Formule di riduzione}{Sia $f: R=[a,b]\times [c,d] \rightarrow \mathbb{R}$ continua, allora $f \in R(\mathbb{R}) $ e si ha:
+
+\[
+    \iint_R {f(x,y)} \: d x d y = \int_{a}^{b} {\left(\int_{c}^{d} {f(x,y)} \: d y \right)} \: dx   = \int_{c}^{d} {\left(\int_{a}^{b} {f(x,y)} \: dx \right)} \: d y 
+\]
+
+}
+\teorema{Formule di riduzione}{ Ogni funzione continua su un'insieme semplice $D \subset \mathbb{R}^{2}$ è integrabile su tale insieme e valgono le formule di riduzione:
+
+    \begin{enumerate}
+        \item Se $D$ è y-semplice allora:
+
+            \[
+                \iint_D {f(x,y)} \: d x d y = \int_{a}^{b} {d x \int_{g_1(x)}^{g_2(x)} {f(x,y)} \: d y } 
+            \]
+        \item Se $D$ è x-semplice allora:
+
+            \[
+                \iint_D {f(x,y)} \: d x d y = \int_{c}^{d} {d y \int_{h_1(y)}^{h_2(y)} {f(x,y)} \: d x } 
+            \]
+    \end{enumerate}
+
+}
+\teorema{}{Consideriamo l'applicazione verticale $F(\rho,\theta) = \left(F_1(\rho,\theta), F_2(\rho,\theta)\right)$ in cui $F: A \rightarrow \mathbb{R}^{2}$ in cui $A = (0,+\infty) \times (0,2\pi)$.
+
+    Sia $S \subset (0,+\infty) \times (0,2\pi)$ un aperto misurabile nel piano $(\rho,\theta)$ con $\bar{S} \subset (0,\infty) \cdot (0,2\pi)$ e sia $T=F(S)$ (fig. \ref{fig:polari})
+
+
+Allora per ogni funzione $f$ integrabile su $T$, continua e limitata, vale la sequente formula:
+
+\[
+    \iint_{T=F(S)} {f(x,y)} \: d x d y  = \iint_{S=F'(T)} {f( \rho \cos \theta, \rho \sin \theta) \underbrace{\rho}_\text{det $JF(\rho,\theta)$}} \: d \rho d \theta  
+\]
+
+}
+\teorema{Teorema fondamentale dell'algebra}{
+    L'equazione di II in $\mathbb{C}$ 
+
+    \[
+   a \lambda^{2}+b \lambda + c =0, in\ \mathbb{C}
+    \]
+
+    ha sempre due soluzioni in $\mathbb{C}$
+
+}
+\begin{proof}
+    y è soluzione di \ref{IIomogenea} $\Leftrightarrow$ $Ly=0$ 
+
+    Se considero $y(x) = e ^{\lambda x}$ 
+
+    Devo dimostrare che:
+
+    \[
+        L(e ^{\lambda x}) = 0 \Leftrightarrow  p(\lambda) = 0
+    \]
+
+    Sostituisco a $x$ $e ^{\lambda x}$:
+
+    \[
+        L(e ^{\lambda x}) = a( e^{\lambda x})'' + b( e ^{\lambda x})' + c(e ^{\lambda x}) =
+    \]
+
+    \[
+        =a \lambda ^{2} e ^{\lambda x} + b \lambda e ^{\lambda x} + c e^{\lambda x}= e ^{\lambda x}(a \lambda ^{2}+ b \lambda+ c)
+    \]
+
+    dunque
+
+    \[
+        L( e ^{\lambda x}) = 0 \Leftrightarrow a \lambda ^{2}+ b \lambda +c = 0 
+    \]
+           
+\end{proof}
+\teorema{}{L'integrale generale dell'equazione omogenea $a y''+by'+c=0$ è dato da:
+
+    \[
+        c_1 y_1(x) + c_2 y_2(x)
+    \]
+
+    al variare di $c_1,c_2 \in \mathbb{R}$ dove $y_1(x)$ e $y_2(x)$ sono definite come sopra
+}
+\begin{proof}
+       1) $b^{2}-4ac >0$ con $\lambda_1,\lambda_2$ soluzioni dell'equazioni di $p(\lambda)=0$    
+
+       scrivo la Wronskiana di $y_1,y_2$:
+       \[
+        \begin{bmatrix}
+            
+        e ^{\lambda_1 x} & e ^{\lambda_2 x} \\
+        \lambda_1e ^{\lambda_1 x} & \lambda_2e ^{\lambda_2 x} \\
+        
+        \end{bmatrix}
+       \]
+        che è diverso da zero quindi le soluzioni sono linearmente indipendenti
+
+        sia ora $y(x)$ una soluzione di \ref{IIomogenea}:
+
+        \[
+            y(x) = e ^{\lambda_1 x}u(x)
+        \]
+
+        io devo determinare $u(x)$ per poi dimostrare che $y(x) = c_1e ^{\lambda_1 x}+c_2 e^{\lambda_2 x}$
+
+        Poiché $y(x) = e ^{\lambda_1 x}u(x)$ è soluzione di \ref{IIomogenea} si ha derivando e sostituendo:
+
+        \[
+            a( e ^{\lambda_1 x} u(x))'' + b(e ^{\lambda_1 x}u(x))'+ c e ^{\lambda_1 x}u(x) =0
+        \]
+
+        \[
+            a(\lambda_1 e ^{\lambda_1 x} u(x)+ e ^{\lambda_1 x}u'(x))' + b(\lambda_1e ^{\lambda_1 x}u(x) + e ^{\lambda_1 x}u'(x))+ c e ^{\lambda_1 x}u(x) =0
+        \]
+
+        \[
+            e ^{(\lambda_1 x}[a \lambda_1 ^{2} + b \lambda_1+c)u(x)+\underbrace{(au''(x)+(2a \lambda_1 + b)u'(x))}_\text{impongo che sia zero}]=0
+        \]
+
+        estraggo solo l'ultima parentesi e impongo che sia uguale a zero perché il resto è già zero
+
+        \[
+            au''(x) + (2a \lambda_1 + b) u'(x) = 0
+        \]
+
+        divido per a:
+
+        \[
+            u''(x) +(2 \lambda_1 + \frac{b}{a}) u'(x) = 0
+        \]
+
+        sapendo che:
+
+        \[
+            a \lambda^{2} + b \lambda + c =0
+        \]
+
+        \[
+             \lambda^{2} + \frac{b}{a} \lambda + \frac{c}{a} =0
+        \]
+
+        \[
+            \lambda_1 + \lambda_2 = -\frac{b}{a}
+        \]
+
+        \[
+            \lambda_1  \lambda_2 = \frac{c}{a}
+        \]
+
+        \[
+            u''(x) + (2 \lambda_1 - \lambda_1 - \lambda_2)u'(x) = 0
+        \]
+
+        il meno per comodità:
+
+        \[
+            u''(x) - (\lambda_1 - \lambda_2)u'(x) = 0
+        \]
+
+        se adesso chiamo $u'(x)=v(x)$ e $v''(x) = u'(x)$ l'equazione diventa:
+
+        \[
+            v' -kv = 0
+        \]
+
+        Risolvendo 
+
+        \[
+            v(x) = ce ^{kx}
+        \]
+
+        \[
+            v(x) = c e^{(\lambda_2 - \lambda_1)x}
+        \]
+
+        Risostituendo:
+
+        \[
+            u'(x) = c e ^{(\lambda_2- \lambda_1)x}
+        \]
+
+        Integrando:
+
+        \[
+            u(x)  = c_1 e ^{(\lambda_2 - \lambda_1)x}+c_2
+        \]
+        
+        la nostra $y(x)$ diventa:
+
+        \[
+            y(x) = e ^{\lambda_1 x}u(x) = e ^{\lambda_1 x}( c_1 e ^{(\lambda_2 - \lambda_1)x}+c_2) = c_1 e ^{\lambda_2 x}+ c_2 e ^{\lambda_1 x}
+        \]
+
+
+\end{proof}
+\begin{proof}
+       \[
+           |x+ y| ^{2} = \langle x+y , x+y \rangle = (x+y) \bullet (x+y) \overset{\text{bilinearità}}{=} \langle x,x+y \rangle + \langle y,x+y \rangle \overset{\text{sempre bilinearità}}{=} 
+       \]    
+
+       \[
+           =\langle x,x \rangle + \langle x,y \rangle + \langle y,x \rangle + \langle y,y \rangle = \langle x,x \rangle + 2\langle x,y \rangle + \langle y,y \rangle= 
+       \]
+
+       \[
+            = |x|^{2} + |y|^{2} + 2x \bullet y
+       \]
+\end{proof}
+\begin{proof}
+     Se
+     \[
+        y=0
+     \]
+
+     \[
+         y=0=(0, \ldots ,0) 
+     \]
+     
+     questo caso va bene.
+
+     Sia dunque $\mathbb{R}^{n} \rightarrow y \neq 0$ e consideriamo la funzione reale di una variabile reale $t \rightarrow |x+ty|^{2}\ge 0$ polinomio di secondo grado in t
+
+     \[
+         |x + ty| ^{2} \overset{\text{Carnot}}{=} |x|^{2} + |ty|^{2} + 2\langle x,ty \rangle  = |x|^{2} + |y|^{2}t^{2} + 2 \langle x,y \rangle t
+     \]
+
+     è un polinomio di II grado in t dove $|y|^{2}> 0 $ essendo $y \neq 0$
+
+     Il nostro $\frac{\Delta}{4}$ deve essere non positivo:
+
+     \[
+         (x\bullet y ) ^{2} - |x| ^{2}|y|^{2} \le 0
+     \]
+
+     \[
+         (x\bullet y ) ^{2}\le  |x| ^{2}|y|^{2} 
+     \]
+
+     da cui si ha la tesi.
+
+     Si verifica, se si ha che
+
+     \[
+         \langle x,y \rangle = |x| |y|
+     \]
+
+     si ha che il $\Delta$ del trinomio di II grado è nullo e dunque $t \in \mathbb{R}$ per cui $|x+ty|^{2}=0$ ovvero $x +ty=0$ $\rightarrow x=-ty$
+
+     devo mostrare che $-t \ge 0$
+
+
+     \[
+         t = - \frac{\langle x,y \rangle}{|y|^{2}}
+     \]
+
+     si ricorda che $|y|>0$ essendo y non nullo
+
+     \[
+         -t = \frac{|x| |y|}{|y|^{2}}\ge 0
+     \]
+
+ \end{proof}
+\begin{proof}
+       Dimostriamo la disuguaglianza triangolare, considero:
+
+       \[
+           |x+y|^{2} = \langle x+y , x+y \rangle = |x|^{2}+|y|^{2} + 2 \langle x,y \rangle \le 
+       \]
+
+       \[
+           \le |x|^{2} + |y| ^{2} + 2|\langle x,y \rangle| \le \underbrace{|x| ^{2} + |y|^{2} + 2|x|\bullet |y|}_{(|x|+|y|)^{2}}
+       \]
+
+       estraendo e passando alle radici si ha
+
+       \[
+           |x+y| \le |x|+|y|
+       \]
+\end{proof}
+\end{document}

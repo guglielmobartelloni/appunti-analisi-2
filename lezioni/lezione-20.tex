@@ -153,6 +153,55 @@ Se le $f_{xy}$ e $f_{yx}$ sono continue in $(x_0,y_0)$, allora $f_{xy}(x_0,y_0) 
 
 \end{proof}
 
+\begin{proof} \textbf{Alternativa con integrali doppi} 
+    
+    Sia un generico rettangolo $R = [a,b]\times [c,d]$
+
+    Integro $f_{xy}(x,y)$:
+
+    \[
+        \int_{c}^{d} {\int_{a}^{b} {f_{yx}(x,y)} \: dx } \: d y \overset{\text{separo la doppia derivata}}{=} \int_{c}^{d} {\int_{a}^{b} {(f_y(x,y))_x} \: dx } \: dy=
+    \]
+
+    \[
+        = \int_{c}^{d} {f_y(b,y) - f_y(a,y)} \: d y = f(b,d) - f(b,c) - f(a,d) + f(a,c)
+    \]
+
+    Adesso vediamo l'altro integrale di $f_{yx}(x,y)$ (si inverte l'integrale con il teorema di Fubini che presuppone che la funzione sia continua):
+
+    \[
+        \int_{c}^{d} {\int_{a}^{b} {f_{xy}} \: dx } \: d y \overset{\text{Teorema di Fubini}}{=} \int_{a}^{b} {\int_{c}^{d} {(f_x)_y} \: d y } \: dx =
+    \]
+
+    \[
+        =\int_{a}^{b} {f_x(x,d) - f_x(x,c)} \: dx  = f(b,d) - f(a,d) - f(b,c) + f(a,c)
+    \]
+
+    e quindi $f_{xy}(x,y) = f_{yx}(x,y)$:
+
+    \[
+      f(b,d) - f(b,c) - f(a,d) + f(a,c) = f(b,d) - f(a,d) - f(b,c) + f(a,c)
+    \]
+
+    Questo funziona per ogni rettangolo che pongo infatti:
+
+    \[
+        \int_{c}^{d} {\int_{a}^{b} {f_{yx}} \: dx } \: d y =  \int_{c}^{d} {\int_{a}^{b} {f_{xy}} \: dx } \: d y 
+    \]
+
+    Quindi la loro differenza deve essere 0:
+
+    \[
+        \iint_R \underbrace{{(f_{yx} - f_{xy})}}_\text{continue} \: dx d y = 0
+    \]
+
+    Vale perché essendo le funzioni continue se supponiamo per assurdo che la differenza sia positiva in un certo punto $x_0$ allora la funzione è positiva anche in un piccolo rettangolo intorno a quel punto (per la continuità) ma questo è assurdo perché nel rettangolo la differenza delle due funzioni è 0.
+
+    Quindi proprio per il fatto che le funzioni sono continue allora questo teorema funziona.
+
+\end{proof}
+
+
 
 \textbf{Esempio} 
 

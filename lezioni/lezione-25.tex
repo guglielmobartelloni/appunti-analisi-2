@@ -312,7 +312,7 @@ dove $d x = \varphi'(t) dt$
 
 \subsection{Integrali doppi in coordinate polari}
 
-Consideriamo l'applicazione (vettore): $F: \mathbb{R}^{2} \rightarrow \mathbb{R}$ cosi definita:
+Consideriamo l'applicazione (vettore): $F: \mathbb{R}^{2} \rightarrow \mathbb{R}^2$ cosi definita:
 
 \[
     (\rho, \theta) \rightarrow (\underbrace{x(\rho, \theta)}_\text{$F_1(\rho, \theta)$}, \underbrace{y(\rho, \theta)}_\text{$F_2(\rho,\theta)$})
@@ -405,14 +405,21 @@ quindi l'applicazione:
 
 \teorema{}{Consideriamo l'applicazione verticale $F(\rho,\theta) = \left(F_1(\rho,\theta), F_2(\rho,\theta)\right)$ in cui $F: A \rightarrow \mathbb{R}^{2}$ in cui $A = (0,+\infty) \times (0,2\pi)$.
 
-    Sia $S \subset (0,+\infty) \times (0,2\pi)$ un aperto misurabile nel piano $(\rho,\theta)$ con $\bar{S} \subset (0,\infty) \cdot (0,2\pi)$ e sia $T=F(S)$ (fig. \ref{fig:polari})
+    Sia $S \subset (0,+\infty) \times (0,2\pi)$ un aperto misurabile nel piano $(\rho,\theta)$ con $\bar{S} \subset (0,\infty) \cdot (0,2\pi)$ e sia $T=F(\bar{S})$ (fig. \ref{fig:polari})
 
 
 Allora per ogni funzione $f$ integrabile su $T$, continua e limitata, vale la sequente formula:
 
 \[
-    \iint_{T=F(S)} {f(x,y)} \: d x d y  = \iint_{S=F'(T)} {f( \rho \cos \theta, \rho \sin \theta) \underbrace{\rho}_\text{det $JF(\rho,\theta)$}} \: d \rho d \theta  
+  \iint_{T=F(S)} {f(x,y)} \: d x d y  = \iint_{S=F^{-1}(T)} {f( \rho \cos \theta, \rho \sin \theta) \underbrace{\rho}_\text{det $JF(\rho,\theta)$}} \: d \rho d \theta  
 \]
+
+Più in generale in realtà:
+
+\[
+  \iint_{T=F(S)} {f(x,y)} \: d x d y  = \iint_{S=F^{-1}(T)} {f( F_1(\rho, \theta) , F_2(\rho, \theta)) \text{det $JF(\rho,\theta)$}} \: d \rho d \theta  
+\]
+
 
 }
 
@@ -441,11 +448,11 @@ Allora per ogni funzione $f$ integrabile su $T$, continua e limitata, vale la se
 \textbf{Esempio} 
 
 \[
-    \iint_{u^{2}+v^{2} \le S} {v^{2}} \: dudv 
+    \iint_{u^{2}+v^{2} \le 5} {v^{2}} \: dudv 
 \]
 
 \[
-    D= \{(u,v) \in \mathbb{R}^{2}, u^{2}+v^{2} \le S\}
+    D= \{(u,v) \in \mathbb{R}^{2}, u^{2}+v^{2} \le 5\}
 \]
 
 Trasformiamo in coordinate polari (in questo caso ha senso perché la forma di A è un cerchio, in casi come questo conviene usare le coordinate polari):

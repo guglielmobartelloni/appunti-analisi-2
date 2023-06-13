@@ -70,10 +70,10 @@ esiste:
     \gamma'(t) = (\gamma_1'(t),\ldots,\gamma_n'(t))
 \]
 
-e supponiamo che $\gamma(0) = x_0 \in A$ e $\gamma'(0) = \bar{v} \in \mathbb{R}^{n}$, 
+e supponiamo che $\gamma(0) = \bar{x_0} \in A$ e $\gamma'(0) = \bar{v} \in \mathbb{R}^{n}$, 
 
 
-allora se $f: A \rightarrow \mathbb{R}$ è differenziabile in $x_0$, la funzione composta $F \rightarrow f(\gamma(t))$ da $[-1,1] \rightarrow \mathbb{R}$:
+allora se $f: A \rightarrow \mathbb{R}$ è differenziabile in $\bar{x_0}$, la funzione composta $F \rightarrow f(\gamma(t))$ da $[-1,1] \rightarrow \mathbb{R}$:
 
 \[
     F= f \circ g : [-1,1] \rightarrow \mathbb{R}
@@ -86,7 +86,7 @@ allora se $f: A \rightarrow \mathbb{R}$ è differenziabile in $x_0$, la funzione
 è differenziabile in $0$:
 
 \[
-    F'(0) = \frac{\partial F}{\partial t} (0) = \frac{\partial (f \circ g)}{\partial t}(0) = \langle \nabla f(x_0), \underbrace{\gamma'(0)}_\text{direzione $\bar{v} $} \rangle
+  F'(0) = \frac{\partial F}{\partial t} (0) = \frac{\partial (f \circ g)}{\partial t}(0) = \langle \nabla f(\bar{x_0}), \underbrace{\gamma'(0)}_\text{direzione $\bar{v} $} \rangle
 \]
 
 Questo si chiama \textbf{teorema delle derivate delle funzioni composte} o regola della catena.

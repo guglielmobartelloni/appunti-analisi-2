@@ -94,7 +94,7 @@ Consideriamo ora le funzioni in più variabili $f: A \subset \mathbb{R}^{n} \rig
 
 Sia $x_0 \in \mathbb{R}^{n}$ un punto di accumulazione per $A$
 
-Si dice che $f(\bar{x})$ tende (ha limite) a $l$ per $\bar{x} $ che tende a $x_0$:
+Si dice che $f(\bar{x})$ tende (ha limite) a $l \in \mathbb{R} \cup \pm \infty$ per $\bar{x} $ che tende a $x_0$:
 
 \[
     \lim_{ \bar{x}  \to x_0 } f(\bar{x} ) = l
@@ -104,7 +104,7 @@ scrivendolo tramite gli intorni: se $\forall $ intorno $U \subset \mathbb{R}$ di
 
 tale che $f(\bar{x}) \in U$ $\forall \bar{x}   \in \underbrace{I(x_0,r)}_{B(x_0,r)}\cap (A \setminus \{x_0\})$ 
 
-L'altra definizione con i delta:
+Se invece $l \in \mathbb{R}$ allora si utilizza i delta:
 
 \[
     \forall \varepsilon>0\  \exists \delta >0
@@ -113,10 +113,10 @@ L'altra definizione con i delta:
 tale che 
 
 \[
-    \underbrace{|f(\bar{x} ) - l|}_{d(f( \bar{x} ),l) \in \mathbb{R}} <\varepsilon
+    \underbrace{||f(\bar{x} ) - l||}_{d(f( \bar{x} ),l) \in \mathbb{R}} <\varepsilon
 \]
 
-$\forall \bar{x} \in A \setminus \{x_0\}$ con $|\bar{x} -x_0| < \delta$
+$\forall \bar{x} \in A \setminus \{x_0\}$ con $||\bar{x} -x_0|| < \delta$
 }
 
 \subsection{Proprietà dei limiti di funzioni in più variabili}
